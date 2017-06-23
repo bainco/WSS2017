@@ -1,0 +1,4110 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[    177017,       4102]
+NotebookOptionsPosition[    160612,       3740]
+NotebookOutlinePosition[    166952,       3881]
+CellTagsIndexPosition[    166909,       3878]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[{
+ "Sonifying ",
+ StyleBox["Clave son \[Dash] ",
+  FontSlant->"Italic"],
+ "Exploring Musical Rhythm"
+}], "Title",
+ CellChangeTimes->{{3.700774153171832*^9, 3.700774159196458*^9}, {
+  3.705104157104324*^9, 3.7051041574063416`*^9}, {3.70568519155404*^9, 
+  3.705685209964157*^9}, {3.707213696407445*^9, 3.707213726987035*^9}, {
+  3.7072145204969797`*^9, 3.707214521968822*^9}, {3.707214629441585*^9, 
+  3.707214630398628*^9}, {3.707215731567875*^9, 3.70721573211036*^9}, {
+  3.707243137503495*^9, 
+  3.707243170596919*^9}},ExpressionUUID->"0f190da8-f8db-481a-8e25-\
+9ae1b777a7b9"],
+
+Cell["\<\
+Much of music from around the world is centered around characteristic rhythms \
+called \[OpenCurlyDoubleQuote]timelines.\[CloseCurlyDoubleQuote] Here, we \
+explore these timelines using Mathematica to sonify, visualize, and generate \
+existing and original rhythms. \
+\>", "Abstract",
+ CellChangeTimes->{{3.700774172671139*^9, 3.700774220850109*^9}, {
+  3.700778895632181*^9, 3.700778896308676*^9}, {3.7051041615775795`*^9, 
+  3.705104170817108*^9}, {3.70721374163391*^9, 3.7072137481775007`*^9}, {
+  3.707213856796321*^9, 3.707213971302717*^9}, {3.7072144723077173`*^9, 
+  3.707214473152446*^9}, {3.7072146887118883`*^9, 
+  3.707214779036189*^9}},ExpressionUUID->"2a082af0-c10d-47ec-81a4-\
+6d97fa70db67"],
+
+Cell[CellGroupData[{
+
+Cell["Sonifcation", "Section",
+ CellChangeTimes->{{3.700774708350976*^9, 3.700774714085747*^9}, {
+  3.7051042493566003`*^9, 3.7051042513157125`*^9}, {3.705686166481989*^9, 
+  3.7056861672865133`*^9}, {3.707214524085083*^9, 
+  3.707214525152231*^9}},ExpressionUUID->"6f874ac9-24f0-4b0e-8c09-\
+dc25b16d8a27"],
+
+Cell["\<\
+A timeline is simply a rhythm that repeats throughout a piece with no \
+variation, giving a particular \[OpenCurlyDoubleQuote]feel\
+\[CloseCurlyDoubleQuote] to the music that incorporates it in addition to \
+serving as a timekeeper and structuring device for the musicians. Sometimes, \
+these are called \[OpenCurlyDoubleQuote]rhythmic ostinatos.\
+\[CloseCurlyDoubleQuote]\
+\>", "Text",
+ CellChangeTimes->{{3.700774312865305*^9, 3.700774350341485*^9}, {
+   3.7051042689957237`*^9, 3.7051043842073135`*^9}, {3.705105072313671*^9, 
+   3.705105092602831*^9}, {3.705683778330366*^9, 3.705683783009487*^9}, {
+   3.7072146648811417`*^9, 3.7072146652055397`*^9}, {3.707214794624662*^9, 
+   3.7072149080088377`*^9}, 3.707214944494804*^9, {3.7072150763275023`*^9, 
+   3.707215122031241*^9}},ExpressionUUID->"e7fb0bc8-3dc1-4500-899c-\
+3d05b5c805d1"],
+
+Cell[TextData[{
+ "Here we generate the ",
+ StyleBox["clave son",
+  FontSlant->"Italic"],
+ " (commonly just called ",
+ StyleBox["clave",
+  FontSlant->"Italic"],
+ ") rhythm, a central facet of any salsa dance:"
+}], "Direction",
+ CellChangeTimes->{{3.700774271565714*^9, 3.70077428101515*^9}, {
+  3.70510436631329*^9, 3.705104402940385*^9}, {3.7051044918334694`*^9, 
+  3.705104547547656*^9}, {3.705104583096689*^9, 3.7051045898510756`*^9}, {
+  3.705105030495279*^9, 3.70510503226538*^9}, {3.7051051046345196`*^9, 
+  3.7051052440884957`*^9}, {3.7072151260613117`*^9, 
+  3.707215204891851*^9}},ExpressionUUID->"0cf08661-74de-4970-b101-\
+504cb52bf410"],
+
+Cell[BoxData[
+ RowBox[{"EmitSound", "[", 
+  RowBox[{"Sound", "[", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"SoundNote", "[", 
+      RowBox[{"\"\<Clap\>\"", ",", " ", "0.75"}], "]"}], ",", 
+     RowBox[{"SoundNote", "[", 
+      RowBox[{"\"\<Clap\>\"", ",", " ", "0.75"}], "]"}], ",", " ", 
+     RowBox[{"SoundNote", "[", 
+      RowBox[{"\"\<Clap\>\"", ",", " ", "1.0"}], "]"}], ",", " ", 
+     RowBox[{"SoundNote", "[", 
+      RowBox[{"\"\<Clap\>\"", ",", " ", "0.5"}], "]"}], ",", " ", 
+     RowBox[{"SoundNote", "[", 
+      RowBox[{"\"\<Clap\>\"", ",", " ", "1.0"}], "]"}]}], "}"}], "]"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.700774255707568*^9, 3.70077426783818*^9}, {
+  3.7051044212184305`*^9, 3.705104469954218*^9}, {3.705105265576725*^9, 
+  3.7051053685916166`*^9}, {3.705105596267639*^9, 3.705105691655095*^9}, {
+  3.7056842975415497`*^9, 3.705684356018416*^9}, {3.707215216141664*^9, 
+  3.707215263492928*^9}, {3.707215302705368*^9, 3.707215327858946*^9}, {
+  3.707215532468096*^9, 3.707215537922805*^9}},
+ CellLabel->"In[5]:=",ExpressionUUID->"1e3b389a-b6e5-44fc-a417-b92f6f843a93"],
+
+Cell[TextData[{
+ "Sound familiar? That pattern is the foundation of nearly all Afro-Cuban \
+music. Usually, it\[CloseCurlyQuote]s played on an instrument called ",
+ StyleBox["claves",
+  FontSlant->"Italic"],
+ " which are two cylindrical pieces of resonant hardwood that produce a sound \
+that cuts through the entire ensemble to communicate this pattern as a \
+foundation to the music that\[CloseCurlyQuote]s going on around it."
+}], "Text",
+ CellChangeTimes->{{3.707215417092557*^9, 3.707215434670332*^9}, {
+  3.707215551824005*^9, 
+  3.707215665123901*^9}},ExpressionUUID->"87be9618-168a-450f-bf76-\
+0e3032627588"],
+
+Cell["\<\
+The same rhythm, but this time with a claves sound instead of clapping. Here, \
+we use a pure function to avoid retyping our instrument name each time:\
+\>", "Direction",
+ CellChangeTimes->{{3.7056860922471857`*^9, 3.7056860957264357`*^9}, 
+   3.706975592765313*^9, {3.7069756502967*^9, 3.706975651832728*^9}, {
+   3.7072154008830976`*^9, 3.707215403609206*^9}, {3.7072156687407417`*^9, 
+   3.707215682595951*^9}, 3.7072157227731743`*^9, {3.707216377706833*^9, 
+   3.707216379952796*^9}, {3.7072168535994596`*^9, 
+   3.7072168646658173`*^9}},ExpressionUUID->"c047c7df-c173-4bb9-9228-\
+e3a555970caf"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"EmitSound", "[", 
+    RowBox[{"Sound", "[", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"SoundNote", "[", 
+        RowBox[{"#", ",", " ", "0.75"}], "]"}], ",", 
+       RowBox[{"SoundNote", "[", 
+        RowBox[{"#", ",", " ", "0.75"}], "]"}], ",", " ", 
+       RowBox[{"SoundNote", "[", 
+        RowBox[{"#", ",", " ", "1.0"}], "]"}], ",", " ", 
+       RowBox[{"SoundNote", "[", 
+        RowBox[{"#", ",", " ", "0.5"}], "]"}], ",", " ", 
+       RowBox[{"SoundNote", "[", 
+        RowBox[{"#", ",", " ", "1.0"}], "]"}]}], "}"}], "]"}], "]"}], " ", 
+   "&"}], " ", "[", "\"\<Claves\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.700774287998974*^9, 3.700774297728869*^9}, {
+  3.7051045527899556`*^9, 3.7051045647306385`*^9}, {3.705105385992612*^9, 
+  3.7051053864506383`*^9}, {3.706974257217712*^9, 3.706974400399123*^9}, {
+  3.7069748472690573`*^9, 3.7069749284874763`*^9}, {3.706974983846427*^9, 
+  3.706974989493617*^9}, {3.7072155065007877`*^9, 3.707215522361964*^9}, {
+  3.707215687921666*^9, 3.7072157081579943`*^9}, {3.707215981044283*^9, 
+  3.7072159856713743`*^9}, {3.707216287181428*^9, 3.70721629372495*^9}, {
+  3.7072163315337973`*^9, 3.7072163584417973`*^9}, {3.707216406841957*^9, 
+  3.707216456873728*^9}, {3.707216490242304*^9, 3.7072165533921337`*^9}, {
+  3.707230034557653*^9, 3.707230035507214*^9}},
+ CellLabel->"In[9]:=",ExpressionUUID->"4c715b31-2a62-4596-a29b-b8862f0a8952"],
+
+Cell["\<\
+Interestingly enough, this is same pattern is also known in rock and roll \
+music as the \[OpenCurlyDoubleQuote]Bo Diddley beat,\[CloseCurlyDoubleQuote] \
+named after rhythm and blues musician Bo Diddley. \
+\>", "Text",
+ CellChangeTimes->{{3.7072159905932302`*^9, 3.7072160066715117`*^9}, {
+   3.707216043360694*^9, 3.707216092142927*^9}, 
+   3.707216397492923*^9},ExpressionUUID->"cd20dae1-5820-4e6b-a99c-\
+df8fbf4b2de8"],
+
+Cell["Again, we have the same timeline, now with a bass drum:", "Direction",
+ CellChangeTimes->{{3.7056860922471857`*^9, 3.7056860957264357`*^9}, 
+   3.706975592765313*^9, {3.7069756502967*^9, 3.706975651832728*^9}, {
+   3.7072154008830976`*^9, 3.707215403609206*^9}, {3.7072156687407417`*^9, 
+   3.707215682595951*^9}, 3.7072157227731743`*^9, {3.707216105320341*^9, 
+   3.707216128702116*^9}, {3.7072168686897993`*^9, 
+   3.707216878840744*^9}},ExpressionUUID->"72200af9-d501-4cfc-8a01-\
+3b4605624fe0"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"EmitSound", "[", 
+    RowBox[{"Sound", "[", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"SoundNote", "[", 
+        RowBox[{"#", ",", " ", "0.75"}], "]"}], ",", 
+       RowBox[{"SoundNote", "[", 
+        RowBox[{"#", ",", " ", "0.75"}], "]"}], ",", " ", 
+       RowBox[{"SoundNote", "[", 
+        RowBox[{"#", ",", " ", "1.0"}], "]"}], ",", " ", 
+       RowBox[{"SoundNote", "[", 
+        RowBox[{"#", ",", " ", "0.5"}], "]"}], ",", " ", 
+       RowBox[{"SoundNote", "[", 
+        RowBox[{"#", ",", " ", "1.0"}], "]"}]}], "}"}], "]"}], "]"}], " ", 
+   "&"}], " ", "[", "\"\<BassDrum\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.707216113107791*^9, 3.707216122009179*^9}, {
+  3.707216500167004*^9, 3.707216511983775*^9}, {3.70721877163878*^9, 
+  3.7072187929932756`*^9}, {3.707218869594747*^9, 3.707218872963869*^9}, {
+  3.70722861630182*^9, 3.707228623356439*^9}, {3.7072289183202*^9, 
+  3.7072289227857447`*^9}, {3.707230037280794*^9, 3.707230044149283*^9}},
+ CellLabel->"In[7]:=",ExpressionUUID->"18999acc-810f-4dfd-b36e-6fda0d06a5c8"],
+
+Cell["\<\
+Up until now, we\[CloseCurlyQuote]ve been generating these timelines by \
+creating a sequence of SoundNotes with pre-determined lengths in seconds \
+(take a look at the second argument of each SoundNote). However, in music we \
+hear what many call a \[OpenCurlyDoubleQuote]pulse\[CloseCurlyDoubleQuote] or \
+the thing you tap your foot to. The pulse is just a set of identical, \
+repeated, and periodic stimuli.\
+\>", "Text",
+ CellChangeTimes->{{3.707218887225688*^9, 3.707218906654353*^9}, {
+   3.707219007766015*^9, 3.707219021492486*^9}, {3.707219200586508*^9, 
+   3.7072192162348137`*^9}, {3.707221444189706*^9, 3.707221465996118*^9}, {
+   3.7072283642740307`*^9, 3.707228466127879*^9}, {3.707228514062147*^9, 
+   3.707228547133621*^9}, 3.70722859099818*^9, {3.7072286334118977`*^9, 
+   3.707228671331242*^9}, {3.707228711466593*^9, 
+   3.707228773682102*^9}},ExpressionUUID->"9ec08883-433d-4d9e-a380-\
+0101e1a9918b"],
+
+Cell["\<\
+Here\[CloseCurlyQuote]s a steady pulse (repeated 16 times) every 0.25 \
+seconds: \
+\>", "Direction",
+ CellChangeTimes->{{3.7056860922471857`*^9, 3.7056860957264357`*^9}, 
+   3.706975592765313*^9, {3.7069756502967*^9, 3.706975651832728*^9}, {
+   3.7072154008830976`*^9, 3.707215403609206*^9}, {3.7072156687407417`*^9, 
+   3.707215682595951*^9}, 3.7072157227731743`*^9, {3.707216105320341*^9, 
+   3.707216128702116*^9}, {3.7072168686897993`*^9, 3.707216878840744*^9}, {
+   3.707228471654294*^9, 3.7072284955344048`*^9}, {3.707228550453115*^9, 
+   3.707228559125637*^9}, {3.707228780249337*^9, 3.707228810457057*^9}, 
+   3.707228876319683*^9, {3.707230220177367*^9, 
+   3.7072302214588547`*^9}},ExpressionUUID->"1b043ab7-b4be-496a-a526-\
+a2f292822094"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"EmitSound", "[", 
+    RowBox[{"Table", "[", 
+     RowBox[{
+      RowBox[{"SoundNote", "[", 
+       RowBox[{"#", ",", " ", "0.25"}], "]"}], ",", " ", "16"}], "]"}], "]"}],
+    "&"}], " ", "[", "\"\<Clap\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.707228820259756*^9, 3.707228955070874*^9}, {
+   3.707228991576344*^9, 3.707228996014295*^9}, {3.707229963216378*^9, 
+   3.7072299985336246`*^9}, {3.707230051910795*^9, 3.707230052860166*^9}, {
+   3.707230222413323*^9, 3.7072302328887377`*^9}, 3.707230472077036*^9, 
+   3.7072306575540457`*^9},
+ CellLabel->"In[8]:=",ExpressionUUID->"17b338a9-d991-4856-9872-07c405a1db99"],
+
+Cell["\<\
+So if every rhythm is built off of this pulse, can we express our earlier \
+clave rhythm in terms of this pulse? Of course! Let\[CloseCurlyQuote]s assume \
+a pulse with a duration of 0.25. That means that each hit or onset will be a \
+minimum of 0.25 seconds away from each other. \
+\>", "Text",
+ CellChangeTimes->{{3.7072302560092697`*^9, 3.7072302971119843`*^9}, {
+  3.707230391029697*^9, 3.707230464892783*^9}, {3.707230588246036*^9, 
+  3.7072306207070637`*^9}, {3.707230666336993*^9, 
+  3.707230692489251*^9}},ExpressionUUID->"8ee8816d-b55b-4eee-8f3a-\
+a65987ad3181"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"EmitSound", "[", 
+    RowBox[{"Sound", "[", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"SoundNote", "[", 
+        RowBox[{"#1", ",", " ", 
+         RowBox[{"#2", "*", "3"}]}], "]"}], ",", 
+       RowBox[{"SoundNote", "[", 
+        RowBox[{"#1", ",", " ", 
+         RowBox[{"#2", "*", "3"}]}], "]"}], ",", " ", 
+       RowBox[{"SoundNote", "[", 
+        RowBox[{"#1", ",", " ", 
+         RowBox[{"#2", "*", "4"}]}], "]"}], ",", " ", 
+       RowBox[{"SoundNote", "[", 
+        RowBox[{"#1", ",", " ", 
+         RowBox[{"#2", "*", "2"}]}], "]"}], ",", " ", 
+       RowBox[{"SoundNote", "[", 
+        RowBox[{"#1", ",", " ", 
+         RowBox[{"#2", "*", "4"}]}], "]"}]}], "}"}], "]"}], "]"}], " ", "&"}],
+   " ", "[", 
+  RowBox[{"\"\<Claves\>\"", ",", " ", "0.25"}], "]"}]], "Input",
+ CellChangeTimes->{{3.70723071221173*^9, 
+  3.7072307755282097`*^9}},ExpressionUUID->"4e6b4534-a276-4d13-a3be-\
+e037c95ac0a2"],
+
+Cell["\<\
+So in that case, we\[CloseCurlyQuote]re expressing each onset as a certain \
+multiple of our base pulse of 0.25. Because we\[CloseCurlyQuote]re dealing \
+with percussion instruments, we could also just express every single pulse, \
+with some being silent.\
+\>", "Text",
+ CellChangeTimes->{{3.707230720122211*^9, 3.7072307228572083`*^9}, {
+  3.7072307844522753`*^9, 3.707230867608729*^9}, {3.707231087940032*^9, 
+  3.7072310882266912`*^9}},ExpressionUUID->"e683a6c2-a636-4ed2-8979-\
+6dac6c1b5821"],
+
+Cell["To \[OpenCurlyDoubleQuote]play\[CloseCurlyDoubleQuote] silence, we use \
+an Instrument called None:", "Direction",
+ CellChangeTimes->{{3.7056860922471857`*^9, 3.7056860957264357`*^9}, 
+   3.706975592765313*^9, {3.7069756502967*^9, 3.706975651832728*^9}, {
+   3.7072154008830976`*^9, 3.707215403609206*^9}, {3.7072156687407417`*^9, 
+   3.707215682595951*^9}, 3.7072157227731743`*^9, {3.707216105320341*^9, 
+   3.707216128702116*^9}, {3.7072168686897993`*^9, 3.707216878840744*^9}, {
+   3.707228471654294*^9, 3.7072284955344048`*^9}, {3.707228550453115*^9, 
+   3.707228559125637*^9}, {3.707228780249337*^9, 3.707228810457057*^9}, 
+   3.707228876319683*^9, {3.707230220177367*^9, 3.7072302214588547`*^9}, {
+   3.7072311126846046`*^9, 
+   3.7072311501855907`*^9}},ExpressionUUID->"22285530-e8f9-4769-9993-\
+a7212da2b326"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"EmitSound", "[", 
+    RowBox[{"Sound", "[", 
+     RowBox[{"{", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"SoundNote", "[", 
+        RowBox[{"#1", ",", " ", "#2"}], "]"}], ",", 
+       RowBox[{"SoundNote", "[", 
+        RowBox[{"None", ",", " ", "#2"}], "]"}], ",", " ", 
+       RowBox[{"SoundNote", "[", 
+        RowBox[{"None", ",", " ", "#2"}], "]"}], ",", " ", 
+       "\[IndentingNewLine]", 
+       RowBox[{"SoundNote", "[", 
+        RowBox[{"#1", ",", " ", "#2"}], "]"}], ",", 
+       RowBox[{"SoundNote", "[", 
+        RowBox[{"None", ",", " ", "#2"}], "]"}], ",", 
+       RowBox[{"SoundNote", "[", 
+        RowBox[{"None", ",", " ", "#2"}], "]"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"SoundNote", "[", 
+        RowBox[{"#1", ",", " ", "#2"}], "]"}], ",", " ", 
+       RowBox[{"SoundNote", "[", 
+        RowBox[{"None", ",", " ", "#2"}], "]"}], ",", 
+       RowBox[{"SoundNote", "[", 
+        RowBox[{"None", ",", " ", "#2"}], "]"}], ",", " ", 
+       RowBox[{"SoundNote", "[", 
+        RowBox[{"None", ",", " ", "#2"}], "]"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"SoundNote", "[", 
+        RowBox[{"#1", ",", " ", "#2"}], "]"}], ",", " ", 
+       RowBox[{"SoundNote", "[", 
+        RowBox[{"None", ",", " ", "#2"}], "]"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"SoundNote", "[", 
+        RowBox[{"#1", ",", " ", "#2"}], "]"}], ",", " ", 
+       RowBox[{"SoundNote", "[", 
+        RowBox[{"None", ",", " ", "#2"}], "]"}], ",", " ", 
+       RowBox[{"SoundNote", "[", 
+        RowBox[{"None", ",", " ", "#2"}], "]"}], ",", " ", 
+       RowBox[{"SoundNote", "[", 
+        RowBox[{"None", ",", " ", "#2"}], "]"}]}], "\[IndentingNewLine]", 
+      "}"}], "]"}], "]"}], " ", "&"}], " ", "[", 
+  RowBox[{"\"\<Claves\>\"", ",", " ", "0.25"}], "]"}]], "Input",
+ CellChangeTimes->{
+  3.707230726344995*^9, {3.707230850494895*^9, 3.707230857479829*^9}, {
+   3.707230888414566*^9, 3.7072308888623*^9}, {3.707230926695937*^9, 
+   3.70723098254954*^9}, {3.7072310610179443`*^9, 3.7072310865870543`*^9}, {
+   3.707231138670836*^9, 3.707231140274519*^9}, {3.707231178873517*^9, 
+   3.7072311810179787`*^9}},
+ CellLabel->"",ExpressionUUID->"47edf942-8b21-4419-be85-5952033f1636"],
+
+Cell["\<\
+The last thing we need to talk about is tempo. Tempo, in music, is just the \
+speed of the pulse, usually measured in beats per minute. Well, in our \
+previous example, we had 0.25 seconds per beat, so how do we find the number \
+of beats per minute for that particular pulse length?\
+\>", "Text",
+ CellChangeTimes->{{3.707231185065954*^9, 
+  3.707231248839238*^9}},ExpressionUUID->"5e75ca8f-cfa9-40d6-bad4-\
+21e0bbfc204d"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   NamespaceBox["LinguisticAssistant",
+    DynamicModuleBox[{Typeset`query$$ = "60 seconds", Typeset`boxes$$ = 
+     TemplateBox[{"60", "\"s\"", "seconds", "\"Seconds\""}, "Quantity", 
+      SyntaxForm -> Mod], 
+     Typeset`allassumptions$$ = {{
+      "type" -> "Unit", "word" -> "seconds", "template" -> 
+       "Assuming ${desc1} for \"${word}\". Use ${desc2} instead", "count" -> 
+       "2", "Values" -> {{
+         "name" -> "Seconds", "desc" -> "seconds of time", "input" -> 
+          "UnitClash_*seconds.*Seconds--"}, {
+         "name" -> "ArcSeconds", "desc" -> "seconds of arc", "input" -> 
+          "UnitClash_*seconds.*ArcSeconds--"}}}}, Typeset`assumptions$$ = {}, 
+     Typeset`open$$ = {1, 2}, Typeset`querystate$$ = {
+     "Online" -> True, "Allowed" -> True, "mparse.jsp" -> 
+      0.369157`6.018756101477405, "Messages" -> {}}}, 
+     DynamicBox[ToBoxes[
+       AlphaIntegration`LinguisticAssistantBoxes["", 4, Automatic, 
+        Dynamic[Typeset`query$$], 
+        Dynamic[Typeset`boxes$$], 
+        Dynamic[Typeset`allassumptions$$], 
+        Dynamic[Typeset`assumptions$$], 
+        Dynamic[Typeset`open$$], 
+        Dynamic[Typeset`querystate$$]], StandardForm],
+      ImageSizeCache->{94., {8., 16.}},
+      TrackedSymbols:>{
+       Typeset`query$$, Typeset`boxes$$, Typeset`allassumptions$$, 
+        Typeset`assumptions$$, Typeset`open$$, Typeset`querystate$$}],
+     DynamicModuleValues:>{},
+     UndoTrackedVariables:>{Typeset`open$$}],
+    BaseStyle->{"Deploy"},
+    DeleteWithContents->True,
+    Editable->False,
+    SelectWithContents->True], "/", 
+   NamespaceBox["LinguisticAssistant",
+    DynamicModuleBox[{Typeset`query$$ = "0.25 seconds per beat", 
+     Typeset`boxes$$ = TemplateBox[{"0.25", 
+       RowBox[{"\"s\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+         FrameBox[
+          StyleBox["\"beats\"", ShowStringCharacters -> False], FrameMargins -> 
+          1, FrameStyle -> GrayLevel[0.85], BaselinePosition -> Baseline, 
+          RoundingRadius -> 3, StripOnInput -> False]}], "seconds per beats", 
+       FractionBox["\"Seconds\"", 
+        RowBox[{"IndependentUnit", "[", "\"beats\"", "]"}]]}, "Quantity", 
+      SyntaxForm -> Mod], Typeset`allassumptions$$ = {}, 
+     Typeset`assumptions$$ = {}, Typeset`open$$ = {1, 2}, 
+     Typeset`querystate$$ = {
+     "Online" -> True, "Allowed" -> True, "mparse.jsp" -> 
+      0.434342`6.089376820293866, "Messages" -> {}}}, 
+     DynamicBox[ToBoxes[
+       AlphaIntegration`LinguisticAssistantBoxes["", 4, Automatic, 
+        Dynamic[Typeset`query$$], 
+        Dynamic[Typeset`boxes$$], 
+        Dynamic[Typeset`allassumptions$$], 
+        Dynamic[Typeset`assumptions$$], 
+        Dynamic[Typeset`open$$], 
+        Dynamic[Typeset`querystate$$]], StandardForm],
+      ImageSizeCache->{136., {11., 20.}},
+      TrackedSymbols:>{
+       Typeset`query$$, Typeset`boxes$$, Typeset`allassumptions$$, 
+        Typeset`assumptions$$, Typeset`open$$, Typeset`querystate$$}],
+     DynamicModuleValues:>{},
+     UndoTrackedVariables:>{Typeset`open$$}],
+    BaseStyle->{"Deploy"},
+    DeleteWithContents->True,
+    Editable->False,
+    SelectWithContents->True]}], " ", "/", 
+  NamespaceBox["LinguisticAssistant",
+   DynamicModuleBox[{Typeset`query$$ = "1 minute", Typeset`boxes$$ = 
+    TemplateBox[{"1", "\"min\"", "minutes", "\"Minutes\""}, "Quantity", 
+     SyntaxForm -> Mod], 
+    Typeset`allassumptions$$ = {{
+     "type" -> "Unit", "word" -> "minute", "template" -> 
+      "Assuming ${desc1} for \"${word}\". Use ${desc2} instead", "count" -> 
+      "2", "Values" -> {{
+        "name" -> "Minutes", "desc" -> "minutes of time", "input" -> 
+         "UnitClash_*minute.*Minutes--"}, {
+        "name" -> "ArcMinutes", "desc" -> "minutes of arc", "input" -> 
+         "UnitClash_*minute.*ArcMinutes--"}}}}, Typeset`assumptions$$ = {}, 
+    Typeset`open$$ = {1, 2}, Typeset`querystate$$ = {
+    "Online" -> True, "Allowed" -> True, "mparse.jsp" -> 
+     0.364183`6.012864662636073, "Messages" -> {}}}, 
+    DynamicBox[ToBoxes[
+      AlphaIntegration`LinguisticAssistantBoxes["", 4, Automatic, 
+       Dynamic[Typeset`query$$], 
+       Dynamic[Typeset`boxes$$], 
+       Dynamic[Typeset`allassumptions$$], 
+       Dynamic[Typeset`assumptions$$], 
+       Dynamic[Typeset`open$$], 
+       Dynamic[Typeset`querystate$$]], StandardForm],
+     ImageSizeCache->{101., {8., 16.}},
+     TrackedSymbols:>{
+      Typeset`query$$, Typeset`boxes$$, Typeset`allassumptions$$, 
+       Typeset`assumptions$$, Typeset`open$$, Typeset`querystate$$}],
+    DynamicModuleValues:>{},
+    UndoTrackedVariables:>{Typeset`open$$}],
+   BaseStyle->{"Deploy"},
+   DeleteWithContents->True,
+   Editable->False,
+   SelectWithContents->True]}]], "Input",
+ CellChangeTimes->{{3.707231319133869*^9, 3.707231409170889*^9}},
+ CellLabel->"In[13]:=",ExpressionUUID->"0741a092-a433-4092-bc36-7eba50dcdc0a"],
+
+Cell[BoxData[
+ TemplateBox[{"240.`",RowBox[{
+     FrameBox[
+      StyleBox["\"beats\"", ShowStringCharacters -> False], FrameMargins -> 1,
+       FrameStyle -> GrayLevel[0.85], BaselinePosition -> Baseline, 
+      RoundingRadius -> 3, StripOnInput -> False], "\[InvisibleSpace]", 
+     "\"/\"", "\[InvisibleSpace]", "\"min\""}],"beats per minute",FractionBox[
+    RowBox[{"IndependentUnit", "[", "\"beats\"", "]"}], "\"Minutes\""]},
+  "Quantity"]], "Output",
+ CellChangeTimes->{{3.7072313941022577`*^9, 3.707231411356391*^9}},
+ CellLabel->"Out[13]=",ExpressionUUID->"ac314a95-910f-4b3a-85f5-1da120e25f94"]
+}, Open  ]],
+
+Cell["\<\
+We can also reverse this process. That is, given a tempo, we can calculate \
+how long each pulse is in seconds.\
+\>", "Text",
+ CellChangeTimes->{{3.707231185065954*^9, 3.707231248839238*^9}, {
+  3.70723145262775*^9, 
+  3.7072314701802483`*^9}},ExpressionUUID->"d5c87012-05b1-4a7a-9bb0-\
+089e84b0be01"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(", 
+   RowBox[{
+    NamespaceBox["LinguisticAssistant",
+     DynamicModuleBox[{Typeset`query$$ = "240 beat per minute", 
+      Typeset`boxes$$ = TemplateBox[{"240", 
+        RowBox[{
+          FrameBox[
+           StyleBox["\"beats\"", ShowStringCharacters -> False], FrameMargins -> 
+           1, FrameStyle -> GrayLevel[0.85], BaselinePosition -> Baseline, 
+           RoundingRadius -> 3, StripOnInput -> False], "\[InvisibleSpace]", 
+          "\"/\"", "\[InvisibleSpace]", "\"min\""}], "beats per minute", 
+        FractionBox[
+         RowBox[{"IndependentUnit", "[", "\"beats\"", "]"}], "\"Minutes\""]}, 
+       "Quantity", SyntaxForm -> Mod], Typeset`allassumptions$$ = {}, 
+      Typeset`assumptions$$ = {}, Typeset`open$$ = {1, 2}, 
+      Typeset`querystate$$ = {
+      "Online" -> True, "Allowed" -> True, "mparse.jsp" -> 
+       0.479188`6.132050927253195, "Messages" -> {}}}, 
+      DynamicBox[ToBoxes[
+        AlphaIntegration`LinguisticAssistantBoxes["240", 4, Automatic, 
+         Dynamic[Typeset`query$$], 
+         Dynamic[Typeset`boxes$$], 
+         Dynamic[Typeset`allassumptions$$], 
+         Dynamic[Typeset`assumptions$$], 
+         Dynamic[Typeset`open$$], 
+         Dynamic[Typeset`querystate$$]], StandardForm],
+       ImageSizeCache->{143., {11., 20.}},
+       TrackedSymbols:>{
+        Typeset`query$$, Typeset`boxes$$, Typeset`allassumptions$$, 
+         Typeset`assumptions$$, Typeset`open$$, Typeset`querystate$$}],
+      DynamicModuleValues:>{},
+      UndoTrackedVariables:>{Typeset`open$$}],
+     BaseStyle->{"Deploy"},
+     DeleteWithContents->True,
+     Editable->False,
+     SelectWithContents->True], "/", 
+    NamespaceBox["LinguisticAssistant",
+     DynamicModuleBox[{Typeset`query$$ = "60 seconds per minute", 
+      Typeset`boxes$$ = TemplateBox[{"60", 
+        RowBox[{"\[InvisibleSpace]", "\"\\\"\""}], 
+        RowBox[{"\"per \"", "\[InvisibleSpace]", "\"minute\""}], 
+        "arc seconds per minute", 
+        FractionBox["\"ArcSeconds\"", "\"Minutes\""]}, "QuantityUnitPostfix", 
+       SyntaxForm -> Mod], 
+      Typeset`allassumptions$$ = {{
+       "type" -> "Unit", "word" -> "seconds per minute", "template" -> 
+        "Assuming ${desc1} for \"${word}\". Use ${desc2} instead", "count" -> 
+        "2", "Values" -> {{
+          "name" -> "ArcSecondsPerMinute", "desc" -> "arc seconds per minute",
+            "input" -> 
+           "UnitClash_*seconds+per+minute.*ArcSecondsPerMinute--"}, {
+          "name" -> "SecondsPerMinute", "desc" -> "seconds per minute", 
+           "input" -> "UnitClash_*seconds+per+minute.*SecondsPerMinute--"}}}},
+       Typeset`assumptions$$ = {}, Typeset`open$$ = {1, 2}, 
+      Typeset`querystate$$ = {
+      "Online" -> True, "Allowed" -> True, "mparse.jsp" -> 
+       0.440341`6.095334117848921, "Messages" -> {}}}, 
+      DynamicBox[ToBoxes[
+        AlphaIntegration`LinguisticAssistantBoxes["60", 4, Automatic, 
+         Dynamic[Typeset`query$$], 
+         Dynamic[Typeset`boxes$$], 
+         Dynamic[Typeset`allassumptions$$], 
+         Dynamic[Typeset`assumptions$$], 
+         Dynamic[Typeset`open$$], 
+         Dynamic[Typeset`querystate$$]], StandardForm],
+       ImageSizeCache->{172., {8., 16.}},
+       TrackedSymbols:>{
+        Typeset`query$$, Typeset`boxes$$, Typeset`allassumptions$$, 
+         Typeset`assumptions$$, Typeset`open$$, Typeset`querystate$$}],
+      DynamicModuleValues:>{},
+      UndoTrackedVariables:>{Typeset`open$$}],
+     BaseStyle->{"Deploy"},
+     DeleteWithContents->True,
+     Editable->False,
+     SelectWithContents->True]}], ")"}], "^", 
+  RowBox[{"-", "1"}]}]], "Input",
+ CellChangeTimes->{{3.707231604116837*^9, 3.707231639538*^9}, {
+  3.707231679360765*^9, 3.7072316928567057`*^9}, {3.707231772133766*^9, 
+  3.7072317870769997`*^9}},
+ CellLabel->"In[23]:=",ExpressionUUID->"fe25ace4-3854-49ba-8de0-c7693182c981"],
+
+Cell[BoxData[
+ TemplateBox[{
+  FractionBox["1", "4"],RowBox[{"\[InvisibleSpace]", "\"\\\"\""}],
+   RowBox[{"\"per \"", "\[InvisibleSpace]", "\"beats\""}],
+   "arc seconds per beats",FractionBox["\"ArcSeconds\"", 
+    RowBox[{"IndependentUnit", "[", "\"beats\"", "]"}]]},
+  "QuantityUnitPostfix"]], "Output",
+ CellChangeTimes->{
+  3.707231607246643*^9, {3.707231688902032*^9, 3.707231693227841*^9}, {
+   3.707231795148161*^9, 3.707231820997498*^9}},
+ CellLabel->"Out[23]=",ExpressionUUID->"1efe5faa-dff5-4893-b670-21765763afaf"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Visualization", "Section",
+ CellChangeTimes->{{3.7072219497393503`*^9, 
+  3.707221964402503*^9}},ExpressionUUID->"92a748b7-bae7-49c7-9d59-\
+b5d888c5639a"],
+
+Cell["\<\
+Up until now, we\[CloseCurlyQuote]ve just been listening to patterns without \
+any way of visualizing the rhythms we\[CloseCurlyQuote]ve been playing with. \
+But remember, our rhythms are just sequences of periodic pulses! So why not \
+just represent each pulse by a square?\
+\>", "Text",
+ CellChangeTimes->{{3.707231167883025*^9, 3.707231169408489*^9}, {
+  3.7072318365679693`*^9, 3.7072318782454243`*^9}, {3.7072323468933897`*^9, 
+  3.707232355196136*^9}, {3.707232523132057*^9, 
+  3.707232594679785*^9}},ExpressionUUID->"e1c74bc4-3b20-4042-a401-\
+c72876334f11"],
+
+Cell["\<\
+Here, we use the ArrayPlot function to plot an array of 16 0s:\
+\>", "Direction",
+ CellChangeTimes->{{3.7056860922471857`*^9, 3.7056860957264357`*^9}, 
+   3.706975592765313*^9, {3.7069756502967*^9, 3.706975651832728*^9}, {
+   3.7072154008830976`*^9, 3.707215403609206*^9}, {3.7072156687407417`*^9, 
+   3.707215682595951*^9}, 3.7072157227731743`*^9, {3.707216105320341*^9, 
+   3.707216128702116*^9}, {3.7072168686897993`*^9, 3.707216878840744*^9}, {
+   3.707228471654294*^9, 3.7072284955344048`*^9}, {3.707228550453115*^9, 
+   3.707228559125637*^9}, {3.707228780249337*^9, 3.707228810457057*^9}, 
+   3.707228876319683*^9, {3.707230220177367*^9, 3.7072302214588547`*^9}, {
+   3.7072311126846046`*^9, 3.7072311501855907`*^9}, {3.7072326170332403`*^9, 
+   3.707232637816079*^9}},ExpressionUUID->"f540016a-43fc-4203-8047-\
+927f382390ee"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ArrayPlot", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"Table", "[", 
+     RowBox[{"0", ",", " ", "16"}], "]"}], "}"}], ",", " ", 
+   RowBox[{"Mesh", "\[Rule]", "All"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.706975657817479*^9, 3.70697568133849*^9}, {
+   3.7069757217461843`*^9, 3.706975732239143*^9}, {3.706976695207314*^9, 
+   3.706976716973126*^9}, 3.7069767725222797`*^9, {3.706976807502748*^9, 
+   3.7069768181703987`*^9}, {3.7069768487807503`*^9, 3.70697687717727*^9}, {
+   3.7069769080763617`*^9, 3.706976908153791*^9}, {3.706976944726171*^9, 
+   3.706976987113608*^9}, {3.7071672706657553`*^9, 3.707167285997731*^9}, {
+   3.707231888309622*^9, 3.707231897182707*^9}, {3.707232010992128*^9, 
+   3.7072320159072447`*^9}, {3.707232071621435*^9, 3.707232084428234*^9}, {
+   3.707232124005917*^9, 3.707232148868293*^9}, {3.707232659457719*^9, 
+   3.707232673848102*^9}},
+ CellLabel->"In[36]:=",ExpressionUUID->"b9856525-af38-4aa4-87a6-80f3e070a2b3"],
+
+Cell[BoxData[
+ GraphicsBox[{
+   RasterBox[{{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}}, {{0, 0}, {16,
+     1}}, {0, 1}], {
+    {GrayLevel[
+      NCache[-1 + GoldenRatio, 0.6180339887498949]], 
+     StyleBox[LineBox[{{{0, 1}, {16, 1}}, {{0, 0}, {16, 0}}}],
+      Antialiasing->False]}, 
+    {GrayLevel[
+      NCache[-1 + GoldenRatio, 0.6180339887498949]], 
+     StyleBox[
+      LineBox[{{{0, 0}, {0, 1}}, {{1, 0}, {1, 1}}, {{2, 0}, {2, 1}}, {{3, 
+       0}, {3, 1}}, {{4, 0}, {4, 1}}, {{5, 0}, {5, 1}}, {{6, 0}, {6, 1}}, {{7,
+        0}, {7, 1}}, {{8, 0}, {8, 1}}, {{9, 0}, {9, 1}}, {{10, 0}, {10, 
+       1}}, {{11, 0}, {11, 1}}, {{12, 0}, {12, 1}}, {{13, 0}, {13, 1}}, {{14, 
+       0}, {14, 1}}, {{15, 0}, {15, 1}}, {{16, 0}, {16, 1}}}],
+      Antialiasing->False]}}},
+  Frame->False,
+  FrameLabel->{None, None},
+  FrameTicks->{{None, None}, {None, None}},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  Method->{
+   "DefaultBoundaryStyle" -> Automatic, "DefaultPlotStyle" -> 
+    Automatic}]], "Output",
+ CellChangeTimes->{{3.7069767496594763`*^9, 3.7069767737626657`*^9}, {
+   3.70697681077944*^9, 3.7069768186357327`*^9}, {3.70697685444842*^9, 
+   3.706976908574772*^9}, {3.7069769459901953`*^9, 3.706976985289797*^9}, 
+   3.7071672655882187`*^9, 3.707232135878627*^9, 3.7072326746053467`*^9},
+ CellLabel->"Out[36]=",ExpressionUUID->"da063176-aacc-4c25-8a9a-ce8c33e489bd"]
+}, Open  ]],
+
+Cell["\<\
+With percussion instruments we only have onsets (hits) and rests, so we can \
+just represent an onset as a filled in square while a rest is a blank square. \
+If each square is 0.25 seconds in length, then to recreate our clave pattern, \
+we need to fill in the 1st, 4th, 7th, 11th, 13th boxes.\
+\>", "Text",
+ CellChangeTimes->{{3.707232689272523*^9, 3.707232814676573*^9}, 
+   3.7072329102362547`*^9, {3.707237005881277*^9, 
+   3.707237019676196*^9}},ExpressionUUID->"4ba0400e-97de-484e-9760-\
+a6e07fda480e"],
+
+Cell["\<\
+We create the same diagram, but this time we add in onsets by using 1s (we \
+also play the rhythm):\
+\>", "Direction",
+ CellChangeTimes->{{3.7056860922471857`*^9, 3.7056860957264357`*^9}, 
+   3.706975592765313*^9, {3.7069756502967*^9, 3.706975651832728*^9}, {
+   3.7072154008830976`*^9, 3.707215403609206*^9}, {3.7072156687407417`*^9, 
+   3.707215682595951*^9}, 3.7072157227731743`*^9, {3.707216105320341*^9, 
+   3.707216128702116*^9}, {3.7072168686897993`*^9, 3.707216878840744*^9}, {
+   3.707228471654294*^9, 3.7072284955344048`*^9}, {3.707228550453115*^9, 
+   3.707228559125637*^9}, {3.707228780249337*^9, 3.707228810457057*^9}, 
+   3.707228876319683*^9, {3.707230220177367*^9, 3.7072302214588547`*^9}, {
+   3.7072311126846046`*^9, 3.7072311501855907`*^9}, {3.7072326170332403`*^9, 
+   3.707232637816079*^9}, {3.707232732016879*^9, 3.707232740086121*^9}, {
+   3.707232819300695*^9, 3.70723284357952*^9}, {3.707232960674038*^9, 
+   3.707232964130587*^9}},ExpressionUUID->"e39cf6c9-ca36-4182-ac1b-\
+f81a6c542b5b"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"ArrayPlot", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{
+     "1", ",", " ", "0", ",", " ", "0", ",", " ", "1", ",", " ", "0", ",", 
+      " ", "0", ",", " ", "1", ",", " ", "0", ",", " ", "0", ",", "0", ",", 
+      " ", "1", ",", " ", "0", ",", " ", "1", ",", " ", "0", ",", " ", "0", 
+      ",", " ", "0"}], "}"}], "}"}], ",", " ", 
+   RowBox[{"Mesh", "\[Rule]", "All"}]}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"EmitSound", "[", 
+    RowBox[{"Sound", "[", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"SoundNote", "[", 
+        RowBox[{"#1", ",", " ", 
+         RowBox[{"#2", "*", "3"}]}], "]"}], ",", 
+       RowBox[{"SoundNote", "[", 
+        RowBox[{"#1", ",", " ", 
+         RowBox[{"#2", "*", "3"}]}], "]"}], ",", " ", 
+       RowBox[{"SoundNote", "[", 
+        RowBox[{"#1", ",", " ", 
+         RowBox[{"#2", "*", "4"}]}], "]"}], ",", " ", 
+       RowBox[{"SoundNote", "[", 
+        RowBox[{"#1", ",", " ", 
+         RowBox[{"#2", "*", "2"}]}], "]"}], ",", " ", 
+       RowBox[{"SoundNote", "[", 
+        RowBox[{"#1", ",", " ", 
+         RowBox[{"#2", "*", "4"}]}], "]"}]}], "}"}], "]"}], "]"}], " ", "&"}],
+   " ", "[", 
+  RowBox[{"\"\<Claves\>\"", ",", " ", "0.25"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.707232849883922*^9, 3.707232956940278*^9}},
+ CellLabel->
+  "In[151]:=",ExpressionUUID->"00a3b14d-c5f5-4bb6-9669-20586068bb70"],
+
+Cell[BoxData[
+ GraphicsBox[{
+   RasterBox[{{0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 0, 1, 1, 1}}, {{0, 0}, {16,
+     1}}, {0, 1}], {
+    {GrayLevel[
+      NCache[-1 + GoldenRatio, 0.6180339887498949]], 
+     StyleBox[LineBox[{{{0, 1}, {16, 1}}, {{0, 0}, {16, 0}}}],
+      Antialiasing->False]}, 
+    {GrayLevel[
+      NCache[-1 + GoldenRatio, 0.6180339887498949]], 
+     StyleBox[
+      LineBox[{{{0, 0}, {0, 1}}, {{1, 0}, {1, 1}}, {{2, 0}, {2, 1}}, {{3, 
+       0}, {3, 1}}, {{4, 0}, {4, 1}}, {{5, 0}, {5, 1}}, {{6, 0}, {6, 1}}, {{7,
+        0}, {7, 1}}, {{8, 0}, {8, 1}}, {{9, 0}, {9, 1}}, {{10, 0}, {10, 
+       1}}, {{11, 0}, {11, 1}}, {{12, 0}, {12, 1}}, {{13, 0}, {13, 1}}, {{14, 
+       0}, {14, 1}}, {{15, 0}, {15, 1}}, {{16, 0}, {16, 1}}}],
+      Antialiasing->False]}}},
+  Frame->False,
+  FrameLabel->{None, None},
+  FrameTicks->{{None, None}, {None, None}},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  Method->{
+   "DefaultBoundaryStyle" -> Automatic, "DefaultPlotStyle" -> 
+    Automatic}]], "Output",
+ CellChangeTimes->{3.707232916921332*^9, 3.707232953733165*^9, 
+  3.707237083608913*^9},
+ CellLabel->
+  "Out[151]=",ExpressionUUID->"8d5bc0b9-0444-4bf5-8725-9d37e3a9180b"]
+}, Open  ]],
+
+Cell["\<\
+Remember that these rhythmic timelines are cyclic: you reach the end and \
+cycle back to the beginning. So another way to represent these would be to \
+use a circular structure like a binary necklace.\
+\>", "Text",
+ CellChangeTimes->{{3.7072329830827827`*^9, 
+  3.7072330600787354`*^9}},ExpressionUUID->"9e68f52f-b416-42d4-971e-\
+91179dda81cc"],
+
+Cell["\<\
+Here we have the pulse represented by points on a circle and our pattern is \
+represented by the nodes connected by the red edges (we use 0-indexed pulses \
+because that\[CloseCurlyQuote]s how music theorists do it:\
+\>", "Direction",
+ CellChangeTimes->{{3.7056860922471857`*^9, 3.7056860957264357`*^9}, 
+   3.706975592765313*^9, {3.7069756502967*^9, 3.706975651832728*^9}, {
+   3.7072154008830976`*^9, 3.707215403609206*^9}, {3.7072156687407417`*^9, 
+   3.707215682595951*^9}, 3.7072157227731743`*^9, {3.707216105320341*^9, 
+   3.707216128702116*^9}, {3.7072168686897993`*^9, 3.707216878840744*^9}, {
+   3.707228471654294*^9, 3.7072284955344048`*^9}, {3.707228550453115*^9, 
+   3.707228559125637*^9}, {3.707228780249337*^9, 3.707228810457057*^9}, 
+   3.707228876319683*^9, {3.707230220177367*^9, 3.7072302214588547`*^9}, {
+   3.7072311126846046`*^9, 3.7072311501855907`*^9}, {3.7072326170332403`*^9, 
+   3.707232637816079*^9}, {3.707232732016879*^9, 3.707232740086121*^9}, {
+   3.707232819300695*^9, 3.70723284357952*^9}, {3.707232960674038*^9, 
+   3.707232964130587*^9}, {3.7072347691540422`*^9, 3.70723479325135*^9}, {
+   3.707236138587284*^9, 3.707236152091457*^9}, {3.707237032836235*^9, 
+   3.7072370427394047`*^9}, {3.707241303764556*^9, 
+   3.707241307724457*^9}},ExpressionUUID->"a8272d5b-fa71-4dcc-9233-\
+ed60d6522b86"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Graph", "[", 
+  RowBox[{
+   RowBox[{"Reverse", "[", 
+    RowBox[{"Range", "[", 
+     RowBox[{"0", ",", " ", "15"}], "]"}], "]"}], ",", " ", 
+   "\[IndentingNewLine]", 
+   RowBox[{"Join", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"Property", "[", 
+        RowBox[{"#", ",", "  ", 
+         RowBox[{"EdgeStyle", "\[Rule]", 
+          RowBox[{"{", 
+           RowBox[{"Black", ",", " ", "Thin"}], "}"}]}]}], "]"}], "&"}], "/@",
+       " ", 
+      RowBox[{"Table", "[", 
+       RowBox[{
+        RowBox[{"i", " ", "<->", " ", 
+         RowBox[{"Mod", "[", 
+          RowBox[{
+           RowBox[{"i", "+", "1"}], ",", " ", "16"}], "]"}]}], " ", ",", " ", 
+        RowBox[{"{", 
+         RowBox[{"i", ",", " ", "0", ",", " ", "15"}], "}"}]}], "]"}]}], ",", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Property", "[", 
+        RowBox[{"#", ",", 
+         RowBox[{"EdgeStyle", "\[Rule]", 
+          RowBox[{"{", 
+           RowBox[{"Red", ",", " ", "Thick"}], "}"}]}]}], "]"}], "&"}], "/@", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"0", "\[UndirectedEdge]", "3"}], ",", " ", 
+        RowBox[{"3", "\[UndirectedEdge]", "6"}], ",", " ", 
+        RowBox[{"6", "<->", "10"}], ",", " ", 
+        RowBox[{"10", "<->", "12"}], ",", " ", 
+        RowBox[{"12", "\[UndirectedEdge]", "0"}]}], "}"}]}]}], "]"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"GraphLayout", "\[Rule]", "\"\<CircularEmbedding\>\""}], ",", " ", 
+   RowBox[{"VertexLabels", "\[Rule]", "All"}], ",", 
+   RowBox[{"EdgeLabels", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"0", "\[UndirectedEdge]", "3"}], "\[Rule]", "3"}], ",", " ", 
+      RowBox[{
+       RowBox[{"3", "\[UndirectedEdge]", "6"}], "\[Rule]", "3"}], ",", " ", 
+      RowBox[{
+       RowBox[{"6", "<->", "10"}], "\[Rule]", "4"}], ",", " ", 
+      RowBox[{
+       RowBox[{"10", "<->", "12"}], "\[Rule]", "2"}], ",", " ", 
+      RowBox[{
+       RowBox[{"12", "\[UndirectedEdge]", "0"}], "\[Rule]", "4"}]}], 
+     "}"}]}]}], "]"}]], "Input",
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmViYGAQBmIQnXlNKOrPvNeO3P8swfQrr+4mEK2/+VAviL7z5chk
+EB0wYf8MEG1XZrsSRHOsFtoEopcd190FonP2+YJpjVVfDoBom69Mh8H6uiJP
+gOhfq/3OgehTfnW3QXTSs5Z7IJot8cdTEP3lftpLEK2yVPAjiN6zZBrrXyB9
+qe4kD4juDHjJC6JXrO0WAtGb/7yUBNHnKqTlQHSJ2hMFEK0ZvUMFRDfxppuD
+aIvqcjsQ/SL7oxuI/rH16VEQ3VJveRVE73t55BaItgpbdg9E22vnfAfRZrac
+7P9A/ji8nA9Es3h78oNoACfouQY=
+  "],
+ CellLabel->
+  "In[139]:=",ExpressionUUID->"ad202d23-6f63-45f3-b023-a1fe0cbdde89"],
+
+Cell[BoxData[
+ GraphicsBox[
+  NamespaceBox["NetworkGraphics",
+   DynamicModuleBox[{Typeset`graph = HoldComplete[
+     Graph[{15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0}, {
+      Null, {{16, 15}, {15, 14}, {14, 13}, {13, 12}, {12, 11}, {11, 10}, {10, 
+       9}, {9, 8}, {8, 7}, {7, 6}, {6, 5}, {5, 4}, {4, 3}, {3, 2}, {2, 1}, {1,
+        16}, {16, 13}, {13, 10}, {10, 6}, {6, 4}, {4, 16}}}, {
+      EdgeLabels -> {
+        UndirectedEdge[12, 0] -> 4, UndirectedEdge[3, 6] -> 3, 
+         UndirectedEdge[6, 10] -> 4, UndirectedEdge[0, 3] -> 3, 
+         UndirectedEdge[10, 12] -> 2}, EdgeStyle -> {UndirectedEdge[6, 7] -> {
+           GrayLevel[0], 
+           Thickness[Tiny]}, UndirectedEdge[7, 8] -> {
+           GrayLevel[0], 
+           Thickness[Tiny]}, UndirectedEdge[1, 2] -> {
+           GrayLevel[0], 
+           Thickness[Tiny]}, UndirectedEdge[12, 13] -> {
+           GrayLevel[0], 
+           Thickness[Tiny]}, UndirectedEdge[3, 4] -> {
+           GrayLevel[0], 
+           Thickness[Tiny]}, UndirectedEdge[12, 0] -> {
+           RGBColor[1, 0, 0], 
+           Thickness[Large]}, UndirectedEdge[14, 15] -> {
+           GrayLevel[0], 
+           Thickness[Tiny]}, UndirectedEdge[11, 12] -> {
+           GrayLevel[0], 
+           Thickness[Tiny]}, UndirectedEdge[13, 14] -> {
+           GrayLevel[0], 
+           Thickness[Tiny]}, UndirectedEdge[0, 3] -> {
+           RGBColor[1, 0, 0], 
+           Thickness[Large]}, UndirectedEdge[6, 10] -> {
+           RGBColor[1, 0, 0], 
+           Thickness[Large]}, UndirectedEdge[10, 11] -> {
+           GrayLevel[0], 
+           Thickness[Tiny]}, UndirectedEdge[5, 6] -> {
+           GrayLevel[0], 
+           Thickness[Tiny]}, UndirectedEdge[3, 6] -> {
+           RGBColor[1, 0, 0], 
+           Thickness[Large]}, UndirectedEdge[4, 5] -> {
+           GrayLevel[0], 
+           Thickness[Tiny]}, UndirectedEdge[10, 12] -> {
+           RGBColor[1, 0, 0], 
+           Thickness[Large]}, UndirectedEdge[0, 1] -> {
+           GrayLevel[0], 
+           Thickness[Tiny]}, UndirectedEdge[15, 0] -> {
+           GrayLevel[0], 
+           Thickness[Tiny]}, UndirectedEdge[9, 10] -> {
+           GrayLevel[0], 
+           Thickness[Tiny]}, UndirectedEdge[8, 9] -> {
+           GrayLevel[0], 
+           Thickness[Tiny]}, UndirectedEdge[2, 3] -> {
+           GrayLevel[0], 
+           Thickness[Tiny]}}, GraphLayout -> "CircularEmbedding", 
+       VertexLabels -> {All}}]]}, 
+    TagBox[GraphicsGroupBox[{
+       {Hue[0.6, 0.7, 0.5], Opacity[0.7], 
+        {GrayLevel[0], Thickness[Tiny], 
+         {Arrowheads[0.], 
+          ArrowBox[{{-0.38268343236509045`, 
+           0.9238795325112871}, {-0.707106781186548, 0.7071067811865482}}, 
+           0.02261146496815286]}}, 
+        {GrayLevel[0], Thickness[Tiny], 
+         {Arrowheads[0.], 
+          ArrowBox[{{-0.38268343236509045`, 0.9238795325112871}, {
+           1.8369701987210297`*^-16, 1.}}, 0.02261146496815286]}}, 
+        {GrayLevel[0], Thickness[Tiny], 
+         {Arrowheads[0.], 
+          ArrowBox[{{-0.707106781186548, 
+           0.7071067811865482}, {-0.9238795325112871, 0.3826834323650903}}, 
+           0.02261146496815286]}}, 
+        {GrayLevel[0], Thickness[Tiny], 
+         {Arrowheads[0.], 
+          ArrowBox[{{-0.9238795325112871, 0.3826834323650903}, {-1., 
+           1.0106430996148606`*^-15}}, 0.02261146496815286]}}, 
+        {GrayLevel[0], Thickness[Tiny], 
+         {Arrowheads[0.], 
+          ArrowBox[{{-1., 
+           1.0106430996148606`*^-15}, {-0.9238795325112865, \
+-0.3826834323650892}}, 0.02261146496815286]}}, {
+         {RGBColor[1, 0, 0], Thickness[Large], 
+          {Arrowheads[0.], 
+           ArrowBox[{{-1., 
+            1.0106430996148606`*^-15}, {-0.7071067811865471, \
+-0.7071067811865468}}, 0.02261146496815286]}}, 
+         InsetBox["2", {-0.8535533905932735, -0.3535533905932729}, 
+          ImageScaled[{0.5, 0.5}],
+          BaseStyle->"Graphics"]}, {
+         {RGBColor[1, 0, 0], Thickness[Large], 
+          {Arrowheads[0.], 
+           ArrowBox[{{-1., 1.0106430996148606`*^-15}, {
+            1.8369701987210297`*^-16, 1.}}, 0.02261146496815286]}}, 
+         InsetBox["4", {-0.4999999999999999, 0.5000000000000006}, 
+          ImageScaled[{0.5, 0.5}],
+          BaseStyle->"Graphics"]}, 
+        {GrayLevel[0], Thickness[Tiny], 
+         {Arrowheads[0.], 
+          ArrowBox[{{-0.9238795325112865, -0.3826834323650892}, \
+{-0.7071067811865471, -0.7071067811865468}}, 0.02261146496815286]}}, 
+        {GrayLevel[0], Thickness[Tiny], 
+         {Arrowheads[0.], 
+          ArrowBox[{{-0.7071067811865471, -0.7071067811865468}, \
+{-0.38268343236508917`, -0.9238795325112865}}, 0.02261146496815286]}}, {
+         {RGBColor[1, 0, 0], Thickness[Large], 
+          {Arrowheads[0.], 
+           ArrowBox[{{-0.7071067811865471, -0.7071067811865468}, {
+            0.7071067811865481, -0.7071067811865483}}, 0.02261146496815286]}},
+          InsetBox["4", {4.996003610813204*^-16, -0.7071067811865476}, 
+          ImageScaled[{0.5, 0.5}],
+          BaseStyle->"Graphics"]}, 
+        {GrayLevel[0], Thickness[Tiny], 
+         {Arrowheads[0.], 
+          ArrowBox[{{-0.38268343236508917`, -0.9238795325112865}, {
+           6.049014748177263*^-16, -1.}}, 0.02261146496815286]}}, 
+        {GrayLevel[0], Thickness[Tiny], 
+         {Arrowheads[0.], 
+          ArrowBox[{{6.049014748177263*^-16, -1.}, {
+           0.38268343236509034`, -0.923879532511287}}, 0.02261146496815286]}}, 
+        {GrayLevel[0], Thickness[Tiny], 
+         {Arrowheads[0.], 
+          ArrowBox[{{0.38268343236509034`, -0.923879532511287}, {
+           0.7071067811865481, -0.7071067811865483}}, 0.02261146496815286]}}, 
+        {GrayLevel[0], Thickness[Tiny], 
+         {Arrowheads[0.], 
+          ArrowBox[{{0.7071067811865481, -0.7071067811865483}, {
+           0.9238795325112868, -0.3826834323650904}}, 0.02261146496815286]}}, {
+         {RGBColor[1, 0, 0], Thickness[Large], 
+          {Arrowheads[0.], 
+           ArrowBox[{{0.7071067811865481, -0.7071067811865483}, {
+            0.9238795325112866, 0.3826834323650891}}, 0.02261146496815286]}}, 
+         InsetBox["3", {0.8154931568489174, -0.16221167441072962}, 
+          ImageScaled[{0.5, 0.5}],
+          BaseStyle->"Graphics"]}, 
+        {GrayLevel[0], Thickness[Tiny], 
+         {Arrowheads[0.], 
+          ArrowBox[{{0.9238795325112868, -0.3826834323650904}, {
+           1., -1.133107779529596*^-15}}, 0.02261146496815286]}}, 
+        {GrayLevel[0], Thickness[Tiny], 
+         {Arrowheads[0.], 
+          ArrowBox[{{1., -1.133107779529596*^-15}, {0.9238795325112866, 
+           0.3826834323650891}}, 0.02261146496815286]}}, 
+        {GrayLevel[0], Thickness[Tiny], 
+         {Arrowheads[0.], 
+          ArrowBox[{{0.9238795325112866, 0.3826834323650891}, {
+           0.707106781186547, 0.7071067811865474}}, 0.02261146496815286]}}, {
+         {RGBColor[1, 0, 0], Thickness[Large], 
+          {Arrowheads[0.], 
+           ArrowBox[{{0.9238795325112866, 0.3826834323650891}, {
+            1.8369701987210297`*^-16, 1.}}, 0.02261146496815286]}}, 
+         InsetBox["3", {0.4619397662556434, 0.6913417161825446}, ImageScaled[{0.5, 0.5}],
+          BaseStyle->"Graphics"]}, 
+        {GrayLevel[0], Thickness[Tiny], 
+         {Arrowheads[0.], 
+          ArrowBox[{{0.707106781186547, 0.7071067811865474}, {
+           0.3826834323650895, 0.9238795325112865}}, 0.02261146496815286]}}, 
+        {GrayLevel[0], Thickness[Tiny], 
+         {Arrowheads[0.], 
+          ArrowBox[{{0.3826834323650895, 0.9238795325112865}, {
+           1.8369701987210297`*^-16, 1.}}, 0.02261146496815286]}}}, 
+       {Hue[0.6, 0.2, 0.8], EdgeForm[{GrayLevel[0], Opacity[
+        0.7]}], {
+         DiskBox[{-0.38268343236509045, 0.9238795325112871}, 
+          0.02261146496815286], 
+         InsetBox["15", 
+          Offset[{2, 2}, {-0.3600719673969376, 0.94649099747944}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{-0.707106781186548, 0.7071067811865482}, 
+          0.02261146496815286], 
+         InsetBox["14", 
+          Offset[{2, 2}, {-0.6844953162183951, 0.7297182461547012}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{-0.9238795325112871, 0.3826834323650903}, 
+          0.02261146496815286], 
+         InsetBox["13", 
+          Offset[{2, 2}, {-0.9012680675431342, 0.40529489733324314}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{-1., 1.0106430996148606*^-15}, 0.02261146496815286], 
+         InsetBox["12", 
+          Offset[{2, 2}, {-0.9773885350318472, 0.02261146496815387}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{-0.9238795325112865, -0.3826834323650892}, 
+          0.02261146496815286], 
+         InsetBox["11", 
+          Offset[{2, 2}, {-0.9012680675431337, -0.36007196739693637}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{-0.7071067811865471, -0.7071067811865468}, 
+          0.02261146496815286], 
+         InsetBox["10", 
+          Offset[{2, 2}, {-0.6844953162183942, -0.684495316218394}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{-0.38268343236508917, -0.9238795325112865}, 
+          0.02261146496815286], 
+         InsetBox["9", 
+          Offset[{2, 2}, {-0.3600719673969363, -0.9012680675431337}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{6.049014748177263*^-16, -1.}, 0.02261146496815286], 
+         InsetBox["8", 
+          Offset[{2, 2}, {0.022611464968153465, -0.9773885350318472}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{0.38268343236509034, -0.923879532511287}, 
+          0.02261146496815286], 
+         InsetBox["7", 
+          Offset[{2, 2}, {0.4052948973332432, -0.9012680675431342}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{0.7071067811865481, -0.7071067811865483}, 
+          0.02261146496815286], 
+         InsetBox["6", 
+          Offset[{2, 2}, {0.7297182461547009, -0.6844953162183955}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{0.9238795325112868, -0.3826834323650904}, 
+          0.02261146496815286], 
+         InsetBox["5", 
+          Offset[{2, 2}, {0.9464909974794398, -0.36007196739693753}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{1., -1.133107779529596*^-15}, 0.02261146496815286], 
+         InsetBox["4", 
+          Offset[{2, 2}, {1.0226114649681528, 0.022611464968151727}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{0.9238795325112866, 0.3826834323650891}, 
+          0.02261146496815286], 
+         InsetBox["3", 
+          Offset[{2, 2}, {0.9464909974794395, 0.405294897333242}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{0.707106781186547, 0.7071067811865474}, 
+          0.02261146496815286], 
+         InsetBox["2", 
+          Offset[{2, 2}, {0.7297182461546998, 0.7297182461547003}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{0.3826834323650895, 0.9238795325112865}, 
+          0.02261146496815286], 
+         InsetBox["1", 
+          Offset[{2, 2}, {0.40529489733324237, 0.9464909974794393}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{1.8369701987210297*^-16, 1.}, 0.02261146496815286], 
+         InsetBox["0", 
+          Offset[{2, 2}, {0.022611464968153045, 1.0226114649681528}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}}}],
+     MouseAppearanceTag["NetworkGraphics"]],
+    AllowKernelInitialization->False]],
+  DefaultBaseStyle->{
+   "NetworkGraphics", FrontEnd`GraphicsHighlightColor -> Hue[0.8, 1., 0.6]},
+  FormatType->TraditionalForm,
+  FrameTicks->None]], "Output",
+ CellChangeTimes->{{3.707234854316382*^9, 3.707234871881935*^9}, {
+   3.707235889259612*^9, 3.707235998100999*^9}, 3.707236054787054*^9, 
+   3.70723608585732*^9, {3.7072362849755898`*^9, 3.707236289519237*^9}, {
+   3.7072363480466347`*^9, 3.70723635387286*^9}, {3.7072363871476793`*^9, 
+   3.707236408978931*^9}},
+ CellLabel->
+  "Out[139]=",ExpressionUUID->"32834b81-4f0f-46af-8c6f-223a3c72e334"]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{3.7072344164476748`*^9, 3.7072346948856153`*^9},
+ CellLabel->"In[95]:=",ExpressionUUID->"4f680aeb-cb2f-44fa-a5b1-836bb163530d"],
+
+Cell["\<\
+Checkout the shape formed by the pattern in our cyclic representation. Maybe \
+humans find rhythms with irregular polygon shapes more interesting than those \
+with regular polygon representations... We won\[CloseCurlyQuote]t explore \
+that idea here, but maybe try it on your own!
+
+We\[CloseCurlyQuote]ll focus on the first type of visualization, often called \
+a TUBS (Time Unit Box System) diagram for the rest of our exploring.\
+\>", "Text",
+ CellChangeTimes->{{3.7072349114189672`*^9, 3.707235013111458*^9}, {
+  3.707235044746726*^9, 3.707235101309705*^9}, {3.707235594319234*^9, 
+  3.707235641053314*^9}, {3.707235803222035*^9, 3.707235805736968*^9}, {
+  3.707236161355785*^9, 3.707236161675288*^9}, {3.707241142586483*^9, 
+  3.7072411450080557`*^9}},ExpressionUUID->"7af678a3-9bbc-4299-a3ee-\
+4b6e55ed1ab0"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Generation", "Section",
+ CellChangeTimes->{{3.70510464885445*^9, 3.7051046548567934`*^9}, {
+  3.7051046932679906`*^9, 3.7051047014174566`*^9}, {3.705686116931855*^9, 
+  3.7056861543411007`*^9}, {3.7072350366003237`*^9, 3.707235037573647*^9}, {
+  3.7072356433084993`*^9, 
+  3.7072356435641127`*^9}},ExpressionUUID->"40fb1d97-71ee-4a49-acac-\
+0dfe617cdf04"],
+
+Cell["\<\
+An interesting consequence of our TUBS diagram is any easy to extract binary \
+representation of our rhythm. It\[CloseCurlyQuote]s simple: 0 is a rest and a \
+1 is an onset. In fact, if we take a look at our earlier TUBS generation \
+code, that\[CloseCurlyQuote]s exactly how we gave ArrayPlot our rhythmic \
+pattern!\
+\>", "Text",
+ CellChangeTimes->{{3.705105405379721*^9, 3.7051054963769255`*^9}, {
+  3.705105533220033*^9, 3.705105546902816*^9}, {3.7051057273781385`*^9, 
+  3.7051057494323997`*^9}, {3.705169934558218*^9, 3.705169973362218*^9}, {
+  3.7072354188686457`*^9, 3.707235454167563*^9}, {3.707235498734703*^9, 
+  3.70723551161434*^9}, {3.707235646182472*^9, 3.7072356734122458`*^9}, {
+  3.707236184243525*^9, 3.707236217409965*^9}, {3.707241181488196*^9, 
+  3.707241211845963*^9}},ExpressionUUID->"efcc6638-38ab-4bbb-9a5f-\
+01e8efc14cb5"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ArrayPlot", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{
+     "1", ",", " ", "0", ",", " ", "0", ",", " ", "1", ",", " ", "0", ",", 
+      " ", "0", ",", " ", "1", ",", " ", "0", ",", " ", "0", ",", "0", ",", 
+      " ", "1", ",", " ", "0", ",", " ", "1", ",", " ", "0", ",", " ", "0", 
+      ",", " ", "0"}], "}"}], "}"}], ",", " ", 
+   RowBox[{"Mesh", "\[Rule]", "All"}]}], "]"}]], "Input",
+ CellChangeTimes->{3.7072412327112226`*^9},
+ CellLabel->
+  "In[161]:=",ExpressionUUID->"71f2a0ed-255d-43f4-98d6-5ca1c25e7bab"],
+
+Cell[BoxData[
+ GraphicsBox[{
+   RasterBox[{{0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 0, 1, 1, 1}}, {{0, 0}, {16,
+     1}}, {0, 1}], {
+    {GrayLevel[
+      NCache[-1 + GoldenRatio, 0.6180339887498949]], 
+     StyleBox[LineBox[{{{0, 1}, {16, 1}}, {{0, 0}, {16, 0}}}],
+      Antialiasing->False]}, 
+    {GrayLevel[
+      NCache[-1 + GoldenRatio, 0.6180339887498949]], 
+     StyleBox[
+      LineBox[{{{0, 0}, {0, 1}}, {{1, 0}, {1, 1}}, {{2, 0}, {2, 1}}, {{3, 
+       0}, {3, 1}}, {{4, 0}, {4, 1}}, {{5, 0}, {5, 1}}, {{6, 0}, {6, 1}}, {{7,
+        0}, {7, 1}}, {{8, 0}, {8, 1}}, {{9, 0}, {9, 1}}, {{10, 0}, {10, 
+       1}}, {{11, 0}, {11, 1}}, {{12, 0}, {12, 1}}, {{13, 0}, {13, 1}}, {{14, 
+       0}, {14, 1}}, {{15, 0}, {15, 1}}, {{16, 0}, {16, 1}}}],
+      Antialiasing->False]}}},
+  Frame->False,
+  FrameLabel->{None, None},
+  FrameTicks->{{None, None}, {None, None}},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  Method->{
+   "DefaultBoundaryStyle" -> Automatic, "DefaultPlotStyle" -> 
+    Automatic}]], "Output",
+ CellChangeTimes->{3.707241234425136*^9},
+ CellLabel->
+  "Out[161]=",ExpressionUUID->"a0608421-7d04-44cf-b227-4d38276bb26c"]
+}, Open  ]],
+
+Cell["\<\
+Of course, we also need a way to actually sonify this new way of representing \
+our rhythms. Below, we write a function that takes in two arguments, a binary \
+array and a tempo, and creates a Sound that we can hear.\
+\>", "Text",
+ CellChangeTimes->{{3.70724217453439*^9, 
+  3.707242225572451*^9}},ExpressionUUID->"ad97a856-b3a3-44a3-84b3-\
+95ad6b4d416a"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"sonifyRhythm", "[", 
+   RowBox[{"instrument_", ",", " ", "pattern_", ",", " ", "tempo_"}], "]"}], ":=",
+   " ", 
+  RowBox[{"Sound", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"SoundNote", "[", 
+      RowBox[{"#", ",", " ", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"tempo", "/", "60"}], ")"}], "^", 
+        RowBox[{"-", "1"}]}]}], "]"}], "&"}], " ", "/@", " ", 
+    RowBox[{"(", 
+     RowBox[{"pattern", " ", "/.", " ", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"0", " ", "\[Rule]", " ", "None"}], ",", " ", 
+        RowBox[{"1", " ", "\[Rule]", " ", "instrument"}]}], "}"}]}], ")"}]}], 
+   "]"}]}]], "Code",
+ CellChangeTimes->{{3.7072422568292427`*^9, 3.707242498288352*^9}, {
+  3.7072425422899714`*^9, 3.707242593007134*^9}, {3.707242760261695*^9, 
+  3.70724276593967*^9}, {3.7072428031728907`*^9, 3.707242803595509*^9}},
+ CellLabel->
+  "In[225]:=",ExpressionUUID->"25fcaff0-c424-4910-90b6-e9390665e9bc"],
+
+Cell["\<\
+Having this binary form of our rhythm means we can easily do computations on \
+it without leaving our pulse-based system. \
+\>", "Text",
+ CellChangeTimes->{{3.70724124338251*^9, 3.707241295558638*^9}, {
+   3.707241411076693*^9, 3.707241420042224*^9}, 
+   3.707242165238987*^9},ExpressionUUID->"02d6b96d-06bd-41d8-a13a-\
+b0babfa4bc7d"],
+
+Cell["Rotate (shift beats):", "Direction",
+ CellChangeTimes->{{3.7056860922471857`*^9, 3.7056860957264357`*^9}, 
+   3.706975592765313*^9, {3.7069756502967*^9, 3.706975651832728*^9}, {
+   3.7072154008830976`*^9, 3.707215403609206*^9}, {3.7072156687407417`*^9, 
+   3.707215682595951*^9}, 3.7072157227731743`*^9, {3.707216105320341*^9, 
+   3.707216128702116*^9}, {3.7072168686897993`*^9, 3.707216878840744*^9}, {
+   3.707228471654294*^9, 3.7072284955344048`*^9}, {3.707228550453115*^9, 
+   3.707228559125637*^9}, {3.707228780249337*^9, 3.707228810457057*^9}, 
+   3.707228876319683*^9, {3.707230220177367*^9, 3.7072302214588547`*^9}, {
+   3.7072311126846046`*^9, 3.7072311501855907`*^9}, {3.7072326170332403`*^9, 
+   3.707232637816079*^9}, {3.707232732016879*^9, 3.707232740086121*^9}, {
+   3.707232819300695*^9, 3.70723284357952*^9}, {3.707232960674038*^9, 
+   3.707232964130587*^9}, {3.7072347691540422`*^9, 3.70723479325135*^9}, {
+   3.707236138587284*^9, 3.707236152091457*^9}, {3.707237032836235*^9, 
+   3.7072370427394047`*^9}, {3.707241312869458*^9, 3.707241315939962*^9}, {
+   3.707241377148425*^9, 3.707241390818695*^9}, 3.7072414658812857`*^9, {
+   3.7072415318493967`*^9, 3.70724153354426*^9}, {3.707241571728113*^9, 
+   3.707241598696231*^9}},ExpressionUUID->"9ab112d4-29f8-47fd-a95f-\
+17290bb3564b"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"clave", " ", "=", " ", 
+  RowBox[{"{", 
+   RowBox[{
+   "1", ",", " ", "0", ",", " ", "0", ",", " ", "1", ",", " ", "0", ",", " ", 
+    "0", ",", " ", "1", ",", " ", "0", ",", " ", "0", ",", "0", ",", " ", "1",
+     ",", " ", "0", ",", " ", "1", ",", " ", "0", ",", " ", "0", ",", " ", 
+    "0"}], "}"}]}], "\[IndentingNewLine]", 
+ RowBox[{"ArrayPlot", "[", 
+  RowBox[{
+   RowBox[{"{", "clave", "}"}], ",", " ", 
+   RowBox[{"Mesh", "\[Rule]", "All"}], ",", " ", 
+   RowBox[{"PlotLabel", "\[Rule]", "\"\<clave\>\""}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"sonifyRhythm", "[", 
+   RowBox[{"\"\<Claves\>\"", ",", " ", "clave", ",", " ", "240.0"}], "]"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"ArrayPlot", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"RotateLeft", "[", 
+     RowBox[{"clave", ",", "4"}], "]"}], "}"}], ",", " ", 
+   RowBox[{"Mesh", "\[Rule]", "All"}], ",", " ", 
+   RowBox[{"PlotLabel", "\[Rule]", "\"\<RotateLeft[clave, 4]\>\""}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"sonifyRhythm", "[", 
+   RowBox[{"\"\<Claves\>\"", ",", " ", 
+    RowBox[{"RotateLeft", "[", 
+     RowBox[{"clave", ",", " ", "4"}], "]"}], ",", " ", "240.0"}], "]"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"ArrayPlot", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"RotateRight", "[", 
+     RowBox[{"clave", ",", "4"}], "]"}], "}"}], ",", " ", 
+   RowBox[{"Mesh", "\[Rule]", "All"}], ",", " ", 
+   RowBox[{"PlotLabel", "\[Rule]", "\"\<RotateRight[clave, 4]\>\""}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"sonifyRhythm", "[", 
+  RowBox[{"\"\<Claves\>\"", ",", " ", 
+   RowBox[{"RotateRight", "[", 
+    RowBox[{"clave", ",", " ", "4"}], "]"}], ",", " ", "240.0"}], 
+  "]"}]}], "Input",
+ CellChangeTimes->{{3.707241534447523*^9, 3.70724156243221*^9}, {
+   3.707241612976461*^9, 3.707241673703792*^9}, 3.707241713727247*^9, {
+   3.707242501816538*^9, 3.7072425170158777`*^9}, {3.7072426180240297`*^9, 
+   3.707242626006584*^9}, {3.707242667856099*^9, 3.707242669221542*^9}, {
+   3.707242711023209*^9, 3.707242796756164*^9}, {3.7072428473265142`*^9, 
+   3.707242958083502*^9}, {3.707243011004661*^9, 3.7072430849291897`*^9}},
+ CellLabel->
+  "In[258]:=",ExpressionUUID->"3a54e7ec-e5f2-455a-94e6-18019a591a51"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "1", ",", "0", ",", "0", ",", "1", ",", "0", ",", "0", ",", "1", ",", "0", 
+   ",", "0", ",", "0", ",", "1", ",", "0", ",", "1", ",", "0", ",", "0", ",", 
+   "0"}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.707242517875101*^9, {3.7072425738327093`*^9, 3.707242596579132*^9}, 
+   3.707242629333667*^9, {3.7072426632740602`*^9, 3.707242674714761*^9}, {
+   3.707242711991074*^9, 3.707242717736719*^9}, 3.7072427485775623`*^9, {
+   3.707242784014509*^9, 3.7072428058618402`*^9}, {3.70724285085853*^9, 
+   3.707242878199082*^9}, {3.7072429402149963`*^9, 3.707242959037486*^9}, {
+   3.7072430707424793`*^9, 3.7072430853065443`*^9}},
+ CellLabel->
+  "Out[258]=",ExpressionUUID->"d528e7a8-a116-4ceb-9087-323806a7f112"],
+
+Cell[BoxData[
+ GraphicsBox[{
+   RasterBox[{{0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 0, 1, 1, 1}}, {{0, 0}, {16,
+     1}}, {0, 1}], {
+    {GrayLevel[
+      NCache[-1 + GoldenRatio, 0.6180339887498949]], 
+     StyleBox[LineBox[{{{0, 1}, {16, 1}}, {{0, 0}, {16, 0}}}],
+      Antialiasing->False]}, 
+    {GrayLevel[
+      NCache[-1 + GoldenRatio, 0.6180339887498949]], 
+     StyleBox[
+      LineBox[{{{0, 0}, {0, 1}}, {{1, 0}, {1, 1}}, {{2, 0}, {2, 1}}, {{3, 
+       0}, {3, 1}}, {{4, 0}, {4, 1}}, {{5, 0}, {5, 1}}, {{6, 0}, {6, 1}}, {{7,
+        0}, {7, 1}}, {{8, 0}, {8, 1}}, {{9, 0}, {9, 1}}, {{10, 0}, {10, 
+       1}}, {{11, 0}, {11, 1}}, {{12, 0}, {12, 1}}, {{13, 0}, {13, 1}}, {{14, 
+       0}, {14, 1}}, {{15, 0}, {15, 1}}, {{16, 0}, {16, 1}}}],
+      Antialiasing->False]}}},
+  Frame->False,
+  FrameLabel->{None, None},
+  FrameTicks->{{None, None}, {None, None}},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImageSize->250,
+  Method->{
+   "DefaultBoundaryStyle" -> Automatic, "DefaultPlotStyle" -> Automatic},
+  PlotLabel->FormBox["\"clave\"", TraditionalForm]]], "Output",
+ CellChangeTimes->{
+  3.707242517875101*^9, {3.7072425738327093`*^9, 3.707242596579132*^9}, 
+   3.707242629333667*^9, {3.7072426632740602`*^9, 3.707242674714761*^9}, {
+   3.707242711991074*^9, 3.707242717736719*^9}, 3.7072427485775623`*^9, {
+   3.707242784014509*^9, 3.7072428058618402`*^9}, {3.70724285085853*^9, 
+   3.707242878199082*^9}, {3.7072429402149963`*^9, 3.707242959037486*^9}, {
+   3.7072430707424793`*^9, 3.707243085395316*^9}},
+ CellLabel->
+  "Out[259]=",ExpressionUUID->"3f67089f-c956-4f4e-af72-d1daa84d49c2"],
+
+Cell[BoxData[
+ InterpretationBox[
+  GraphicsBox[{
+    {RGBColor[0.9568627450980393, 0.9568627450980393, 0.9568627450980393], 
+     RectangleBox[{0, 0}, {360, -164}]}, {InsetBox[
+      GraphicsBox[
+       {RGBColor[0.5, 0, 0.5], 
+        StyleBox[{
+          RectangleBox[{0., 0.610558394599415}, {0.2375, 0.6224631565041769}],
+           RectangleBox[{0.75, 0.610558394599415}, \
+{0.9875, 0.6224631565041769}], 
+          RectangleBox[{1.5, 0.610558394599415}, \
+{1.7375, 0.6224631565041769}], 
+          RectangleBox[{2.5, 0.610558394599415}, \
+{2.7375, 0.6224631565041769}], 
+          RectangleBox[{3., 0.610558394599415}, {3.2375, 0.6224631565041769}]},
+         Antialiasing->True]},
+       AspectRatio->NCache[
+         Rational[6, 35], 0.17142857142857143`],
+       Background->GrayLevel[1],
+       Frame->True,
+       FrameStyle->GrayLevel[0.75],
+       FrameTicks->False,
+       ImagePadding->None,
+       PlotRange->{All, All},
+       PlotRangePadding->{Automatic, 0.05}], {180, -35}, 
+      ImageScaled[{0.5, 0.5}], {350, 60},
+      Background->RGBColor[
+       0.9568627450980393, 0.9568627450980393, 0.9568627450980393]], InsetBox[
+      GraphicsBox[
+       {GrayLevel[0.6], RectangleBox[{0, 0}]},
+       AspectRatio->NCache[
+         Rational[6, 35], 0.17142857142857143`],
+       Background->GrayLevel[1],
+       Frame->True,
+       FrameStyle->GrayLevel[0.75],
+       FrameTicks->False,
+       ImagePadding->None], {180, -100}, ImageScaled[{0.5, 0.5}], {350, 60},
+      Background->RGBColor[
+       0.9568627450980393, 0.9568627450980393, 0.9568627450980393]]}, InsetBox[
+     StyleBox[
+      TemplateBox[{
+       StyleBox[
+        "\" | \"", FontSize -> 14, FontColor -> 
+         RGBColor[0.5098039215686274, 0.5098039215686274, 0.5098039215686274],
+          StripOnInput -> False],StyleBox[
+         TemplateBox[{"\"3.25\"", "\" s\""}, "RowDefault"], FontColor -> 
+         RGBColor[0.5098039215686274, 0.5098039215686274, 0.5098039215686274],
+          StripOnInput -> False]},
+       "RowWithSeparator"], "DialogStyle",
+      StripOnInput->False], {355, -159}, Scaled[{1, 0}]], 
+    TagBox[{
+      {RGBColor[0.9568627450980393, 0.9568627450980393, 0.9568627450980393], 
+       RectangleBox[{5, -158}, {29, -135}]}, 
+      {RGBColor[0.27450980392156865`, 0.5411764705882353, 0.796078431372549], 
+       PolygonBox[
+        NCache[{{11, -157}, {11, -136}, {20., Rational[-293, 2]}, {
+          11, -157}}, {{11, -157}, {11, -136}, {20., -146.5}, {11, -157}}]], 
+       StyleBox[{},
+        Antialiasing->False]}},
+     EventHandlerTag[{"MouseClicked" :> If[True, Sound`EmitMIDI[
+           Sound`MIDISequence[{
+             Sound`MIDITrack[{
+               Sound`MIDIEvent[0, "SetTempo", "Tempo" -> 1000000], 
+               Sound`MIDIEvent[
+               0, "ProgramCommand", "Channel" -> 9, "Value" -> 0], 
+               Sound`MIDIEvent[
+               0, "NoteOn", "Note" -> 75, "Channel" -> 9, "Velocity" -> 127], 
+               Sound`MIDIEvent[
+               12, "NoteOff", "Note" -> 75, "Channel" -> 9, "Velocity" -> 0], 
+               Sound`MIDIEvent[
+               36, "NoteOn", "Note" -> 75, "Channel" -> 9, "Velocity" -> 127], 
+               Sound`MIDIEvent[
+               48, "NoteOff", "Note" -> 75, "Channel" -> 9, "Velocity" -> 0], 
+               Sound`MIDIEvent[
+               72, "NoteOn", "Note" -> 75, "Channel" -> 9, "Velocity" -> 127], 
+               Sound`MIDIEvent[
+               84, "NoteOff", "Note" -> 75, "Channel" -> 9, "Velocity" -> 0], 
+               Sound`MIDIEvent[
+               120, "NoteOn", "Note" -> 75, "Channel" -> 9, "Velocity" -> 
+                127], 
+               Sound`MIDIEvent[
+               132, "NoteOff", "Note" -> 75, "Channel" -> 9, "Velocity" -> 0], 
+               Sound`MIDIEvent[
+               144, "NoteOn", "Note" -> 75, "Channel" -> 9, "Velocity" -> 
+                127], 
+               Sound`MIDIEvent[
+               156, "NoteOff", "Note" -> 75, "Channel" -> 9, "Velocity" -> 
+                0]}]}, "DivisionType" -> "PPQ", "Resolution" -> 48]]; 
+         Sound`EmitSampledSound[None, "Preemptive"], 
+         FEPrivate`EmitSound[None, "Preemptive"]], Method -> "Preemptive", 
+       PassEventsDown -> Automatic, PassEventsUp -> True}]], 
+    TagBox[{
+      {RGBColor[0.9568627450980393, 0.9568627450980393, 0.9568627450980393], 
+       RectangleBox[{29, -158}, {53, -135}]}, 
+      {RGBColor[0.27450980392156865`, 0.5411764705882353, 0.796078431372549], 
+       RectangleBox[{35, -152}, {47, -141}], 
+       StyleBox[{},
+        Antialiasing->False]}},
+     EventHandlerTag[{"MouseClicked" :> If[True, Sound`EmitSampledSound[
+           SampledSoundList[{{0.}}, 8000], "Preemptive"]; Sound`StopMIDI[], 
+         FEPrivate`EmitSound[
+          SampledSoundList[{{0.}}, 8000], "Preemptive"]], Method -> 
+       "Preemptive", PassEventsDown -> Automatic, PassEventsUp -> True}]], 
+    {GrayLevel[0.75], 
+     StyleBox[LineBox[{{0, 0}, {360, 0}, {360, -164}, {0, -164}, {0, 0}}],
+      Antialiasing->False]}},
+   ContentSelectable->False,
+   ImageSize->250,
+   PlotRange->{{0, 360}, {-164, 0}},
+   PlotRangePadding->1],
+  Sound[{
+    SoundNote["Claves", 0.25], 
+    SoundNote[None, 0.25], 
+    SoundNote[None, 0.25], 
+    SoundNote["Claves", 0.25], 
+    SoundNote[None, 0.25], 
+    SoundNote[None, 0.25], 
+    SoundNote["Claves", 0.25], 
+    SoundNote[None, 0.25], 
+    SoundNote[None, 0.25], 
+    SoundNote[None, 0.25], 
+    SoundNote["Claves", 0.25], 
+    SoundNote[None, 0.25], 
+    SoundNote["Claves", 0.25], 
+    SoundNote[None, 0.25], 
+    SoundNote[None, 0.25], 
+    SoundNote[None, 0.25]}]]], "Output",
+ CellChangeTimes->{
+  3.707242517875101*^9, {3.7072425738327093`*^9, 3.707242596579132*^9}, 
+   3.707242629333667*^9, {3.7072426632740602`*^9, 3.707242674714761*^9}, {
+   3.707242711991074*^9, 3.707242717736719*^9}, 3.7072427485775623`*^9, {
+   3.707242784014509*^9, 3.7072428058618402`*^9}, {3.70724285085853*^9, 
+   3.707242878199082*^9}, {3.7072429402149963`*^9, 3.707242959037486*^9}, {
+   3.7072430707424793`*^9, 3.707243085475545*^9}},
+ CellLabel->
+  "Out[260]=",ExpressionUUID->"66499189-67ea-4b2d-b153-5855c548783f"],
+
+Cell[BoxData[
+ GraphicsBox[{
+   RasterBox[{{1, 1, 0, 1, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 0}}, {{0, 0}, {16,
+     1}}, {0, 1}], {
+    {GrayLevel[
+      NCache[-1 + GoldenRatio, 0.6180339887498949]], 
+     StyleBox[LineBox[{{{0, 1}, {16, 1}}, {{0, 0}, {16, 0}}}],
+      Antialiasing->False]}, 
+    {GrayLevel[
+      NCache[-1 + GoldenRatio, 0.6180339887498949]], 
+     StyleBox[
+      LineBox[{{{0, 0}, {0, 1}}, {{1, 0}, {1, 1}}, {{2, 0}, {2, 1}}, {{3, 
+       0}, {3, 1}}, {{4, 0}, {4, 1}}, {{5, 0}, {5, 1}}, {{6, 0}, {6, 1}}, {{7,
+        0}, {7, 1}}, {{8, 0}, {8, 1}}, {{9, 0}, {9, 1}}, {{10, 0}, {10, 
+       1}}, {{11, 0}, {11, 1}}, {{12, 0}, {12, 1}}, {{13, 0}, {13, 1}}, {{14, 
+       0}, {14, 1}}, {{15, 0}, {15, 1}}, {{16, 0}, {16, 1}}}],
+      Antialiasing->False]}}},
+  Frame->False,
+  FrameLabel->{None, None},
+  FrameTicks->{{None, None}, {None, None}},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImageSize->250,
+  Method->{
+   "DefaultBoundaryStyle" -> Automatic, "DefaultPlotStyle" -> Automatic},
+  PlotLabel->FormBox["\"RotateLeft[clave, 4]\"", TraditionalForm]]], "Output",
+ CellChangeTimes->{
+  3.707242517875101*^9, {3.7072425738327093`*^9, 3.707242596579132*^9}, 
+   3.707242629333667*^9, {3.7072426632740602`*^9, 3.707242674714761*^9}, {
+   3.707242711991074*^9, 3.707242717736719*^9}, 3.7072427485775623`*^9, {
+   3.707242784014509*^9, 3.7072428058618402`*^9}, {3.70724285085853*^9, 
+   3.707242878199082*^9}, {3.7072429402149963`*^9, 3.707242959037486*^9}, {
+   3.7072430707424793`*^9, 3.707243085552408*^9}},
+ CellLabel->
+  "Out[261]=",ExpressionUUID->"26a5aa6c-7159-403f-af3e-31c7451d32ce"],
+
+Cell[BoxData[
+ InterpretationBox[
+  GraphicsBox[{
+    {RGBColor[0.9568627450980393, 0.9568627450980393, 0.9568627450980393], 
+     RectangleBox[{0, 0}, {360, -164}]}, {InsetBox[
+      GraphicsBox[
+       {RGBColor[0.5, 0, 0.5], 
+        StyleBox[{
+          RectangleBox[{0.5, 0.610558394599415}, \
+{0.7375, 0.6224631565041769}], 
+          RectangleBox[{1.5, 0.610558394599415}, \
+{1.7375, 0.6224631565041769}], 
+          RectangleBox[{2., 0.610558394599415}, {2.2375, 0.6224631565041769}],
+           RectangleBox[{3., 0.610558394599415}, \
+{3.2375, 0.6224631565041769}], 
+          RectangleBox[{3.75, 0.610558394599415}, \
+{3.9875, 0.6224631565041769}]},
+         Antialiasing->True]},
+       AspectRatio->NCache[
+         Rational[6, 35], 0.17142857142857143`],
+       Background->GrayLevel[1],
+       Frame->True,
+       FrameStyle->GrayLevel[0.75],
+       FrameTicks->False,
+       ImagePadding->None,
+       PlotRange->{All, All},
+       PlotRangePadding->{Automatic, 0.05}], {180, -35}, 
+      ImageScaled[{0.5, 0.5}], {350, 60},
+      Background->RGBColor[
+       0.9568627450980393, 0.9568627450980393, 0.9568627450980393]], InsetBox[
+      GraphicsBox[
+       {GrayLevel[0.6], RectangleBox[{0, 0}]},
+       AspectRatio->NCache[
+         Rational[6, 35], 0.17142857142857143`],
+       Background->GrayLevel[1],
+       Frame->True,
+       FrameStyle->GrayLevel[0.75],
+       FrameTicks->False,
+       ImagePadding->None], {180, -100}, ImageScaled[{0.5, 0.5}], {350, 60},
+      Background->RGBColor[
+       0.9568627450980393, 0.9568627450980393, 0.9568627450980393]]}, InsetBox[
+     StyleBox[
+      TemplateBox[{
+       StyleBox[
+        "\" | \"", FontSize -> 14, FontColor -> 
+         RGBColor[0.5098039215686274, 0.5098039215686274, 0.5098039215686274],
+          StripOnInput -> False],StyleBox[
+         TemplateBox[{"\"4\"", "\" s\""}, "RowDefault"], FontColor -> 
+         RGBColor[0.5098039215686274, 0.5098039215686274, 0.5098039215686274],
+          StripOnInput -> False]},
+       "RowWithSeparator"], "DialogStyle",
+      StripOnInput->False], {355, -159}, Scaled[{1, 0}]], 
+    TagBox[{
+      {RGBColor[0.9568627450980393, 0.9568627450980393, 0.9568627450980393], 
+       RectangleBox[{5, -158}, {29, -135}]}, 
+      {RGBColor[0.27450980392156865`, 0.5411764705882353, 0.796078431372549], 
+       PolygonBox[
+        NCache[{{11, -157}, {11, -136}, {20., Rational[-293, 2]}, {
+          11, -157}}, {{11, -157}, {11, -136}, {20., -146.5}, {11, -157}}]], 
+       StyleBox[{},
+        Antialiasing->False]}},
+     EventHandlerTag[{"MouseClicked" :> If[True, Sound`EmitMIDI[
+           Sound`MIDISequence[{
+             Sound`MIDITrack[{
+               Sound`MIDIEvent[0, "SetTempo", "Tempo" -> 1000000], 
+               Sound`MIDIEvent[
+               0, "ProgramCommand", "Channel" -> 9, "Value" -> 0], 
+               Sound`MIDIEvent[
+               24, "NoteOn", "Note" -> 75, "Channel" -> 9, "Velocity" -> 127], 
+               Sound`MIDIEvent[
+               36, "NoteOff", "Note" -> 75, "Channel" -> 9, "Velocity" -> 0], 
+               Sound`MIDIEvent[
+               72, "NoteOn", "Note" -> 75, "Channel" -> 9, "Velocity" -> 127], 
+               Sound`MIDIEvent[
+               84, "NoteOff", "Note" -> 75, "Channel" -> 9, "Velocity" -> 0], 
+               Sound`MIDIEvent[
+               96, "NoteOn", "Note" -> 75, "Channel" -> 9, "Velocity" -> 127], 
+               Sound`MIDIEvent[
+               108, "NoteOff", "Note" -> 75, "Channel" -> 9, "Velocity" -> 0], 
+               Sound`MIDIEvent[
+               144, "NoteOn", "Note" -> 75, "Channel" -> 9, "Velocity" -> 
+                127], 
+               Sound`MIDIEvent[
+               156, "NoteOff", "Note" -> 75, "Channel" -> 9, "Velocity" -> 0], 
+               Sound`MIDIEvent[
+               180, "NoteOn", "Note" -> 75, "Channel" -> 9, "Velocity" -> 
+                127], 
+               Sound`MIDIEvent[
+               192, "NoteOff", "Note" -> 75, "Channel" -> 9, "Velocity" -> 
+                0]}]}, "DivisionType" -> "PPQ", "Resolution" -> 48]]; 
+         Sound`EmitSampledSound[None, "Preemptive"], 
+         FEPrivate`EmitSound[None, "Preemptive"]], Method -> "Preemptive", 
+       PassEventsDown -> Automatic, PassEventsUp -> True}]], 
+    TagBox[{
+      {RGBColor[0.9568627450980393, 0.9568627450980393, 0.9568627450980393], 
+       RectangleBox[{29, -158}, {53, -135}]}, 
+      {RGBColor[0.27450980392156865`, 0.5411764705882353, 0.796078431372549], 
+       RectangleBox[{35, -152}, {47, -141}], 
+       StyleBox[{},
+        Antialiasing->False]}},
+     EventHandlerTag[{"MouseClicked" :> If[True, Sound`EmitSampledSound[
+           SampledSoundList[{{0.}}, 8000], "Preemptive"]; Sound`StopMIDI[], 
+         FEPrivate`EmitSound[
+          SampledSoundList[{{0.}}, 8000], "Preemptive"]], Method -> 
+       "Preemptive", PassEventsDown -> Automatic, PassEventsUp -> True}]], 
+    {GrayLevel[0.75], 
+     StyleBox[LineBox[{{0, 0}, {360, 0}, {360, -164}, {0, -164}, {0, 0}}],
+      Antialiasing->False]}},
+   ContentSelectable->False,
+   ImageSize->250,
+   PlotRange->{{0, 360}, {-164, 0}},
+   PlotRangePadding->1],
+  Sound[{
+    SoundNote[None, 0.25], 
+    SoundNote[None, 0.25], 
+    SoundNote["Claves", 0.25], 
+    SoundNote[None, 0.25], 
+    SoundNote[None, 0.25], 
+    SoundNote[None, 0.25], 
+    SoundNote["Claves", 0.25], 
+    SoundNote[None, 0.25], 
+    SoundNote["Claves", 0.25], 
+    SoundNote[None, 0.25], 
+    SoundNote[None, 0.25], 
+    SoundNote[None, 0.25], 
+    SoundNote["Claves", 0.25], 
+    SoundNote[None, 0.25], 
+    SoundNote[None, 0.25], 
+    SoundNote["Claves", 0.25]}]]], "Output",
+ CellChangeTimes->{
+  3.707242517875101*^9, {3.7072425738327093`*^9, 3.707242596579132*^9}, 
+   3.707242629333667*^9, {3.7072426632740602`*^9, 3.707242674714761*^9}, {
+   3.707242711991074*^9, 3.707242717736719*^9}, 3.7072427485775623`*^9, {
+   3.707242784014509*^9, 3.7072428058618402`*^9}, {3.70724285085853*^9, 
+   3.707242878199082*^9}, {3.7072429402149963`*^9, 3.707242959037486*^9}, {
+   3.7072430707424793`*^9, 3.707243085625688*^9}},
+ CellLabel->
+  "Out[262]=",ExpressionUUID->"8eae209d-529a-4c3a-9438-8895e33fc3eb"],
+
+Cell[BoxData[
+ GraphicsBox[{
+   RasterBox[{{0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1}}, {{0, 0}, {16,
+     1}}, {0, 1}], {
+    {GrayLevel[
+      NCache[-1 + GoldenRatio, 0.6180339887498949]], 
+     StyleBox[LineBox[{{{0, 1}, {16, 1}}, {{0, 0}, {16, 0}}}],
+      Antialiasing->False]}, 
+    {GrayLevel[
+      NCache[-1 + GoldenRatio, 0.6180339887498949]], 
+     StyleBox[
+      LineBox[{{{0, 0}, {0, 1}}, {{1, 0}, {1, 1}}, {{2, 0}, {2, 1}}, {{3, 
+       0}, {3, 1}}, {{4, 0}, {4, 1}}, {{5, 0}, {5, 1}}, {{6, 0}, {6, 1}}, {{7,
+        0}, {7, 1}}, {{8, 0}, {8, 1}}, {{9, 0}, {9, 1}}, {{10, 0}, {10, 
+       1}}, {{11, 0}, {11, 1}}, {{12, 0}, {12, 1}}, {{13, 0}, {13, 1}}, {{14, 
+       0}, {14, 1}}, {{15, 0}, {15, 1}}, {{16, 0}, {16, 1}}}],
+      Antialiasing->False]}}},
+  Frame->False,
+  FrameLabel->{None, None},
+  FrameTicks->{{None, None}, {None, None}},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImageSize->250,
+  Method->{
+   "DefaultBoundaryStyle" -> Automatic, "DefaultPlotStyle" -> Automatic},
+  PlotLabel->FormBox["\"RotateRight[clave, 4]\"", TraditionalForm]]], "Output",
+ CellChangeTimes->{
+  3.707242517875101*^9, {3.7072425738327093`*^9, 3.707242596579132*^9}, 
+   3.707242629333667*^9, {3.7072426632740602`*^9, 3.707242674714761*^9}, {
+   3.707242711991074*^9, 3.707242717736719*^9}, 3.7072427485775623`*^9, {
+   3.707242784014509*^9, 3.7072428058618402`*^9}, {3.70724285085853*^9, 
+   3.707242878199082*^9}, {3.7072429402149963`*^9, 3.707242959037486*^9}, {
+   3.7072430707424793`*^9, 3.707243085710897*^9}},
+ CellLabel->
+  "Out[263]=",ExpressionUUID->"543ee7e7-5ac7-4eff-a05d-859b458a7f0d"],
+
+Cell[BoxData[
+ InterpretationBox[
+  GraphicsBox[{
+    {RGBColor[0.9568627450980393, 0.9568627450980393, 0.9568627450980393], 
+     RectangleBox[{0, 0}, {360, -164}]}, {InsetBox[
+      GraphicsBox[
+       {RGBColor[0.5, 0, 0.5], 
+        StyleBox[{
+          RectangleBox[{0., 0.610558394599415}, {0.2375, 0.6224631565041769}],
+           RectangleBox[{1., 0.610558394599415}, \
+{1.2375, 0.6224631565041769}], 
+          RectangleBox[{1.75, 0.610558394599415}, \
+{1.9875, 0.6224631565041769}], 
+          RectangleBox[{2.5, 0.610558394599415}, \
+{2.7375, 0.6224631565041769}], 
+          RectangleBox[{3.5, 0.610558394599415}, \
+{3.7375, 0.6224631565041769}]},
+         Antialiasing->True]},
+       AspectRatio->NCache[
+         Rational[6, 35], 0.17142857142857143`],
+       Background->GrayLevel[1],
+       Frame->True,
+       FrameStyle->GrayLevel[0.75],
+       FrameTicks->False,
+       ImagePadding->None,
+       PlotRange->{All, All},
+       PlotRangePadding->{Automatic, 0.05}], {180, -35}, 
+      ImageScaled[{0.5, 0.5}], {350, 60},
+      Background->RGBColor[
+       0.9568627450980393, 0.9568627450980393, 0.9568627450980393]], InsetBox[
+      GraphicsBox[
+       {GrayLevel[0.6], RectangleBox[{0, 0}]},
+       AspectRatio->NCache[
+         Rational[6, 35], 0.17142857142857143`],
+       Background->GrayLevel[1],
+       Frame->True,
+       FrameStyle->GrayLevel[0.75],
+       FrameTicks->False,
+       ImagePadding->None], {180, -100}, ImageScaled[{0.5, 0.5}], {350, 60},
+      Background->RGBColor[
+       0.9568627450980393, 0.9568627450980393, 0.9568627450980393]]}, InsetBox[
+     StyleBox[
+      TemplateBox[{
+       StyleBox[
+        "\" | \"", FontSize -> 14, FontColor -> 
+         RGBColor[0.5098039215686274, 0.5098039215686274, 0.5098039215686274],
+          StripOnInput -> False],StyleBox[
+         TemplateBox[{"\"3.75\"", "\" s\""}, "RowDefault"], FontColor -> 
+         RGBColor[0.5098039215686274, 0.5098039215686274, 0.5098039215686274],
+          StripOnInput -> False]},
+       "RowWithSeparator"], "DialogStyle",
+      StripOnInput->False], {355, -159}, Scaled[{1, 0}]], 
+    TagBox[{
+      {RGBColor[0.9568627450980393, 0.9568627450980393, 0.9568627450980393], 
+       RectangleBox[{5, -158}, {29, -135}]}, 
+      {RGBColor[0.27450980392156865`, 0.5411764705882353, 0.796078431372549], 
+       PolygonBox[
+        NCache[{{11, -157}, {11, -136}, {20., Rational[-293, 2]}, {
+          11, -157}}, {{11, -157}, {11, -136}, {20., -146.5}, {11, -157}}]], 
+       StyleBox[{},
+        Antialiasing->False]}},
+     EventHandlerTag[{"MouseClicked" :> If[True, Sound`EmitMIDI[
+           Sound`MIDISequence[{
+             Sound`MIDITrack[{
+               Sound`MIDIEvent[0, "SetTempo", "Tempo" -> 1000000], 
+               Sound`MIDIEvent[
+               0, "ProgramCommand", "Channel" -> 9, "Value" -> 0], 
+               Sound`MIDIEvent[
+               0, "NoteOn", "Note" -> 75, "Channel" -> 9, "Velocity" -> 127], 
+               Sound`MIDIEvent[
+               12, "NoteOff", "Note" -> 75, "Channel" -> 9, "Velocity" -> 0], 
+               Sound`MIDIEvent[
+               48, "NoteOn", "Note" -> 75, "Channel" -> 9, "Velocity" -> 127], 
+               Sound`MIDIEvent[
+               60, "NoteOff", "Note" -> 75, "Channel" -> 9, "Velocity" -> 0], 
+               Sound`MIDIEvent[
+               84, "NoteOn", "Note" -> 75, "Channel" -> 9, "Velocity" -> 127], 
+               Sound`MIDIEvent[
+               96, "NoteOff", "Note" -> 75, "Channel" -> 9, "Velocity" -> 0], 
+               Sound`MIDIEvent[
+               120, "NoteOn", "Note" -> 75, "Channel" -> 9, "Velocity" -> 
+                127], 
+               Sound`MIDIEvent[
+               132, "NoteOff", "Note" -> 75, "Channel" -> 9, "Velocity" -> 0], 
+               Sound`MIDIEvent[
+               168, "NoteOn", "Note" -> 75, "Channel" -> 9, "Velocity" -> 
+                127], 
+               Sound`MIDIEvent[
+               180, "NoteOff", "Note" -> 75, "Channel" -> 9, "Velocity" -> 
+                0]}]}, "DivisionType" -> "PPQ", "Resolution" -> 48]]; 
+         Sound`EmitSampledSound[None, "Preemptive"], 
+         FEPrivate`EmitSound[None, "Preemptive"]], Method -> "Preemptive", 
+       PassEventsDown -> Automatic, PassEventsUp -> True}]], 
+    TagBox[{
+      {RGBColor[0.9568627450980393, 0.9568627450980393, 0.9568627450980393], 
+       RectangleBox[{29, -158}, {53, -135}]}, 
+      {RGBColor[0.27450980392156865`, 0.5411764705882353, 0.796078431372549], 
+       RectangleBox[{35, -152}, {47, -141}], 
+       StyleBox[{},
+        Antialiasing->False]}},
+     EventHandlerTag[{"MouseClicked" :> If[True, Sound`EmitSampledSound[
+           SampledSoundList[{{0.}}, 8000], "Preemptive"]; Sound`StopMIDI[], 
+         FEPrivate`EmitSound[
+          SampledSoundList[{{0.}}, 8000], "Preemptive"]], Method -> 
+       "Preemptive", PassEventsDown -> Automatic, PassEventsUp -> True}]], 
+    {GrayLevel[0.75], 
+     StyleBox[LineBox[{{0, 0}, {360, 0}, {360, -164}, {0, -164}, {0, 0}}],
+      Antialiasing->False]}},
+   ContentSelectable->False,
+   ImageSize->250,
+   PlotRange->{{0, 360}, {-164, 0}},
+   PlotRangePadding->1],
+  Sound[{
+    SoundNote["Claves", 0.25], 
+    SoundNote[None, 0.25], 
+    SoundNote[None, 0.25], 
+    SoundNote[None, 0.25], 
+    SoundNote["Claves", 0.25], 
+    SoundNote[None, 0.25], 
+    SoundNote[None, 0.25], 
+    SoundNote["Claves", 0.25], 
+    SoundNote[None, 0.25], 
+    SoundNote[None, 0.25], 
+    SoundNote["Claves", 0.25], 
+    SoundNote[None, 0.25], 
+    SoundNote[None, 0.25], 
+    SoundNote[None, 0.25], 
+    SoundNote["Claves", 0.25], 
+    SoundNote[None, 0.25]}]]], "Output",
+ CellChangeTimes->{
+  3.707242517875101*^9, {3.7072425738327093`*^9, 3.707242596579132*^9}, 
+   3.707242629333667*^9, {3.7072426632740602`*^9, 3.707242674714761*^9}, {
+   3.707242711991074*^9, 3.707242717736719*^9}, 3.7072427485775623`*^9, {
+   3.707242784014509*^9, 3.7072428058618402`*^9}, {3.70724285085853*^9, 
+   3.707242878199082*^9}, {3.7072429402149963`*^9, 3.707242959037486*^9}, {
+   3.7072430707424793`*^9, 3.7072430857832613`*^9}},
+ CellLabel->
+  "Out[264]=",ExpressionUUID->"bed4fca9-8708-4310-9deb-ecee7749a0ac"]
+}, Open  ]],
+
+Cell["Invert:", "Direction",
+ CellChangeTimes->{{3.7056860922471857`*^9, 3.7056860957264357`*^9}, 
+   3.706975592765313*^9, {3.7069756502967*^9, 3.706975651832728*^9}, {
+   3.7072154008830976`*^9, 3.707215403609206*^9}, {3.7072156687407417`*^9, 
+   3.707215682595951*^9}, 3.7072157227731743`*^9, {3.707216105320341*^9, 
+   3.707216128702116*^9}, {3.7072168686897993`*^9, 3.707216878840744*^9}, {
+   3.707228471654294*^9, 3.7072284955344048`*^9}, {3.707228550453115*^9, 
+   3.707228559125637*^9}, {3.707228780249337*^9, 3.707228810457057*^9}, 
+   3.707228876319683*^9, {3.707230220177367*^9, 3.7072302214588547`*^9}, {
+   3.7072311126846046`*^9, 3.7072311501855907`*^9}, {3.7072326170332403`*^9, 
+   3.707232637816079*^9}, {3.707232732016879*^9, 3.707232740086121*^9}, {
+   3.707232819300695*^9, 3.70723284357952*^9}, {3.707232960674038*^9, 
+   3.707232964130587*^9}, {3.7072347691540422`*^9, 3.70723479325135*^9}, {
+   3.707236138587284*^9, 3.707236152091457*^9}, {3.707237032836235*^9, 
+   3.7072370427394047`*^9}, {3.707241312869458*^9, 3.707241315939962*^9}, {
+   3.707241377148425*^9, 3.707241390818695*^9}, 3.7072414658812857`*^9, {
+   3.7072415318493967`*^9, 3.70724153354426*^9}, {3.707241571728113*^9, 
+   3.707241598696231*^9}, {3.707241758790903*^9, 
+   3.707241762116967*^9}},ExpressionUUID->"1ecb7f73-bc31-4e7e-82f3-\
+1ae96634b5da"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"ArrayPlot", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", "-", "clave"}], "}"}], ",", " ", 
+   RowBox[{"Mesh", "\[Rule]", "All"}], ",", " ", 
+   RowBox[{"PlotLabel", "\[Rule]", "\"\<1 - clave\>\""}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"sonifyRhythm", "[", 
+  RowBox[{"\"\<Claves\>\"", ",", " ", 
+   RowBox[{"1", "-", "clave"}], ",", " ", "240.0"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.707241902243902*^9, 3.707241954723051*^9}, {
+  3.707243090430725*^9, 3.707243119581554*^9}},
+ CellLabel->
+  "In[267]:=",ExpressionUUID->"09c2a363-1924-4358-b32f-3a0cdb304b4f"],
+
+Cell[BoxData[
+ GraphicsBox[{
+   RasterBox[{{1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0}}, {{0, 0}, {16,
+     1}}, {0, 1}], {
+    {GrayLevel[
+      NCache[-1 + GoldenRatio, 0.6180339887498949]], 
+     StyleBox[LineBox[{{{0, 1}, {16, 1}}, {{0, 0}, {16, 0}}}],
+      Antialiasing->False]}, 
+    {GrayLevel[
+      NCache[-1 + GoldenRatio, 0.6180339887498949]], 
+     StyleBox[
+      LineBox[{{{0, 0}, {0, 1}}, {{1, 0}, {1, 1}}, {{2, 0}, {2, 1}}, {{3, 
+       0}, {3, 1}}, {{4, 0}, {4, 1}}, {{5, 0}, {5, 1}}, {{6, 0}, {6, 1}}, {{7,
+        0}, {7, 1}}, {{8, 0}, {8, 1}}, {{9, 0}, {9, 1}}, {{10, 0}, {10, 
+       1}}, {{11, 0}, {11, 1}}, {{12, 0}, {12, 1}}, {{13, 0}, {13, 1}}, {{14, 
+       0}, {14, 1}}, {{15, 0}, {15, 1}}, {{16, 0}, {16, 1}}}],
+      Antialiasing->False]}}},
+  Frame->False,
+  FrameLabel->{None, None},
+  FrameTicks->{{None, None}, {None, None}},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  Method->{
+   "DefaultBoundaryStyle" -> Automatic, "DefaultPlotStyle" -> Automatic},
+  PlotLabel->FormBox["\"1 - clave\"", TraditionalForm]]], "Output",
+ CellChangeTimes->{{3.707241918856997*^9, 3.7072419561397457`*^9}, {
+  3.707243114988055*^9, 3.707243119870203*^9}},
+ CellLabel->
+  "Out[267]=",ExpressionUUID->"79550740-c9e6-4cec-a2fd-ac31994f4493"],
+
+Cell[BoxData[
+ InterpretationBox[
+  GraphicsBox[{
+    {RGBColor[0.9568627450980393, 0.9568627450980393, 0.9568627450980393], 
+     RectangleBox[{0, 0}, {360, -164}]}, {InsetBox[
+      GraphicsBox[
+       {RGBColor[0.5, 0, 0.5], 
+        StyleBox[{
+          RectangleBox[{0.25, 0.610558394599415}, \
+{0.4875, 0.6224631565041769}], 
+          RectangleBox[{0.5, 0.610558394599415}, \
+{0.7375, 0.6224631565041769}], 
+          RectangleBox[{1., 0.610558394599415}, {1.2375, 0.6224631565041769}],
+           RectangleBox[{1.25, 0.610558394599415}, \
+{1.4875, 0.6224631565041769}], 
+          RectangleBox[{1.75, 0.610558394599415}, \
+{1.9875, 0.6224631565041769}], 
+          RectangleBox[{2., 0.610558394599415}, {2.2375, 0.6224631565041769}],
+           RectangleBox[{2.25, 0.610558394599415}, \
+{2.4875, 0.6224631565041769}], 
+          RectangleBox[{2.75, 0.610558394599415}, \
+{2.9875, 0.6224631565041769}], 
+          RectangleBox[{3.25, 0.610558394599415}, \
+{3.4875, 0.6224631565041769}], 
+          RectangleBox[{3.5, 0.610558394599415}, \
+{3.7375, 0.6224631565041769}], 
+          RectangleBox[{3.75, 0.610558394599415}, \
+{3.9875, 0.6224631565041769}]},
+         Antialiasing->True]},
+       AspectRatio->NCache[
+         Rational[6, 35], 0.17142857142857143`],
+       Background->GrayLevel[1],
+       Frame->True,
+       FrameStyle->GrayLevel[0.75],
+       FrameTicks->False,
+       ImagePadding->None,
+       PlotRange->{All, All},
+       PlotRangePadding->{Automatic, 0.05}], {180, -35}, 
+      ImageScaled[{0.5, 0.5}], {350, 60},
+      Background->RGBColor[
+       0.9568627450980393, 0.9568627450980393, 0.9568627450980393]], InsetBox[
+      GraphicsBox[
+       {GrayLevel[0.6], RectangleBox[{0, 0}]},
+       AspectRatio->NCache[
+         Rational[6, 35], 0.17142857142857143`],
+       Background->GrayLevel[1],
+       Frame->True,
+       FrameStyle->GrayLevel[0.75],
+       FrameTicks->False,
+       ImagePadding->None], {180, -100}, ImageScaled[{0.5, 0.5}], {350, 60},
+      Background->RGBColor[
+       0.9568627450980393, 0.9568627450980393, 0.9568627450980393]]}, InsetBox[
+     StyleBox[
+      TemplateBox[{
+       StyleBox[
+        "\" | \"", FontSize -> 14, FontColor -> 
+         RGBColor[0.5098039215686274, 0.5098039215686274, 0.5098039215686274],
+          StripOnInput -> False],StyleBox[
+         TemplateBox[{"\"4\"", "\" s\""}, "RowDefault"], FontColor -> 
+         RGBColor[0.5098039215686274, 0.5098039215686274, 0.5098039215686274],
+          StripOnInput -> False]},
+       "RowWithSeparator"], "DialogStyle",
+      StripOnInput->False], {355, -159}, Scaled[{1, 0}]], 
+    TagBox[{
+      {RGBColor[0.9568627450980393, 0.9568627450980393, 0.9568627450980393], 
+       RectangleBox[{5, -158}, {29, -135}]}, 
+      {RGBColor[0.27450980392156865`, 0.5411764705882353, 0.796078431372549], 
+       PolygonBox[
+        NCache[{{11, -157}, {11, -136}, {20., Rational[-293, 2]}, {
+          11, -157}}, {{11, -157}, {11, -136}, {20., -146.5}, {11, -157}}]], 
+       StyleBox[{},
+        Antialiasing->False]}},
+     EventHandlerTag[{"MouseClicked" :> If[True, Sound`EmitMIDI[
+           Sound`MIDISequence[{
+             Sound`MIDITrack[{
+               Sound`MIDIEvent[0, "SetTempo", "Tempo" -> 1000000], 
+               Sound`MIDIEvent[
+               0, "ProgramCommand", "Channel" -> 9, "Value" -> 0], 
+               Sound`MIDIEvent[
+               12, "NoteOn", "Note" -> 75, "Channel" -> 9, "Velocity" -> 127], 
+               Sound`MIDIEvent[
+               24, "NoteOff", "Note" -> 75, "Channel" -> 9, "Velocity" -> 0], 
+               Sound`MIDIEvent[
+               24, "NoteOn", "Note" -> 75, "Channel" -> 9, "Velocity" -> 127], 
+               Sound`MIDIEvent[
+               36, "NoteOff", "Note" -> 75, "Channel" -> 9, "Velocity" -> 0], 
+               Sound`MIDIEvent[
+               48, "NoteOn", "Note" -> 75, "Channel" -> 9, "Velocity" -> 127], 
+               Sound`MIDIEvent[
+               60, "NoteOff", "Note" -> 75, "Channel" -> 9, "Velocity" -> 0], 
+               Sound`MIDIEvent[
+               60, "NoteOn", "Note" -> 75, "Channel" -> 9, "Velocity" -> 127], 
+               Sound`MIDIEvent[
+               72, "NoteOff", "Note" -> 75, "Channel" -> 9, "Velocity" -> 0], 
+               Sound`MIDIEvent[
+               84, "NoteOn", "Note" -> 75, "Channel" -> 9, "Velocity" -> 127], 
+               Sound`MIDIEvent[
+               96, "NoteOff", "Note" -> 75, "Channel" -> 9, "Velocity" -> 0], 
+               Sound`MIDIEvent[
+               96, "NoteOn", "Note" -> 75, "Channel" -> 9, "Velocity" -> 127], 
+               Sound`MIDIEvent[
+               108, "NoteOff", "Note" -> 75, "Channel" -> 9, "Velocity" -> 0], 
+               Sound`MIDIEvent[
+               108, "NoteOn", "Note" -> 75, "Channel" -> 9, "Velocity" -> 
+                127], 
+               Sound`MIDIEvent[
+               120, "NoteOff", "Note" -> 75, "Channel" -> 9, "Velocity" -> 0], 
+               Sound`MIDIEvent[
+               132, "NoteOn", "Note" -> 75, "Channel" -> 9, "Velocity" -> 
+                127], 
+               Sound`MIDIEvent[
+               144, "NoteOff", "Note" -> 75, "Channel" -> 9, "Velocity" -> 0], 
+               Sound`MIDIEvent[
+               156, "NoteOn", "Note" -> 75, "Channel" -> 9, "Velocity" -> 
+                127], 
+               Sound`MIDIEvent[
+               168, "NoteOff", "Note" -> 75, "Channel" -> 9, "Velocity" -> 0], 
+               Sound`MIDIEvent[
+               168, "NoteOn", "Note" -> 75, "Channel" -> 9, "Velocity" -> 
+                127], 
+               Sound`MIDIEvent[
+               180, "NoteOff", "Note" -> 75, "Channel" -> 9, "Velocity" -> 0], 
+               Sound`MIDIEvent[
+               180, "NoteOn", "Note" -> 75, "Channel" -> 9, "Velocity" -> 
+                127], 
+               Sound`MIDIEvent[
+               192, "NoteOff", "Note" -> 75, "Channel" -> 9, "Velocity" -> 
+                0]}]}, "DivisionType" -> "PPQ", "Resolution" -> 48]]; 
+         Sound`EmitSampledSound[None, "Preemptive"], 
+         FEPrivate`EmitSound[None, "Preemptive"]], Method -> "Preemptive", 
+       PassEventsDown -> Automatic, PassEventsUp -> True}]], 
+    TagBox[{
+      {RGBColor[0.9568627450980393, 0.9568627450980393, 0.9568627450980393], 
+       RectangleBox[{29, -158}, {53, -135}]}, 
+      {RGBColor[0.27450980392156865`, 0.5411764705882353, 0.796078431372549], 
+       RectangleBox[{35, -152}, {47, -141}], 
+       StyleBox[{},
+        Antialiasing->False]}},
+     EventHandlerTag[{"MouseClicked" :> If[True, Sound`EmitSampledSound[
+           SampledSoundList[{{0.}}, 8000], "Preemptive"]; Sound`StopMIDI[], 
+         FEPrivate`EmitSound[
+          SampledSoundList[{{0.}}, 8000], "Preemptive"]], Method -> 
+       "Preemptive", PassEventsDown -> Automatic, PassEventsUp -> True}]], 
+    {GrayLevel[0.75], 
+     StyleBox[LineBox[{{0, 0}, {360, 0}, {360, -164}, {0, -164}, {0, 0}}],
+      Antialiasing->False]}},
+   ContentSelectable->False,
+   ImageSize->250,
+   PlotRange->{{0, 360}, {-164, 0}},
+   PlotRangePadding->1],
+  Sound[{
+    SoundNote[None, 0.25], 
+    SoundNote["Claves", 0.25], 
+    SoundNote["Claves", 0.25], 
+    SoundNote[None, 0.25], 
+    SoundNote["Claves", 0.25], 
+    SoundNote["Claves", 0.25], 
+    SoundNote[None, 0.25], 
+    SoundNote["Claves", 0.25], 
+    SoundNote["Claves", 0.25], 
+    SoundNote["Claves", 0.25], 
+    SoundNote[None, 0.25], 
+    SoundNote["Claves", 0.25], 
+    SoundNote[None, 0.25], 
+    SoundNote["Claves", 0.25], 
+    SoundNote["Claves", 0.25], 
+    SoundNote["Claves", 0.25]}]]], "Output",
+ CellChangeTimes->{{3.707241918856997*^9, 3.7072419561397457`*^9}, {
+  3.707243114988055*^9, 3.707243119948082*^9}},
+ CellLabel->
+  "Out[268]=",ExpressionUUID->"29513188-6954-4589-abfb-52fcacb1f2a3"]
+}, Open  ]],
+
+Cell["\<\
+In fact, these are common rules that musicians and composers use to change up \
+rhythms in real music.
+
+We could get even fancier by generating a new rhythm after each playthrough \
+by using 1-D cellular automata rules.\
+\>", "Text",
+ CellChangeTimes->{{3.7072414348979063`*^9, 3.707241461034096*^9}, {
+  3.707241728510192*^9, 3.707241754644443*^9}, {3.707241801332922*^9, 
+  3.707241801859694*^9}, {3.707241975960855*^9, 
+  3.707242029753222*^9}},ExpressionUUID->"37d64f9c-5d22-4054-b6c6-\
+b54f873e3f4c"],
+
+Cell["\<\
+Using rule 30 (the top row is the first generation, the 2nd row the second \
+generation, and so forth):\
+\>", "Direction",
+ CellChangeTimes->{{3.7056860922471857`*^9, 3.7056860957264357`*^9}, 
+   3.706975592765313*^9, {3.7069756502967*^9, 3.706975651832728*^9}, {
+   3.7072154008830976`*^9, 3.707215403609206*^9}, {3.7072156687407417`*^9, 
+   3.707215682595951*^9}, 3.7072157227731743`*^9, {3.707216105320341*^9, 
+   3.707216128702116*^9}, {3.7072168686897993`*^9, 3.707216878840744*^9}, {
+   3.707228471654294*^9, 3.7072284955344048`*^9}, {3.707228550453115*^9, 
+   3.707228559125637*^9}, {3.707228780249337*^9, 3.707228810457057*^9}, 
+   3.707228876319683*^9, {3.707230220177367*^9, 3.7072302214588547`*^9}, {
+   3.7072311126846046`*^9, 3.7072311501855907`*^9}, {3.7072326170332403`*^9, 
+   3.707232637816079*^9}, {3.707232732016879*^9, 3.707232740086121*^9}, {
+   3.707232819300695*^9, 3.70723284357952*^9}, {3.707232960674038*^9, 
+   3.707232964130587*^9}, {3.7072347691540422`*^9, 3.70723479325135*^9}, {
+   3.707236138587284*^9, 3.707236152091457*^9}, {3.707237032836235*^9, 
+   3.7072370427394047`*^9}, {3.707241312869458*^9, 3.707241315939962*^9}, {
+   3.707241377148425*^9, 3.707241390818695*^9}, 3.7072414658812857`*^9, {
+   3.7072415318493967`*^9, 3.70724153354426*^9}, {3.707241571728113*^9, 
+   3.707241598696231*^9}, {3.707241758790903*^9, 3.707241762116967*^9}, {
+   3.707242030991626*^9, 3.707242056976462*^9}, {3.707242091814452*^9, 
+   3.707242107110773*^9}},ExpressionUUID->"24b52442-1a83-4275-8590-\
+fd83199298b5"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"ArrayPlot", "[", 
+  RowBox[{
+   RowBox[{"CellularAutomaton", "[", 
+    RowBox[{"30", ",", " ", "clave", ",", " ", "2"}], "]"}], ",", " ", 
+   RowBox[{"Mesh", "\[Rule]", "All"}]}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"sonifyRhythm", "[", 
+    RowBox[{"\"\<Claves\>\"", ",", " ", "#", ",", " ", "240"}], "]"}], "&"}], 
+  " ", "/@", " ", 
+  RowBox[{"CellularAutomaton", "[", 
+   RowBox[{"30", ",", " ", "clave", ",", " ", "2"}], "]"}]}]}], "Input",
+ CellChangeTimes->{{3.7072420639214573`*^9, 3.707242074559121*^9}, {
+  3.707242112496624*^9, 3.7072421296633368`*^9}, {3.7072431875659657`*^9, 
+  3.7072432975257473`*^9}, {3.7072433412933493`*^9, 3.707243342297975*^9}},
+ CellLabel->
+  "In[283]:=",ExpressionUUID->"b2f679d6-a468-4521-ba19-b816c0877719"],
+
+Cell[BoxData[
+ GraphicsBox[{
+   RasterBox[{{1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0}, {0, 0, 0, 0, 
+    0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0}, {0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 
+    0, 1, 1, 1}}, {{0, 0}, {16, 3}}, {0, 1}], {
+    {GrayLevel[
+      NCache[-1 + GoldenRatio, 0.6180339887498949]], 
+     StyleBox[
+      LineBox[{{{0, 3}, {16, 3}}, {{0, 2}, {16, 2}}, {{0, 1}, {16, 1}}, {{0, 
+       0}, {16, 0}}}],
+      Antialiasing->False]}, 
+    {GrayLevel[
+      NCache[-1 + GoldenRatio, 0.6180339887498949]], 
+     StyleBox[
+      LineBox[{{{0, 0}, {0, 3}}, {{1, 0}, {1, 3}}, {{2, 0}, {2, 3}}, {{3, 
+       0}, {3, 3}}, {{4, 0}, {4, 3}}, {{5, 0}, {5, 3}}, {{6, 0}, {6, 3}}, {{7,
+        0}, {7, 3}}, {{8, 0}, {8, 3}}, {{9, 0}, {9, 3}}, {{10, 0}, {10, 
+       3}}, {{11, 0}, {11, 3}}, {{12, 0}, {12, 3}}, {{13, 0}, {13, 3}}, {{14, 
+       0}, {14, 3}}, {{15, 0}, {15, 3}}, {{16, 0}, {16, 3}}}],
+      Antialiasing->False]}}},
+  Frame->False,
+  FrameLabel->{None, None},
+  FrameTicks->{{None, None}, {None, None}},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  Method->{
+   "DefaultBoundaryStyle" -> Automatic, "DefaultPlotStyle" -> 
+    Automatic}]], "Output",
+ CellChangeTimes->{
+  3.707242075040052*^9, {3.707242110409346*^9, 3.707242130018157*^9}, 
+   3.707243201055081*^9, {3.707243241269309*^9, 3.707243297805602*^9}, 
+   3.707243346043434*^9},
+ CellLabel->
+  "Out[283]=",ExpressionUUID->"bf1a4380-b986-4b0c-90db-bd0c224f7eb3"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   InterpretationBox[
+    GraphicsBox[{
+      {RGBColor[0.9568627450980393, 0.9568627450980393, 0.9568627450980393], 
+       RectangleBox[{0, 0}, {360, -164}]}, {InsetBox[
+        GraphicsBox[
+         {RGBColor[0.5, 0, 0.5], 
+          
+          StyleBox[{
+            RectangleBox[{0., 0.610558394599415}, \
+{0.2375, 0.6224631565041769}], 
+            RectangleBox[{0.75, 0.610558394599415}, \
+{0.9875, 0.6224631565041769}], 
+            RectangleBox[{1.5, 0.610558394599415}, \
+{1.7375, 0.6224631565041769}], 
+            RectangleBox[{2.5, 0.610558394599415}, \
+{2.7375, 0.6224631565041769}], 
+            RectangleBox[{3., 0.610558394599415}, \
+{3.2375, 0.6224631565041769}]},
+           Antialiasing->True]},
+         AspectRatio->NCache[
+           Rational[6, 35], 0.17142857142857143`],
+         Background->GrayLevel[1],
+         Frame->True,
+         FrameStyle->GrayLevel[0.75],
+         FrameTicks->False,
+         ImagePadding->None,
+         PlotRange->{All, All},
+         PlotRangePadding->{Automatic, 0.05}], {180, -35}, 
+        ImageScaled[{0.5, 0.5}], {350, 60},
+        Background->RGBColor[
+         0.9568627450980393, 0.9568627450980393, 0.9568627450980393]], 
+       InsetBox[
+        GraphicsBox[
+         {GrayLevel[0.6], RectangleBox[{0, 0}]},
+         AspectRatio->NCache[
+           Rational[6, 35], 0.17142857142857143`],
+         Background->GrayLevel[1],
+         Frame->True,
+         FrameStyle->GrayLevel[0.75],
+         FrameTicks->False,
+         ImagePadding->None], {180, -100}, ImageScaled[{0.5, 0.5}], {350, 60},
+        Background->RGBColor[
+         0.9568627450980393, 0.9568627450980393, 0.9568627450980393]]}, 
+      InsetBox[
+       StyleBox[
+        TemplateBox[{
+         StyleBox[
+          "\" | \"", FontSize -> 14, FontColor -> 
+           RGBColor[
+            0.5098039215686274, 0.5098039215686274, 0.5098039215686274], 
+           StripOnInput -> False],StyleBox[
+           TemplateBox[{"\"3.25\"", "\" s\""}, "RowDefault"], FontColor -> 
+           RGBColor[
+            0.5098039215686274, 0.5098039215686274, 0.5098039215686274], 
+           StripOnInput -> False]},
+         "RowWithSeparator"], "DialogStyle",
+        StripOnInput->False], {355, -159}, Scaled[{1, 0}]], 
+      TagBox[{
+        {RGBColor[0.9568627450980393, 0.9568627450980393, 0.9568627450980393],
+          RectangleBox[{5, -158}, {29, -135}]}, 
+        {RGBColor[
+         0.27450980392156865`, 0.5411764705882353, 0.796078431372549], 
+         PolygonBox[
+          NCache[{{11, -157}, {11, -136}, {20., Rational[-293, 2]}, {
+            11, -157}}, {{11, -157}, {11, -136}, {20., -146.5}, {11, -157}}]], 
+         StyleBox[{},
+          Antialiasing->False]}},
+       EventHandlerTag[{"MouseClicked" :> If[True, Sound`EmitMIDI[
+             Sound`MIDISequence[{
+               Sound`MIDITrack[{
+                 Sound`MIDIEvent[0, "SetTempo", "Tempo" -> 1000000], 
+                 Sound`MIDIEvent[
+                 0, "ProgramCommand", "Channel" -> 9, "Value" -> 0], 
+                 Sound`MIDIEvent[
+                 0, "NoteOn", "Note" -> 75, "Channel" -> 9, "Velocity" -> 
+                  127], 
+                 Sound`MIDIEvent[
+                 12, "NoteOff", "Note" -> 75, "Channel" -> 9, "Velocity" -> 
+                  0], 
+                 Sound`MIDIEvent[
+                 36, "NoteOn", "Note" -> 75, "Channel" -> 9, "Velocity" -> 
+                  127], 
+                 Sound`MIDIEvent[
+                 48, "NoteOff", "Note" -> 75, "Channel" -> 9, "Velocity" -> 
+                  0], 
+                 Sound`MIDIEvent[
+                 72, "NoteOn", "Note" -> 75, "Channel" -> 9, "Velocity" -> 
+                  127], 
+                 Sound`MIDIEvent[
+                 84, "NoteOff", "Note" -> 75, "Channel" -> 9, "Velocity" -> 
+                  0], 
+                 Sound`MIDIEvent[
+                 120, "NoteOn", "Note" -> 75, "Channel" -> 9, "Velocity" -> 
+                  127], 
+                 Sound`MIDIEvent[
+                 132, "NoteOff", "Note" -> 75, "Channel" -> 9, "Velocity" -> 
+                  0], 
+                 Sound`MIDIEvent[
+                 144, "NoteOn", "Note" -> 75, "Channel" -> 9, "Velocity" -> 
+                  127], 
+                 Sound`MIDIEvent[
+                 156, "NoteOff", "Note" -> 75, "Channel" -> 9, "Velocity" -> 
+                  0]}]}, "DivisionType" -> "PPQ", "Resolution" -> 48]]; 
+           Sound`EmitSampledSound[None, "Preemptive"], 
+           FEPrivate`EmitSound[None, "Preemptive"]], Method -> "Preemptive", 
+         PassEventsDown -> Automatic, PassEventsUp -> True}]], 
+      TagBox[{
+        {RGBColor[0.9568627450980393, 0.9568627450980393, 0.9568627450980393],
+          RectangleBox[{29, -158}, {53, -135}]}, 
+        {RGBColor[
+         0.27450980392156865`, 0.5411764705882353, 0.796078431372549], 
+         RectangleBox[{35, -152}, {47, -141}], 
+         StyleBox[{},
+          Antialiasing->False]}},
+       EventHandlerTag[{"MouseClicked" :> If[True, Sound`EmitSampledSound[
+             SampledSoundList[{{0.}}, 8000], "Preemptive"]; Sound`StopMIDI[], 
+           FEPrivate`EmitSound[
+            SampledSoundList[{{0.}}, 8000], "Preemptive"]], Method -> 
+         "Preemptive", PassEventsDown -> Automatic, PassEventsUp -> True}]], 
+      {GrayLevel[0.75], 
+       StyleBox[LineBox[{{0, 0}, {360, 0}, {360, -164}, {0, -164}, {0, 0}}],
+        Antialiasing->False]}},
+     ContentSelectable->False,
+     ImageSize->250,
+     PlotRange->{{0, 360}, {-164, 0}},
+     PlotRangePadding->1],
+    Sound[{
+      SoundNote["Claves", 
+       Rational[1, 4]], 
+      SoundNote[None, 
+       Rational[1, 4]], 
+      SoundNote[None, 
+       Rational[1, 4]], 
+      SoundNote["Claves", 
+       Rational[1, 4]], 
+      SoundNote[None, 
+       Rational[1, 4]], 
+      SoundNote[None, 
+       Rational[1, 4]], 
+      SoundNote["Claves", 
+       Rational[1, 4]], 
+      SoundNote[None, 
+       Rational[1, 4]], 
+      SoundNote[None, 
+       Rational[1, 4]], 
+      SoundNote[None, 
+       Rational[1, 4]], 
+      SoundNote["Claves", 
+       Rational[1, 4]], 
+      SoundNote[None, 
+       Rational[1, 4]], 
+      SoundNote["Claves", 
+       Rational[1, 4]], 
+      SoundNote[None, 
+       Rational[1, 4]], 
+      SoundNote[None, 
+       Rational[1, 4]], 
+      SoundNote[None, 
+       Rational[1, 4]]}]], ",", 
+   InterpretationBox[
+    GraphicsBox[{
+      {RGBColor[0.9568627450980393, 0.9568627450980393, 0.9568627450980393], 
+       RectangleBox[{0, 0}, {360, -164}]}, {InsetBox[
+        GraphicsBox[
+         {RGBColor[0.5, 0, 0.5], 
+          
+          StyleBox[{
+            RectangleBox[{0., 0.610558394599415}, \
+{0.2375, 0.6224631565041769}], 
+            RectangleBox[{0.25, 0.610558394599415}, \
+{0.4875, 0.6224631565041769}], 
+            RectangleBox[{0.5, 0.610558394599415}, \
+{0.7375, 0.6224631565041769}], 
+            RectangleBox[{0.75, 0.610558394599415}, \
+{0.9875, 0.6224631565041769}], 
+            RectangleBox[{1., 0.610558394599415}, \
+{1.2375, 0.6224631565041769}], 
+            RectangleBox[{1.25, 0.610558394599415}, \
+{1.4875, 0.6224631565041769}], 
+            RectangleBox[{1.5, 0.610558394599415}, \
+{1.7375, 0.6224631565041769}], 
+            RectangleBox[{1.75, 0.610558394599415}, \
+{1.9875, 0.6224631565041769}], 
+            RectangleBox[{2.25, 0.610558394599415}, \
+{2.4875, 0.6224631565041769}], 
+            RectangleBox[{2.5, 0.610558394599415}, \
+{2.7375, 0.6224631565041769}], 
+            RectangleBox[{3., 0.610558394599415}, \
+{3.2375, 0.6224631565041769}], 
+            RectangleBox[{3.25, 0.610558394599415}, \
+{3.4875, 0.6224631565041769}], 
+            RectangleBox[{3.75, 0.610558394599415}, \
+{3.9875, 0.6224631565041769}]},
+           Antialiasing->True]},
+         AspectRatio->NCache[
+           Rational[6, 35], 0.17142857142857143`],
+         Background->GrayLevel[1],
+         Frame->True,
+         FrameStyle->GrayLevel[0.75],
+         FrameTicks->False,
+         ImagePadding->None,
+         PlotRange->{All, All},
+         PlotRangePadding->{Automatic, 0.05}], {180, -35}, 
+        ImageScaled[{0.5, 0.5}], {350, 60},
+        Background->RGBColor[
+         0.9568627450980393, 0.9568627450980393, 0.9568627450980393]], 
+       InsetBox[
+        GraphicsBox[
+         {GrayLevel[0.6], RectangleBox[{0, 0}]},
+         AspectRatio->NCache[
+           Rational[6, 35], 0.17142857142857143`],
+         Background->GrayLevel[1],
+         Frame->True,
+         FrameStyle->GrayLevel[0.75],
+         FrameTicks->False,
+         ImagePadding->None], {180, -100}, ImageScaled[{0.5, 0.5}], {350, 60},
+        Background->RGBColor[
+         0.9568627450980393, 0.9568627450980393, 0.9568627450980393]]}, 
+      InsetBox[
+       StyleBox[
+        TemplateBox[{
+         StyleBox[
+          "\" | \"", FontSize -> 14, FontColor -> 
+           RGBColor[
+            0.5098039215686274, 0.5098039215686274, 0.5098039215686274], 
+           StripOnInput -> False],StyleBox[
+           TemplateBox[{"\"4\"", "\" s\""}, "RowDefault"], FontColor -> 
+           RGBColor[
+            0.5098039215686274, 0.5098039215686274, 0.5098039215686274], 
+           StripOnInput -> False]},
+         "RowWithSeparator"], "DialogStyle",
+        StripOnInput->False], {355, -159}, Scaled[{1, 0}]], 
+      TagBox[{
+        {RGBColor[0.9568627450980393, 0.9568627450980393, 0.9568627450980393],
+          RectangleBox[{5, -158}, {29, -135}]}, 
+        {RGBColor[
+         0.27450980392156865`, 0.5411764705882353, 0.796078431372549], 
+         PolygonBox[
+          NCache[{{11, -157}, {11, -136}, {20., Rational[-293, 2]}, {
+            11, -157}}, {{11, -157}, {11, -136}, {20., -146.5}, {11, -157}}]], 
+         StyleBox[{},
+          Antialiasing->False]}},
+       EventHandlerTag[{"MouseClicked" :> If[True, Sound`EmitMIDI[
+             Sound`MIDISequence[{
+               Sound`MIDITrack[{
+                 Sound`MIDIEvent[0, "SetTempo", "Tempo" -> 1000000], 
+                 Sound`MIDIEvent[
+                 0, "ProgramCommand", "Channel" -> 9, "Value" -> 0], 
+                 Sound`MIDIEvent[
+                 0, "NoteOn", "Note" -> 75, "Channel" -> 9, "Velocity" -> 
+                  127], 
+                 Sound`MIDIEvent[
+                 12, "NoteOff", "Note" -> 75, "Channel" -> 9, "Velocity" -> 
+                  0], 
+                 Sound`MIDIEvent[
+                 12, "NoteOn", "Note" -> 75, "Channel" -> 9, "Velocity" -> 
+                  127], 
+                 Sound`MIDIEvent[
+                 24, "NoteOff", "Note" -> 75, "Channel" -> 9, "Velocity" -> 
+                  0], 
+                 Sound`MIDIEvent[
+                 24, "NoteOn", "Note" -> 75, "Channel" -> 9, "Velocity" -> 
+                  127], 
+                 Sound`MIDIEvent[
+                 36, "NoteOff", "Note" -> 75, "Channel" -> 9, "Velocity" -> 
+                  0], 
+                 Sound`MIDIEvent[
+                 36, "NoteOn", "Note" -> 75, "Channel" -> 9, "Velocity" -> 
+                  127], 
+                 Sound`MIDIEvent[
+                 48, "NoteOff", "Note" -> 75, "Channel" -> 9, "Velocity" -> 
+                  0], 
+                 Sound`MIDIEvent[
+                 48, "NoteOn", "Note" -> 75, "Channel" -> 9, "Velocity" -> 
+                  127], 
+                 Sound`MIDIEvent[
+                 60, "NoteOff", "Note" -> 75, "Channel" -> 9, "Velocity" -> 
+                  0], 
+                 Sound`MIDIEvent[
+                 60, "NoteOn", "Note" -> 75, "Channel" -> 9, "Velocity" -> 
+                  127], 
+                 Sound`MIDIEvent[
+                 72, "NoteOff", "Note" -> 75, "Channel" -> 9, "Velocity" -> 
+                  0], 
+                 Sound`MIDIEvent[
+                 72, "NoteOn", "Note" -> 75, "Channel" -> 9, "Velocity" -> 
+                  127], 
+                 Sound`MIDIEvent[
+                 84, "NoteOff", "Note" -> 75, "Channel" -> 9, "Velocity" -> 
+                  0], 
+                 Sound`MIDIEvent[
+                 84, "NoteOn", "Note" -> 75, "Channel" -> 9, "Velocity" -> 
+                  127], 
+                 Sound`MIDIEvent[
+                 96, "NoteOff", "Note" -> 75, "Channel" -> 9, "Velocity" -> 
+                  0], 
+                 Sound`MIDIEvent[
+                 108, "NoteOn", "Note" -> 75, "Channel" -> 9, "Velocity" -> 
+                  127], 
+                 Sound`MIDIEvent[
+                 120, "NoteOff", "Note" -> 75, "Channel" -> 9, "Velocity" -> 
+                  0], 
+                 Sound`MIDIEvent[
+                 120, "NoteOn", "Note" -> 75, "Channel" -> 9, "Velocity" -> 
+                  127], 
+                 Sound`MIDIEvent[
+                 132, "NoteOff", "Note" -> 75, "Channel" -> 9, "Velocity" -> 
+                  0], 
+                 Sound`MIDIEvent[
+                 144, "NoteOn", "Note" -> 75, "Channel" -> 9, "Velocity" -> 
+                  127], 
+                 Sound`MIDIEvent[
+                 156, "NoteOff", "Note" -> 75, "Channel" -> 9, "Velocity" -> 
+                  0], 
+                 Sound`MIDIEvent[
+                 156, "NoteOn", "Note" -> 75, "Channel" -> 9, "Velocity" -> 
+                  127], 
+                 Sound`MIDIEvent[
+                 168, "NoteOff", "Note" -> 75, "Channel" -> 9, "Velocity" -> 
+                  0], 
+                 Sound`MIDIEvent[
+                 180, "NoteOn", "Note" -> 75, "Channel" -> 9, "Velocity" -> 
+                  127], 
+                 Sound`MIDIEvent[
+                 192, "NoteOff", "Note" -> 75, "Channel" -> 9, "Velocity" -> 
+                  0]}]}, "DivisionType" -> "PPQ", "Resolution" -> 48]]; 
+           Sound`EmitSampledSound[None, "Preemptive"], 
+           FEPrivate`EmitSound[None, "Preemptive"]], Method -> "Preemptive", 
+         PassEventsDown -> Automatic, PassEventsUp -> True}]], 
+      TagBox[{
+        {RGBColor[0.9568627450980393, 0.9568627450980393, 0.9568627450980393],
+          RectangleBox[{29, -158}, {53, -135}]}, 
+        {RGBColor[
+         0.27450980392156865`, 0.5411764705882353, 0.796078431372549], 
+         RectangleBox[{35, -152}, {47, -141}], 
+         StyleBox[{},
+          Antialiasing->False]}},
+       EventHandlerTag[{"MouseClicked" :> If[True, Sound`EmitSampledSound[
+             SampledSoundList[{{0.}}, 8000], "Preemptive"]; Sound`StopMIDI[], 
+           FEPrivate`EmitSound[
+            SampledSoundList[{{0.}}, 8000], "Preemptive"]], Method -> 
+         "Preemptive", PassEventsDown -> Automatic, PassEventsUp -> True}]], 
+      {GrayLevel[0.75], 
+       StyleBox[LineBox[{{0, 0}, {360, 0}, {360, -164}, {0, -164}, {0, 0}}],
+        Antialiasing->False]}},
+     ContentSelectable->False,
+     ImageSize->250,
+     PlotRange->{{0, 360}, {-164, 0}},
+     PlotRangePadding->1],
+    Sound[{
+      SoundNote["Claves", 
+       Rational[1, 4]], 
+      SoundNote["Claves", 
+       Rational[1, 4]], 
+      SoundNote["Claves", 
+       Rational[1, 4]], 
+      SoundNote["Claves", 
+       Rational[1, 4]], 
+      SoundNote["Claves", 
+       Rational[1, 4]], 
+      SoundNote["Claves", 
+       Rational[1, 4]], 
+      SoundNote["Claves", 
+       Rational[1, 4]], 
+      SoundNote["Claves", 
+       Rational[1, 4]], 
+      SoundNote[None, 
+       Rational[1, 4]], 
+      SoundNote["Claves", 
+       Rational[1, 4]], 
+      SoundNote["Claves", 
+       Rational[1, 4]], 
+      SoundNote[None, 
+       Rational[1, 4]], 
+      SoundNote["Claves", 
+       Rational[1, 4]], 
+      SoundNote["Claves", 
+       Rational[1, 4]], 
+      SoundNote[None, 
+       Rational[1, 4]], 
+      SoundNote["Claves", 
+       Rational[1, 4]]}]], ",", 
+   InterpretationBox[
+    GraphicsBox[{
+      {RGBColor[0.9568627450980393, 0.9568627450980393, 0.9568627450980393], 
+       RectangleBox[{0, 0}, {360, -164}]}, {InsetBox[
+        GraphicsBox[
+         {RGBColor[0.5, 0, 0.5], 
+          
+          StyleBox[{
+            RectangleBox[{2.25, 0.610558394599415}, \
+{2.4875, 0.6224631565041769}], 
+            RectangleBox[{3., 0.610558394599415}, \
+{3.2375, 0.6224631565041769}], 
+            RectangleBox[{3.75, 0.610558394599415}, \
+{3.9875, 0.6224631565041769}]},
+           Antialiasing->True]},
+         AspectRatio->NCache[
+           Rational[6, 35], 0.17142857142857143`],
+         Background->GrayLevel[1],
+         Frame->True,
+         FrameStyle->GrayLevel[0.75],
+         FrameTicks->False,
+         ImagePadding->None,
+         PlotRange->{All, All},
+         PlotRangePadding->{Automatic, 0.05}], {180, -35}, 
+        ImageScaled[{0.5, 0.5}], {350, 60},
+        Background->RGBColor[
+         0.9568627450980393, 0.9568627450980393, 0.9568627450980393]], 
+       InsetBox[
+        GraphicsBox[
+         {GrayLevel[0.6], RectangleBox[{0, 0}]},
+         AspectRatio->NCache[
+           Rational[6, 35], 0.17142857142857143`],
+         Background->GrayLevel[1],
+         Frame->True,
+         FrameStyle->GrayLevel[0.75],
+         FrameTicks->False,
+         ImagePadding->None], {180, -100}, ImageScaled[{0.5, 0.5}], {350, 60},
+        Background->RGBColor[
+         0.9568627450980393, 0.9568627450980393, 0.9568627450980393]]}, 
+      InsetBox[
+       StyleBox[
+        TemplateBox[{
+         StyleBox[
+          "\" | \"", FontSize -> 14, FontColor -> 
+           RGBColor[
+            0.5098039215686274, 0.5098039215686274, 0.5098039215686274], 
+           StripOnInput -> False],StyleBox[
+           TemplateBox[{"\"4\"", "\" s\""}, "RowDefault"], FontColor -> 
+           RGBColor[
+            0.5098039215686274, 0.5098039215686274, 0.5098039215686274], 
+           StripOnInput -> False]},
+         "RowWithSeparator"], "DialogStyle",
+        StripOnInput->False], {355, -159}, Scaled[{1, 0}]], 
+      TagBox[{
+        {RGBColor[0.9568627450980393, 0.9568627450980393, 0.9568627450980393],
+          RectangleBox[{5, -158}, {29, -135}]}, 
+        {RGBColor[
+         0.27450980392156865`, 0.5411764705882353, 0.796078431372549], 
+         PolygonBox[
+          NCache[{{11, -157}, {11, -136}, {20., Rational[-293, 2]}, {
+            11, -157}}, {{11, -157}, {11, -136}, {20., -146.5}, {11, -157}}]], 
+         StyleBox[{},
+          Antialiasing->False]}},
+       EventHandlerTag[{"MouseClicked" :> If[True, Sound`EmitMIDI[
+             Sound`MIDISequence[{
+               Sound`MIDITrack[{
+                 Sound`MIDIEvent[0, "SetTempo", "Tempo" -> 1000000], 
+                 Sound`MIDIEvent[
+                 0, "ProgramCommand", "Channel" -> 9, "Value" -> 0], 
+                 Sound`MIDIEvent[
+                 108, "NoteOn", "Note" -> 75, "Channel" -> 9, "Velocity" -> 
+                  127], 
+                 Sound`MIDIEvent[
+                 120, "NoteOff", "Note" -> 75, "Channel" -> 9, "Velocity" -> 
+                  0], 
+                 Sound`MIDIEvent[
+                 144, "NoteOn", "Note" -> 75, "Channel" -> 9, "Velocity" -> 
+                  127], 
+                 Sound`MIDIEvent[
+                 156, "NoteOff", "Note" -> 75, "Channel" -> 9, "Velocity" -> 
+                  0], 
+                 Sound`MIDIEvent[
+                 180, "NoteOn", "Note" -> 75, "Channel" -> 9, "Velocity" -> 
+                  127], 
+                 Sound`MIDIEvent[
+                 192, "NoteOff", "Note" -> 75, "Channel" -> 9, "Velocity" -> 
+                  0]}]}, "DivisionType" -> "PPQ", "Resolution" -> 48]]; 
+           Sound`EmitSampledSound[None, "Preemptive"], 
+           FEPrivate`EmitSound[None, "Preemptive"]], Method -> "Preemptive", 
+         PassEventsDown -> Automatic, PassEventsUp -> True}]], 
+      TagBox[{
+        {RGBColor[0.9568627450980393, 0.9568627450980393, 0.9568627450980393],
+          RectangleBox[{29, -158}, {53, -135}]}, 
+        {RGBColor[
+         0.27450980392156865`, 0.5411764705882353, 0.796078431372549], 
+         RectangleBox[{35, -152}, {47, -141}], 
+         StyleBox[{},
+          Antialiasing->False]}},
+       EventHandlerTag[{"MouseClicked" :> If[True, Sound`EmitSampledSound[
+             SampledSoundList[{{0.}}, 8000], "Preemptive"]; Sound`StopMIDI[], 
+           FEPrivate`EmitSound[
+            SampledSoundList[{{0.}}, 8000], "Preemptive"]], Method -> 
+         "Preemptive", PassEventsDown -> Automatic, PassEventsUp -> True}]], 
+      {GrayLevel[0.75], 
+       StyleBox[LineBox[{{0, 0}, {360, 0}, {360, -164}, {0, -164}, {0, 0}}],
+        Antialiasing->False]}},
+     ContentSelectable->False,
+     ImageSize->250,
+     PlotRange->{{0, 360}, {-164, 0}},
+     PlotRangePadding->1],
+    Sound[{
+      SoundNote[None, 
+       Rational[1, 4]], 
+      SoundNote[None, 
+       Rational[1, 4]], 
+      SoundNote[None, 
+       Rational[1, 4]], 
+      SoundNote[None, 
+       Rational[1, 4]], 
+      SoundNote[None, 
+       Rational[1, 4]], 
+      SoundNote[None, 
+       Rational[1, 4]], 
+      SoundNote[None, 
+       Rational[1, 4]], 
+      SoundNote[None, 
+       Rational[1, 4]], 
+      SoundNote[None, 
+       Rational[1, 4]], 
+      SoundNote["Claves", 
+       Rational[1, 4]], 
+      SoundNote[None, 
+       Rational[1, 4]], 
+      SoundNote[None, 
+       Rational[1, 4]], 
+      SoundNote["Claves", 
+       Rational[1, 4]], 
+      SoundNote[None, 
+       Rational[1, 4]], 
+      SoundNote[None, 
+       Rational[1, 4]], 
+      SoundNote["Claves", 
+       Rational[1, 4]]}]]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.707242075040052*^9, {3.707242110409346*^9, 3.707242130018157*^9}, 
+   3.707243201055081*^9, {3.707243241269309*^9, 3.707243297805602*^9}, 
+   3.7072433462425623`*^9},
+ CellLabel->
+  "Out[284]=",ExpressionUUID->"34b4a6c3-f2d2-4581-bd38-665ce756ea11"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Bonus: Cross beats", "Section",
+ CellChangeTimes->{{3.70510464885445*^9, 3.7051046548567934`*^9}, {
+   3.7051046932679906`*^9, 3.7051047014174566`*^9}, {3.705686116931855*^9, 
+   3.7056861543411007`*^9}, {3.707236511336865*^9, 3.7072365123910522`*^9}, {
+   3.707236545500331*^9, 3.7072365583406677`*^9}, 
+   3.7072412655491467`*^9},ExpressionUUID->"ed1eca78-45ae-4880-ae54-\
+a84a85c58c7f"],
+
+Cell["\<\
+In complex pieces of music, particularly Jazz, musicians often like to create \
+\[OpenCurlyDoubleQuote]rhythmic complexity\[CloseCurlyDoubleQuote] by \
+creating polyrhythms. We didn\[CloseCurlyQuote]t get a chance to explore the \
+idea of macro-beats in our previous explorations, but suffice it to say for \
+now that often times we hear groupings of pulses instead of a the lowest \
+common micro-pulse. It\[CloseCurlyQuote]s this macro-beat that we usually end \
+up tapping our foot to. The cool thing about these macro-pulses is that they \
+can be made up of different numbers of micro-pulses based on the music you\
+\[CloseCurlyQuote]re playing. This leads to a concept of rhythmic meter which \
+we don\[CloseCurlyQuote]t have time to explore in-depth. Instead, let\
+\[CloseCurlyQuote]s talk about \[OpenCurlyDoubleQuote]cross beats\
+\[CloseCurlyDoubleQuote] which rely on the ear hearing a simultaneous \
+expression of two different kinds of macro beats.\
+\>", "Text",
+ CellChangeTimes->{{3.705105405379721*^9, 3.7051054963769255`*^9}, {
+  3.705105533220033*^9, 3.705105546902816*^9}, {3.7051057273781385`*^9, 
+  3.7051057494323997`*^9}, {3.705169934558218*^9, 3.705169973362218*^9}, {
+  3.7072433988575373`*^9, 3.70724347818407*^9}, {3.707243664580068*^9, 
+  3.70724383712127*^9}, {3.707243870170342*^9, 
+  3.7072438810886*^9}},ExpressionUUID->"d8126cd1-cd45-4529-882a-d2b29c561121"],
+
+Cell["\<\
+Pretend you\[CloseCurlyQuote]re a drummer from Ghana. You\[CloseCurlyQuote]re \
+given 20 micro-pulses and asked to play on the first of the 20 pulses and \
+three other evenly spaced pulses. In other words, you have four evenly spaced \
+onsets.\
+\>", "Text",
+ CellChangeTimes->{{3.707243892249312*^9, 3.707243960214542*^9}, {
+  3.7072441720747147`*^9, 
+  3.707244172291135*^9}},ExpressionUUID->"8a933f1c-7854-4020-b7aa-\
+d485bb6790d4"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"ArrayPlot", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"Table", "[", 
+     RowBox[{
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"Mod", "[", 
+          RowBox[{"i", ",", " ", "4"}], "]"}], " ", "\[Equal]", " ", "1"}], 
+        ",", " ", "1", ",", " ", "0"}], "]"}], ",", " ", 
+      RowBox[{"{", 
+       RowBox[{"i", ",", "20"}], "}"}]}], "]"}], "}"}], ",", " ", 
+   RowBox[{"Mesh", "\[Rule]", "All"}]}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"sonifyRhythm", "[", 
+  RowBox[{"\"\<Claves\>\"", ",", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Mod", "[", 
+         RowBox[{"i", ",", " ", "4"}], "]"}], " ", "\[Equal]", " ", "1"}], 
+       ",", " ", "1", ",", " ", "0"}], "]"}], ",", " ", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "20"}], "}"}]}], "]"}], ",", " ", "240"}], 
+  "]"}]}], "Input",
+ CellChangeTimes->{{3.707243974903777*^9, 3.707244062126659*^9}, {
+  3.707244101494584*^9, 3.7072441100122223`*^9}},
+ CellLabel->
+  "In[288]:=",ExpressionUUID->"fb12e695-59b7-40ff-aef9-b0a2cc6aae13"],
+
+Cell[BoxData[
+ GraphicsBox[{
+   RasterBox[{{0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 
+    1}}, {{0, 0}, {20, 1}}, {0, 1}], {
+    {GrayLevel[
+      NCache[-1 + GoldenRatio, 0.6180339887498949]], 
+     StyleBox[LineBox[{{{0, 1}, {20, 1}}, {{0, 0}, {20, 0}}}],
+      Antialiasing->False]}, 
+    {GrayLevel[
+      NCache[-1 + GoldenRatio, 0.6180339887498949]], 
+     StyleBox[
+      LineBox[{{{0, 0}, {0, 1}}, {{1, 0}, {1, 1}}, {{2, 0}, {2, 1}}, {{3, 
+       0}, {3, 1}}, {{4, 0}, {4, 1}}, {{5, 0}, {5, 1}}, {{6, 0}, {6, 1}}, {{7,
+        0}, {7, 1}}, {{8, 0}, {8, 1}}, {{9, 0}, {9, 1}}, {{10, 0}, {10, 
+       1}}, {{11, 0}, {11, 1}}, {{12, 0}, {12, 1}}, {{13, 0}, {13, 1}}, {{14, 
+       0}, {14, 1}}, {{15, 0}, {15, 1}}, {{16, 0}, {16, 1}}, {{17, 0}, {17, 
+       1}}, {{18, 0}, {18, 1}}, {{19, 0}, {19, 1}}, {{20, 0}, {20, 1}}}],
+      Antialiasing->False]}}},
+  Frame->False,
+  FrameLabel->{None, None},
+  FrameTicks->{{None, None}, {None, None}},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  Method->{
+   "DefaultBoundaryStyle" -> Automatic, "DefaultPlotStyle" -> 
+    Automatic}]], "Output",
+ CellChangeTimes->{{3.7072440059391737`*^9, 3.7072440321794367`*^9}, 
+   3.70724411050793*^9},
+ CellLabel->
+  "Out[288]=",ExpressionUUID->"9d9b5637-8b4c-4db5-957b-62f3060df778"],
+
+Cell[BoxData[
+ InterpretationBox[
+  GraphicsBox[{
+    {RGBColor[0.9568627450980393, 0.9568627450980393, 0.9568627450980393], 
+     RectangleBox[{0, 0}, {360, -164}]}, {InsetBox[
+      GraphicsBox[
+       {RGBColor[0.5, 0, 0.5], 
+        StyleBox[{
+          RectangleBox[{0., 0.610558394599415}, {0.2375, 0.6224631565041769}],
+           RectangleBox[{1., 0.610558394599415}, \
+{1.2375, 0.6224631565041769}], 
+          RectangleBox[{2., 0.610558394599415}, {2.2375, 0.6224631565041769}],
+           RectangleBox[{3., 0.610558394599415}, \
+{3.2375, 0.6224631565041769}], 
+          RectangleBox[{4., 0.610558394599415}, {4.2375, 0.6224631565041769}]},
+         Antialiasing->True]},
+       AspectRatio->NCache[
+         Rational[6, 35], 0.17142857142857143`],
+       Background->GrayLevel[1],
+       Frame->True,
+       FrameStyle->GrayLevel[0.75],
+       FrameTicks->False,
+       ImagePadding->None,
+       PlotRange->{All, All},
+       PlotRangePadding->{Automatic, 0.05}], {180, -35}, 
+      ImageScaled[{0.5, 0.5}], {350, 60},
+      Background->RGBColor[
+       0.9568627450980393, 0.9568627450980393, 0.9568627450980393]], InsetBox[
+      GraphicsBox[
+       {GrayLevel[0.6], RectangleBox[{0, 0}]},
+       AspectRatio->NCache[
+         Rational[6, 35], 0.17142857142857143`],
+       Background->GrayLevel[1],
+       Frame->True,
+       FrameStyle->GrayLevel[0.75],
+       FrameTicks->False,
+       ImagePadding->None], {180, -100}, ImageScaled[{0.5, 0.5}], {350, 60},
+      Background->RGBColor[
+       0.9568627450980393, 0.9568627450980393, 0.9568627450980393]]}, InsetBox[
+     StyleBox[
+      TemplateBox[{
+       StyleBox[
+        "\" | \"", FontSize -> 14, FontColor -> 
+         RGBColor[0.5098039215686274, 0.5098039215686274, 0.5098039215686274],
+          StripOnInput -> False],StyleBox[
+         TemplateBox[{"\"4.25\"", "\" s\""}, "RowDefault"], FontColor -> 
+         RGBColor[0.5098039215686274, 0.5098039215686274, 0.5098039215686274],
+          StripOnInput -> False]},
+       "RowWithSeparator"], "DialogStyle",
+      StripOnInput->False], {355, -159}, Scaled[{1, 0}]], 
+    TagBox[{
+      {RGBColor[0.9568627450980393, 0.9568627450980393, 0.9568627450980393], 
+       RectangleBox[{5, -158}, {29, -135}]}, 
+      {RGBColor[0.27450980392156865`, 0.5411764705882353, 0.796078431372549], 
+       PolygonBox[
+        NCache[{{11, -157}, {11, -136}, {20., Rational[-293, 2]}, {
+          11, -157}}, {{11, -157}, {11, -136}, {20., -146.5}, {11, -157}}]], 
+       StyleBox[{},
+        Antialiasing->False]}},
+     EventHandlerTag[{"MouseClicked" :> If[True, Sound`EmitMIDI[
+           Sound`MIDISequence[{
+             Sound`MIDITrack[{
+               Sound`MIDIEvent[0, "SetTempo", "Tempo" -> 1000000], 
+               Sound`MIDIEvent[
+               0, "ProgramCommand", "Channel" -> 9, "Value" -> 0], 
+               Sound`MIDIEvent[
+               0, "NoteOn", "Note" -> 75, "Channel" -> 9, "Velocity" -> 127], 
+               Sound`MIDIEvent[
+               12, "NoteOff", "Note" -> 75, "Channel" -> 9, "Velocity" -> 0], 
+               Sound`MIDIEvent[
+               48, "NoteOn", "Note" -> 75, "Channel" -> 9, "Velocity" -> 127], 
+               Sound`MIDIEvent[
+               60, "NoteOff", "Note" -> 75, "Channel" -> 9, "Velocity" -> 0], 
+               Sound`MIDIEvent[
+               96, "NoteOn", "Note" -> 75, "Channel" -> 9, "Velocity" -> 127], 
+               Sound`MIDIEvent[
+               108, "NoteOff", "Note" -> 75, "Channel" -> 9, "Velocity" -> 0], 
+               Sound`MIDIEvent[
+               144, "NoteOn", "Note" -> 75, "Channel" -> 9, "Velocity" -> 
+                127], 
+               Sound`MIDIEvent[
+               156, "NoteOff", "Note" -> 75, "Channel" -> 9, "Velocity" -> 0], 
+               Sound`MIDIEvent[
+               192, "NoteOn", "Note" -> 75, "Channel" -> 9, "Velocity" -> 
+                127], 
+               Sound`MIDIEvent[
+               204, "NoteOff", "Note" -> 75, "Channel" -> 9, "Velocity" -> 
+                0]}]}, "DivisionType" -> "PPQ", "Resolution" -> 48]]; 
+         Sound`EmitSampledSound[None, "Preemptive"], 
+         FEPrivate`EmitSound[None, "Preemptive"]], Method -> "Preemptive", 
+       PassEventsDown -> Automatic, PassEventsUp -> True}]], 
+    TagBox[{
+      {RGBColor[0.9568627450980393, 0.9568627450980393, 0.9568627450980393], 
+       RectangleBox[{29, -158}, {53, -135}]}, 
+      {RGBColor[0.27450980392156865`, 0.5411764705882353, 0.796078431372549], 
+       RectangleBox[{35, -152}, {47, -141}], 
+       StyleBox[{},
+        Antialiasing->False]}},
+     EventHandlerTag[{"MouseClicked" :> If[True, Sound`EmitSampledSound[
+           SampledSoundList[{{0.}}, 8000], "Preemptive"]; Sound`StopMIDI[], 
+         FEPrivate`EmitSound[
+          SampledSoundList[{{0.}}, 8000], "Preemptive"]], Method -> 
+       "Preemptive", PassEventsDown -> Automatic, PassEventsUp -> True}]], 
+    {GrayLevel[0.75], 
+     StyleBox[LineBox[{{0, 0}, {360, 0}, {360, -164}, {0, -164}, {0, 0}}],
+      Antialiasing->False]}},
+   ContentSelectable->False,
+   ImageSize->250,
+   PlotRange->{{0, 360}, {-164, 0}},
+   PlotRangePadding->1],
+  Sound[{
+    SoundNote["Claves", 
+     Rational[1, 4]], 
+    SoundNote[None, 
+     Rational[1, 4]], 
+    SoundNote[None, 
+     Rational[1, 4]], 
+    SoundNote[None, 
+     Rational[1, 4]], 
+    SoundNote["Claves", 
+     Rational[1, 4]], 
+    SoundNote[None, 
+     Rational[1, 4]], 
+    SoundNote[None, 
+     Rational[1, 4]], 
+    SoundNote[None, 
+     Rational[1, 4]], 
+    SoundNote["Claves", 
+     Rational[1, 4]], 
+    SoundNote[None, 
+     Rational[1, 4]], 
+    SoundNote[None, 
+     Rational[1, 4]], 
+    SoundNote[None, 
+     Rational[1, 4]], 
+    SoundNote["Claves", 
+     Rational[1, 4]], 
+    SoundNote[None, 
+     Rational[1, 4]], 
+    SoundNote[None, 
+     Rational[1, 4]], 
+    SoundNote[None, 
+     Rational[1, 4]], 
+    SoundNote["Claves", 
+     Rational[1, 4]], 
+    SoundNote[None, 
+     Rational[1, 4]], 
+    SoundNote[None, 
+     Rational[1, 4]], 
+    SoundNote[None, 
+     Rational[1, 4]]}]]], "Output",
+ CellChangeTimes->{{3.7072440059391737`*^9, 3.7072440321794367`*^9}, 
+   3.707244110598069*^9},
+ CellLabel->
+  "Out[289]=",ExpressionUUID->"f7021393-ca9d-4c06-8d88-dc6dca6e27bf"]
+}, Open  ]],
+
+Cell[TextData[{
+ "Now do the same thing, except you need to play on ",
+ StyleBox["4",
+  FontWeight->"Bold",
+  FontSlant->"Italic"],
+ " other evenly spaced pulses. In other words, you have five evenly spaced \
+onsets."
+}], "Text",
+ CellChangeTimes->{{3.707243892249312*^9, 3.707243960214542*^9}, {
+  3.707244181003008*^9, 
+  3.707244198090561*^9}},ExpressionUUID->"8f2a4046-67c8-4616-8293-\
+33f6afc55456"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"ArrayPlot", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"Table", "[", 
+     RowBox[{
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"Mod", "[", 
+          RowBox[{"i", ",", " ", "5"}], "]"}], " ", "\[Equal]", " ", "1"}], 
+        ",", " ", "1", ",", " ", "0"}], "]"}], ",", " ", 
+      RowBox[{"{", 
+       RowBox[{"i", ",", "20"}], "}"}]}], "]"}], "}"}], ",", " ", 
+   RowBox[{"Mesh", "\[Rule]", "All"}]}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"sonifyRhythm", "[", 
+  RowBox[{"\"\<Claves\>\"", ",", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Mod", "[", 
+         RowBox[{"i", ",", " ", "4"}], "]"}], " ", "\[Equal]", " ", "1"}], 
+       ",", " ", "1", ",", " ", "0"}], "]"}], ",", " ", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "20"}], "}"}]}], "]"}], ",", " ", "240"}], 
+  "]"}]}], "Input",
+ CellChangeTimes->{{3.707244206482994*^9, 3.707244207275907*^9}},
+ CellLabel->
+  "In[291]:=",ExpressionUUID->"34d818c3-7855-4439-8585-1d3135aa39df"],
+
+Cell[BoxData[
+ GraphicsBox[{
+   RasterBox[{{0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 
+    1}}, {{0, 0}, {20, 1}}, {0, 1}], {
+    {GrayLevel[
+      NCache[-1 + GoldenRatio, 0.6180339887498949]], 
+     StyleBox[LineBox[{{{0, 1}, {20, 1}}, {{0, 0}, {20, 0}}}],
+      Antialiasing->False]}, 
+    {GrayLevel[
+      NCache[-1 + GoldenRatio, 0.6180339887498949]], 
+     StyleBox[
+      LineBox[{{{0, 0}, {0, 1}}, {{1, 0}, {1, 1}}, {{2, 0}, {2, 1}}, {{3, 
+       0}, {3, 1}}, {{4, 0}, {4, 1}}, {{5, 0}, {5, 1}}, {{6, 0}, {6, 1}}, {{7,
+        0}, {7, 1}}, {{8, 0}, {8, 1}}, {{9, 0}, {9, 1}}, {{10, 0}, {10, 
+       1}}, {{11, 0}, {11, 1}}, {{12, 0}, {12, 1}}, {{13, 0}, {13, 1}}, {{14, 
+       0}, {14, 1}}, {{15, 0}, {15, 1}}, {{16, 0}, {16, 1}}, {{17, 0}, {17, 
+       1}}, {{18, 0}, {18, 1}}, {{19, 0}, {19, 1}}, {{20, 0}, {20, 1}}}],
+      Antialiasing->False]}}},
+  Frame->False,
+  FrameLabel->{None, None},
+  FrameTicks->{{None, None}, {None, None}},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  Method->{
+   "DefaultBoundaryStyle" -> Automatic, "DefaultPlotStyle" -> 
+    Automatic}]], "Output",
+ CellChangeTimes->{3.707244208333227*^9},
+ CellLabel->
+  "Out[291]=",ExpressionUUID->"3c39d16f-4084-48af-a386-7b669a9a9653"],
+
+Cell[BoxData[
+ InterpretationBox[
+  GraphicsBox[{
+    {RGBColor[0.9568627450980393, 0.9568627450980393, 0.9568627450980393], 
+     RectangleBox[{0, 0}, {360, -164}]}, {InsetBox[
+      GraphicsBox[
+       {RGBColor[0.5, 0, 0.5], 
+        StyleBox[{
+          RectangleBox[{0., 0.610558394599415}, {0.2375, 0.6224631565041769}],
+           RectangleBox[{1., 0.610558394599415}, \
+{1.2375, 0.6224631565041769}], 
+          RectangleBox[{2., 0.610558394599415}, {2.2375, 0.6224631565041769}],
+           RectangleBox[{3., 0.610558394599415}, \
+{3.2375, 0.6224631565041769}], 
+          RectangleBox[{4., 0.610558394599415}, {4.2375, 0.6224631565041769}]},
+         Antialiasing->True]},
+       AspectRatio->NCache[
+         Rational[6, 35], 0.17142857142857143`],
+       Background->GrayLevel[1],
+       Frame->True,
+       FrameStyle->GrayLevel[0.75],
+       FrameTicks->False,
+       ImagePadding->None,
+       PlotRange->{All, All},
+       PlotRangePadding->{Automatic, 0.05}], {180, -35}, 
+      ImageScaled[{0.5, 0.5}], {350, 60},
+      Background->RGBColor[
+       0.9568627450980393, 0.9568627450980393, 0.9568627450980393]], InsetBox[
+      GraphicsBox[
+       {GrayLevel[0.6], RectangleBox[{0, 0}]},
+       AspectRatio->NCache[
+         Rational[6, 35], 0.17142857142857143`],
+       Background->GrayLevel[1],
+       Frame->True,
+       FrameStyle->GrayLevel[0.75],
+       FrameTicks->False,
+       ImagePadding->None], {180, -100}, ImageScaled[{0.5, 0.5}], {350, 60},
+      Background->RGBColor[
+       0.9568627450980393, 0.9568627450980393, 0.9568627450980393]]}, InsetBox[
+     StyleBox[
+      TemplateBox[{
+       StyleBox[
+        "\" | \"", FontSize -> 14, FontColor -> 
+         RGBColor[0.5098039215686274, 0.5098039215686274, 0.5098039215686274],
+          StripOnInput -> False],StyleBox[
+         TemplateBox[{"\"4.25\"", "\" s\""}, "RowDefault"], FontColor -> 
+         RGBColor[0.5098039215686274, 0.5098039215686274, 0.5098039215686274],
+          StripOnInput -> False]},
+       "RowWithSeparator"], "DialogStyle",
+      StripOnInput->False], {355, -159}, Scaled[{1, 0}]], 
+    TagBox[{
+      {RGBColor[0.9568627450980393, 0.9568627450980393, 0.9568627450980393], 
+       RectangleBox[{5, -158}, {29, -135}]}, 
+      {RGBColor[0.27450980392156865`, 0.5411764705882353, 0.796078431372549], 
+       PolygonBox[
+        NCache[{{11, -157}, {11, -136}, {20., Rational[-293, 2]}, {
+          11, -157}}, {{11, -157}, {11, -136}, {20., -146.5}, {11, -157}}]], 
+       StyleBox[{},
+        Antialiasing->False]}},
+     EventHandlerTag[{"MouseClicked" :> If[True, Sound`EmitMIDI[
+           Sound`MIDISequence[{
+             Sound`MIDITrack[{
+               Sound`MIDIEvent[0, "SetTempo", "Tempo" -> 1000000], 
+               Sound`MIDIEvent[
+               0, "ProgramCommand", "Channel" -> 9, "Value" -> 0], 
+               Sound`MIDIEvent[
+               0, "NoteOn", "Note" -> 75, "Channel" -> 9, "Velocity" -> 127], 
+               Sound`MIDIEvent[
+               12, "NoteOff", "Note" -> 75, "Channel" -> 9, "Velocity" -> 0], 
+               Sound`MIDIEvent[
+               48, "NoteOn", "Note" -> 75, "Channel" -> 9, "Velocity" -> 127], 
+               Sound`MIDIEvent[
+               60, "NoteOff", "Note" -> 75, "Channel" -> 9, "Velocity" -> 0], 
+               Sound`MIDIEvent[
+               96, "NoteOn", "Note" -> 75, "Channel" -> 9, "Velocity" -> 127], 
+               Sound`MIDIEvent[
+               108, "NoteOff", "Note" -> 75, "Channel" -> 9, "Velocity" -> 0], 
+               Sound`MIDIEvent[
+               144, "NoteOn", "Note" -> 75, "Channel" -> 9, "Velocity" -> 
+                127], 
+               Sound`MIDIEvent[
+               156, "NoteOff", "Note" -> 75, "Channel" -> 9, "Velocity" -> 0], 
+               Sound`MIDIEvent[
+               192, "NoteOn", "Note" -> 75, "Channel" -> 9, "Velocity" -> 
+                127], 
+               Sound`MIDIEvent[
+               204, "NoteOff", "Note" -> 75, "Channel" -> 9, "Velocity" -> 
+                0]}]}, "DivisionType" -> "PPQ", "Resolution" -> 48]]; 
+         Sound`EmitSampledSound[None, "Preemptive"], 
+         FEPrivate`EmitSound[None, "Preemptive"]], Method -> "Preemptive", 
+       PassEventsDown -> Automatic, PassEventsUp -> True}]], 
+    TagBox[{
+      {RGBColor[0.9568627450980393, 0.9568627450980393, 0.9568627450980393], 
+       RectangleBox[{29, -158}, {53, -135}]}, 
+      {RGBColor[0.27450980392156865`, 0.5411764705882353, 0.796078431372549], 
+       RectangleBox[{35, -152}, {47, -141}], 
+       StyleBox[{},
+        Antialiasing->False]}},
+     EventHandlerTag[{"MouseClicked" :> If[True, Sound`EmitSampledSound[
+           SampledSoundList[{{0.}}, 8000], "Preemptive"]; Sound`StopMIDI[], 
+         FEPrivate`EmitSound[
+          SampledSoundList[{{0.}}, 8000], "Preemptive"]], Method -> 
+       "Preemptive", PassEventsDown -> Automatic, PassEventsUp -> True}]], 
+    {GrayLevel[0.75], 
+     StyleBox[LineBox[{{0, 0}, {360, 0}, {360, -164}, {0, -164}, {0, 0}}],
+      Antialiasing->False]}},
+   ContentSelectable->False,
+   ImageSize->250,
+   PlotRange->{{0, 360}, {-164, 0}},
+   PlotRangePadding->1],
+  Sound[{
+    SoundNote["Claves", 
+     Rational[1, 4]], 
+    SoundNote[None, 
+     Rational[1, 4]], 
+    SoundNote[None, 
+     Rational[1, 4]], 
+    SoundNote[None, 
+     Rational[1, 4]], 
+    SoundNote["Claves", 
+     Rational[1, 4]], 
+    SoundNote[None, 
+     Rational[1, 4]], 
+    SoundNote[None, 
+     Rational[1, 4]], 
+    SoundNote[None, 
+     Rational[1, 4]], 
+    SoundNote["Claves", 
+     Rational[1, 4]], 
+    SoundNote[None, 
+     Rational[1, 4]], 
+    SoundNote[None, 
+     Rational[1, 4]], 
+    SoundNote[None, 
+     Rational[1, 4]], 
+    SoundNote["Claves", 
+     Rational[1, 4]], 
+    SoundNote[None, 
+     Rational[1, 4]], 
+    SoundNote[None, 
+     Rational[1, 4]], 
+    SoundNote[None, 
+     Rational[1, 4]], 
+    SoundNote["Claves", 
+     Rational[1, 4]], 
+    SoundNote[None, 
+     Rational[1, 4]], 
+    SoundNote[None, 
+     Rational[1, 4]], 
+    SoundNote[None, 
+     Rational[1, 4]]}]]], "Output",
+ CellChangeTimes->{3.707244208410719*^9},
+ CellLabel->
+  "Out[292]=",ExpressionUUID->"82d28bc9-3971-4524-a4f9-3919d90b83dc"]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.707244645937499*^9, 
+  3.7072446506117973`*^9}},ExpressionUUID->"f1dc1833-d2d6-4afd-9e3e-\
+4db5ef01a401"],
+
+Cell["\<\
+If these two players were to play at the same time, the human ear (and brain) \
+senses the tension between the two different rhythmic sub divisions. This is \
+a really common technique in West African drum music.\
+\>", "Text",
+ CellChangeTimes->{{3.707244220197994*^9, 3.707244275377226*^9}, {
+  3.707244332337307*^9, 3.7072443383839607`*^9}, {3.70724464112411*^9, 
+  3.707244674266062*^9}},ExpressionUUID->"e297e899-e8f1-47fb-aa44-\
+63e3b1f2132a"],
+
+Cell["\<\
+Here we have one drummer play 4 evenly space hits while the other plays 5 \
+evenly spaced hits (these are grouped together into one instrument for \
+simplicity):\
+\>", "Direction",
+ CellChangeTimes->{{3.7056860922471857`*^9, 3.7056860957264357`*^9}, 
+   3.706975592765313*^9, {3.7069756502967*^9, 3.706975651832728*^9}, {
+   3.7072154008830976`*^9, 3.707215403609206*^9}, {3.7072156687407417`*^9, 
+   3.707215682595951*^9}, 3.7072157227731743`*^9, {3.707216105320341*^9, 
+   3.707216128702116*^9}, {3.7072168686897993`*^9, 3.707216878840744*^9}, {
+   3.707228471654294*^9, 3.7072284955344048`*^9}, {3.707228550453115*^9, 
+   3.707228559125637*^9}, {3.707228780249337*^9, 3.707228810457057*^9}, 
+   3.707228876319683*^9, {3.707230220177367*^9, 3.7072302214588547`*^9}, {
+   3.7072311126846046`*^9, 3.7072311501855907`*^9}, {3.7072326170332403`*^9, 
+   3.707232637816079*^9}, {3.707232732016879*^9, 3.707232740086121*^9}, {
+   3.707232819300695*^9, 3.70723284357952*^9}, {3.707232960674038*^9, 
+   3.707232964130587*^9}, {3.7072347691540422`*^9, 3.70723479325135*^9}, {
+   3.707236138587284*^9, 3.707236152091457*^9}, {3.707237032836235*^9, 
+   3.7072370427394047`*^9}, {3.707241312869458*^9, 3.707241315939962*^9}, {
+   3.707241377148425*^9, 3.707241390818695*^9}, 3.7072414658812857`*^9, {
+   3.7072415318493967`*^9, 3.70724153354426*^9}, {3.707241571728113*^9, 
+   3.707241598696231*^9}, {3.707241758790903*^9, 3.707241762116967*^9}, {
+   3.707244693826838*^9, 3.707244718089692*^9}, {3.707244749392577*^9, 
+   3.7072447574971*^9}, {3.707244997988174*^9, 
+   3.707245008756065*^9}},ExpressionUUID->"5610d2fc-c488-406b-b33a-\
+4dd57ffcffa1"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"sonifyRhythm", "[", 
+  RowBox[{"\"\<Claves\>\"", ",", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"Table", "[", 
+       RowBox[{
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"Mod", "[", 
+            RowBox[{"i", ",", " ", "4"}], "]"}], " ", "\[Equal]", " ", "1"}], 
+          ",", " ", "1", ",", " ", "0"}], "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"i", ",", " ", "21"}], "}"}]}], "]"}], " ", "+", " ", 
+      RowBox[{"Table", "[", 
+       RowBox[{
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"Mod", "[", 
+            RowBox[{"i", ",", " ", "5"}], "]"}], " ", "\[Equal]", " ", "1"}], 
+          ",", " ", "1", ",", " ", "0"}], "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"i", ",", " ", "21"}], "}"}]}], "]"}]}], ")"}], " ", "/.", 
+    " ", 
+    RowBox[{"{", 
+     RowBox[{"2", "\[Rule]", "1"}], "}"}]}], ",", "240"}], "]"}]], "Input",
+ CellChangeTimes->{{3.7072446689079103`*^9, 3.707244675938581*^9}, {
+   3.7072447256419*^9, 3.707244766120448*^9}, {3.7072448020287046`*^9, 
+   3.7072449242709*^9}, 3.7072449679664307`*^9},
+ CellLabel->
+  "In[303]:=",ExpressionUUID->"6ce2ef5f-a4e4-469c-87ae-c5ac4625be32"],
+
+Cell[BoxData[
+ InterpretationBox[
+  GraphicsBox[{
+    {RGBColor[0.9568627450980393, 0.9568627450980393, 0.9568627450980393], 
+     RectangleBox[{0, 0}, {360, -164}]}, {InsetBox[
+      GraphicsBox[
+       {RGBColor[0.5, 0, 0.5], 
+        StyleBox[{
+          RectangleBox[{0., 0.610558394599415}, {0.2375, 0.6224631565041769}],
+           RectangleBox[{1., 0.610558394599415}, \
+{1.2375, 0.6224631565041769}], 
+          RectangleBox[{1.25, 0.610558394599415}, \
+{1.4875, 0.6224631565041769}], 
+          RectangleBox[{2., 0.610558394599415}, {2.2375, 0.6224631565041769}],
+           RectangleBox[{2.5, 0.610558394599415}, \
+{2.7375, 0.6224631565041769}], 
+          RectangleBox[{3., 0.610558394599415}, {3.2375, 0.6224631565041769}],
+           RectangleBox[{3.75, 0.610558394599415}, \
+{3.9875, 0.6224631565041769}], 
+          RectangleBox[{4., 0.610558394599415}, {4.2375, 0.6224631565041769}],
+           RectangleBox[{5., 0.610558394599415}, \
+{5.2375, 0.6224631565041769}]},
+         Antialiasing->True]},
+       AspectRatio->NCache[
+         Rational[6, 35], 0.17142857142857143`],
+       Background->GrayLevel[1],
+       Frame->True,
+       FrameStyle->GrayLevel[0.75],
+       FrameTicks->False,
+       ImagePadding->None,
+       PlotRange->{All, All},
+       PlotRangePadding->{Automatic, 0.05}], {180, -35}, 
+      ImageScaled[{0.5, 0.5}], {350, 60},
+      Background->RGBColor[
+       0.9568627450980393, 0.9568627450980393, 0.9568627450980393]], InsetBox[
+      GraphicsBox[
+       {GrayLevel[0.6], RectangleBox[{0, 0}]},
+       AspectRatio->NCache[
+         Rational[6, 35], 0.17142857142857143`],
+       Background->GrayLevel[1],
+       Frame->True,
+       FrameStyle->GrayLevel[0.75],
+       FrameTicks->False,
+       ImagePadding->None], {180, -100}, ImageScaled[{0.5, 0.5}], {350, 60},
+      Background->RGBColor[
+       0.9568627450980393, 0.9568627450980393, 0.9568627450980393]]}, InsetBox[
+     StyleBox[
+      TemplateBox[{
+       StyleBox[
+        "\" | \"", FontSize -> 14, FontColor -> 
+         RGBColor[0.5098039215686274, 0.5098039215686274, 0.5098039215686274],
+          StripOnInput -> False],StyleBox[
+         TemplateBox[{"\"5.25\"", "\" s\""}, "RowDefault"], FontColor -> 
+         RGBColor[0.5098039215686274, 0.5098039215686274, 0.5098039215686274],
+          StripOnInput -> False]},
+       "RowWithSeparator"], "DialogStyle",
+      StripOnInput->False], {355, -159}, Scaled[{1, 0}]], 
+    TagBox[{
+      {RGBColor[0.9568627450980393, 0.9568627450980393, 0.9568627450980393], 
+       RectangleBox[{5, -158}, {29, -135}]}, 
+      {RGBColor[0.27450980392156865`, 0.5411764705882353, 0.796078431372549], 
+       PolygonBox[
+        NCache[{{11, -157}, {11, -136}, {20., Rational[-293, 2]}, {
+          11, -157}}, {{11, -157}, {11, -136}, {20., -146.5}, {11, -157}}]], 
+       StyleBox[{},
+        Antialiasing->False]}},
+     EventHandlerTag[{"MouseClicked" :> If[True, Sound`EmitMIDI[
+           Sound`MIDISequence[{
+             Sound`MIDITrack[{
+               Sound`MIDIEvent[0, "SetTempo", "Tempo" -> 1000000], 
+               Sound`MIDIEvent[
+               0, "ProgramCommand", "Channel" -> 9, "Value" -> 0], 
+               Sound`MIDIEvent[
+               0, "NoteOn", "Note" -> 75, "Channel" -> 9, "Velocity" -> 127], 
+               Sound`MIDIEvent[
+               12, "NoteOff", "Note" -> 75, "Channel" -> 9, "Velocity" -> 0], 
+               Sound`MIDIEvent[
+               48, "NoteOn", "Note" -> 75, "Channel" -> 9, "Velocity" -> 127], 
+               Sound`MIDIEvent[
+               60, "NoteOff", "Note" -> 75, "Channel" -> 9, "Velocity" -> 0], 
+               Sound`MIDIEvent[
+               60, "NoteOn", "Note" -> 75, "Channel" -> 9, "Velocity" -> 127], 
+               Sound`MIDIEvent[
+               72, "NoteOff", "Note" -> 75, "Channel" -> 9, "Velocity" -> 0], 
+               Sound`MIDIEvent[
+               96, "NoteOn", "Note" -> 75, "Channel" -> 9, "Velocity" -> 127], 
+               Sound`MIDIEvent[
+               108, "NoteOff", "Note" -> 75, "Channel" -> 9, "Velocity" -> 0], 
+               Sound`MIDIEvent[
+               120, "NoteOn", "Note" -> 75, "Channel" -> 9, "Velocity" -> 
+                127], 
+               Sound`MIDIEvent[
+               132, "NoteOff", "Note" -> 75, "Channel" -> 9, "Velocity" -> 0], 
+               Sound`MIDIEvent[
+               144, "NoteOn", "Note" -> 75, "Channel" -> 9, "Velocity" -> 
+                127], 
+               Sound`MIDIEvent[
+               156, "NoteOff", "Note" -> 75, "Channel" -> 9, "Velocity" -> 0], 
+               Sound`MIDIEvent[
+               180, "NoteOn", "Note" -> 75, "Channel" -> 9, "Velocity" -> 
+                127], 
+               Sound`MIDIEvent[
+               192, "NoteOff", "Note" -> 75, "Channel" -> 9, "Velocity" -> 0], 
+               Sound`MIDIEvent[
+               192, "NoteOn", "Note" -> 75, "Channel" -> 9, "Velocity" -> 
+                127], 
+               Sound`MIDIEvent[
+               204, "NoteOff", "Note" -> 75, "Channel" -> 9, "Velocity" -> 0], 
+               Sound`MIDIEvent[
+               240, "NoteOn", "Note" -> 75, "Channel" -> 9, "Velocity" -> 
+                127], 
+               Sound`MIDIEvent[
+               252, "NoteOff", "Note" -> 75, "Channel" -> 9, "Velocity" -> 
+                0]}]}, "DivisionType" -> "PPQ", "Resolution" -> 48]]; 
+         Sound`EmitSampledSound[None, "Preemptive"], 
+         FEPrivate`EmitSound[None, "Preemptive"]], Method -> "Preemptive", 
+       PassEventsDown -> Automatic, PassEventsUp -> True}]], 
+    TagBox[{
+      {RGBColor[0.9568627450980393, 0.9568627450980393, 0.9568627450980393], 
+       RectangleBox[{29, -158}, {53, -135}]}, 
+      {RGBColor[0.27450980392156865`, 0.5411764705882353, 0.796078431372549], 
+       RectangleBox[{35, -152}, {47, -141}], 
+       StyleBox[{},
+        Antialiasing->False]}},
+     EventHandlerTag[{"MouseClicked" :> If[True, Sound`EmitSampledSound[
+           SampledSoundList[{{0.}}, 8000], "Preemptive"]; Sound`StopMIDI[], 
+         FEPrivate`EmitSound[
+          SampledSoundList[{{0.}}, 8000], "Preemptive"]], Method -> 
+       "Preemptive", PassEventsDown -> Automatic, PassEventsUp -> True}]], 
+    {GrayLevel[0.75], 
+     StyleBox[LineBox[{{0, 0}, {360, 0}, {360, -164}, {0, -164}, {0, 0}}],
+      Antialiasing->False]}},
+   ContentSelectable->False,
+   ImageSize->250,
+   PlotRange->{{0, 360}, {-164, 0}},
+   PlotRangePadding->1],
+  Sound[{
+    SoundNote["Claves", 
+     Rational[1, 4]], 
+    SoundNote[None, 
+     Rational[1, 4]], 
+    SoundNote[None, 
+     Rational[1, 4]], 
+    SoundNote[None, 
+     Rational[1, 4]], 
+    SoundNote["Claves", 
+     Rational[1, 4]], 
+    SoundNote["Claves", 
+     Rational[1, 4]], 
+    SoundNote[None, 
+     Rational[1, 4]], 
+    SoundNote[None, 
+     Rational[1, 4]], 
+    SoundNote["Claves", 
+     Rational[1, 4]], 
+    SoundNote[None, 
+     Rational[1, 4]], 
+    SoundNote["Claves", 
+     Rational[1, 4]], 
+    SoundNote[None, 
+     Rational[1, 4]], 
+    SoundNote["Claves", 
+     Rational[1, 4]], 
+    SoundNote[None, 
+     Rational[1, 4]], 
+    SoundNote[None, 
+     Rational[1, 4]], 
+    SoundNote["Claves", 
+     Rational[1, 4]], 
+    SoundNote["Claves", 
+     Rational[1, 4]], 
+    SoundNote[None, 
+     Rational[1, 4]], 
+    SoundNote[None, 
+     Rational[1, 4]], 
+    SoundNote[None, 
+     Rational[1, 4]], 
+    SoundNote["Claves", 
+     Rational[1, 4]]}]]], "Output",
+ CellChangeTimes->{3.707244925229897*^9, 3.707244968573451*^9},
+ CellLabel->
+  "Out[303]=",ExpressionUUID->"2616a1f7-1e12-4405-bc1e-59bbdc55061c"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"ArrayPlot", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Table", "[", 
+        RowBox[{
+         RowBox[{"If", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"Mod", "[", 
+             RowBox[{"i", ",", " ", "a"}], "]"}], " ", "\[Equal]", " ", "1"}],
+            ",", " ", "1", ",", " ", "0"}], "]"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"i", ",", " ", 
+           RowBox[{
+            RowBox[{"LCM", "[", 
+             RowBox[{"b", ",", "a"}], "]"}], "+", "1"}]}], "}"}]}], "]"}], 
+       ",", " ", 
+       RowBox[{"Table", "[", 
+        RowBox[{
+         RowBox[{"If", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"Mod", "[", 
+             RowBox[{"i", ",", " ", "b"}], "]"}], " ", "\[Equal]", " ", "1"}],
+            ",", " ", "1", ",", " ", "0"}], "]"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"i", ",", " ", 
+           RowBox[{
+            RowBox[{"LCM", "[", 
+             RowBox[{"b", ",", "a"}], "]"}], "+", "1"}]}], "}"}]}], "]"}]}], 
+      "}"}], " ", ",", " ", 
+     RowBox[{"Mesh", "\[Rule]", "All"}]}], "]"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{"a", ",", " ", "1", ",", " ", "10", ",", " ", "1"}], "}"}], ",", 
+   " ", 
+   RowBox[{"{", 
+    RowBox[{"b", ",", "1", ",", "10", ",", " ", "1"}], "}"}]}], 
+  "\[IndentingNewLine]", "]"}]], "Input",
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmViYGCQAmIQffrblcN18147/smtPQqiq5xTzoLosvt7z4PonVub
+LoNoWb1Zt0B0m6vkMxBdt+7yKxC97mjDRxA9/XP6dxD9aB0XYz2QTsk1FAbR
+U2yfKoBol3pFRRAd6detDaLZfNR1QLTMj/1WIPpXbr0NiD539o8viO5w1/AD
+0WrHzkSD6OuVC2NBtI7dhkQQHWoQmQaim0qtKkC02a6DbSA6r4CjB0Q/2ujQ
+D6IvdWROBdGrRaPmgmiLUw7LQbTQBH8wfcSn+OpcIC2tJ3EHRHe4tTwF0dEX
+s16AaN1XMz/MA9KG6gafQfSCY9uF5oPE7fNFQPSBU3W/fgNp8XDe/yD6zUNL
+vX8gc88GWoFoicAyexAt8tPJC0R/alv2gnE+MJzvz3oPoptcTb6CaKda898g
++mDh/38gmiWpl4UJSAMA7GrioA==
+  "],
+ CellLabel->
+  "In[300]:=",ExpressionUUID->"adefd959-baa0-46aa-9ffb-16f2f491205a"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`a$$ = 5, $CellContext`b$$ = 4, 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`a$$], 1, 10, 1}, {
+      Hold[$CellContext`b$$], 1, 10, 1}}, Typeset`size$$ = {360., {22., 26.}},
+     Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    True, $CellContext`a$146363$$ = 0, $CellContext`b$146364$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`a$$ = 1, $CellContext`b$$ = 1}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`a$$, $CellContext`a$146363$$, 0], 
+        Hold[$CellContext`b$$, $CellContext`b$146364$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> ArrayPlot[{
+         Table[
+          If[
+          Mod[$CellContext`i, $CellContext`a$$] == 1, 1, 0], {$CellContext`i, 
+           LCM[$CellContext`b$$, $CellContext`a$$] + 1}], 
+         Table[
+          If[
+          Mod[$CellContext`i, $CellContext`b$$] == 1, 1, 0], {$CellContext`i, 
+           LCM[$CellContext`b$$, $CellContext`a$$] + 1}]}, Mesh -> All], 
+      "Specifications" :> {{$CellContext`a$$, 1, 10, 1}, {$CellContext`b$$, 1,
+          10, 1}}, "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{405., {108., 114.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{{3.707244536674848*^9, 3.707244580750347*^9}},
+ CellLabel->
+  "Out[300]=",ExpressionUUID->"f3b3431f-e86c-4f2e-b7af-2f57b043ff2d"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Things we didn\[CloseCurlyQuote]t get to", "Section",
+ CellChangeTimes->{{3.707245035980627*^9, 
+  3.707245039635315*^9}},ExpressionUUID->"e1417433-2c57-4bf2-9061-\
+540f230077f8"],
+
+Cell["\<\
+We\[CloseCurlyQuote]ve barely scratched the surface of musical rhythm. This \
+was just meant as an intro to seeing how we could formally express, \
+visualize, and generate new rhythms using the Wolfram Language. A great next \
+step would be to explore musical meter, a concept that lots of beginning \
+musicians have trouble with.\
+\>", "Text",
+ CellChangeTimes->{{3.707245046197544*^9, 
+  3.70724510803533*^9}},ExpressionUUID->"6499e11f-ea87-4d68-8186-\
+5eb36029e6c3"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Further Explorations", "FurtherExplorationSection",
+ CellChangeTimes->{{3.70077612322993*^9, 3.7007761320921593`*^9}, {
+  3.7007787731699142`*^9, 
+  3.70077877480995*^9}},ExpressionUUID->"5935468f-4faf-42ec-9ce5-\
+cfaecb303b1f"],
+
+Cell["\<\
+Musical Geometry
+Musical Structure (Voice Leading and Part Writing)
+Classical Fugue Analysis
+Composing from the Greats: Using Machine Learning to Generate Musical \
+Compositions\
+\>", "FurtherExploration",
+ CellChangeTimes->{{3.7007765492418337`*^9, 3.7007765636102467`*^9}, {
+  3.705104213701561*^9, 3.7051042224510612`*^9}, {3.7051697227932177`*^9, 
+  3.7051697367862177`*^9}, {3.7056847753333597`*^9, 3.7056847788413363`*^9}, {
+  3.705686193025524*^9, 3.7056861967297907`*^9}, {3.707236571798953*^9, 
+  3.70723657377138*^9}, {3.7072366240826607`*^9, 
+  3.707236698242935*^9}},ExpressionUUID->"fc00d35b-c175-46f2-bdde-\
+4a3e799238ba"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Authorship information", "AuthorshipSection",
+ CellChangeTimes->{{3.705105762145127*^9, 
+  3.7051057665253773`*^9}},ExpressionUUID->"1145f06d-098f-44f3-8ec7-\
+d4e9d7eb28ba"],
+
+Cell["Connor Bain", "Authorship",
+ CellChangeTimes->{{3.7051057700535793`*^9, 3.7051057808261957`*^9}, {
+  3.7072145871839457`*^9, 
+  3.707214588046687*^9}},ExpressionUUID->"5102885a-34eb-44ab-80db-\
+aa3710dbd08a"],
+
+Cell["June 23, 2017 - v1.0", "Authorship",
+ CellChangeTimes->{{3.705105786521521*^9, 3.7051057998362827`*^9}, {
+  3.707214594462998*^9, 
+  3.707214600843191*^9}},ExpressionUUID->"a955aad8-c1c5-41e7-ad9b-\
+f592f4a82734"],
+
+Cell["connorbain@u.northwestern.edu", "Authorship",
+ CellChangeTimes->{{3.7051058070526953`*^9, 3.705105841815684*^9}, {
+  3.707214602726894*^9, 
+  3.707214606182663*^9}},ExpressionUUID->"31ae3bf8-c288-4b0b-bca6-\
+5f0155809418"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{Full, Full},
+WindowMargins->{{142, Automatic}, {Automatic, 0}},
+DockedCells->Cell[
+  BoxData[
+   TagBox[
+    GridBox[{{
+       ItemBox["\"\"", ItemSize -> 0.2, StripOnInput -> False], 
+       DynamicModuleBox[{}, 
+        ActionMenuBox[
+        "\"Insert\"", {
+         "\"Section\"" :> 
+          Module[{$CellContext`nb = ButtonNotebook[]}, 
+            Exploration`MoveCursorAfterCellPosition[$CellContext`nb]; 
+            NotebookWrite[$CellContext`nb, 
+              Cell[
+               CellGroupData[{
+                 Cell["XXXX", "Section"], 
+                 Cell["XXXX", "Text"], 
+                 Cell["XXXX", "Direction"], 
+                 Cell[
+                  BoxData["XXXX"], "Input"]}, Open]], All]; 
+            SelectionMove[$CellContext`nb, Before, Cell]; 
+            SelectionMove[$CellContext`nb, Next, Cell]; 
+            SelectionMove[$CellContext`nb, All, CellContents]], Delimiter, 
+          "\"Text\"" :> 
+          Module[{$CellContext`nb = ButtonNotebook[]}, 
+            Exploration`MoveCursorAfterCellPosition[$CellContext`nb]; 
+            NotebookWrite[$CellContext`nb, 
+              Cell["XXXX", "Text"], All]; 
+            SelectionMove[$CellContext`nb, All, CellContents]], 
+          "\"Direction\"" :> 
+          Module[{$CellContext`nb = ButtonNotebook[]}, 
+            Exploration`MoveCursorAfterCellPosition[$CellContext`nb]; 
+            NotebookWrite[$CellContext`nb, 
+              Cell["XXXX", "Direction"], All]; 
+            SelectionMove[$CellContext`nb, All, CellContents]], 
+          "\"Further Exploration\"" :> 
+          Module[{$CellContext`nb = ButtonNotebook[]}, 
+            Exploration`MoveCursorAfterCellPosition[$CellContext`nb]; 
+            NotebookWrite[$CellContext`nb, 
+              Cell["XXXX", "FurtherExploration"], All]; 
+            SelectionMove[$CellContext`nb, All, CellContents]]}, Method -> 
+         "Queued", Appearance -> "PopupMenu", FrameMargins -> 2.4], 
+        Initialization :> (Exploration`MoveCursorAfterCellPosition[
+           Pattern[$CellContext`nb, 
+            Blank[]]] := Which[
+           MatchQ[
+            Developer`CellInformation[$CellContext`nb], {
+             Repeated[{
+               BlankSequence[], "CursorPosition" -> "CellBracket", 
+               BlankSequence[]}]}], 
+           SelectionMove[$CellContext`nb, After, Cell], 
+           Developer`CellInformation[$CellContext`nb] =!= $Failed, 
+           Module[{$CellContext`lnkre}, 
+             While[(LinkWrite[$ParentLink, 
+                 
+                 FrontEnd`CellInformation[$CellContext`nb]]; \
+$CellContext`lnkre = LinkRead[$ParentLink]); 
+              And[$CellContext`lnkre =!= $Failed, 
+                Not[
+                 MemberQ[
+                  ReplaceAll["CursorPosition", $CellContext`lnkre], 
+                  "CellBracket"]]], 
+              FrontEndExecute[
+               
+               FrontEnd`SelectionMove[$CellContext`nb, All, Cell, AutoScroll -> 
+                False]]]]; SelectionMove[$CellContext`nb, After, Cell]]), 
+        DynamicModuleValues :> {}], 
+       ItemBox["\"\"", ItemSize -> Fit, StripOnInput -> False], 
+       ButtonBox["\"Sample\"", ButtonFunction :> NotebookOpen[
+          
+          FileNameJoin[{$UserBaseDirectory, "Applications", 
+            "SummerSchoolTemplates", "FrontEnd", "TextResources", 
+            "TopicExplorationExample.nb"}]], Appearance -> Automatic, 
+        Evaluator -> Automatic, Method -> "Queued"]}}, AutoDelete -> False, 
+     GridBoxItemSize -> {
+      "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], "Grid"]], 
+  "DockedCell"],
+CellLabelAutoDelete->False,
+FrontEndVersion->"11.1 for Mac OS X x86 (32-bit, 64-bit Kernel) (April 18, \
+2017)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[StyleDefinitions -> "Default.nb"]], 
+   Cell[
+    StyleData["Title"], FontFamily -> "Source Sans Pro", FontTracking -> -0.8,
+     FontColor -> RGBColor[0.65, 0, 0]], 
+   Cell[
+    StyleData["Abstract", StyleDefinitions -> StyleData["Text"]], FontSize -> 
+    16, FontSlant -> "Italic", FontColor -> GrayLevel[0.4]], 
+   Cell[
+    StyleData["Section"], CellFrame -> False, FontFamily -> "Source Sans Pro",
+     FontTracking -> -0.5, $CellContext`ReturnCreatesNewCell -> 
+    True, $CellContext`DefaultReturnCreatedCellStyle -> "Text"], 
+   Cell[
+    StyleData["FurtherExplorationSection"], 
+    CellMargins -> {{28, Inherited}, {6, 24}}, 
+    CellGroupingRules -> {"SectionGrouping", 30}, DefaultNewCellStyle -> 
+    "FurtherExploration", FontFamily -> "Source Sans Pro Semibold", FontSize -> 
+    22, FontColor -> GrayLevel[0.35]], 
+   Cell[
+    StyleData["FurtherExploration", StyleDefinitions -> StyleData["Text"]], 
+    CellMargins -> {{66, 10}, {5, 5}}, FontSize -> 14, FontWeight -> "Bold", 
+    FontColor -> GrayLevel[0.5], $CellContext`ReturnCreatesNewCell -> True], 
+   Cell[
+    StyleData["AuthorshipSection"], CellMargins -> {{28, Inherited}, {6, 24}},
+     CellGroupingRules -> {"SectionGrouping", 30}, DefaultNewCellStyle -> 
+    "FurtherExploration", FontFamily -> "Source Sans Pro Semibold", FontSize -> 
+    22, FontColor -> GrayLevel[0.35]], 
+   Cell[
+    StyleData["Authorship", StyleDefinitions -> StyleData["Text"]], 
+    CellMargins -> {{66, 10}, {4, 4}}, FontSize -> 14, FontColor -> 
+    GrayLevel[0.5], $CellContext`ReturnCreatesNewCell -> True], 
+   Cell[
+    StyleData["Text"], DefaultNewCellStyle -> 
+    "Direction", $CellContext`ReturnCreatesNewCell -> 
+    True, $CellContext`DefaultReturnCreatedCellStyle -> "Direction"], 
+   Cell[
+    StyleData["Direction", StyleDefinitions -> StyleData["Text"]], 
+    CellDingbat -> 
+    StyleBox["\[FilledSmallSquare]", FontColor -> GrayLevel[0.7]], 
+    CellMargins -> {{78, 10}, {6, 7}}, CellFrameLabelMargins -> 4, 
+    MenuSortingValue -> 10000, MenuCommandKey -> "8", FontSize -> 14, 
+    FontWeight -> "Plain", FontColor -> 
+    GrayLevel[0.4], $CellContext`DefaultReturnCreatedCellStyle -> "Input"], 
+   Cell[
+    StyleData["Code"], MenuCommandKey -> None]}, Visible -> False, 
+  FrontEndVersion -> 
+  "11.1 for Mac OS X x86 (32-bit, 64-bit Kernel) (April 18, 2017)", 
+  StyleDefinitions -> "PrivateStylesheetFormatting.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 592, 13, 97, "Title", "ExpressionUUID" -> \
+"0f190da8-f8db-481a-8e25-9ae1b777a7b9"],
+Cell[1175, 37, 715, 12, 55, "Abstract", "ExpressionUUID" -> \
+"2a082af0-c10d-47ec-81a4-6d97fa70db67"],
+Cell[CellGroupData[{
+Cell[1915, 53, 306, 5, 62, "Section", "ExpressionUUID" -> \
+"6f874ac9-24f0-4b0e-8c09-dc25b16d8a27"],
+Cell[2224, 60, 849, 14, 49, "Text", "ExpressionUUID" -> \
+"e7fb0bc8-3dc1-4500-899c-3d05b5c805d1"],
+Cell[3076, 76, 646, 15, 31, "Direction", "ExpressionUUID" -> \
+"0cf08661-74de-4970-b101-504cb52bf410"],
+Cell[3725, 93, 1099, 22, 32, "Input", "ExpressionUUID" -> \
+"1e3b389a-b6e5-44fc-a417-b92f6f843a93"],
+Cell[4827, 117, 616, 12, 49, "Text", "ExpressionUUID" -> \
+"87be9618-168a-450f-bf76-0e3032627588"],
+Cell[5446, 131, 609, 10, 31, "Direction", "ExpressionUUID" -> \
+"c047c7df-c173-4bb9-9228-e3a555970caf"],
+Cell[6058, 143, 1445, 28, 32, "Input", "ExpressionUUID" -> \
+"4c715b31-2a62-4596-a29b-b8862f0a8952"],
+Cell[7506, 173, 432, 8, 30, "Text", "ExpressionUUID" -> \
+"cd20dae1-5820-4e6b-a99c-df8fbf4b2de8"],
+Cell[7941, 183, 503, 7, 31, "Direction", "ExpressionUUID" -> \
+"72200af9-d501-4cfc-8a01-3b4605624fe0"],
+Cell[8447, 192, 1089, 23, 32, "Input", "ExpressionUUID" -> \
+"18999acc-810f-4dfd-b36e-6fda0d06a5c8"],
+Cell[9539, 217, 931, 15, 49, "Text", "ExpressionUUID" -> \
+"9ec08883-433d-4d9e-a380-0101e1a9918b"],
+Cell[10473, 234, 759, 13, 31, "Direction", "ExpressionUUID" -> \
+"1b043ab7-b4be-496a-a526-a2f292822094"],
+Cell[11235, 249, 665, 14, 32, "Input", "ExpressionUUID" -> \
+"17b338a9-d991-4856-9872-07c405a1db99"],
+Cell[11903, 265, 581, 10, 49, "Text", "ExpressionUUID" -> \
+"8ee8816d-b55b-4eee-8f3a-a65987ad3181"],
+Cell[12487, 277, 960, 26, 54, "Input", "ExpressionUUID" -> \
+"4e6b4534-a276-4d13-a3be-e037c95ac0a2"],
+Cell[13450, 305, 506, 9, 49, "Text", "ExpressionUUID" -> \
+"e683a6c2-a636-4ed2-8979-6dac6c1b5821"],
+Cell[13959, 316, 823, 12, 31, "Direction", "ExpressionUUID" -> \
+"22285530-e8f9-4769-9993-a7212da2b326"],
+Cell[14785, 330, 2248, 48, 159, "Input", "ExpressionUUID" -> \
+"47edf942-8b21-4419-be85-5952033f1636"],
+Cell[17036, 380, 433, 8, 49, "Text", "ExpressionUUID" -> \
+"5e75ca8f-cfa9-40d6-bad4-21e0bbfc204d"],
+Cell[CellGroupData[{
+Cell[17494, 392, 4902, 103, 48, "Input", "ExpressionUUID" -> \
+"0741a092-a433-4092-bc36-7eba50dcdc0a"],
+Cell[22399, 497, 605, 10, 44, "Output", "ExpressionUUID" -> \
+"ac314a95-910f-4b3a-85f5-1da120e25f94"]
+}, Open  ]],
+Cell[23019, 510, 311, 7, 30, "Text", "ExpressionUUID" -> \
+"d5c87012-05b1-4a7a-9bb0-089e84b0be01"],
+Cell[CellGroupData[{
+Cell[23355, 521, 3878, 81, 48, "Input", "ExpressionUUID" -> \
+"fe25ace4-3854-49ba-8de0-c7693182c981"],
+Cell[27236, 604, 527, 10, 53, "Output", "ExpressionUUID" -> \
+"1efe5faa-dff5-4893-b670-21765763afaf"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[27812, 620, 160, 3, 62, "Section", "ExpressionUUID" -> \
+"92a748b7-bae7-49c7-9d59-b5d888c5639a"],
+Cell[27975, 625, 574, 10, 49, "Text", "ExpressionUUID" -> \
+"e1c74bc4-3b20-4042-a401-c72876334f11"],
+Cell[28552, 637, 842, 13, 31, "Direction", "ExpressionUUID" -> \
+"f540016a-43fc-4203-8047-927f382390ee"],
+Cell[CellGroupData[{
+Cell[29419, 654, 982, 17, 32, "Input", "ExpressionUUID" -> \
+"b9856525-af38-4aa4-87a6-80f3e070a2b3"],
+Cell[30404, 673, 1393, 29, 51, "Output", "ExpressionUUID" -> \
+"da063176-aacc-4c25-8a9a-ce8c33e489bd"]
+}, Open  ]],
+Cell[31812, 705, 518, 9, 49, "Text", "ExpressionUUID" -> \
+"4ba0400e-97de-484e-9760-a6e07fda480e"],
+Cell[32333, 716, 1024, 16, 31, "Direction", "ExpressionUUID" -> \
+"e39cf6c9-ca36-4182-ac1b-f81a6c542b5b"],
+Cell[CellGroupData[{
+Cell[33382, 736, 1422, 36, 75, "Input", "ExpressionUUID" -> \
+"00a3b14d-c5f5-4bb6-9669-20586068bb70"],
+Cell[34807, 774, 1194, 28, 51, "Output", "ExpressionUUID" -> \
+"8d5bc0b9-0444-4bf5-8725-9d37e3a9180b"]
+}, Open  ]],
+Cell[36016, 805, 354, 7, 49, "Text", "ExpressionUUID" -> \
+"9e68f52f-b416-42d4-971e-91179dda81cc"],
+Cell[36373, 814, 1339, 20, 48, "Direction", "ExpressionUUID" -> \
+"a8272d5b-fa71-4dcc-9233-ed60d6522b86"],
+Cell[CellGroupData[{
+Cell[37737, 838, 2505, 65, 96, "Input", "ExpressionUUID" -> \
+"ad202d23-6f63-45f3-b023-a1fe0cbdde89"],
+Cell[40245, 905, 12313, 265, 382, "Output", "ExpressionUUID" -> \
+"32834b81-4f0f-46af-8c6f-223a3c72e334"]
+}, Open  ]],
+Cell[52573, 1173, 173, 2, 32, InheritFromParent, "ExpressionUUID" -> \
+"4f680aeb-cb2f-44fa-a5b1-836bb163530d"],
+Cell[52749, 1177, 823, 14, 87, "Text", "ExpressionUUID" -> \
+"7af678a3-9bbc-4299-a3ee-4b6e55ed1ab0"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[53609, 1196, 361, 6, 62, "Section", "ExpressionUUID" -> \
+"40fb1d97-71ee-4a49-acac-0dfe617cdf04"],
+Cell[53973, 1204, 859, 14, 49, "Text", "ExpressionUUID" -> \
+"efcc6638-38ab-4bbb-9a5f-01e8efc14cb5"],
+Cell[CellGroupData[{
+Cell[54857, 1222, 564, 13, 32, "Input", "ExpressionUUID" -> \
+"71f2a0ed-255d-43f4-98d6-5ca1c25e7bab"],
+Cell[55424, 1237, 1147, 27, 51, "Output", "ExpressionUUID" -> \
+"a0608421-7d04-44cf-b227-4d38276bb26c"]
+}, Open  ]],
+Cell[56586, 1267, 365, 7, 49, "Text", "ExpressionUUID" -> \
+"ad97a856-b3a3-44a3-84b3-95ad6b4d416a"],
+Cell[56954, 1276, 968, 25, 52, "Code", "ExpressionUUID" -> \
+"25fcaff0-c424-4910-90b6-e9390665e9bc"],
+Cell[57925, 1303, 344, 7, 30, "Text", "ExpressionUUID" -> \
+"02d6b96d-06bd-41d8-a13a-b0babfa4bc7d"],
+Cell[58272, 1312, 1308, 18, 31, "Direction", "ExpressionUUID" -> \
+"9ab112d4-29f8-47fd-a95f-17290bb3564b"],
+Cell[CellGroupData[{
+Cell[59605, 1334, 2301, 52, 201, "Input", "ExpressionUUID" -> \
+"3a54e7ec-e5f2-455a-94e6-18019a591a51"],
+Cell[61909, 1388, 751, 14, 32, "Output", "ExpressionUUID" -> \
+"d528e7a8-a116-4ceb-9087-323806a7f112"],
+Cell[62663, 1404, 1612, 34, 55, "Output", "ExpressionUUID" -> \
+"3f67089f-c956-4f4e-af72-d1daa84d49c2"],
+Cell[64278, 1440, 6134, 136, 130, "Output", "ExpressionUUID" -> \
+"66499189-67ea-4b2d-b153-5855c548783f"],
+Cell[70415, 1578, 1627, 34, 55, "Output", "ExpressionUUID" -> \
+"26a5aa6c-7159-403f-af3e-31c7451d32ce"],
+Cell[72045, 1614, 6135, 137, 130, "Output", "ExpressionUUID" -> \
+"8eae209d-529a-4c3a-9438-8895e33fc3eb"],
+Cell[78183, 1753, 1628, 34, 57, "Output", "ExpressionUUID" -> \
+"543ee7e7-5ac7-4eff-a05d-859b458a7f0d"],
+Cell[79814, 1789, 6138, 137, 130, "Output", "ExpressionUUID" -> \
+"bed4fca9-8708-4310-9deb-ecee7749a0ac"]
+}, Open  ]],
+Cell[85967, 1929, 1344, 19, 31, "Direction", "ExpressionUUID" -> \
+"1ecb7f73-bc31-4e7e-82f3-1ae96634b5da"],
+Cell[CellGroupData[{
+Cell[87336, 1952, 604, 14, 54, "Input", "ExpressionUUID" -> \
+"09c2a363-1924-4358-b32f-3a0cdb304b4f"],
+Cell[87943, 1968, 1273, 28, 65, "Output", "ExpressionUUID" -> \
+"79550740-c9e6-4cec-a2fd-ac31994f4493"],
+Cell[89219, 1998, 7731, 170, 130, "Output", "ExpressionUUID" -> \
+"29513188-6954-4589-abfb-52fcacb1f2a3"]
+}, Open  ]],
+Cell[96965, 2171, 515, 11, 68, "Text", "ExpressionUUID" -> \
+"37d64f9c-5d22-4054-b6c6-b54f873e3f4c"],
+Cell[97483, 2184, 1544, 23, 31, "Direction", "ExpressionUUID" -> \
+"24b52442-1a83-4275-8590-fd83199298b5"],
+Cell[CellGroupData[{
+Cell[99052, 2211, 800, 17, 54, "Input", "ExpressionUUID" -> \
+"b2f679d6-a468-4521-ba19-b816c0877719"],
+Cell[99855, 2230, 1452, 33, 94, "Output", "ExpressionUUID" -> \
+"bf1a4380-b986-4b0c-90db-bd0c224f7eb3"],
+Cell[101310, 2265, 21493, 533, 132, "Output", "ExpressionUUID" -> \
+"34b4a6c3-f2d2-4581-bd38-665ce756ea11"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[122852, 2804, 395, 6, 62, "Section", "ExpressionUUID" -> \
+"ed1eca78-45ae-4880-ae54-a84a85c58c7f"],
+Cell[123250, 2812, 1398, 20, 106, "Text", "ExpressionUUID" -> \
+"d8126cd1-cd45-4529-882a-d2b29c561121"],
+Cell[124651, 2834, 444, 9, 49, "Text", "ExpressionUUID" -> \
+"8a933f1c-7854-4020-b7aa-d485bb6790d4"],
+Cell[CellGroupData[{
+Cell[125120, 2847, 1123, 31, 54, "Input", "ExpressionUUID" -> \
+"fb12e695-59b7-40ff-aef9-b0a2cc6aae13"],
+Cell[126246, 2880, 1300, 29, 47, "Output", "ExpressionUUID" -> \
+"9d9b5637-8b4c-4db5-957b-62f3060df778"],
+Cell[127549, 2911, 6215, 154, 130, "Output", "ExpressionUUID" -> \
+"f7021393-ca9d-4c06-8d88-dc6dca6e27bf"]
+}, Open  ]],
+Cell[133779, 3068, 404, 11, 30, "Text", "ExpressionUUID" -> \
+"8f2a4046-67c8-4616-8293-33f6afc55456"],
+Cell[CellGroupData[{
+Cell[134208, 3083, 1072, 30, 54, "Input", "ExpressionUUID" -> \
+"34d818c3-7855-4439-8585-1d3135aa39df"],
+Cell[135283, 3115, 1247, 28, 47, "Output", "ExpressionUUID" -> \
+"3c39d16f-4084-48af-a386-7b669a9a9653"],
+Cell[136533, 3145, 6161, 153, 130, "Output", "ExpressionUUID" -> \
+"82d28bc9-3971-4524-a4f9-3919d90b83dc"]
+}, Open  ]],
+Cell[142709, 3301, 154, 3, 32, "Input", "ExpressionUUID" -> \
+"f1dc1833-d2d6-4afd-9e3e-4db5ef01a401"],
+Cell[142866, 3306, 458, 8, 49, "Text", "ExpressionUUID" -> \
+"e297e899-e8f1-47fb-aa44-63e3b1f2132a"],
+Cell[143327, 3316, 1650, 25, 31, "Direction", "ExpressionUUID" -> \
+"5610d2fc-c488-406b-b33a-4dd57ffcffa1"],
+Cell[CellGroupData[{
+Cell[145002, 3345, 1244, 33, 32, "Input", "ExpressionUUID" -> \
+"6ce2ef5f-a4e4-469c-87ae-c5ac4625be32"],
+Cell[146249, 3380, 7523, 181, 130, "Output", "ExpressionUUID" -> \
+"2616a1f7-1e12-4405-bc1e-59bbdc55061c"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[153809, 3566, 2031, 53, 96, "Input", "ExpressionUUID" -> \
+"adefd959-baa0-46aa-9ffb-16f2f491205a"],
+Cell[155843, 3621, 2219, 45, 239, "Output", "ExpressionUUID" -> \
+"f3b3431f-e86c-4f2e-b7af-2f57b043ff2d"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[158111, 3672, 185, 3, 62, "Section", "ExpressionUUID" -> \
+"e1417433-2c57-4bf2-9061-540f230077f8"],
+Cell[158299, 3677, 479, 9, 49, "Text", "ExpressionUUID" -> \
+"6499e11f-ea87-4d68-8186-5eb36029e6c3"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[158815, 3691, 234, 4, 59, "FurtherExplorationSection", "ExpressionUUID" \
+-> "5935468f-4faf-42ec-9ce5-cfaecb303b1f"],
+Cell[159052, 3697, 646, 13, 83, "FurtherExploration", "ExpressionUUID" -> \
+"fc00d35b-c175-46f2-bdde-4a3e799238ba"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[159735, 3715, 179, 3, 59, "AuthorshipSection", "ExpressionUUID" -> \
+"1145f06d-098f-44f3-8ec7-d4e9d7eb28ba"],
+Cell[159917, 3720, 214, 4, 24, "Authorship", "ExpressionUUID" -> \
+"5102885a-34eb-44ab-80db-aa3710dbd08a"],
+Cell[160134, 3726, 219, 4, 24, "Authorship", "ExpressionUUID" -> \
+"a955aad8-c1c5-41e7-ad9b-f592f4a82734"],
+Cell[160356, 3732, 228, 4, 24, "Authorship", "ExpressionUUID" -> \
+"31ae3bf8-c288-4b0b-bca6-5f0155809418"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
