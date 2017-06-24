@@ -1,0 +1,3942 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[    166508,       3934]
+NotebookOptionsPosition[    153560,       3615]
+NotebookOutlinePosition[    155102,       3664]
+CellTagsIndexPosition[    155022,       3659]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["", "SlideShowNavigationBar",
+ CellTags->
+  "SlideShowHeader",ExpressionUUID->"013c3792-9455-4411-9be0-36f69ac49d1a"],
+
+Cell["Built-in Knowledge & Services", "Title",
+ CellChangeTimes->{{3.6797999803840237`*^9, 3.679799985230589*^9}, 
+   3.683610590804654*^9, 
+   3.70712450189307*^9},ExpressionUUID->"4b2c2fc9-1c01-40fa-880e-\
+d2769b7ea080"],
+
+Cell["How to use the integrated data in the Wolfram Language", "Subtitle",
+ CellChangeTimes->{{3.683610653990395*^9, 3.683610687421789*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SlideShowNavigationBar",
+ CellTags->
+  "SlideShowHeader",ExpressionUUID->"3de5d618-256f-43d6-b681-79753b5b6888"],
+
+Cell[CellGroupData[{
+
+Cell["Ways to transform strings into WL expressions", "Chapter",
+ CellChangeTimes->{{3.683610934778306*^9, 3.683610955120503*^9}, 
+   3.7070792394421597`*^9},ExpressionUUID->"3a9e49c9-0f01-4148-9680-\
+4db723615133"],
+
+Cell["\<\
+Ctrl + = lets you input free form text and get a WL expression as a result\
+\>", "Text",
+ CellChangeTimes->{{3.683610958453012*^9, 3.683610983507821*^9}}],
+
+Cell[BoxData[
+ RowBox[{" ", 
+  RowBox[{"=", 
+   RowBox[{"[", 
+    RowBox[{"population", " ", "of", " ", "france"}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.6836109864258633`*^9, 3.68361100610476*^9}}],
+
+Cell[BoxData[
+ NamespaceBox["LinguisticAssistant",
+  DynamicModuleBox[{Typeset`query$$ = "population of france", 
+   Typeset`boxes$$ = RowBox[{
+     TemplateBox[{"\"France\"", 
+       RowBox[{"Entity", "[", 
+         RowBox[{"\"Country\"", ",", "\"France\""}], "]"}], 
+       "\"Entity[\\\"Country\\\", \\\"France\\\"]\"", "\"country\""}, 
+      "Entity"], "[", 
+     TemplateBox[{"\"population\"", 
+       RowBox[{"EntityProperty", "[", 
+         RowBox[{"\"Country\"", ",", "\"Population\""}], "]"}], 
+       "\"EntityProperty[\\\"Country\\\", \\\"Population\\\"]\""}, 
+      "EntityProperty"], "]"}], Typeset`allassumptions$$ = {}, 
+   Typeset`assumptions$$ = {}, Typeset`open$$ = {1, 2}, 
+   Typeset`querystate$$ = {
+   "Online" -> True, "Allowed" -> True, "mparse.jsp" -> 
+    0.834906`6.373182575591156, "Messages" -> {}}}, 
+   DynamicBox[ToBoxes[
+     AlphaIntegration`LinguisticAssistantBoxes["", 4, Automatic, 
+      Dynamic[Typeset`query$$], 
+      Dynamic[Typeset`boxes$$], 
+      Dynamic[Typeset`allassumptions$$], 
+      Dynamic[Typeset`assumptions$$], 
+      Dynamic[Typeset`open$$], 
+      Dynamic[Typeset`querystate$$]], StandardForm],
+    ImageSizeCache->{513., {20., 39.}},
+    TrackedSymbols:>{
+     Typeset`query$$, Typeset`boxes$$, Typeset`allassumptions$$, 
+      Typeset`assumptions$$, Typeset`open$$, Typeset`querystate$$}],
+   DynamicModuleValues:>{},
+   UndoTrackedVariables:>{Typeset`open$$}],
+  BaseStyle->{"Deploy"},
+  DeleteWithContents->True,
+  Editable->False,
+  SelectWithContents->True]], "Input",
+ CellChangeTimes->{
+  3.679800543421026*^9},ExpressionUUID->"137a1b7b-21c7-498a-b297-\
+8679a4820a32"],
+
+Cell["\<\
+SemanticInterpretation is the programmable interface to ctrl + =, it has a \
+second argument which is a pattern to filter the results:\
+\>", "Text",
+ CellChangeTimes->{{3.683611014539441*^9, 3.68361103837573*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"SemanticInterpretation", "[", 
+  RowBox[{"\"\<congo\>\"", ",", " ", 
+   RowBox[{"Entity", "[", 
+    RowBox[{"\"\<River\>\"", ",", " ", "__"}], "]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.679800665521716*^9, 3.6798007647092237`*^9}, 
+   3.683611065126206*^9}],
+
+Cell[BoxData[
+ TemplateBox[{"\"Congo\"",RowBox[{"Entity", "[", 
+     RowBox[{"\"River\"", ",", "\"Congo::zqkh9\""}], "]"}],
+   "\"Entity[\\\"River\\\", \\\"Congo::zqkh9\\\"]\"","\"river\""},
+  "Entity"]], "Output",
+ CellChangeTimes->{{3.6798006760508537`*^9, 3.679800689837288*^9}, {
+  3.679800759236793*^9, 3.679800765543056*^9}, {3.683611042127226*^9, 
+  3.683611066915574*^9}}]
+}, Open  ]],
+
+Cell["\<\
+But if you want even more fine grained result you should use Interpreter\
+\>", "Text",
+ CellChangeTimes->{3.683611113625022*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SlideShowNavigationBar",
+ CellTags->
+  "SlideShowHeader",ExpressionUUID->"ef6f7756-19c9-43a1-95aa-93820717b981"],
+
+Cell[CellGroupData[{
+
+Cell["Interpreter", "Chapter",
+ CellChangeTimes->{{3.683611104888438*^9, 3.683611106046372*^9}}],
+
+Cell["Interpreters have a type (in this case Number):", "Text",
+ CellChangeTimes->{{3.683611075487105*^9, 3.683611136692971*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Interpreter", "[", "\"\<Number\>\"", "]"}], "[", "\"\<2\>\"", 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.679800843514358*^9, 
+  3.679800849091385*^9}},ExpressionUUID->"c68ffcc7-e1af-4cf9-9770-\
+ed7fd3f36e5a"],
+
+Cell[BoxData["2"], "Output",
+ CellChangeTimes->{3.67980084950279*^9}]
+}, Open  ]],
+
+Cell["\<\
+Interpreters come in several flavors, if you want to get the full power of \
+the W|A parser use Semantic Interpreters:\
+\>", "Text",
+ CellChangeTimes->{{3.68361114320467*^9, 3.683611181332821*^9}, 
+   3.707124304823691*^9},ExpressionUUID->"f4c09a37-cc93-42d9-93b5-\
+6e4d005d2a5f"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Interpreter", "[", "\"\<SemanticNumber\>\"", "]"}], "[", 
+  "\"\<two\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.679800862528797*^9, 3.679800867279379*^9}}],
+
+Cell[BoxData["2"], "Output",
+ CellChangeTimes->{3.679800868920086*^9}]
+}, Open  ]],
+
+Cell["Some interpreters are Semantic by default:", "Text",
+ CellChangeTimes->{{3.683611184833202*^9, 3.6836111939675083`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Interpreter", "[", "\"\<Quantity\>\"", "]"}], "[", "\"\<1 m\>\"", 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.67980088082568*^9, 3.679800901765627*^9}}],
+
+Cell[BoxData[
+ TemplateBox[{"1","\"m\"","meters","\"Meters\""},
+  "Quantity"]], "Output",
+ CellChangeTimes->{{3.679800889527769*^9, 3.679800902244541*^9}}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SlideShowNavigationBar",
+ CellTags->
+  "SlideShowHeader",ExpressionUUID->"1d71fa88-e17f-4b57-a169-141bdbaf95e7"],
+
+Cell[CellGroupData[{
+
+Cell["Restricted", "Chapter",
+ CellChangeTimes->{{3.683611207909129*^9, 3.683611212238652*^9}}],
+
+Cell[TextData[{
+ "Sometimes you might want to restrict the domain of your interpreter type. \
+Restricted has a syntax that depends on the base type. The possible \
+restrictions are documented in the corresponding ",
+ ButtonBox["interpreter type page",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    FrontEnd`FileName[{
+     "Documentation", "English", "System", "ReferencePages", "Interpreters"}, 
+     "Quantity.nb", CharacterEncoding -> "UTF-8"], None}],
+ ":"
+}], "Text",
+ CellChangeTimes->{{3.683611214405314*^9, 3.683611290599663*^9}, {
+  3.683611407054891*^9, 3.6836114070589237`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Interpreter", "[", 
+   RowBox[{"Restricted", "[", 
+    RowBox[{"\"\<Quantity\>\"", ",", " ", "\"\<Seconds\>\""}], "]"}], "]"}], 
+  "[", "\"\<1 m\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.6798009084768248`*^9, 3.679800919868793*^9}}],
+
+Cell[BoxData[
+ TemplateBox[{"60","\"s\"","seconds","\"Seconds\""},
+  "Quantity"]], "Output",
+ CellChangeTimes->{3.6798009211033*^9}]
+}, Open  ]],
+
+Cell["\<\
+If the provided input is incompatible with the restriction we get a Failure \
+object:\
+\>", "Text",
+ CellChangeTimes->{{3.683611418855747*^9, 3.6836114321228323`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Interpreter", "[", 
+   RowBox[{"Restricted", "[", 
+    RowBox[{"\"\<Quantity\>\"", ",", " ", "\"\<Seconds\>\""}], "]"}], "]"}], 
+  "[", "\"\<1 ly\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.679800962024691*^9, 3.679800963671178*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   TagBox["Failure",
+    "SummaryHead"], "[", 
+   DynamicModuleBox[{Typeset`open$$ = False}, 
+    PanelBox[
+     PaneSelectorBox[{False->GridBox[{
+        {
+         PaneBox[
+          ButtonBox[
+           
+           DynamicBox[FEPrivate`FrontEndResource[
+            "FEBitmaps", "SquarePlusIconMedium"],
+            ImageSizeCache->{24., {0., 24.}}],
+           Appearance->None,
+           ButtonFunction:>(Typeset`open$$ = True),
+           Evaluator->Automatic,
+           Method->"Preemptive"],
+          Alignment->{Center, Center},
+          
+          ImageSize->
+           Dynamic[{
+            Automatic, 
+             3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+              Magnification])}]], 
+         FrameBox[
+          StyleBox["\<\"\[WarningSign]\"\>", "Message",
+           StripOnInput->False,
+           FontSize->35],
+          ContentPadding->False,
+          FrameMargins->{{0, 0}, {0, 0}},
+          FrameStyle->None,
+          StripOnInput->False], GridBox[{
+           {
+            TagBox[GridBox[{
+               {
+                TagBox["\<\"Message: \"\>",
+                 "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                TagBox["\<\"Enter units compatible with Seconds.\"\>",
+                 "SummaryItem"]}
+              },
+              GridBoxAlignment->{"Columns" -> {{Left}}},
+              GridBoxItemSize->{"Columns" -> {6.5, All}},
+              GridBoxSpacings->{"Columns" -> {{0}}}],
+             "SummaryItem"]},
+           {
+            TagBox[GridBox[{
+               {
+                TagBox["\<\"Tag: \"\>",
+                 "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                TagBox["\<\"RestrictionFailure\"\>",
+                 "SummaryItem"]}
+              },
+              GridBoxAlignment->{"Columns" -> {{Left}}},
+              GridBoxItemSize->{"Columns" -> {6.5, All}},
+              GridBoxSpacings->{"Columns" -> {{0}}}],
+             "SummaryItem"]}
+          },
+          AutoDelete->False,
+          
+          BaseStyle->{
+           ShowStringCharacters -> False, NumberMarks -> False, 
+            PrintPrecision -> 3, ShowSyntaxStyles -> False},
+          GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Top}}},
+          
+          GridBoxItemSize->{
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+          GridBoxSpacings->{"Columns" -> {{2}}, "Rows" -> {{Automatic}}}]}
+       },
+       AutoDelete->False,
+       BaselinePosition->{1, 1},
+       GridBoxAlignment->{"Rows" -> {{Top}}},
+       GridBoxItemSize->{
+        "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], True->
+      GridBox[{
+        {
+         PaneBox[
+          ButtonBox[
+           
+           DynamicBox[FEPrivate`FrontEndResource[
+            "FEBitmaps", "SquareMinusIconMedium"]],
+           Appearance->None,
+           ButtonFunction:>(Typeset`open$$ = False),
+           Evaluator->Automatic,
+           Method->"Preemptive"],
+          Alignment->{Center, Center},
+          
+          ImageSize->
+           Dynamic[{
+            Automatic, 
+             3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+              Magnification])}]], 
+         FrameBox[
+          StyleBox["\<\"\[WarningSign]\"\>", "Message",
+           StripOnInput->False,
+           FontSize->35],
+          ContentPadding->False,
+          FrameMargins->{{0, 0}, {0, 0}},
+          FrameStyle->None,
+          StripOnInput->False], GridBox[{
+           {
+            TagBox[GridBox[{
+               {
+                TagBox["\<\"Message: \"\>",
+                 "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                TagBox["\<\"Enter units compatible with Seconds.\"\>",
+                 "SummaryItem"]}
+              },
+              GridBoxAlignment->{"Columns" -> {{Left}}},
+              GridBoxItemSize->{"Columns" -> {6.5, All}},
+              GridBoxSpacings->{"Columns" -> {{0}}}],
+             "SummaryItem"]},
+           {
+            TagBox[GridBox[{
+               {
+                TagBox["\<\"Tag: \"\>",
+                 "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                TagBox["\<\"RestrictionFailure\"\>",
+                 "SummaryItem"]}
+              },
+              GridBoxAlignment->{"Columns" -> {{Left}}},
+              GridBoxItemSize->{"Columns" -> {6.5, All}},
+              GridBoxSpacings->{"Columns" -> {{0}}}],
+             "SummaryItem"]},
+           {
+            RowBox[{
+             TagBox[
+              TemplateBox[{"\"Unit\"","\": \""},
+               "RowDefault"],
+              "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+             TagBox["\<\"Seconds\"\>",
+              "SummaryItem"]}]},
+           {
+            RowBox[{
+             TagBox[
+              TemplateBox[{"\"Input\"","\": \""},
+               "RowDefault"],
+              "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+             TagBox["\<\"1 ly\"\>",
+              "SummaryItem"]}]},
+           {
+            RowBox[{
+             TagBox[
+              TemplateBox[{"\"Type\"","\": \""},
+               "RowDefault"],
+              "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+             TagBox["\<\"Quantity\"\>",
+              "SummaryItem"]}]}
+          },
+          AutoDelete->False,
+          
+          BaseStyle->{
+           ShowStringCharacters -> False, NumberMarks -> False, 
+            PrintPrecision -> 3, ShowSyntaxStyles -> False},
+          GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Top}}},
+          
+          GridBoxItemSize->{
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+          GridBoxSpacings->{"Columns" -> {{2}}, "Rows" -> {{Automatic}}}]}
+       },
+       AutoDelete->False,
+       BaselinePosition->{1, 1},
+       GridBoxAlignment->{"Rows" -> {{Top}}},
+       GridBoxItemSize->{
+        "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}]}, Dynamic[
+      Typeset`open$$],
+      ImageSize->Automatic],
+     BaselinePosition->Baseline],
+    DynamicModuleValues:>{}], "]"}],
+  Failure["RestrictionFailure", 
+   Association[
+   "MessageTemplate" :> MessageName[Interpreter, "unitincompatible"], 
+    "MessageParameters" -> 
+    Association["Unit" -> "Seconds", "Input" -> "1 ly"], "Unit" -> "Seconds", 
+    "Input" -> "1 ly", "Type" -> "Quantity"]],
+  Editable->False,
+  SelectWithContents->True,
+  Selectable->False]], "Output",
+ CellChangeTimes->{3.679800965062216*^9}]
+}, Open  ]],
+
+Cell["\<\
+Note that the Failure object has a nice informative error message (this is \
+very useful when building forms):\
+\>", "Text",
+ CellChangeTimes->{{3.6836114419462233`*^9, 3.683611459842616*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Interpreter", "[", 
+   RowBox[{"Restricted", "[", 
+    RowBox[{"\"\<Number\>\"", ",", " ", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "100", ",", "2.1"}], "}"}]}], "]"}], "]"}], "[", 
+  "\"\<3\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.679800984902158*^9, 3.679801023816875*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   TagBox["Failure",
+    "SummaryHead"], "[", 
+   DynamicModuleBox[{Typeset`open$$ = False}, 
+    PanelBox[
+     PaneSelectorBox[{False->GridBox[{
+        {
+         PaneBox[
+          ButtonBox[
+           
+           DynamicBox[FEPrivate`FrontEndResource[
+            "FEBitmaps", "SquarePlusIconMedium"],
+            ImageSizeCache->{24., {0., 24.}}],
+           Appearance->None,
+           ButtonFunction:>(Typeset`open$$ = True),
+           Evaluator->Automatic,
+           Method->"Preemptive"],
+          Alignment->{Center, Center},
+          
+          ImageSize->
+           Dynamic[{
+            Automatic, 
+             3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+              Magnification])}]], 
+         FrameBox[
+          StyleBox["\<\"\[WarningSign]\"\>", "Message",
+           StripOnInput->False,
+           FontSize->35],
+          ContentPadding->False,
+          FrameMargins->{{0, 0}, {0, 0}},
+          FrameStyle->None,
+          StripOnInput->False], GridBox[{
+           {
+            TagBox[GridBox[{
+               {
+                TagBox["\<\"Message: \"\>",
+                 "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                
+                TagBox["\<\"Enter a number from the sequence 0., 2.1, 4.2 \
+\[Ellipsis] 98.7.\"\>",
+                 "SummaryItem"]}
+              },
+              GridBoxAlignment->{"Columns" -> {{Left}}},
+              GridBoxItemSize->{"Columns" -> {6.5, All}},
+              GridBoxSpacings->{"Columns" -> {{0}}}],
+             "SummaryItem"]},
+           {
+            TagBox[GridBox[{
+               {
+                TagBox["\<\"Tag: \"\>",
+                 "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                TagBox["\<\"RestrictionFailure\"\>",
+                 "SummaryItem"]}
+              },
+              GridBoxAlignment->{"Columns" -> {{Left}}},
+              GridBoxItemSize->{"Columns" -> {6.5, All}},
+              GridBoxSpacings->{"Columns" -> {{0}}}],
+             "SummaryItem"]}
+          },
+          AutoDelete->False,
+          
+          BaseStyle->{
+           ShowStringCharacters -> False, NumberMarks -> False, 
+            PrintPrecision -> 3, ShowSyntaxStyles -> False},
+          GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Top}}},
+          
+          GridBoxItemSize->{
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+          GridBoxSpacings->{"Columns" -> {{2}}, "Rows" -> {{Automatic}}}]}
+       },
+       AutoDelete->False,
+       BaselinePosition->{1, 1},
+       GridBoxAlignment->{"Rows" -> {{Top}}},
+       GridBoxItemSize->{
+        "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], True->
+      GridBox[{
+        {
+         PaneBox[
+          ButtonBox[
+           
+           DynamicBox[FEPrivate`FrontEndResource[
+            "FEBitmaps", "SquareMinusIconMedium"]],
+           Appearance->None,
+           ButtonFunction:>(Typeset`open$$ = False),
+           Evaluator->Automatic,
+           Method->"Preemptive"],
+          Alignment->{Center, Center},
+          
+          ImageSize->
+           Dynamic[{
+            Automatic, 
+             3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+              Magnification])}]], 
+         FrameBox[
+          StyleBox["\<\"\[WarningSign]\"\>", "Message",
+           StripOnInput->False,
+           FontSize->35],
+          ContentPadding->False,
+          FrameMargins->{{0, 0}, {0, 0}},
+          FrameStyle->None,
+          StripOnInput->False], GridBox[{
+           {
+            TagBox[GridBox[{
+               {
+                TagBox["\<\"Message: \"\>",
+                 "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                
+                TagBox["\<\"Enter a number from the sequence 0., 2.1, 4.2 \
+\[Ellipsis] 98.7.\"\>",
+                 "SummaryItem"]}
+              },
+              GridBoxAlignment->{"Columns" -> {{Left}}},
+              GridBoxItemSize->{"Columns" -> {6.5, All}},
+              GridBoxSpacings->{"Columns" -> {{0}}}],
+             "SummaryItem"]},
+           {
+            TagBox[GridBox[{
+               {
+                TagBox["\<\"Tag: \"\>",
+                 "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                TagBox["\<\"RestrictionFailure\"\>",
+                 "SummaryItem"]}
+              },
+              GridBoxAlignment->{"Columns" -> {{Left}}},
+              GridBoxItemSize->{"Columns" -> {6.5, All}},
+              GridBoxSpacings->{"Columns" -> {{0}}}],
+             "SummaryItem"]},
+           {
+            RowBox[{
+             TagBox[
+              TemplateBox[{"\"Step\"","\": \""},
+               "RowDefault"],
+              "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+             TagBox["2.1`",
+              "SummaryItem"]}]},
+           {
+            RowBox[{
+             TagBox[
+              TemplateBox[{"\"Input\"","\": \""},
+               "RowDefault"],
+              "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+             TagBox["\<\"3\"\>",
+              "SummaryItem"]}]},
+           {
+            RowBox[{
+             TagBox[
+              TemplateBox[{"\"Type\"","\": \""},
+               "RowDefault"],
+              "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+             TagBox["\<\"Number\"\>",
+              "SummaryItem"]}]}
+          },
+          AutoDelete->False,
+          
+          BaseStyle->{
+           ShowStringCharacters -> False, NumberMarks -> False, 
+            PrintPrecision -> 3, ShowSyntaxStyles -> False},
+          GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Top}}},
+          
+          GridBoxItemSize->{
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+          GridBoxSpacings->{"Columns" -> {{2}}, "Rows" -> {{Automatic}}}]}
+       },
+       AutoDelete->False,
+       BaselinePosition->{1, 1},
+       GridBoxAlignment->{"Rows" -> {{Top}}},
+       GridBoxItemSize->{
+        "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}]}, Dynamic[
+      Typeset`open$$],
+      ImageSize->Automatic],
+     BaselinePosition->Baseline],
+    DynamicModuleValues:>{}], "]"}],
+  Failure["RestrictionFailure", 
+   Association[
+   "MessageTemplate" :> MessageName[Interpreter, "numbersequence"], 
+    "MessageParameters" -> 
+    Association[
+     "Sequence" -> "0., 2.1, 4.2 \[Ellipsis] 98.7", "Input" -> "3"], "Step" -> 
+    2.1, "Input" -> "3", "Type" -> "Number"]],
+  Editable->False,
+  SelectWithContents->True,
+  Selectable->False]], "Output",
+ CellChangeTimes->{{3.679801005018392*^9, 3.679801024101659*^9}}]
+}, Open  ]],
+
+Cell["There are a lot of interpreter types", "Text",
+ CellChangeTimes->{{3.683611465385971*^9, 3.683611470500737*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"$InterpreterTypes", "//", "Length"}]], "Input",
+ CellChangeTimes->{{3.6798011056492767`*^9, 3.6798011233650837`*^9}}],
+
+Cell[BoxData["680"], "Output",
+ CellChangeTimes->{{3.679801109601489*^9, 3.679801123753051*^9}}]
+}, Open  ]],
+
+Cell["Many of these return Entities", "Text",
+ CellChangeTimes->{{3.683611476570809*^9, 3.68361148208578*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Interpreter", "[", "\"\<Country\>\"", "]"}], "[", "\"\<italy\>\"", 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.679801166506278*^9, 3.679801174237199*^9}}],
+
+Cell[BoxData[
+ TemplateBox[{"\"Italy\"",RowBox[{"Entity", "[", 
+     RowBox[{"\"Country\"", ",", "\"Italy\""}], "]"}],
+   "\"Entity[\\\"Country\\\", \\\"Italy\\\"]\"","\"country\""},
+  "Entity"]], "Output",
+ CellChangeTimes->{3.67980117553102*^9}]
+}, Open  ]],
+
+Cell["Entity interpreters support a very rich restriction syntax", "Text",
+ CellChangeTimes->{{3.683611489603661*^9, 3.683611507373114*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Interpreter", "[", 
+   RowBox[{
+    RowBox[{"Restricted", "[", 
+     RowBox[{"\"\<City\>\"", ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"\"\<Country\>\"", "->", " ", 
+         TemplateBox[{"\"United States\"",RowBox[{"Entity", "[", 
+             RowBox[{"\"Country\"", ",", "\"UnitedStates\""}], "]"}],
+           "\"Entity[\\\"Country\\\", \\\"UnitedStates\\\"]\"","\"country\""},
+          
+          "Entity"]}], ",", " ", 
+        RowBox[{"\"\<Population\>\"", " ", "\[Rule]", " ", 
+         RowBox[{"GreaterThan", "[", "100000", "]"}]}]}], "}"}]}], "]"}], ",",
+     " ", 
+    RowBox[{"AmbiguityFunction", "\[Rule]", "All"}]}], "]"}], "[", 
+  "\"\<springfield\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.679801190760083*^9, 3.679801207830274*^9}, {
+   3.679801247413849*^9, 3.6798012958115473`*^9}, {3.679801328296434*^9, 
+   3.679801350009254*^9}, 3.679801399787122*^9, {3.683611522294198*^9, 
+   3.683611533262497*^9}}],
+
+Cell[BoxData[
+ RowBox[{"AmbiguityList", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[{"\"Springfield\"",RowBox[{"Entity", "[", 
+         RowBox[{"\"City\"", ",", 
+           RowBox[{"{", 
+             
+             RowBox[{"\"Springfield\"", ",", "\"Massachusetts\"", ",", 
+               "\"UnitedStates\""}], "}"}]}], "]"}],
+       "\"Entity[\\\"City\\\", {\\\"Springfield\\\", \\\"Massachusetts\\\", \
+\\\"UnitedStates\\\"}]\"","\"city\""},
+      "Entity"], ",", 
+     TemplateBox[{"\"Springfield\"",RowBox[{"Entity", "[", 
+         RowBox[{"\"City\"", ",", 
+           RowBox[{"{", 
+             
+             RowBox[{"\"Springfield\"", ",", "\"Missouri\"", ",", 
+               "\"UnitedStates\""}], "}"}]}], "]"}],
+       "\"Entity[\\\"City\\\", {\\\"Springfield\\\", \\\"Missouri\\\", \
+\\\"UnitedStates\\\"}]\"","\"city\""},
+      "Entity"], ",", 
+     TemplateBox[{"\"Springfield\"",RowBox[{"Entity", "[", 
+         RowBox[{"\"City\"", ",", 
+           RowBox[{"{", 
+             
+             RowBox[{"\"Springfield\"", ",", "\"Illinois\"", ",", 
+               "\"UnitedStates\""}], "}"}]}], "]"}],
+       "\"Entity[\\\"City\\\", {\\\"Springfield\\\", \\\"Illinois\\\", \
+\\\"UnitedStates\\\"}]\"","\"city\""},
+      "Entity"]}], "}"}], ",", "\<\"springfield\"\>", ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{"\<\"Description\"\>", 
+       "\[Rule]", "\<\"Springfield (Massachusetts, USA)\"\>"}], 
+      "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{"\<\"Description\"\>", 
+       "\[Rule]", "\<\"Springfield (Missouri, USA)\"\>"}], 
+      "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{"\<\"Description\"\>", 
+       "\[Rule]", "\<\"Springfield (Illinois, USA)\"\>"}], 
+      "\[RightAssociation]"}]}], "}"}]}], "]"}]], "Output",
+ CellChangeTimes->{3.683611536597118*^9}]
+}, Open  ]],
+
+Cell["\<\
+As you can see above Interpreter can deal with ambiguous queries.\
+\>", "Text",
+ CellChangeTimes->{{3.6836115553977003`*^9, 3.6836115788009577`*^9}}],
+
+Cell["\<\
+It will also try to construct an helpful failure message given a complex \
+restriction:\
+\>", "Text",
+ CellChangeTimes->{{3.68361158085179*^9, 3.683611592621202*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Interpreter", "[", 
+   RowBox[{
+    RowBox[{"Restricted", "[", 
+     RowBox[{"\"\<City\>\"", ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"\"\<Country\>\"", "->", " ", 
+         TemplateBox[{"\"United States\"",RowBox[{"Entity", "[", 
+             RowBox[{"\"Country\"", ",", "\"UnitedStates\""}], "]"}],
+           "\"Entity[\\\"Country\\\", \\\"UnitedStates\\\"]\"","\"country\""},
+          
+          "Entity"]}], ",", " ", 
+        RowBox[{"\"\<Population\>\"", " ", "\[Rule]", " ", 
+         RowBox[{"GreaterThan", "[", "100000", "]"}]}]}], "}"}]}], "]"}], ",",
+     " ", 
+    RowBox[{"AmbiguityFunction", "\[Rule]", "All"}]}], "]"}], "[", 
+  "\"\<moscow\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.679801190760083*^9, 3.679801207830274*^9}, {
+   3.679801247413849*^9, 3.6798012958115473`*^9}, {3.679801328296434*^9, 
+   3.679801350009254*^9}, 3.679801399787122*^9, {3.683611522294198*^9, 
+   3.683611523526639*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   TagBox["Failure",
+    "SummaryHead"], "[", 
+   DynamicModuleBox[{Typeset`open$$ = False}, 
+    PanelBox[
+     PaneSelectorBox[{False->GridBox[{
+        {
+         PaneBox[
+          ButtonBox[
+           
+           DynamicBox[FEPrivate`FrontEndResource[
+            "FEBitmaps", "SquarePlusIconMedium"],
+            ImageSizeCache->{24., {0., 24.}}],
+           Appearance->None,
+           ButtonFunction:>(Typeset`open$$ = True),
+           Evaluator->Automatic,
+           Method->"Preemptive"],
+          Alignment->{Center, Center},
+          
+          ImageSize->
+           Dynamic[{
+            Automatic, 
+             3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+              Magnification])}]], 
+         FrameBox[
+          StyleBox["\<\"\[WarningSign]\"\>", "Message",
+           StripOnInput->False,
+           FontSize->35],
+          ContentPadding->False,
+          FrameMargins->{{0, 0}, {0, 0}},
+          FrameStyle->None,
+          StripOnInput->False], GridBox[{
+           {
+            TagBox[GridBox[{
+               {
+                TagBox["\<\"Message: \"\>",
+                 "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                
+                TagBox["\<\"Enter a city with country equal to United States, \
+and with city population greater than 100,000 people.\"\>",
+                 "SummaryItem"]}
+              },
+              GridBoxAlignment->{"Columns" -> {{Left}}},
+              GridBoxItemSize->{"Columns" -> {6.5, All}},
+              GridBoxSpacings->{"Columns" -> {{0}}}],
+             "SummaryItem"]},
+           {
+            TagBox[GridBox[{
+               {
+                TagBox["\<\"Tag: \"\>",
+                 "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                TagBox["\<\"RestrictionFailure\"\>",
+                 "SummaryItem"]}
+              },
+              GridBoxAlignment->{"Columns" -> {{Left}}},
+              GridBoxItemSize->{"Columns" -> {6.5, All}},
+              GridBoxSpacings->{"Columns" -> {{0}}}],
+             "SummaryItem"]}
+          },
+          AutoDelete->False,
+          
+          BaseStyle->{
+           ShowStringCharacters -> False, NumberMarks -> False, 
+            PrintPrecision -> 3, ShowSyntaxStyles -> False},
+          GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Top}}},
+          
+          GridBoxItemSize->{
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+          GridBoxSpacings->{"Columns" -> {{2}}, "Rows" -> {{Automatic}}}]}
+       },
+       AutoDelete->False,
+       BaselinePosition->{1, 1},
+       GridBoxAlignment->{"Rows" -> {{Top}}},
+       GridBoxItemSize->{
+        "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], True->
+      GridBox[{
+        {
+         PaneBox[
+          ButtonBox[
+           
+           DynamicBox[FEPrivate`FrontEndResource[
+            "FEBitmaps", "SquareMinusIconMedium"]],
+           Appearance->None,
+           ButtonFunction:>(Typeset`open$$ = False),
+           Evaluator->Automatic,
+           Method->"Preemptive"],
+          Alignment->{Center, Center},
+          
+          ImageSize->
+           Dynamic[{
+            Automatic, 
+             3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+              Magnification])}]], 
+         FrameBox[
+          StyleBox["\<\"\[WarningSign]\"\>", "Message",
+           StripOnInput->False,
+           FontSize->35],
+          ContentPadding->False,
+          FrameMargins->{{0, 0}, {0, 0}},
+          FrameStyle->None,
+          StripOnInput->False], GridBox[{
+           {
+            TagBox[GridBox[{
+               {
+                TagBox["\<\"Message: \"\>",
+                 "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                
+                TagBox["\<\"Enter a city with country equal to United States, \
+and with city population greater than 100,000 people.\"\>",
+                 "SummaryItem"]}
+              },
+              GridBoxAlignment->{"Columns" -> {{Left}}},
+              GridBoxItemSize->{"Columns" -> {6.5, All}},
+              GridBoxSpacings->{"Columns" -> {{0}}}],
+             "SummaryItem"]},
+           {
+            TagBox[GridBox[{
+               {
+                TagBox["\<\"Tag: \"\>",
+                 "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                TagBox["\<\"RestrictionFailure\"\>",
+                 "SummaryItem"]}
+              },
+              GridBoxAlignment->{"Columns" -> {{Left}}},
+              GridBoxItemSize->{"Columns" -> {6.5, All}},
+              GridBoxSpacings->{"Columns" -> {{0}}}],
+             "SummaryItem"]},
+           {
+            RowBox[{
+             TagBox[
+              TemplateBox[{"\"Type\"","\": \""},
+               "RowDefault"],
+              "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+             TagBox["\<\"City\"\>",
+              "SummaryItem"]}]},
+           {
+            RowBox[{
+             TagBox[
+              TemplateBox[{"\"PropertyRestriction\"","\": \""},
+               "RowDefault"],
+              "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+             TagBox[
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{
+                 TemplateBox[{"\"country\"",RowBox[{"EntityProperty", "[", 
+                    RowBox[{"\"City\"", ",", "\"Country\""}], "]"}],
+                   "\"EntityProperty[\\\"City\\\", \\\"Country\\\"]\""},
+                  "EntityProperty"], "\[Rule]", 
+                 RowBox[{"EqualTo", "[", 
+                  TemplateBox[{"\"United States\"",RowBox[{"Entity", "[", 
+                    RowBox[{"\"Country\"", ",", "\"UnitedStates\""}], "]"}],
+                    "\"Entity[\\\"Country\\\", \\\"UnitedStates\\\"]\"",
+                    "\"country\""},
+                   "Entity"], "]"}]}], ",", 
+                RowBox[{
+                 
+                 TemplateBox[{
+                  "\"city population\"",RowBox[{"EntityProperty", "[", 
+                    RowBox[{"\"City\"", ",", "\"Population\""}], "]"}],
+                   "\"EntityProperty[\\\"City\\\", \\\"Population\\\"]\""},
+                  "EntityProperty"], "\[Rule]", 
+                 RowBox[{"GreaterThan", "[", 
+                  TemplateBox[{"100000","\"people\"","people","\"People\""},
+                   "Quantity"], "]"}]}]}], "}"}],
+              "SummaryItem"]}]},
+           {
+            RowBox[{
+             TagBox[
+              TemplateBox[{"\"Input\"","\": \""},
+               "RowDefault"],
+              "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+             TagBox["\<\"moscow\"\>",
+              "SummaryItem"]}]}
+          },
+          AutoDelete->False,
+          
+          BaseStyle->{
+           ShowStringCharacters -> False, NumberMarks -> False, 
+            PrintPrecision -> 3, ShowSyntaxStyles -> False},
+          GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Top}}},
+          
+          GridBoxItemSize->{
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+          GridBoxSpacings->{"Columns" -> {{2}}, "Rows" -> {{Automatic}}}]}
+       },
+       AutoDelete->False,
+       BaselinePosition->{1, 1},
+       GridBoxAlignment->{"Rows" -> {{Top}}},
+       GridBoxItemSize->{
+        "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}]}, Dynamic[
+      Typeset`open$$],
+      ImageSize->Automatic],
+     BaselinePosition->Baseline],
+    DynamicModuleValues:>{}], "]"}],
+  Failure["RestrictionFailure", 
+   Association[
+   "MessageTemplate" :> MessageName[Interpreter, "property"], 
+    "MessageParameters" -> 
+    Association[
+     "Article" -> "a", "Type" -> "city", "Property" -> 
+      "with country equal to United States, and with city population greater \
+than 100,000 people", "Input" -> "moscow"], "Type" -> "City", 
+    "PropertyRestriction" -> {EntityProperty["City", "Country"] -> EqualTo[
+        Entity["Country", "UnitedStates"]], 
+      EntityProperty["City", "Population"] -> GreaterThan[
+        Quantity[100000, "People"]]}, "Input" -> "moscow"]],
+  Editable->False,
+  SelectWithContents->True,
+  Selectable->False]], "Output",
+ CellChangeTimes->{{3.679801227458043*^9, 3.6798012679083633`*^9}, 
+   3.679801299180106*^9, {3.679801344168481*^9, 3.679801352049594*^9}, 
+   3.679801401394536*^9}]
+}, Open  ]],
+
+Cell["There are other interpreter types for all use cases:", "Text",
+ CellChangeTimes->{{3.6836116035886307`*^9, 3.683611611659552*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Interpreter", "[", "\"\<PhoneNumber\>\"", "]"}], "[", 
+  "\"\<+39 333 09880 987\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.6798015115681973`*^9, 3.679801562207172*^9}, {
+  3.7071257407966633`*^9, 
+  3.707125743945426*^9}},ExpressionUUID->"c75d5397-589d-4762-933b-\
+9e859c4a3272"],
+
+Cell[BoxData["\<\"+3933309880987\"\>"], "Output",
+ CellChangeTimes->{
+  3.679801521738793*^9, {3.6798015537328577`*^9, 
+   3.67980156250861*^9}},ExpressionUUID->"93a0cb41-7f91-4cb1-b93a-\
+50ea73c2574e"]
+}, Open  ]],
+
+Cell["\<\
+Sometimes you want to allow \[OpenCurlyQuote]computations\[CloseCurlyQuote] \
+in the interpretation. This might not be a good choice for quizzes as you can \
+answer the question by typing the question again:\
+\>", "Text",
+ CellChangeTimes->{{3.683611617439666*^9, 3.6836116478798523`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Interpreter", "[", "\"\<ComputedCity\>\"", "]"}], "[", 
+  "\"\<what is the capital of armenia?\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.679801722589196*^9, 3.67980174406406*^9}}],
+
+Cell[BoxData[
+ TemplateBox[{"\"Yerevan\"",RowBox[{"Entity", "[", 
+     RowBox[{"\"City\"", ",", 
+       RowBox[{"{", 
+         RowBox[{"\"Yerevan\"", ",", "\"Yerevan\"", ",", "\"Armenia\""}], 
+         "}"}]}], "]"}],
+   "\"Entity[\\\"City\\\", {\\\"Yerevan\\\", \\\"Yerevan\\\", \
+\\\"Armenia\\\"}]\"","\"city\""},
+  "Entity"]], "Input",
+ CellChangeTimes->{{3.6798020794969597`*^9, 3.679802079505229*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SlideShowNavigationBar",
+ CellTags->
+  "SlideShowHeader",ExpressionUUID->"6f8f4327-84ad-4b20-9055-1e6bd8f839ae"],
+
+Cell[CellGroupData[{
+
+Cell["Interpreter features", "Chapter",
+ CellChangeTimes->{{3.683611104888438*^9, 3.683611106046372*^9}, {
+  3.707079268149542*^9, 3.707079269957324*^9}, {3.70707940718919*^9, 
+  3.707079408387089*^9}},ExpressionUUID->"b78f927c-7642-4f78-8051-\
+92733f286a16"],
+
+Cell["\<\
+Interpreter will use internet connection to send data to alpha when a \
+semantic interpretation is required\
+\>", "Text",
+ CellChangeTimes->{{3.683611075487105*^9, 3.683611136692971*^9}, {
+  3.707079274388303*^9, 
+  3.707079307394617*^9}},ExpressionUUID->"1fc8065d-c2c2-4ab3-8bf8-\
+fbeb380d908f"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Interpreter", "[", "\"\<City\>\"", "]"}], "[", "\"\<NYC\>\"", 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.679800843514358*^9, 3.679800849091385*^9}, {
+  3.7070793106190453`*^9, 
+  3.707079313562422*^9}},ExpressionUUID->"9498bcaf-6f72-49d8-a2ad-\
+67d95c399bbe"],
+
+Cell["This is code is doing three consecutive network requests", "Text",
+ CellChangeTimes->{{3.683611075487105*^9, 3.683611136692971*^9}, {
+  3.707079274388303*^9, 3.707079307394617*^9}, {3.707079347961404*^9, 
+  3.7070793617262506`*^9}, {3.707124366041704*^9, 
+  3.707124381150258*^9}},ExpressionUUID->"8a466136-bcce-440b-ae88-\
+4418cd48b869"],
+
+Cell[BoxData[
+ RowBox[{"Map", "[", 
+  RowBox[{
+   RowBox[{"Interpreter", "[", "\"\<City\>\"", "]"}], ",", " ", 
+   RowBox[{"{", 
+    RowBox[{
+    "\"\<NYC\>\"", ",", " ", "\"\<Rome\>\"", ",", " ", "\"\<Paris\>\"", ",", 
+     " ", "\"\<Liubjana\>\""}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.7070793280656233`*^9, 3.707079342168517*^9}, {
+  3.707079495527484*^9, 
+  3.7070795008277197`*^9}},ExpressionUUID->"c2491355-4773-4b13-ab8c-\
+3ea5acf0cf90"],
+
+Cell["This is code is batching network request", "Text",
+ CellChangeTimes->{{3.683611075487105*^9, 3.683611136692971*^9}, {
+  3.707079274388303*^9, 3.707079307394617*^9}, {3.707079347961404*^9, 
+  3.707079377973456*^9}, {3.7071243774551477`*^9, 
+  3.7071243782228394`*^9}},ExpressionUUID->"c603da06-145d-4710-af5d-\
+921b1f4835aa"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Interpreter", "[", "\"\<City\>\"", "]"}], "[", 
+  RowBox[{"{", 
+   RowBox[{
+   "\"\<NYC\>\"", ",", " ", "\"\<Rome\>\"", ",", " ", "\"\<Paris\>\"", ",", 
+    " ", "\"\<Liubjana\>\""}], "}"}], "]"}]], "Input",
+ CellChangeTimes->{{3.7070793280656233`*^9, 3.707079342168517*^9}, {
+  3.707079380262946*^9, 3.707079383245154*^9}, {3.7070795149977627`*^9, 
+  3.707079515260026*^9}},ExpressionUUID->"81e187ea-b37e-419d-b972-\
+7ab8da61fdf5"],
+
+Cell["\<\
+Alternatives can be used in the type to fallback to a second interpretation\
+\>", "Text",
+ CellChangeTimes->{{3.7070794165558*^9, 
+  3.707079460015225*^9}},ExpressionUUID->"e42d1d44-60e0-4622-b6a3-\
+2886adc95a20"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Interpreter", "[", 
+   RowBox[{"\"\<Number\>\"", "|", "\"\<String\>\""}], "]"}], "[", 
+  RowBox[{"{", 
+   RowBox[{"\"\<1\>\"", ",", " ", "\"\<a\>\""}], "}"}], "]"}]], "Input",
+ CellChangeTimes->{{3.70707942963367*^9, 
+  3.707079445128488*^9}},ExpressionUUID->"a955e87d-82ca-4f8f-9d96-\
+b518ec6fc797"],
+
+Cell["\<\
+Alternatives can be used in the input to return the first input that succeeds.\
+\>", "Text",
+ CellChangeTimes->{{3.7070794165558*^9, 3.707079427257468*^9}, {
+  3.707079465206875*^9, 
+  3.707079476581252*^9}},ExpressionUUID->"0a996a34-cf0e-4574-b93e-\
+cd3cf065de9b"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Interpreter", "[", "\"\<Number\>\"", "]"}], "[", 
+  RowBox[{"\"\<a\>\"", "|", "\"\<1\>\""}], "]"}]], "Input",
+ CellChangeTimes->{{3.70707942963367*^9, 3.707079445128488*^9}, {
+  3.707079479296215*^9, 
+  3.707079490447749*^9}},ExpressionUUID->"67d82c40-c616-4140-a493-\
+1a2cc7c75e86"],
+
+Cell["\<\
+CompoundElement and RepeatingElement can be used to parse different types of \
+inputs.\
+\>", "Text",
+ CellChangeTimes->{{3.707079550356523*^9, 3.707079567457876*^9}, {
+  3.707124395721237*^9, 
+  3.707124403237829*^9}},ExpressionUUID->"c6e3007f-62f8-403a-9e55-\
+20b13e23c3d2"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"i", " ", "=", " ", 
+   RowBox[{"Interpreter", "[", "\[IndentingNewLine]", 
+    RowBox[{"CompoundElement", "[", 
+     RowBox[{"{", 
+      RowBox[{"\"\<Integer\>\"", ",", 
+       RowBox[{"RepeatingElement", "[", "\"\<Integer\>\"", "]"}]}], "}"}], 
+     "]"}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.707079527395939*^9, 3.70707954682124*^9}, {
+  3.7070795843527937`*^9, 
+  3.707079590816938*^9}},ExpressionUUID->"33c2129e-3a8a-4cf7-b318-\
+d736deb8ba95"],
+
+Cell[BoxData[
+ RowBox[{"i", "[", 
+  RowBox[{"{", 
+   RowBox[{"\"\<6\>\"", ",", 
+    RowBox[{"{", 
+     RowBox[{"\"\<1\>\"", ",", "\"\<2\>\"", ",", "\"\<3\>\""}], "}"}]}], 
+   "}"}], "]"}]], "Input",
+ CellChangeTimes->{{3.707079592587346*^9, 
+  3.707079597606881*^9}},ExpressionUUID->"f21aae44-2c9d-485d-986e-\
+aace53bc29e9"],
+
+Cell[BoxData[
+ RowBox[{"i", "[", 
+  RowBox[{"{", 
+   RowBox[{"\"\<6\>\"", ",", "\"\<b\>\""}], "}"}], "]"}]], "Input",
+ CellChangeTimes->{{3.707079602463216*^9, 
+  3.707079606334305*^9}},ExpressionUUID->"61be12a9-a82b-4514-93e6-\
+68c4449a4340"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SlideShowNavigationBar",
+ CellTags->
+  "SlideShowHeader",ExpressionUUID->"ce79f757-633f-4c9f-92ce-9e3074313759"],
+
+Cell[CellGroupData[{
+
+Cell["Entities", "Chapter",
+ CellChangeTimes->{{3.683611716975135*^9, 3.683611718925478*^9}}],
+
+Cell["\<\
+The most interesting thing about entities is that they have properties:\
+\>", "Text",
+ CellChangeTimes->{{3.683611728292624*^9, 3.683611736677066*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"EntityValue", "[", 
+  RowBox[{
+   TemplateBox[{"\"Yerevan\"",RowBox[{"Entity", "[", 
+       RowBox[{"\"City\"", ",", 
+         RowBox[{"{", 
+           RowBox[{"\"Yerevan\"", ",", "\"Yerevan\"", ",", "\"Armenia\""}], 
+           "}"}]}], "]"}],
+     "\"Entity[\\\"City\\\", {\\\"Yerevan\\\", \\\"Yerevan\\\", \\\"Armenia\\\
+\"}]\"","\"city\""},
+    "Entity"], ",", 
+   RowBox[{"EntityProperty", "[", 
+    RowBox[{"\"\<City\>\"", ",", " ", "\"\<Population\>\""}], "]"}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.679802073095907*^9, 3.679802103438216*^9}}],
+
+Cell[BoxData[
+ TemplateBox[{"1111300","\"people\"","people","\"People\""},
+  "Quantity"]], "Output",
+ CellChangeTimes->{3.679802105120652*^9}]
+}, Open  ]],
+
+Cell["Shorthands for extracting properties are supported as well:", "Text",
+ CellChangeTimes->{{3.683611747719698*^9, 3.683611755930151*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"EntityValue", "[", 
+  RowBox[{
+   TemplateBox[{"\"Yerevan\"",RowBox[{"Entity", "[", 
+       RowBox[{"\"City\"", ",", 
+         RowBox[{"{", 
+           RowBox[{"\"Yerevan\"", ",", "\"Yerevan\"", ",", "\"Armenia\""}], 
+           "}"}]}], "]"}],
+     "\"Entity[\\\"City\\\", {\\\"Yerevan\\\", \\\"Yerevan\\\", \\\"Armenia\\\
+\"}]\"","\"city\""},
+    "Entity"], ",", "\"\<Population\>\""}], "]"}]], "Input",
+ CellChangeTimes->{3.679802908475683*^9}],
+
+Cell[BoxData[
+ TemplateBox[{"1111300","\"people\"","people","\"People\""},
+  "Quantity"]], "Output",
+ CellChangeTimes->{3.679802908890686*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  TemplateBox[{"\"Yerevan\"",RowBox[{"Entity", "[", 
+      RowBox[{"\"City\"", ",", 
+        RowBox[{"{", 
+          RowBox[{"\"Yerevan\"", ",", "\"Yerevan\"", ",", "\"Armenia\""}], 
+          "}"}]}], "]"}],
+    "\"Entity[\\\"City\\\", {\\\"Yerevan\\\", \\\"Yerevan\\\", \
+\\\"Armenia\\\"}]\"","\"city\""},
+   "Entity"], "[", "\"\<Population\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.679802917272587*^9, 3.679802924120634*^9}}],
+
+Cell[BoxData[
+ TemplateBox[{"1111300","\"people\"","people","\"People\""},
+  "Quantity"]], "Output",
+ CellChangeTimes->{3.679802924462888*^9}]
+}, Open  ]],
+
+Cell["Get out all of the properties for an Entity:", "Text",
+ CellChangeTimes->{{3.6836117620646267`*^9, 3.683611774239294*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  TemplateBox[{"\"Yerevan\"",RowBox[{"Entity", "[", 
+      RowBox[{"\"City\"", ",", 
+        RowBox[{"{", 
+          RowBox[{"\"Yerevan\"", ",", "\"Yerevan\"", ",", "\"Armenia\""}], 
+          "}"}]}], "]"}],
+    "\"Entity[\\\"City\\\", {\\\"Yerevan\\\", \\\"Yerevan\\\", \
+\\\"Armenia\\\"}]\"","\"city\""},
+   "Entity"], "[", "\"\<PropertyAssociation\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.6798029384618397`*^9, 3.679802943630014*^9}}],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{
+    TemplateBox[{"\"administrative region\"",RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"AdministrativeDivision\""}], "]"}],
+      "\"EntityProperty[\\\"City\\\", \\\"AdministrativeDivision\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    TemplateBox[{"\"Yerevan, Armenia\"",RowBox[{"Entity", "[", 
+        RowBox[{"\"AdministrativeDivision\"", ",", 
+          RowBox[{"{", 
+            RowBox[{"\"Yerevan\"", ",", "\"Armenia\""}], "}"}]}], "]"}],
+      "\"Entity[\\\"AdministrativeDivision\\\", {\\\"Yerevan\\\", \\\"Armenia\
+\\\"}]\"","\"administrative division\""},
+     "Entity"]}], ",", 
+   RowBox[{
+    TemplateBox[{
+     "\"number of aggravated assaults\"",RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"AggravatedAssault\""}], "]"}],
+      "\"EntityProperty[\\\"City\\\", \\\"AggravatedAssault\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}], ",", 
+   RowBox[{
+    TemplateBox[{
+     "\"rate of aggravated assault\"",RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"AggravatedAssaultRate\""}], "]"}],
+      "\"EntityProperty[\\\"City\\\", \\\"AggravatedAssaultRate\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}], ",", 
+   RowBox[{
+    TemplateBox[{"\"aggregate home value\"",RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"AggregateHomeValue\""}], "]"}],
+      "\"EntityProperty[\\\"City\\\", \\\"AggregateHomeValue\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}], ",", 
+   RowBox[{
+    TemplateBox[{
+     "\"aggregate home value, householder 15 to 24 years\"",
+      RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"AggregateHomeValue15To24\""}], "]"}],
+      "\"EntityProperty[\\\"City\\\", \\\"AggregateHomeValue15To24\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}], ",", 
+   RowBox[{
+    TemplateBox[{
+     "\"aggregate home value, householder 25 to 34 years\"",
+      RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"AggregateHomeValue25To34\""}], "]"}],
+      "\"EntityProperty[\\\"City\\\", \\\"AggregateHomeValue25To34\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}], ",", 
+   RowBox[{
+    TemplateBox[{
+     "\"aggregate home value, householder 35 to 64 years\"",
+      RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"AggregateHomeValue35To64\""}], "]"}],
+      "\"EntityProperty[\\\"City\\\", \\\"AggregateHomeValue35To64\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}], ",", 
+   RowBox[{
+    TemplateBox[{
+     "\"aggregate home value, householder 65 years and over\"",
+      RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"AggregateHomeValue65\""}], "]"}],
+      "\"EntityProperty[\\\"City\\\", \\\"AggregateHomeValue65\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}], ",", 
+   RowBox[{
+    TemplateBox[{
+     "\"aggregate household income\"",RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"AggregateHouseholdIncome\""}], "]"}],
+      "\"EntityProperty[\\\"City\\\", \\\"AggregateHouseholdIncome\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}], ",", 
+   RowBox[{
+    TemplateBox[{"\"airport codes\"",RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"AirportCodes\""}], "]"}],
+      "\"EntityProperty[\\\"City\\\", \\\"AirportCodes\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    RowBox[{"{", 
+     TemplateBox[{"\"Zvartnots Airport\"",RowBox[{"Entity", "[", 
+         RowBox[{"\"Airport\"", ",", "\"UDYZ\""}], "]"}],
+       "\"Entity[\\\"Airport\\\", \\\"UDYZ\\\"]\"","\"airport\""},
+      "Entity"], "}"}]}], ",", 
+   RowBox[{
+    TemplateBox[{"\"fuel spent in delays\"",RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"AnnualExcessFuelConsumedPerCommuter\""}], 
+        "]"}],"\"EntityProperty[\\\"City\\\", \
+\\\"AnnualExcessFuelConsumedPerCommuter\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}], ",", 
+   RowBox[{
+    TemplateBox[{
+     "\"total fuel spent in delays\"",RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"AnnualExcessFuelConsumedTotal\""}], "]"}],
+      "\"EntityProperty[\\\"City\\\", \
+\\\"AnnualExcessFuelConsumedTotal\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}], ",", 
+   RowBox[{
+    TemplateBox[{"\"average annual delay\"",RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"AnnualHoursOfDelayPerAutoCommuter\""}], 
+        "]"}],"\"EntityProperty[\\\"City\\\", \
+\\\"AnnualHoursOfDelayPerAutoCommuter\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}], ",", 
+   RowBox[{
+    TemplateBox[{"\"total annual delay\"",RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"AnnualHoursOfDelayTotal\""}], "]"}],
+      "\"EntityProperty[\\\"City\\\", \\\"AnnualHoursOfDelayTotal\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}], ",", 
+   RowBox[{
+    TemplateBox[{"\"area\"",RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"Area\""}], "]"}],
+      "\"EntityProperty[\\\"City\\\", \\\"Area\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}], ",", 
+   RowBox[{
+    TemplateBox[{"\"area code\"",RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"AreaCodes\""}], "]"}],
+      "\"EntityProperty[\\\"City\\\", \\\"AreaCodes\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}], ",", 
+   RowBox[{
+    TemplateBox[{
+     "\"arterial street traffic\"",RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"ArterialStreetDailyVehicleMiles\""}], 
+        "]"}],"\"EntityProperty[\\\"City\\\", \
+\\\"ArterialStreetDailyVehicleMiles\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}], ",", 
+   RowBox[{
+    TemplateBox[{"\"arterial street length\"",RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"ArterialStreetLaneMiles\""}], "]"}],
+      "\"EntityProperty[\\\"City\\\", \\\"ArterialStreetLaneMiles\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}], ",", 
+   RowBox[{
+    TemplateBox[{
+     "\"average public transit trip distance\"",RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"AveragePublicTransitTripLength\""}], 
+        "]"}],"\"EntityProperty[\\\"City\\\", \
+\\\"AveragePublicTransitTripLength\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}], ",", 
+   RowBox[{
+    TemplateBox[{"\"number of burglaries\"",RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"Burglary\""}], "]"}],
+      "\"EntityProperty[\\\"City\\\", \\\"Burglary\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}], ",", 
+   RowBox[{
+    TemplateBox[{"\"rate of burglary\"",RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"BurglaryRate\""}], "]"}],
+      "\"EntityProperty[\\\"City\\\", \\\"BurglaryRate\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}], ",", 
+   RowBox[{
+    TemplateBox[{"\"city sales tax\"",RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"CitySalesTaxRate\""}], "]"}],
+      "\"EntityProperty[\\\"City\\\", \\\"CitySalesTaxRate\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}], ",", 
+   RowBox[{
+    TemplateBox[{"\"coordinates\"",RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"Coordinates\""}], "]"}],
+      "\"EntityProperty[\\\"City\\\", \\\"Coordinates\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"40.17`", ",", "44.52`"}], "}"}]}], ",", 
+   RowBox[{
+    TemplateBox[{"\"country\"",RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"Country\""}], "]"}],
+      "\"EntityProperty[\\\"City\\\", \\\"Country\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    TemplateBox[{"\"Armenia\"",RowBox[{"Entity", "[", 
+        RowBox[{"\"Country\"", ",", "\"Armenia\""}], "]"}],
+      "\"Entity[\\\"Country\\\", \\\"Armenia\\\"]\"","\"country\""},
+     "Entity"]}], ",", 
+   RowBox[{
+    TemplateBox[{"\"county\"",RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"County\""}], "]"}],
+      "\"EntityProperty[\\\"City\\\", \\\"County\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}], ",", 
+   RowBox[{
+    TemplateBox[{"\"county sales tax\"",RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"CountySalesTaxRate\""}], "]"}],
+      "\"EntityProperty[\\\"City\\\", \\\"CountySalesTaxRate\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}], ",", 
+   RowBox[{
+    TemplateBox[{"\"total rate of crime\"",RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"CrimeRate\""}], "]"}],
+      "\"EntityProperty[\\\"City\\\", \\\"CrimeRate\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}], ",", 
+   RowBox[{
+    TemplateBox[{"\"total number of crimes\"",RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"CrimeTotal\""}], "]"}],
+      "\"EntityProperty[\\\"City\\\", \\\"CrimeTotal\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}], ",", 
+   RowBox[{
+    TemplateBox[{
+     "\"average daily traffic delay\"",RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"DailyDelayMinutes\""}], "]"}],
+      "\"EntityProperty[\\\"City\\\", \\\"DailyDelayMinutes\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}], ",", 
+   RowBox[{
+    TemplateBox[{"\"elevation\"",RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"Elevation\""}], "]"}],
+      "\"EntityProperty[\\\"City\\\", \\\"Elevation\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    TemplateBox[{"991.`2.","\"m\"","meters","\"Meters\""},
+     "Quantity"]}], ",", 
+   RowBox[{
+    TemplateBox[{"\"number of rapes\"",RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"ForcibleRape\""}], "]"}],
+      "\"EntityProperty[\\\"City\\\", \\\"ForcibleRape\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}], ",", 
+   RowBox[{
+    TemplateBox[{"\"rate of rape\"",RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"ForcibleRapeRate\""}], "]"}],
+      "\"EntityProperty[\\\"City\\\", \\\"ForcibleRapeRate\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}], ",", 
+   RowBox[{
+    TemplateBox[{"\"freeway traffic\"",RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"FreewayDailyVehicle-Miles\""}], "]"}],
+      "\"EntityProperty[\\\"City\\\", \\\"FreewayDailyVehicle-Miles\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}], ",", 
+   RowBox[{
+    TemplateBox[{"\"freeway length\"",RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"FreewayLaneMiles\""}], "]"}],
+      "\"EntityProperty[\\\"City\\\", \\\"FreewayLaneMiles\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}], ",", 
+   RowBox[{
+    TemplateBox[{"\"Gini index\"",RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"GiniIndex\""}], "]"}],
+      "\"EntityProperty[\\\"City\\\", \\\"GiniIndex\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}], ",", 
+   RowBox[{
+    TemplateBox[{"\"has polygon?\"",RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"HasPolygon\""}], "]"}],
+      "\"EntityProperty[\\\"City\\\", \\\"HasPolygon\\\"]\""},
+     "EntityProperty"], "\[Rule]", "True"}], ",", 
+   RowBox[{
+    TemplateBox[{"\"FHFA home price index\"",RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"HousePriceIndex\""}], "]"}],
+      "\"EntityProperty[\\\"City\\\", \\\"HousePriceIndex\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}], ",", 
+   RowBox[{
+    TemplateBox[{
+     "\"FHFA home price index annual average\"",RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"HousePriceIndexAnnualAverage\""}], "]"}],
+      "\"EntityProperty[\\\"City\\\", \
+\\\"HousePriceIndexAnnualAverage\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}], ",", 
+   RowBox[{
+    TemplateBox[{
+     "\"housing affordability index\"",RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"HousingAffordability\""}], "]"}],
+      "\"EntityProperty[\\\"City\\\", \\\"HousingAffordability\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}], ",", 
+   RowBox[{
+    TemplateBox[{"\"households\"",RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"HousingUnits\""}], "]"}],
+      "\"EntityProperty[\\\"City\\\", \\\"HousingUnits\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}], ",", 
+   RowBox[{
+    TemplateBox[{"\"number of larcenies\"",RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"LarcenyTheft\""}], "]"}],
+      "\"EntityProperty[\\\"City\\\", \\\"LarcenyTheft\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}], ",", 
+   RowBox[{
+    TemplateBox[{"\"rate of larceny\"",RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"LarcenyTheftRate\""}], "]"}],
+      "\"EntityProperty[\\\"City\\\", \\\"LarcenyTheftRate\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}], ",", 
+   RowBox[{
+    TemplateBox[{"\"latitude\"",RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"Latitude\""}], "]"}],
+      "\"EntityProperty[\\\"City\\\", \\\"Latitude\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    TemplateBox[{
+     "40.17`",RowBox[{"\[InvisibleSpace]", "\"\[Degree]\""}],"degrees",
+      "\"AngularDegrees\""},
+     "QuantityPostfix"]}], ",", 
+   RowBox[{
+    TemplateBox[{"\"longitude\"",RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"Longitude\""}], "]"}],
+      "\"EntityProperty[\\\"City\\\", \\\"Longitude\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    TemplateBox[{
+     "44.52`",RowBox[{"\[InvisibleSpace]", "\"\[Degree]\""}],"degrees",
+      "\"AngularDegrees\""},
+     "QuantityPostfix"]}], ",", 
+   RowBox[{
+    TemplateBox[{
+     "\"total magnetic field strength\"",RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"MagneticFieldStrength\""}], "]"}],
+      "\"EntityProperty[\\\"City\\\", \\\"MagneticFieldStrength\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    TemplateBox[{
+     "48.99535805155552`","\"\[Mu]T\"","microteslas","\"Microteslas\""},
+     "Quantity"]}], ",", 
+   RowBox[{
+    TemplateBox[{"\"median age\"",RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"MedianAge\""}], "]"}],
+      "\"EntityProperty[\\\"City\\\", \\\"MedianAge\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}], ",", 
+   RowBox[{
+    TemplateBox[{"\"median home sale price\"",RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"MedianHomeSalePrice\""}], "]"}],
+      "\"EntityProperty[\\\"City\\\", \\\"MedianHomeSalePrice\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}], ",", 
+   RowBox[{
+    TemplateBox[{"\"median home value\"",RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"MedianHomeValue\""}], "]"}],
+      "\"EntityProperty[\\\"City\\\", \\\"MedianHomeValue\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}], ",", 
+   RowBox[{
+    TemplateBox[{
+     "\"median household income\"",RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"MedianHouseholdIncome\""}], "]"}],
+      "\"EntityProperty[\\\"City\\\", \\\"MedianHouseholdIncome\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}], ",", 
+   RowBox[{
+    TemplateBox[{
+     "\"number of motor vehicle thefts\"",RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"MotorVehicleTheft\""}], "]"}],
+      "\"EntityProperty[\\\"City\\\", \\\"MotorVehicleTheft\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}], ",", 
+   RowBox[{
+    TemplateBox[{
+     "\"rate of motor vehicle thefts\"",RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"MotorVehicleTheftRate\""}], "]"}],
+      "\"EntityProperty[\\\"City\\\", \\\"MotorVehicleTheftRate\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}], ",", 
+   RowBox[{
+    TemplateBox[{
+     "\"incidents of murder and nonnegligent manslaughter\"",
+      RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"MurderNonnegligentManslaughter\""}], 
+        "]"}],"\"EntityProperty[\\\"City\\\", \
+\\\"MurderNonnegligentManslaughter\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}], ",", 
+   RowBox[{
+    TemplateBox[{
+     "\"rate of murder and nonnegligent manslaughter\"",
+      RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"MurderNonnegligentManslaughterRate\""}], 
+        "]"}],"\"EntityProperty[\\\"City\\\", \
+\\\"MurderNonnegligentManslaughterRate\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}], ",", 
+   RowBox[{
+    TemplateBox[{"\"name\"",RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"Name\""}], "]"}],
+      "\"EntityProperty[\\\"City\\\", \\\"Name\\\"]\""},
+     "EntityProperty"], "\[Rule]", "\<\"Yerevan\"\>"}], ",", 
+   RowBox[{
+    TemplateBox[{
+     "\"next daylight saving shift\"",RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"NextDSTShift\""}], "]"}],
+      "\"EntityProperty[\\\"City\\\", \\\"NextDSTShift\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}], ",", 
+   RowBox[{
+    TemplateBox[{"\"nicknames\"",RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"Nicknames\""}], "]"}],
+      "\"EntityProperty[\\\"City\\\", \\\"Nicknames\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}], ",", 
+   RowBox[{
+    TemplateBox[{
+     "\"number of owner\[Hyphen]occupied housing units\"",
+      RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"NumberOfHomes\""}], "]"}],
+      "\"EntityProperty[\\\"City\\\", \\\"NumberOfHomes\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}], ",", 
+   RowBox[{
+    TemplateBox[{
+     "\"average daily peak period travelers\"",
+      RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"PeakPeriodTravelers\""}], "]"}],
+      "\"EntityProperty[\\\"City\\\", \\\"PeakPeriodTravelers\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}], ",", 
+   RowBox[{
+    TemplateBox[{
+     "\"peak period travelers per capita\"",RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"PeakPeriodTravelersPerCapita\""}], "]"}],
+      "\"EntityProperty[\\\"City\\\", \
+\\\"PeakPeriodTravelersPerCapita\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}], ",", 
+   RowBox[{
+    TemplateBox[{
+     "\"average daily peak period vehicles\"",RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"PeakPeriodVehicles\""}], "]"}],
+      "\"EntityProperty[\\\"City\\\", \\\"PeakPeriodVehicles\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    RowBox[{"0.8`", " ", 
+     RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}]}], ",", 
+   RowBox[{
+    TemplateBox[{
+     "\"notable people born in city\"",RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"PeopleBornInCity\""}], "]"}],
+      "\"EntityProperty[\\\"City\\\", \\\"PeopleBornInCity\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{
+       TemplateBox[{"\"Shavo Odadjian\"",RowBox[{"Entity", "[", 
+           RowBox[{"\"Person\"", ",", "\"ShavoOdadjian::644n9\""}], "]"}],
+         "\"Entity[\\\"Person\\\", \\\"ShavoOdadjian::644n9\\\"]\"",
+         "\"person\""},
+        "Entity"], "\[Rule]", 
+       TemplateBox[{RowBox[{"\"Mon 22 Apr 1974\""}],RowBox[{"DateObject", "[", 
+           RowBox[{"{", 
+             RowBox[{"1974", ",", "4", ",", "22"}], "}"}], "]"}]},
+        "DateObject",
+        Editable->False]}], ",", 
+      RowBox[{
+       TemplateBox[{"\"Karen Asrian\"",RowBox[{"Entity", "[", 
+           RowBox[{"\"Person\"", ",", "\"KarenAsrian::jff9j\""}], "]"}],
+         "\"Entity[\\\"Person\\\", \\\"KarenAsrian::jff9j\\\"]\"",
+         "\"person\""},
+        "Entity"], "\[Rule]", 
+       TemplateBox[{RowBox[{"\"Thu 24 Apr 1980\""}],RowBox[{"DateObject", "[", 
+           RowBox[{"{", 
+             RowBox[{"1980", ",", "4", ",", "24"}], "}"}], "]"}]},
+        "DateObject",
+        Editable->False]}], ",", 
+      RowBox[{
+       TemplateBox[{"\"Sargis Sargsian\"",RowBox[{"Entity", "[", 
+           RowBox[{"\"Person\"", ",", "\"SargisSargsian::b767j\""}], "]"}],
+         "\"Entity[\\\"Person\\\", \\\"SargisSargsian::b767j\\\"]\"",
+         "\"person\""},
+        "Entity"], "\[Rule]", 
+       TemplateBox[{
+        RowBox[{"\"Sun 3 Jun 1973\""}],RowBox[{"DateObject", "[", 
+           RowBox[{"{", 
+             RowBox[{"1973", ",", "6", ",", "3"}], "}"}], "]"}]},
+        "DateObject",
+        Editable->False]}], ",", 
+      RowBox[{
+       TemplateBox[{"\"Armen Movsessian\"",RowBox[{"Entity", "[", 
+           RowBox[{"\"Person\"", ",", "\"ArmenMovsessian::4wgzv\""}], "]"}],
+         "\"Entity[\\\"Person\\\", \\\"ArmenMovsessian::4wgzv\\\"]\"",
+         "\"person\""},
+        "Entity"], "\[Rule]", 
+       RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}], ",", 
+      RowBox[{
+       TemplateBox[{"\"Roman Amoyan\"",RowBox[{"Entity", "[", 
+           RowBox[{"\"Person\"", ",", "\"RomanAmoyan::9764h\""}], "]"}],
+         "\"Entity[\\\"Person\\\", \\\"RomanAmoyan::9764h\\\"]\"",
+         "\"person\""},
+        "Entity"], "\[Rule]", 
+       TemplateBox[{
+        RowBox[{"\"Sat 3 Sep 1983\""}],RowBox[{"DateObject", "[", 
+           RowBox[{"{", 
+             RowBox[{"1983", ",", "9", ",", "3"}], "}"}], "]"}]},
+        "DateObject",
+        Editable->False]}], ",", 
+      RowBox[{
+       TemplateBox[{"\"Ashot Danielyan\"",RowBox[{"Entity", "[", 
+           RowBox[{"\"Person\"", ",", "\"AshotDanielyan::bd4tj\""}], "]"}],
+         "\"Entity[\\\"Person\\\", \\\"AshotDanielyan::bd4tj\\\"]\"",
+         "\"person\""},
+        "Entity"], "\[Rule]", 
+       TemplateBox[{RowBox[{"\"Thu 11 Apr 1974\""}],RowBox[{"DateObject", "[", 
+           RowBox[{"{", 
+             RowBox[{"1974", ",", "4", ",", "11"}], "}"}], "]"}]},
+        "DateObject",
+        Editable->False]}], ",", 
+      RowBox[{
+       TemplateBox[{"\"Arsen Melikyan\"",RowBox[{"Entity", "[", 
+           RowBox[{"\"Person\"", ",", "\"ArsenMelikyan::t9qs6\""}], "]"}],
+         "\"Entity[\\\"Person\\\", \\\"ArsenMelikyan::t9qs6\\\"]\"",
+         "\"person\""},
+        "Entity"], "\[Rule]", 
+       TemplateBox[{RowBox[{"\"Mon 17 May 1976\""}],RowBox[{"DateObject", "[", 
+           RowBox[{"{", 
+             RowBox[{"1976", ",", "5", ",", "17"}], "}"}], "]"}]},
+        "DateObject",
+        Editable->False]}], ",", 
+      RowBox[{
+       TemplateBox[{"\"Vladimir Yengibaryan\"",RowBox[{"Entity", "[", 
+           RowBox[{"\"Person\"", ",", "\"VladimirYengibaryan::5r482\""}], 
+           "]"}],"\"Entity[\\\"Person\\\", \
+\\\"VladimirYengibaryan::5r482\\\"]\"","\"person\""},
+        "Entity"], "\[Rule]", 
+       TemplateBox[{RowBox[{"\"Sun 24 Apr 1932\""}],RowBox[{"DateObject", "[", 
+           RowBox[{"{", 
+             RowBox[{"1932", ",", "4", ",", "24"}], "}"}], "]"}]},
+        "DateObject",
+        Editable->False]}], ",", 
+      RowBox[{
+       TemplateBox[{"\"Lilit Pipoyan\"",RowBox[{"Entity", "[", 
+           RowBox[{"\"Person\"", ",", "\"LilitPipoyan::868h2\""}], "]"}],
+         "\"Entity[\\\"Person\\\", \\\"LilitPipoyan::868h2\\\"]\"",
+         "\"person\""},
+        "Entity"], "\[Rule]", 
+       TemplateBox[{RowBox[{"\"Thu 16 Jun 1955\""}],RowBox[{"DateObject", "[", 
+           RowBox[{"{", 
+             RowBox[{"1955", ",", "6", ",", "16"}], "}"}], "]"}]},
+        "DateObject",
+        Editable->False]}], ",", 
+      RowBox[{
+       TemplateBox[{"\"Vruir Galstian\"",RowBox[{"Entity", "[", 
+           RowBox[{"\"Person\"", ",", "\"VruirGalstian::p7w29\""}], "]"}],
+         "\"Entity[\\\"Person\\\", \\\"VruirGalstian::p7w29\\\"]\"",
+         "\"person\""},
+        "Entity"], "\[Rule]", 
+       TemplateBox[{
+        RowBox[{"\"Mon 3 Mar 1924\""}],RowBox[{"DateObject", "[", 
+           RowBox[{"{", 
+             RowBox[{"1924", ",", "3", ",", "3"}], "}"}], "]"}]},
+        "DateObject",
+        Editable->False]}], ",", 
+      RowBox[{
+       TemplateBox[{"\"Gagik Sarkisyan\"",RowBox[{"Entity", "[", 
+           RowBox[{"\"Person\"", ",", "\"GagikSarkisyan::5z9mp\""}], "]"}],
+         "\"Entity[\\\"Person\\\", \\\"GagikSarkisyan::5z9mp\\\"]\"",
+         "\"person\""},
+        "Entity"], "\[Rule]", 
+       TemplateBox[{
+        RowBox[{"\"Tue 6 Apr 1926\""}],RowBox[{"DateObject", "[", 
+           RowBox[{"{", 
+             RowBox[{"1926", ",", "4", ",", "6"}], "}"}], "]"}]},
+        "DateObject",
+        Editable->False]}], ",", 
+      RowBox[{
+       TemplateBox[{"\"Levon Sharafyan\"",RowBox[{"Entity", "[", 
+           RowBox[{"\"Person\"", ",", "\"LevonSharafyan::96m76\""}], "]"}],
+         "\"Entity[\\\"Person\\\", \\\"LevonSharafyan::96m76\\\"]\"",
+         "\"person\""},
+        "Entity"], "\[Rule]", 
+       TemplateBox[{RowBox[{"\"Mon 17 Feb 1947\""}],RowBox[{"DateObject", "[", 
+           RowBox[{"{", 
+             RowBox[{"1947", ",", "2", ",", "17"}], "}"}], "]"}]},
+        "DateObject",
+        Editable->False]}], ",", 
+      RowBox[{
+       TemplateBox[{"\"Svetlana Navasardyan\"",RowBox[{"Entity", "[", 
+           RowBox[{"\"Person\"", ",", "\"SvetlanaNavasardyan::x73b3\""}], 
+           "]"}],"\"Entity[\\\"Person\\\", \
+\\\"SvetlanaNavasardyan::x73b3\\\"]\"","\"person\""},
+        "Entity"], "\[Rule]", 
+       TemplateBox[{RowBox[{"\"1946\""}],RowBox[{"DateObject", "[", 
+           RowBox[{"{", "1946", "}"}], "]"}]},
+        "DateObject",
+        Editable->False]}], ",", 
+      RowBox[{
+       TemplateBox[{"\"John Kirakosyan\"",RowBox[{"Entity", "[", 
+           RowBox[{"\"Person\"", ",", "\"JohnKirakosyan::rq9gr\""}], "]"}],
+         "\"Entity[\\\"Person\\\", \\\"JohnKirakosyan::rq9gr\\\"]\"",
+         "\"person\""},
+        "Entity"], "\[Rule]", 
+       TemplateBox[{RowBox[{"\"1929\""}],RowBox[{"DateObject", "[", 
+           RowBox[{"{", "1929", "}"}], "]"}]},
+        "DateObject",
+        Editable->False]}]}], "}"}]}], ",", 
+   RowBox[{
+    TemplateBox[{
+     "\"notable people who died in city\"",RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"PeopleDiedInCity\""}], "]"}],
+      "\"EntityProperty[\\\"City\\\", \\\"PeopleDiedInCity\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      TemplateBox[{"\"Sergei Parajanov\"",RowBox[{"Entity", "[", 
+          RowBox[{"\"Person\"", ",", "\"SergeiParajanov::686h7\""}], "]"}],
+        "\"Entity[\\\"Person\\\", \\\"SergeiParajanov::686h7\\\"]\"",
+        "\"person\""},
+       "Entity"], ",", 
+      TemplateBox[{"\"Martiros Saryan\"",RowBox[{"Entity", "[", 
+          RowBox[{"\"Person\"", ",", "\"MartirosSaryan::566yh\""}], "]"}],
+        "\"Entity[\\\"Person\\\", \\\"MartirosSaryan::566yh\\\"]\"",
+        "\"person\""},
+       "Entity"], ",", 
+      TemplateBox[{"\"Karen Asrian\"",RowBox[{"Entity", "[", 
+          RowBox[{"\"Person\"", ",", "\"KarenAsrian::jff9j\""}], "]"}],
+        "\"Entity[\\\"Person\\\", \\\"KarenAsrian::jff9j\\\"]\"","\"person\""},
+       "Entity"], ",", 
+      TemplateBox[{"\"Andranik Margaryan\"",RowBox[{"Entity", "[", 
+          RowBox[{"\"Person\"", ",", "\"AndranikMargaryan::829m6\""}], "]"}],
+        "\"Entity[\\\"Person\\\", \\\"AndranikMargaryan::829m6\\\"]\"",
+        "\"person\""},
+       "Entity"], ",", 
+      TemplateBox[{"\"Gevorg Emin\"",RowBox[{"Entity", "[", 
+          RowBox[{"\"Person\"", ",", "\"GevorgEmin::5z57n\""}], "]"}],
+        "\"Entity[\\\"Person\\\", \\\"GevorgEmin::5z57n\\\"]\"","\"person\""},
+       
+       "Entity"], ",", 
+      TemplateBox[{"\"Gurgen Mahari\"",RowBox[{"Entity", "[", 
+          RowBox[{"\"Person\"", ",", "\"GurgenMahari::69ph3\""}], "]"}],
+        "\"Entity[\\\"Person\\\", \\\"GurgenMahari::69ph3\\\"]\"",
+        "\"person\""},
+       "Entity"], ",", 
+      TemplateBox[{"\"Vahagn Davtyan\"",RowBox[{"Entity", "[", 
+          RowBox[{"\"Person\"", ",", "\"VahagnDavtyan::7h3zs\""}], "]"}],
+        "\"Entity[\\\"Person\\\", \\\"VahagnDavtyan::7h3zs\\\"]\"",
+        "\"person\""},
+       "Entity"], ",", 
+      TemplateBox[{"\"Grant Shaginyan\"",RowBox[{"Entity", "[", 
+          RowBox[{"\"Person\"", ",", "\"GrantShaginyan::29p92\""}], "]"}],
+        "\"Entity[\\\"Person\\\", \\\"GrantShaginyan::29p92\\\"]\"",
+        "\"person\""},
+       "Entity"], ",", 
+      TemplateBox[{"\"Vruir Galstian\"",RowBox[{"Entity", "[", 
+          RowBox[{"\"Person\"", ",", "\"VruirGalstian::p7w29\""}], "]"}],
+        "\"Entity[\\\"Person\\\", \\\"VruirGalstian::p7w29\\\"]\"",
+        "\"person\""},
+       "Entity"], ",", 
+      TemplateBox[{"\"Yervand Kochar\"",RowBox[{"Entity", "[", 
+          RowBox[{"\"Person\"", ",", "\"YervandKochar::85h39\""}], "]"}],
+        "\"Entity[\\\"Person\\\", \\\"YervandKochar::85h39\\\"]\"",
+        "\"person\""},
+       "Entity"], ",", 
+      TemplateBox[{"\"Hakob Kojoyan\"",RowBox[{"Entity", "[", 
+          RowBox[{"\"Person\"", ",", "\"HakobKojoyan::7d5n6\""}], "]"}],
+        "\"Entity[\\\"Person\\\", \\\"HakobKojoyan::7d5n6\\\"]\"",
+        "\"person\""},
+       "Entity"], ",", 
+      TemplateBox[{"\"Vahram Alazan\"",RowBox[{"Entity", "[", 
+          RowBox[{"\"Person\"", ",", "\"VahramAlazan::m9r6q\""}], "]"}],
+        "\"Entity[\\\"Person\\\", \\\"VahramAlazan::m9r6q\\\"]\"",
+        "\"person\""},
+       "Entity"], ",", 
+      TemplateBox[{"\"Rafael Ghazaryan\"",RowBox[{"Entity", "[", 
+          RowBox[{"\"Person\"", ",", "\"RafaelGhazaryan::p2297\""}], "]"}],
+        "\"Entity[\\\"Person\\\", \\\"RafaelGhazaryan::p2297\\\"]\"",
+        "\"person\""},
+       "Entity"]}], "}"}]}], ",", 
+   RowBox[{
+    TemplateBox[{"\"per capita income\"",RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"PerCapitaIncome\""}], "]"}],
+      "\"EntityProperty[\\\"City\\\", \\\"PerCapitaIncome\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}], ",", 
+   RowBox[{
+    TemplateBox[{"\"polygon\"",RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"Polygon\""}], "]"}],
+      "\"EntityProperty[\\\"City\\\", \\\"Polygon\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"Polygon", "[", 
+      InterpretationBox[
+       RowBox[{
+        TagBox["GeoPosition",
+         "SummaryHead"], "[", 
+        DynamicModuleBox[{Typeset`open$$ = False}, 
+         PanelBox[
+          PaneSelectorBox[{False->GridBox[{
+             {
+              GraphicsBox[{{{
+                  {RGBColor[0, 0, 
+                    NCache[
+                    Rational[2, 3], 0.6666666666666666]], AbsolutePointSize[
+                   1.5238127279440312`], PointBox[CompressedData["
+1:eJxTTMoPSmViYGDQBWIQbVlseqfFxM2hnyXr2nUJF4fgN88uSZq5Ofz7YG6/
+RtLFgbfPauoWUzeH83vY1zySdnGov/hQ8pUJgg+TV+u39b4k6+LwYIW93xOg
+/trE4lcH5V0cthx2YRexcHO471D6TlnRxeG34keXSiD/ta9j8DQFFwex2Yus
++awQ6ln0I19fskHwrRT33Phjj+DnC8sfU3NG6H+drPdxq5ubwxXjlZ0bgeZP
+nmmRLOqJ4KdvsZVx9ULY/6Vg2nR+b4R5MD5f6dLGt3IuDnOWLeDM93VzWDN1
+cW030D8S39eb/Atwc7h98rJAKNC/bN1pTw4Fuzm0fJ9bmAoMH0UWidvhoW4O
+uqoZl0rFXRxuLc2e+ynEzSEmckaqvaiLwwGdXctigerrG/5Mnibs4rB0M8eG
+E4FuDia7J0VKCro4bJMPYmDxd3OQWfir30TIxeFE9+wAex83hyrO6G3HeV0c
+1gq9ilwFdD+DwMEXDUA+6937z7083BzaxNSlrYB8w0O39KTd3RzmGux/Isfj
+4iDuqWnR5urmsNUrfB0zt4tDZ8+FPbtd3BysA/c+2MPl4vDnfLnjR2eEfMis
+3PMTHd0ceGR7fT8D9X8+xD97uj3Cflh8wPiLw39vuwGMrxdfNeTn8Lk4qLO/
+6fY0d3PYdfBH9yUBF4e81Bkn1wH567boqCcIIuQ11h37skwQIQ/z7yyvyQL1
+wPRSXGygryKC4MPCD8a3MDIxfyGGSG+btc+x6Isj0uNyOaYFe4B8AD2YH+Y=
+
+                    "]]}}}},
+               
+               ImageSize->{{
+                 2 Dynamic[(5. CurrentValue["FontCapHeight"])/
+                    AbsoluteCurrentValue[Magnification], 
+                    ImageSizeCache -> {94., {1., 9.}}]}, 
+                 
+                 Dynamic[(5. CurrentValue["FontCapHeight"])/
+                  AbsoluteCurrentValue[Magnification], 
+                  ImageSizeCache -> {94., {1., 9.}}]}], GridBox[{
+                {
+                 RowBox[{
+                  TagBox["\<\"Number of points: \"\>",
+                   "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                  TagBox["46",
+                   "SummaryItem"]}]},
+                {
+                 RowBox[{
+                  TagBox["\<\"Lat bounds: \"\>",
+                   "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                  TagBox[
+                   RowBox[{"{", 
+                    RowBox[{"40.0837599982164`", ",", "40.262410000482`"}], 
+                    "}"}],
+                   "SummaryItem"]}]},
+                {
+                 RowBox[{
+                  TagBox["\<\"Lon bounds: \"\>",
+                   "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                  TagBox[
+                   RowBox[{"{", 
+                    RowBox[{"44.4115545693704`", ",", "44.6670049832859`"}], 
+                    "}"}],
+                   "SummaryItem"]}]}
+               },
+               AutoDelete->False,
+               
+               BaseStyle->{
+                ShowStringCharacters -> False, NumberMarks -> False, 
+                 PrintPrecision -> 3, ShowSyntaxStyles -> False},
+               
+               GridBoxAlignment->{
+                "Columns" -> {{Left}}, "Rows" -> {{Automatic}}},
+               GridBoxItemSize->{
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+               GridBoxSpacings->{"Columns" -> {{2}}, "Rows" -> {{Automatic}}}]}
+            },
+            AutoDelete->False,
+            BaselinePosition->{1, 1},
+            GridBoxAlignment->{"Rows" -> {{Top}}},
+            
+            GridBoxItemSize->{
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], True->
+           GridBox[{
+             {
+              GraphicsBox[{{{
+                  {RGBColor[0, 0, 
+                    NCache[
+                    Rational[2, 3], 0.6666666666666666]], AbsolutePointSize[
+                   1.5238127279440312`], PointBox[CompressedData["
+1:eJxTTMoPSmViYGDQBWIQbVlseqfFxM2hnyXr2nUJF4fgN88uSZq5Ofz7YG6/
+RtLFgbfPauoWUzeH83vY1zySdnGov/hQ8pUJgg+TV+u39b4k6+LwYIW93xOg
+/trE4lcH5V0cthx2YRexcHO471D6TlnRxeG34keXSiD/ta9j8DQFFwex2Yus
++awQ6ln0I19fskHwrRT33Phjj+DnC8sfU3NG6H+drPdxq5ubwxXjlZ0bgeZP
+nmmRLOqJ4KdvsZVx9ULY/6Vg2nR+b4R5MD5f6dLGt3IuDnOWLeDM93VzWDN1
+cW030D8S39eb/Atwc7h98rJAKNC/bN1pTw4Fuzm0fJ9bmAoMH0UWidvhoW4O
+uqoZl0rFXRxuLc2e+ynEzSEmckaqvaiLwwGdXctigerrG/5Mnibs4rB0M8eG
+E4FuDia7J0VKCro4bJMPYmDxd3OQWfir30TIxeFE9+wAex83hyrO6G3HeV0c
+1gq9ilwFdD+DwMEXDUA+6937z7083BzaxNSlrYB8w0O39KTd3RzmGux/Isfj
+4iDuqWnR5urmsNUrfB0zt4tDZ8+FPbtd3BysA/c+2MPl4vDnfLnjR2eEfMis
+3PMTHd0ceGR7fT8D9X8+xD97uj3Cflh8wPiLw39vuwGMrxdfNeTn8Lk4qLO/
+6fY0d3PYdfBH9yUBF4e81Bkn1wH567boqCcIIuQ11h37skwQIQ/z7yyvyQL1
+wPRSXGygryKC4MPCD8a3MDIxfyGGSG+btc+x6Isj0uNyOaYFe4B8AD2YH+Y=
+
+                    "]]}}}},
+               
+               ImageSize->{{
+                 2 Dynamic[(5. CurrentValue["FontCapHeight"])/
+                    AbsoluteCurrentValue[Magnification], 
+                    ImageSizeCache -> {94., {1., 9.}}]}, 
+                 
+                 Dynamic[(5. CurrentValue["FontCapHeight"])/
+                  AbsoluteCurrentValue[Magnification], 
+                  ImageSizeCache -> {94., {1., 9.}}]}], GridBox[{
+                {
+                 RowBox[{
+                  TagBox["\<\"Number of points: \"\>",
+                   "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                  TagBox["46",
+                   "SummaryItem"]}]},
+                {
+                 RowBox[{
+                  TagBox["\<\"Lat bounds: \"\>",
+                   "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                  TagBox[
+                   RowBox[{"{", 
+                    RowBox[{"40.0837599982164`", ",", "40.262410000482`"}], 
+                    "}"}],
+                   "SummaryItem"]}]},
+                {
+                 RowBox[{
+                  TagBox["\<\"Lon bounds: \"\>",
+                   "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                  TagBox[
+                   RowBox[{"{", 
+                    RowBox[{"44.4115545693704`", ",", "44.6670049832859`"}], 
+                    "}"}],
+                   "SummaryItem"]}]}
+               },
+               AutoDelete->False,
+               
+               BaseStyle->{
+                ShowStringCharacters -> False, NumberMarks -> False, 
+                 PrintPrecision -> 3, ShowSyntaxStyles -> False},
+               
+               GridBoxAlignment->{
+                "Columns" -> {{Left}}, "Rows" -> {{Automatic}}},
+               
+               GridBoxItemSize->{
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+               GridBoxSpacings->{"Columns" -> {{2}}, "Rows" -> {{Automatic}}}]}
+            },
+            AutoDelete->False,
+            BaselinePosition->{1, 1},
+            GridBoxAlignment->{"Rows" -> {{Top}}},
+            
+            GridBoxItemSize->{
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}]}, Dynamic[
+           Typeset`open$$],
+           ImageSize->Automatic],
+          BaselinePosition->Baseline],
+         DynamicModuleValues:>{}], "]"}],
+       GeoPosition[CompressedData["
+1:eJxdkmtIE1AUx5emlWWvOXW+n6Mh2ctXzq2jXq+STS0fZGrIqNSUbEXUoHxX
+FonZRGGkqKRZKbmsaehq5BRzzRxlWT5A0kgtE63wNe30adCHy+XHedzz/9/j
+LMo8ctKIwWB44vl3m38Q1L+3JlC0NKdr9KKQNDFQq2YTSGFukVj6UPhyWs0f
+syWQylZopd4U7Kq8p38hf7uft0aP+f0nbpZq7Ak098r6yjAu44qLOhwJBM6y
+NHNYL+JZRPg6E2gU77Hf70fhQcDl1UYnAnUZkYUyZE7TropKzA/asTfUwd/A
+JQ/XUnkAhQtpl5I7kd9d9OSagqF+oWEm1CuYQqxtdV0Z9mf4KcYfUwNPC+mp
+32EUmm1kCS7Iulc2FR4HDf1qWFlxP5A5U0a3RxxQ39gGLTucwl2zs/fqUI/J
+/FBbvJBC6qAs1R/1ZrvEcJajKJx3ynVJQ38yFruVQ9EUtKJjbLEVAbkyLj05
+loKt3qfag0VAJRc5fY+hIGAuQy6TQGHop4pAzJ9++qabtw39HvPjlx+m0L7A
+83ffTsDtyWQ8J5LCymhi+1dzAsz89VddD1Fw0wRLziGbpny804XzhnGudIUj
+hywFS/ehvpmeqCrWJgKVRUez9Kjf+swq33QjgYYcu/yqEAot13pqW80IaHc+
+fz1CDHGLdXzXP+jfZIJesIL1qqCUzhuBFIRdowwV9s/OkwyXHDDMMzuvbF/B
+/0hq+jyYu5mAkhugNuVRsGxRvVRvJWBlbNeT6Uvhel/pbjHqc1A7Ll5HdmYI
+hjuQYxLhWRpyW31vcQTqbSvgm2iQmwd0E0YW+J40e6oY90XuSt2j0T9JzvjP
+R8jphVLFoiUBfkFy6y3kEN3UCy76Xc6u6e/FfTtuJhx9i6xImJwzRv5/n/8C
+cAsvug==
+        "]],
+       Editable->False,
+       SelectWithContents->True,
+       Selectable->False], "]"}], "}"}]}], ",", 
+   RowBox[{
+    TemplateBox[{"\"city population\"",RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"Population\""}], "]"}],
+      "\"EntityProperty[\\\"City\\\", \\\"Population\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    TemplateBox[{"1111300","\"people\"","people","\"People\""},
+     "Quantity"]}], ",", 
+   RowBox[{
+    TemplateBox[{
+     "\"population by educational attainment\"",RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"PopulationByEducationalAttainment\""}], 
+        "]"}],"\"EntityProperty[\\\"City\\\", \
+\\\"PopulationByEducationalAttainment\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}], ",", 
+   RowBox[{
+    TemplateBox[{
+     "\"population by migration in previous 12 months\"",
+      RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"PopulationByGeographicalMobility\""}], 
+        "]"}],"\"EntityProperty[\\\"City\\\", \
+\\\"PopulationByGeographicalMobility\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}], ",", 
+   RowBox[{
+    TemplateBox[{
+     "\"population by language spoken at home\"",
+      RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"PopulationByLanguageSpokenAtHome\""}], 
+        "]"}],"\"EntityProperty[\\\"City\\\", \
+\\\"PopulationByLanguageSpokenAtHome\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}], ",", 
+   RowBox[{
+    TemplateBox[{
+     "\"population by marital status\"",RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"PopulationByMaritalStatus\""}], "]"}],
+      "\"EntityProperty[\\\"City\\\", \\\"PopulationByMaritalStatus\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}], ",", 
+   RowBox[{
+    TemplateBox[{
+     "\"population by poverty status\"",RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"PopulationByPovertyStatus\""}], "]"}],
+      "\"EntityProperty[\\\"City\\\", \\\"PopulationByPovertyStatus\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}], ",", 
+   RowBox[{
+    TemplateBox[{
+     "\"population by school enrollment\"",RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"PopulationBySchoolEnrollment\""}], "]"}],
+      "\"EntityProperty[\\\"City\\\", \
+\\\"PopulationBySchoolEnrollment\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}], ",", 
+   RowBox[{
+    TemplateBox[{"\"population density\"",RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"PopulationDensity\""}], "]"}],
+      "\"EntityProperty[\\\"City\\\", \\\"PopulationDensity\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}], ",", 
+   RowBox[{
+    TemplateBox[{"\"position\"",RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"Position\""}], "]"}],
+      "\"EntityProperty[\\\"City\\\", \\\"Position\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    RowBox[{"GeoPosition", "[", 
+     RowBox[{"{", 
+      RowBox[{"40.17`", ",", "44.52`"}], "}"}], "]"}]}], ",", 
+   RowBox[{
+    TemplateBox[{
+     "\"last daylight saving shift\"",RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"PreviousDSTShift\""}], "]"}],
+      "\"EntityProperty[\\\"City\\\", \\\"PreviousDSTShift\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}], ",", 
+   RowBox[{
+    TemplateBox[{
+     "\"total rate of property crime\"",RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"PropertyCrimeRate\""}], "]"}],
+      "\"EntityProperty[\\\"City\\\", \\\"PropertyCrimeRate\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}], ",", 
+   RowBox[{
+    TemplateBox[{
+     "\"total number of property crimes\"",RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"PropertyCrimeTotal\""}], "]"}],
+      "\"EntityProperty[\\\"City\\\", \\\"PropertyCrimeTotal\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}], ",", 
+   RowBox[{
+    TemplateBox[{"\"total public transit use\"",RowBox[{"EntityProperty", "[", 
+        RowBox[{
+         "\"City\"", ",", "\"PublicTransportationAnnualPassengerMiles\""}], 
+        "]"}],"\"EntityProperty[\\\"City\\\", \
+\\\"PublicTransportationAnnualPassengerMiles\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}], ",", 
+   RowBox[{
+    TemplateBox[{
+     "\"unlinked public transit trips\"",RowBox[{"EntityProperty", "[", 
+        RowBox[{
+         "\"City\"", ",", 
+          "\"PublicTransportationAnnualUnlinkedPassengerTrips\""}], "]"}],
+      "\"EntityProperty[\\\"City\\\", \
+\\\"PublicTransportationAnnualUnlinkedPassengerTrips\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}], ",", 
+   RowBox[{
+    TemplateBox[{
+     "\"4 bedroom apartment fair market rent\"",RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"RentFourBedrooms\""}], "]"}],
+      "\"EntityProperty[\\\"City\\\", \\\"RentFourBedrooms\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}], ",", 
+   RowBox[{
+    TemplateBox[{
+     "\"1 bedroom apartment fair market rent\"",RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"RentOneBedrooms\""}], "]"}],
+      "\"EntityProperty[\\\"City\\\", \\\"RentOneBedrooms\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}], ",", 
+   RowBox[{
+    TemplateBox[{
+     "\"3 bedroom apartment fair market rent\"",RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"RentThreeBedrooms\""}], "]"}],
+      "\"EntityProperty[\\\"City\\\", \\\"RentThreeBedrooms\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}], ",", 
+   RowBox[{
+    TemplateBox[{
+     "\"2 bedroom apartment fair market rent\"",RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"RentTwoBedrooms\""}], "]"}],
+      "\"EntityProperty[\\\"City\\\", \\\"RentTwoBedrooms\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}], ",", 
+   RowBox[{
+    TemplateBox[{
+     "\"studio apartment fair market rent\"",RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"RentZeroBedrooms\""}], "]"}],
+      "\"EntityProperty[\\\"City\\\", \\\"RentZeroBedrooms\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}], ",", 
+   RowBox[{
+    TemplateBox[{"\"number of robberies\"",RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"Robbery\""}], "]"}],
+      "\"EntityProperty[\\\"City\\\", \\\"Robbery\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}], ",", 
+   RowBox[{
+    TemplateBox[{"\"rate of robbery\"",RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"RobberyRate\""}], "]"}],
+      "\"EntityProperty[\\\"City\\\", \\\"RobberyRate\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}], ",", 
+   RowBox[{
+    TemplateBox[{"\"daily rush hour length\"",RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"RushHours\""}], "]"}],
+      "\"EntityProperty[\\\"City\\\", \\\"RushHours\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}], ",", 
+   RowBox[{
+    TemplateBox[{"\"state sales tax\"",RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"StateSalesTaxRate\""}], "]"}],
+      "\"EntityProperty[\\\"City\\\", \\\"StateSalesTaxRate\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}], ",", 
+   RowBox[{
+    TemplateBox[{"\"time zone\"",RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"TimeZone\""}], "]"}],
+      "\"EntityProperty[\\\"City\\\", \\\"TimeZone\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    TemplateBox[{"\"Asia/Yerevan\"",RowBox[{"Entity", "[", 
+        RowBox[{"\"TimeZone\"", ",", "\"Asia/Yerevan\""}], "]"}],
+      "\"Entity[\\\"TimeZone\\\", \\\"Asia/Yerevan\\\"]\"","\"time zone\""},
+     "Entity"]}], ",", 
+   RowBox[{
+    TemplateBox[{
+     "\"total daily traffic delay\"",RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"TotalDailyDelay\""}], "]"}],
+      "\"EntityProperty[\\\"City\\\", \\\"TotalDailyDelay\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    RowBox[{"0.0027472527472527475`", " ", 
+     RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}]}], ",", 
+   RowBox[{
+    TemplateBox[{"\"total sales tax rate\"",RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"TotalSalesTaxRate\""}], "]"}],
+      "\"EntityProperty[\\\"City\\\", \\\"TotalSalesTaxRate\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}], ",", 
+   RowBox[{
+    TemplateBox[{"\"average peak travel time\"",RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"TravelTimeIndex\""}], "]"}],
+      "\"EntityProperty[\\\"City\\\", \\\"TravelTimeIndex\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}], ",", 
+   RowBox[{
+    TemplateBox[{"\"unemployment rate\"",RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"UnemploymentRate\""}], "]"}],
+      "\"EntityProperty[\\\"City\\\", \\\"UnemploymentRate\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}], ",", 
+   RowBox[{
+    TemplateBox[{
+     "\"unweighted sample housing units\"",RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"UnweightedSampleHousingUnits\""}], "]"}],
+      "\"EntityProperty[\\\"City\\\", \
+\\\"UnweightedSampleHousingUnits\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}], ",", 
+   RowBox[{
+    TemplateBox[{
+     "\"unweighted sample population\"",RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"UnweightedSamplePopulation\""}], "]"}],
+      "\"EntityProperty[\\\"City\\\", \\\"UnweightedSamplePopulation\\\"]\""},
+     
+     "EntityProperty"], "\[Rule]", 
+    RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}], ",", 
+   RowBox[{
+    TemplateBox[{
+     "\"total rate of violent crime\"",RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"ViolentCrimeRate\""}], "]"}],
+      "\"EntityProperty[\\\"City\\\", \\\"ViolentCrimeRate\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}], ",", 
+   RowBox[{
+    TemplateBox[{
+     "\"total number of violent crimes\"",RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"ViolentCrimeTotal\""}], "]"}],
+      "\"EntityProperty[\\\"City\\\", \\\"ViolentCrimeTotal\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}], ",", 
+   RowBox[{
+    TemplateBox[{"\"ZIP codes\"",RowBox[{"EntityProperty", "[", 
+        RowBox[{"\"City\"", ",", "\"ZIPCodes\""}], "]"}],
+      "\"EntityProperty[\\\"City\\\", \\\"ZIPCodes\\\"]\""},
+     "EntityProperty"], "\[Rule]", 
+    RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}]}], 
+  "\[RightAssociation]"}]], "Output",
+ CellChangeTimes->{
+  3.6798029539631042`*^9},ExpressionUUID->"5c603107-e591-49b4-9de8-\
+db77fbd5e939"]
+}, Open  ]],
+
+Cell["\<\
+You can use listability to efficiently get properties from several entities:\
+\>", "Text",
+ CellChangeTimes->{{3.683611797959519*^9, 3.683611827446727*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"EntityValue", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[{"\"Odesa\"",RowBox[{"Entity", "[", 
+         RowBox[{"\"City\"", ",", 
+           RowBox[{"{", 
+             RowBox[{"\"Odesa\"", ",", "\"Odesa\"", ",", "\"Ukraine\""}], 
+             "}"}]}], "]"}],
+       "\"Entity[\\\"City\\\", {\\\"Odesa\\\", \\\"Odesa\\\", \
+\\\"Ukraine\\\"}]\"","\"city\""},
+      "Entity"], ",", " ", 
+     TemplateBox[{"\"Rome\"",RowBox[{"Entity", "[", 
+         RowBox[{"\"City\"", ",", 
+           RowBox[{"{", 
+             RowBox[{"\"Rome\"", ",", "\"Lazio\"", ",", "\"Italy\""}], 
+             "}"}]}], "]"}],
+       "\"Entity[\\\"City\\\", {\\\"Rome\\\", \\\"Lazio\\\", \
+\\\"Italy\\\"}]\"","\"city\""},
+      "Entity"], ",", " ", 
+     TemplateBox[{"\"Trieste\"",RowBox[{"Entity", "[", 
+         RowBox[{"\"City\"", ",", 
+           RowBox[{"{", 
+             
+             RowBox[{"\"Trieste\"", ",", "\"FriuliVeneziaGiulia\"", ",", 
+               "\"Italy\""}], "}"}]}], "]"}],
+       "\"Entity[\\\"City\\\", {\\\"Trieste\\\", \\\"FriuliVeneziaGiulia\\\", \
+\\\"Italy\\\"}]\"","\"city\""},
+      "Entity"], ",", " ", 
+     TemplateBox[{"\"Tehran\"",RowBox[{"Entity", "[", 
+         RowBox[{"\"City\"", ",", 
+           RowBox[{"{", 
+             RowBox[{"\"Tehran\"", ",", "\"Tehran\"", ",", "\"Iran\""}], 
+             "}"}]}], "]"}],
+       "\"Entity[\\\"City\\\", {\\\"Tehran\\\", \\\"Tehran\\\", \
+\\\"Iran\\\"}]\"","\"city\""},
+      "Entity"], ",", " ", 
+     TemplateBox[{"\"Yerevan\"",RowBox[{"Entity", "[", 
+         RowBox[{"\"City\"", ",", 
+           RowBox[{"{", 
+             RowBox[{"\"Yerevan\"", ",", "\"Yerevan\"", ",", "\"Armenia\""}], 
+             "}"}]}], "]"}],
+       "\"Entity[\\\"City\\\", {\\\"Yerevan\\\", \\\"Yerevan\\\", \\\"Armenia\
+\\\"}]\"","\"city\""},
+      "Entity"]}], "}"}], ",", " ", "\"\<Polygon\>\""}], "]"}]], "Input",
+ CellChangeTimes->{{3.679803169830002*^9, 3.679803207705139*^9}, {
+  3.67980325515711*^9, 3.6798032703598747`*^9}, {3.6798033006210337`*^9, 
+  3.679803303477227*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"Polygon", "[", 
+      InterpretationBox[
+       RowBox[{
+        TagBox["GeoPosition",
+         "SummaryHead"], "[", 
+        DynamicModuleBox[{Typeset`open$$ = False}, 
+         PanelBox[
+          PaneSelectorBox[{False->GridBox[{
+             {
+              GraphicsBox[
+               {RGBColor[0, 0, 
+                 NCache[
+                  Rational[2, 3], 0.6666666666666666]], AbsolutePointSize[
+                0.4371239566070197], PointBox[CompressedData["
+1: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
+/0/wrWUhD68eJS/TkU5bcYTOCzDOA/8Bq91CFA==
+                 "]]},
+               
+               ImageSize->{{
+                 2 Dynamic[(5. CurrentValue["FontCapHeight"])/
+                    AbsoluteCurrentValue[Magnification], 
+                    ImageSizeCache -> {94., {1., 9.}}]}, 
+                 
+                 Dynamic[(5. CurrentValue["FontCapHeight"])/
+                  AbsoluteCurrentValue[Magnification], 
+                  ImageSizeCache -> {94., {1., 9.}}]}], GridBox[{
+                {
+                 RowBox[{
+                  TagBox["\<\"Number of points: \"\>",
+                   "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                  TagBox["559",
+                   "SummaryItem"]}]},
+                {
+                 RowBox[{
+                  TagBox["\<\"Lat bounds: \"\>",
+                   "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                  TagBox[
+                   RowBox[{"{", 
+                    RowBox[{"46.3427183861746`", ",", "46.6291187043816`"}], 
+                    "}"}],
+                   "SummaryItem"]}]},
+                {
+                 RowBox[{
+                  TagBox["\<\"Lon bounds: \"\>",
+                   "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                  TagBox[
+                   RowBox[{"{", 
+                    RowBox[{"30.6114012534264`", ",", "30.8313753103099`"}], 
+                    "}"}],
+                   "SummaryItem"]}]}
+               },
+               AutoDelete->False,
+               
+               BaseStyle->{
+                ShowStringCharacters -> False, NumberMarks -> False, 
+                 PrintPrecision -> 3, ShowSyntaxStyles -> False},
+               
+               GridBoxAlignment->{
+                "Columns" -> {{Left}}, "Rows" -> {{Automatic}}},
+               
+               GridBoxItemSize->{
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+               GridBoxSpacings->{"Columns" -> {{2}}, "Rows" -> {{Automatic}}}]}
+            },
+            AutoDelete->False,
+            BaselinePosition->{1, 1},
+            GridBoxAlignment->{"Rows" -> {{Top}}},
+            
+            GridBoxItemSize->{
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], True->
+           GridBox[{
+             {
+              GraphicsBox[
+               {RGBColor[0, 0, 
+                 NCache[
+                  Rational[2, 3], 0.6666666666666666]], AbsolutePointSize[
+                0.4371239566070197], PointBox[CompressedData["
+1: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
+/0/wrWUhD68eJS/TkU5bcYTOCzDOA/8Bq91CFA==
+                 "]]},
+               
+               ImageSize->{{
+                 2 Dynamic[(5. CurrentValue["FontCapHeight"])/
+                    AbsoluteCurrentValue[Magnification], 
+                    ImageSizeCache -> {94., {1., 9.}}]}, 
+                 
+                 Dynamic[(5. CurrentValue["FontCapHeight"])/
+                  AbsoluteCurrentValue[Magnification], 
+                  ImageSizeCache -> {94., {1., 9.}}]}], GridBox[{
+                {
+                 RowBox[{
+                  TagBox["\<\"Number of points: \"\>",
+                   "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                  TagBox["559",
+                   "SummaryItem"]}]},
+                {
+                 RowBox[{
+                  TagBox["\<\"Lat bounds: \"\>",
+                   "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                  TagBox[
+                   RowBox[{"{", 
+                    RowBox[{"46.3427183861746`", ",", "46.6291187043816`"}], 
+                    "}"}],
+                   "SummaryItem"]}]},
+                {
+                 RowBox[{
+                  TagBox["\<\"Lon bounds: \"\>",
+                   "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                  TagBox[
+                   RowBox[{"{", 
+                    RowBox[{"30.6114012534264`", ",", "30.8313753103099`"}], 
+                    "}"}],
+                   "SummaryItem"]}]}
+               },
+               AutoDelete->False,
+               
+               BaseStyle->{
+                ShowStringCharacters -> False, NumberMarks -> False, 
+                 PrintPrecision -> 3, ShowSyntaxStyles -> False},
+               
+               GridBoxAlignment->{
+                "Columns" -> {{Left}}, "Rows" -> {{Automatic}}},
+               
+               GridBoxItemSize->{
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+               GridBoxSpacings->{"Columns" -> {{2}}, "Rows" -> {{Automatic}}}]}
+            },
+            AutoDelete->False,
+            BaselinePosition->{1, 1},
+            GridBoxAlignment->{"Rows" -> {{Top}}},
+            
+            GridBoxItemSize->{
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}]}, Dynamic[
+           Typeset`open$$],
+           ImageSize->Automatic],
+          BaselinePosition->Baseline],
+         DynamicModuleValues:>{}], "]"}],
+       GeoPosition[CompressedData["
+1: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
+338IR+9drtKC/+//b/kfDipK6Q==
+        "]],
+       Editable->False,
+       SelectWithContents->True,
+       Selectable->False], "]"}], ",", 
+     RowBox[{"Polygon", "[", 
+      InterpretationBox[
+       RowBox[{
+        TagBox["GeoPosition",
+         "SummaryHead"], "[", 
+        DynamicModuleBox[{Typeset`open$$ = False}, 
+         PanelBox[
+          PaneSelectorBox[{False->GridBox[{
+             {
+              GraphicsBox[
+               {RGBColor[0, 0, 
+                 NCache[
+                  Rational[2, 3], 0.6666666666666666]], AbsolutePointSize[
+                2.5837501883506775`], 
+                PointBox[{{30.775162819872, 46.60604641511524}, {
+                 30.788271268487172`, 46.60410491202569}, {30.78795540225548, 
+                 46.60322241062135}, {30.785112606170262`, 
+                 46.59880990359964}, {30.777373883493837`, 
+                 46.59995715542528}}]},
+               
+               ImageSize->{{
+                 2 Dynamic[(5. CurrentValue["FontCapHeight"])/
+                    AbsoluteCurrentValue[Magnification], 
+                    ImageSizeCache -> {94., {1., 9.}}]}, 
+                 
+                 Dynamic[(5. CurrentValue["FontCapHeight"])/
+                  AbsoluteCurrentValue[Magnification], 
+                  ImageSizeCache -> {94., {1., 9.}}]}], GridBox[{
+                {
+                 RowBox[{
+                  TagBox["\<\"Number of points: \"\>",
+                   "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                  TagBox["6",
+                   "SummaryItem"]}]},
+                {
+                 RowBox[{
+                  TagBox["\<\"Lat bounds: \"\>",
+                   "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                  TagBox[
+                   RowBox[{"{", 
+                    RowBox[{"46.5987926892807`", ",", "46.6060892114237`"}], 
+                    "}"}],
+                   "SummaryItem"]}]},
+                {
+                 RowBox[{
+                  TagBox["\<\"Lon bounds: \"\>",
+                   "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                  TagBox[
+                   RowBox[{"{", 
+                    RowBox[{"30.7752364441017`", ",", "30.7882943550717`"}], 
+                    "}"}],
+                   "SummaryItem"]}]}
+               },
+               AutoDelete->False,
+               
+               BaseStyle->{
+                ShowStringCharacters -> False, NumberMarks -> False, 
+                 PrintPrecision -> 3, ShowSyntaxStyles -> False},
+               
+               GridBoxAlignment->{
+                "Columns" -> {{Left}}, "Rows" -> {{Automatic}}},
+               
+               GridBoxItemSize->{
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+               GridBoxSpacings->{"Columns" -> {{2}}, "Rows" -> {{Automatic}}}]}
+            },
+            AutoDelete->False,
+            BaselinePosition->{1, 1},
+            GridBoxAlignment->{"Rows" -> {{Top}}},
+            
+            GridBoxItemSize->{
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], True->
+           GridBox[{
+             {
+              GraphicsBox[
+               {RGBColor[0, 0, 
+                 NCache[
+                  Rational[2, 3], 0.6666666666666666]], AbsolutePointSize[
+                2.5837501883506775`], 
+                PointBox[{{30.775162819872, 46.60604641511524}, {
+                 30.788271268487172`, 46.60410491202569}, {30.78795540225548, 
+                 46.60322241062135}, {30.785112606170262`, 
+                 46.59880990359964}, {30.777373883493837`, 
+                 46.59995715542528}}]},
+               
+               ImageSize->{{
+                 2 Dynamic[(5. CurrentValue["FontCapHeight"])/
+                    AbsoluteCurrentValue[Magnification], 
+                    ImageSizeCache -> {94., {1., 9.}}]}, 
+                 
+                 Dynamic[(5. CurrentValue["FontCapHeight"])/
+                  AbsoluteCurrentValue[Magnification], 
+                  ImageSizeCache -> {94., {1., 9.}}]}], GridBox[{
+                {
+                 RowBox[{
+                  TagBox["\<\"Number of points: \"\>",
+                   "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                  TagBox["6",
+                   "SummaryItem"]}]},
+                {
+                 RowBox[{
+                  TagBox["\<\"Lat bounds: \"\>",
+                   "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                  TagBox[
+                   RowBox[{"{", 
+                    RowBox[{"46.5987926892807`", ",", "46.6060892114237`"}], 
+                    "}"}],
+                   "SummaryItem"]}]},
+                {
+                 RowBox[{
+                  TagBox["\<\"Lon bounds: \"\>",
+                   "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                  TagBox[
+                   RowBox[{"{", 
+                    RowBox[{"30.7752364441017`", ",", "30.7882943550717`"}], 
+                    "}"}],
+                   "SummaryItem"]}]}
+               },
+               AutoDelete->False,
+               
+               BaseStyle->{
+                ShowStringCharacters -> False, NumberMarks -> False, 
+                 PrintPrecision -> 3, ShowSyntaxStyles -> False},
+               
+               GridBoxAlignment->{
+                "Columns" -> {{Left}}, "Rows" -> {{Automatic}}},
+               
+               GridBoxItemSize->{
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+               GridBoxSpacings->{"Columns" -> {{2}}, "Rows" -> {{Automatic}}}]}
+            },
+            AutoDelete->False,
+            BaselinePosition->{1, 1},
+            GridBoxAlignment->{"Rows" -> {{Top}}},
+            
+            GridBoxItemSize->{
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}]}, Dynamic[
+           Typeset`open$$],
+           ImageSize->Automatic],
+          BaselinePosition->Baseline],
+         DynamicModuleValues:>{}], "]"}],
+       GeoPosition[{{46.6060892114237, 30.7752364441017}, {46.6041241643159, 
+        30.7882943550717}, {46.6032303035047, 30.7880247706549}, {
+        46.5987926892807, 30.7850358062101}, {46.5999465977618, 
+        30.7774101874262}, {46.6060892114237, 30.7752364441017}}],
+       Editable->False,
+       SelectWithContents->True,
+       Selectable->False], "]"}]}], "}"}], ",", 
+   RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}], ",", 
+   RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"Polygon", "[", 
+     InterpretationBox[
+      RowBox[{
+       TagBox["GeoPosition",
+        "SummaryHead"], "[", 
+       DynamicModuleBox[{Typeset`open$$ = False}, 
+        PanelBox[
+         PaneSelectorBox[{False->GridBox[{
+            {
+             GraphicsBox[
+              {RGBColor[0, 0, 
+                NCache[
+                 Rational[2, 3], 0.6666666666666666]], AbsolutePointSize[
+               0.6671214300161633], PointBox[CompressedData["
+1:eJxt1mlQFEcUB3BERUUjgkcCRMWgRhSigWgQQtkjIBkNCoK3eGCwKG8IECFE
+BQIJHoghoqKLB5fch0BAEFFXQASRy0VcFVaulYqISSRSpWby4V9vayYfKOpX
+782b7t7u1zPNc+9KL20tLa1S4e+//6OUg239h3nWrz112kMlx/alrrpdcYRn
+j3NmtLo85pgiICf17FGeHfNmZXOfcqwlMGCqPJq8yKl+6JkT5DGqiJrFMWS/
+vJSZ7DTV1+sxKIo5yzPDFP1s9SOOpU4+wHfHS433+xfsPud9jmd3NpnHVGm4
+YIzVN+wJ1RP74tWFw4ueUD7GowytOmQn45mX3Hne1DaKu/q6q2M1jDjqwZyz
+R5/6DOXDdiYbLo1t59ijg9qjJ/6Pze5t3RDRTvmTgr0nvBN82aiosSxOauTj
+/aiH8SFu72LqZRBPxvqh3rjeFovS81Jrz95b66/iWECRlcGJC1Ij38FN3Wpz
+SWqMJ83E4bpeAsVh1EO+2C8U/hF/qCi/NTx4kdczjum/iE/oSKD4/pI3Pxcn
+kp/84r4rKklqPA/ntUfmundwzHF1tsu2ZHKGqe586xSeeZ5JPGnVxTGD/m8N
+P7jMs+VO6cvTBS9Z519xJI3imTPvp21JJwfdCP9ON5PcHtW25mkmPf/1Rtuv
+8rPIWWaxJpHZUgf0ypQlnRybOPBy2KYcqVEfFj9v83fuCNNuios9M6GoPE7D
+Bq7XAw16OBYsX6a2zJUa+aoTybUj8ij+Y6X+5g0FPHv/7rblYcEdv+2yn1fI
+s1sjWz361RzLnfvJmNbfedabUdM7RHDnKcvitVelVqxvTAwUvMzrmMyihJxn
+2ROiXUruivvns5Ayep+zt9v41dcpfmV+1sDscoov32kYeeAWjbfA2m+3m5zW
+z1inznXWbVpf+LDdKVMHDccfj95R00HPi4391S0rS0y9STYaOkr5vpz2I8YH
+Y/zY/5gfzguM84t8nK+Q+9vKm25IjXyMB8Z6oD6MOOaDOOaPOIx4aKPZgrca
+cfWFn4waKqRGPozxFtraPPuhivrl5FEnK13u0PMw8sMe9KXPqKb85wlLowcF
+B05y+j5F6N+uPkl+dXfJK/12Ph+oo34P4z6AcZ/0Jo/TMRU8fNVH3luV9H4Y
+48V9hfnAWA/kY71grC+M30ts3Hew+Rvd1z4aZsuG2Q220u8rtrvsbViohr37
+XlfrajiYe6kf85DqIY79KrY4H0a96Bj1WuOHtJ8SO1XnE1povmLXRDZb5Cto
+ff6yqCqRP+DYij1P3yVX8uzjhqt8czOt77zp+dEezRQXe01V8pQ9TVQPcYzf
+PiBT0dlEThl31OZ4A51HqxUec/g6ml+s2jbqVQ05zXZ+c5Dgg7WypRnXeLb+
+zxXF6+5xzFDLfruiVOolF1f71t+jfgaj3+1x5LVUtWTUx/M++17F1VZS/wu/
+2du+qpLqLQjSqfjiDscOVCuawop5NvbBeOvp1Rxb6ln56XCh3w6GGfWf1bDH
+lDdujlXUn/WHXGvQk3Msx3xjbO4Vni1Myt5icotj/OYheUqhv89wKzQ8rWHk
+o/+rN1Y7vJfT/QDjPuj6fFra+LscmzRYGBSRz7PQU4uddtTS+2DUh1EPxv0E
+434Tx7GeMH4P5GP9cT8jH/f56PQdMuv7HGs7YqQqTOVZiWd4yIcNdP+L/Uxn
+v96sevq+wn7D9+PIQze0nYX9nDTBvGf3r3Re8D1c9KWya04LfS/jPPhkGNv2
+HScn6m/3dYyi84Pvb5xvGP0BRj/5FyjtcCs=
+                "]]},
+              
+              ImageSize->{{
+                2 Dynamic[(5. CurrentValue["FontCapHeight"])/
+                   AbsoluteCurrentValue[Magnification], 
+                   ImageSizeCache -> {94., {1., 9.}}]}, 
+                
+                Dynamic[(5. CurrentValue["FontCapHeight"])/
+                 AbsoluteCurrentValue[Magnification], 
+                 ImageSizeCache -> {94., {1., 9.}}]}], GridBox[{
+               {
+                RowBox[{
+                 TagBox["\<\"Number of points: \"\>",
+                  "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                 TagBox["240",
+                  "SummaryItem"]}]},
+               {
+                RowBox[{
+                 TagBox["\<\"Lat bounds: \"\>",
+                  "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                 TagBox[
+                  RowBox[{"{", 
+                   RowBox[{"35.5243582868055`", ",", "35.8264419772057`"}], 
+                   "}"}],
+                  "SummaryItem"]}]},
+               {
+                RowBox[{
+                 TagBox["\<\"Lon bounds: \"\>",
+                  "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                 TagBox[
+                  RowBox[{"{", 
+                   RowBox[{"51.0881890446416`", ",", "51.6253567910432`"}], 
+                   "}"}],
+                  "SummaryItem"]}]}
+              },
+              AutoDelete->False,
+              
+              BaseStyle->{
+               ShowStringCharacters -> False, NumberMarks -> False, 
+                PrintPrecision -> 3, ShowSyntaxStyles -> False},
+              
+              GridBoxAlignment->{
+               "Columns" -> {{Left}}, "Rows" -> {{Automatic}}},
+              
+              GridBoxItemSize->{
+               "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+              GridBoxSpacings->{
+               "Columns" -> {{2}}, "Rows" -> {{Automatic}}}]}
+           },
+           AutoDelete->False,
+           BaselinePosition->{1, 1},
+           GridBoxAlignment->{"Rows" -> {{Top}}},
+           
+           GridBoxItemSize->{
+            "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], True->
+          GridBox[{
+            {
+             GraphicsBox[
+              {RGBColor[0, 0, 
+                NCache[
+                 Rational[2, 3], 0.6666666666666666]], AbsolutePointSize[
+               0.6671214300161633], PointBox[CompressedData["
+1:eJxt1mlQFEcUB3BERUUjgkcCRMWgRhSigWgQQtkjIBkNCoK3eGCwKG8IECFE
+BQIJHoghoqKLB5fch0BAEFFXQASRy0VcFVaulYqISSRSpWby4V9vayYfKOpX
+782b7t7u1zPNc+9KL20tLa1S4e+//6OUg239h3nWrz112kMlx/alrrpdcYRn
+j3NmtLo85pgiICf17FGeHfNmZXOfcqwlMGCqPJq8yKl+6JkT5DGqiJrFMWS/
+vJSZ7DTV1+sxKIo5yzPDFP1s9SOOpU4+wHfHS433+xfsPud9jmd3NpnHVGm4
+YIzVN+wJ1RP74tWFw4ueUD7GowytOmQn45mX3Hne1DaKu/q6q2M1jDjqwZyz
+R5/6DOXDdiYbLo1t59ijg9qjJ/6Pze5t3RDRTvmTgr0nvBN82aiosSxOauTj
+/aiH8SFu72LqZRBPxvqh3rjeFovS81Jrz95b66/iWECRlcGJC1Ij38FN3Wpz
+SWqMJ83E4bpeAsVh1EO+2C8U/hF/qCi/NTx4kdczjum/iE/oSKD4/pI3Pxcn
+kp/84r4rKklqPA/ntUfmundwzHF1tsu2ZHKGqe586xSeeZ5JPGnVxTGD/m8N
+P7jMs+VO6cvTBS9Z519xJI3imTPvp21JJwfdCP9ON5PcHtW25mkmPf/1Rtuv
+8rPIWWaxJpHZUgf0ypQlnRybOPBy2KYcqVEfFj9v83fuCNNuios9M6GoPE7D
+Bq7XAw16OBYsX6a2zJUa+aoTybUj8ij+Y6X+5g0FPHv/7rblYcEdv+2yn1fI
+s1sjWz361RzLnfvJmNbfedabUdM7RHDnKcvitVelVqxvTAwUvMzrmMyihJxn
+2ROiXUruivvns5Ayep+zt9v41dcpfmV+1sDscoov32kYeeAWjbfA2m+3m5zW
+z1inznXWbVpf+LDdKVMHDccfj95R00HPi4391S0rS0y9STYaOkr5vpz2I8YH
+Y/zY/5gfzguM84t8nK+Q+9vKm25IjXyMB8Z6oD6MOOaDOOaPOIx4aKPZgrca
+cfWFn4waKqRGPozxFtraPPuhivrl5FEnK13u0PMw8sMe9KXPqKb85wlLowcF
+B05y+j5F6N+uPkl+dXfJK/12Ph+oo34P4z6AcZ/0Jo/TMRU8fNVH3luV9H4Y
+48V9hfnAWA/kY71grC+M30ts3Hew+Rvd1z4aZsuG2Q220u8rtrvsbViohr37
+XlfrajiYe6kf85DqIY79KrY4H0a96Bj1WuOHtJ8SO1XnE1povmLXRDZb5Cto
+ff6yqCqRP+DYij1P3yVX8uzjhqt8czOt77zp+dEezRQXe01V8pQ9TVQPcYzf
+PiBT0dlEThl31OZ4A51HqxUec/g6ml+s2jbqVQ05zXZ+c5Dgg7WypRnXeLb+
+zxXF6+5xzFDLfruiVOolF1f71t+jfgaj3+1x5LVUtWTUx/M++17F1VZS/wu/
+2du+qpLqLQjSqfjiDscOVCuawop5NvbBeOvp1Rxb6ln56XCh3w6GGfWf1bDH
+lDdujlXUn/WHXGvQk3Msx3xjbO4Vni1Myt5icotj/OYheUqhv89wKzQ8rWHk
+o/+rN1Y7vJfT/QDjPuj6fFra+LscmzRYGBSRz7PQU4uddtTS+2DUh1EPxv0E
+434Tx7GeMH4P5GP9cT8jH/f56PQdMuv7HGs7YqQqTOVZiWd4yIcNdP+L/Uxn
+v96sevq+wn7D9+PIQze0nYX9nDTBvGf3r3Re8D1c9KWya04LfS/jPPhkGNv2
+HScn6m/3dYyi84Pvb5xvGP0BRj/5FyjtcCs=
+                "]]},
+              
+              ImageSize->{{
+                2 Dynamic[(5. CurrentValue["FontCapHeight"])/
+                   AbsoluteCurrentValue[Magnification], 
+                   ImageSizeCache -> {94., {1., 9.}}]}, 
+                
+                Dynamic[(5. CurrentValue["FontCapHeight"])/
+                 AbsoluteCurrentValue[Magnification], 
+                 ImageSizeCache -> {94., {1., 9.}}]}], GridBox[{
+               {
+                RowBox[{
+                 TagBox["\<\"Number of points: \"\>",
+                  "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                 TagBox["240",
+                  "SummaryItem"]}]},
+               {
+                RowBox[{
+                 TagBox["\<\"Lat bounds: \"\>",
+                  "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                 TagBox[
+                  RowBox[{"{", 
+                   RowBox[{"35.5243582868055`", ",", "35.8264419772057`"}], 
+                   "}"}],
+                  "SummaryItem"]}]},
+               {
+                RowBox[{
+                 TagBox["\<\"Lon bounds: \"\>",
+                  "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                 TagBox[
+                  RowBox[{"{", 
+                   RowBox[{"51.0881890446416`", ",", "51.6253567910432`"}], 
+                   "}"}],
+                  "SummaryItem"]}]}
+              },
+              AutoDelete->False,
+              
+              BaseStyle->{
+               ShowStringCharacters -> False, NumberMarks -> False, 
+                PrintPrecision -> 3, ShowSyntaxStyles -> False},
+              GridBoxAlignment->{
+               "Columns" -> {{Left}}, "Rows" -> {{Automatic}}},
+              
+              GridBoxItemSize->{
+               "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+              
+              GridBoxSpacings->{
+               "Columns" -> {{2}}, "Rows" -> {{Automatic}}}]}
+           },
+           AutoDelete->False,
+           BaselinePosition->{1, 1},
+           GridBoxAlignment->{"Rows" -> {{Top}}},
+           
+           GridBoxItemSize->{
+            "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}]}, Dynamic[
+          Typeset`open$$],
+          ImageSize->Automatic],
+         BaselinePosition->Baseline],
+        DynamicModuleValues:>{}], "]"}],
+      GeoPosition[CompressedData["
+1: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
+Kms=
+       "]],
+      Editable->False,
+      SelectWithContents->True,
+      Selectable->False], "]"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"Polygon", "[", 
+     InterpretationBox[
+      RowBox[{
+       TagBox["GeoPosition",
+        "SummaryHead"], "[", 
+       DynamicModuleBox[{Typeset`open$$ = False}, 
+        PanelBox[
+         PaneSelectorBox[{False->GridBox[{
+            {
+             GraphicsBox[
+              {RGBColor[0, 0, 
+                NCache[
+                 Rational[2, 3], 0.6666666666666666]], AbsolutePointSize[
+               1.5238127279440312`], PointBox[CompressedData["
+1:eJxTTMoPSmViYGDQBWIQbVlseqfFxM2hnyXr2nUJF4fgN88uSZq5Ofz7YG6/
+RtLFgbfPauoWUzeH83vY1zySdnGov/hQ8pUJgg+TV+u39b4k6+LwYIW93xOg
+/trE4lcH5V0cthx2YRexcHO471D6TlnRxeG34keXSiD/ta9j8DQFFwex2Yus
++awQ6ln0I19fskHwrRT33Phjj+DnC8sfU3NG6H+drPdxq5ubwxXjlZ0bgeZP
+nmmRLOqJ4KdvsZVx9ULY/6Vg2nR+b4R5MD5f6dLGt3IuDnOWLeDM93VzWDN1
+cW030D8S39eb/Atwc7h98rJAKNC/bN1pTw4Fuzm0fJ9bmAoMH0UWidvhoW4O
+uqoZl0rFXRxuLc2e+ynEzSEmckaqvaiLwwGdXctigerrG/5Mnibs4rB0M8eG
+E4FuDia7J0VKCro4bJMPYmDxd3OQWfir30TIxeFE9+wAex83hyrO6G3HeV0c
+1gq9ilwFdD+DwMEXDUA+6937z7083BzaxNSlrYB8w0O39KTd3RzmGux/Isfj
+4iDuqWnR5urmsNUrfB0zt4tDZ8+FPbtd3BysA/c+2MPl4vDnfLnjR2eEfMis
+3PMTHd0ceGR7fT8D9X8+xD97uj3Cflh8wPiLw39vuwGMrxdfNeTn8Lk4qLO/
+6fY0d3PYdfBH9yUBF4e81Bkn1wH567boqCcIIuQ11h37skwQIQ/z7yyvyQL1
+wPRSXGygryKC4MPCD8a3MDIxfyGGSG+btc+x6Isj0uNyOaYFe4B8AD2YH+Y=
+
+                "]]},
+              
+              ImageSize->{{
+                2 Dynamic[(5. CurrentValue["FontCapHeight"])/
+                   AbsoluteCurrentValue[Magnification], 
+                   ImageSizeCache -> {94., {1., 9.}}]}, 
+                
+                Dynamic[(5. CurrentValue["FontCapHeight"])/
+                 AbsoluteCurrentValue[Magnification], 
+                 ImageSizeCache -> {94., {1., 9.}}]}], GridBox[{
+               {
+                RowBox[{
+                 TagBox["\<\"Number of points: \"\>",
+                  "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                 TagBox["46",
+                  "SummaryItem"]}]},
+               {
+                RowBox[{
+                 TagBox["\<\"Lat bounds: \"\>",
+                  "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                 TagBox[
+                  RowBox[{"{", 
+                   RowBox[{"40.0837599982164`", ",", "40.262410000482`"}], 
+                   "}"}],
+                  "SummaryItem"]}]},
+               {
+                RowBox[{
+                 TagBox["\<\"Lon bounds: \"\>",
+                  "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                 TagBox[
+                  RowBox[{"{", 
+                   RowBox[{"44.4115545693704`", ",", "44.6670049832859`"}], 
+                   "}"}],
+                  "SummaryItem"]}]}
+              },
+              AutoDelete->False,
+              
+              BaseStyle->{
+               ShowStringCharacters -> False, NumberMarks -> False, 
+                PrintPrecision -> 3, ShowSyntaxStyles -> False},
+              
+              GridBoxAlignment->{
+               "Columns" -> {{Left}}, "Rows" -> {{Automatic}}},
+              
+              GridBoxItemSize->{
+               "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+              
+              GridBoxSpacings->{
+               "Columns" -> {{2}}, "Rows" -> {{Automatic}}}]}
+           },
+           AutoDelete->False,
+           BaselinePosition->{1, 1},
+           GridBoxAlignment->{"Rows" -> {{Top}}},
+           
+           GridBoxItemSize->{
+            "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], True->
+          GridBox[{
+            {
+             GraphicsBox[
+              {RGBColor[0, 0, 
+                NCache[
+                 Rational[2, 3], 0.6666666666666666]], AbsolutePointSize[
+               1.5238127279440312`], PointBox[CompressedData["
+1:eJxTTMoPSmViYGDQBWIQbVlseqfFxM2hnyXr2nUJF4fgN88uSZq5Ofz7YG6/
+RtLFgbfPauoWUzeH83vY1zySdnGov/hQ8pUJgg+TV+u39b4k6+LwYIW93xOg
+/trE4lcH5V0cthx2YRexcHO471D6TlnRxeG34keXSiD/ta9j8DQFFwex2Yus
++awQ6ln0I19fskHwrRT33Phjj+DnC8sfU3NG6H+drPdxq5ubwxXjlZ0bgeZP
+nmmRLOqJ4KdvsZVx9ULY/6Vg2nR+b4R5MD5f6dLGt3IuDnOWLeDM93VzWDN1
+cW030D8S39eb/Atwc7h98rJAKNC/bN1pTw4Fuzm0fJ9bmAoMH0UWidvhoW4O
+uqoZl0rFXRxuLc2e+ynEzSEmckaqvaiLwwGdXctigerrG/5Mnibs4rB0M8eG
+E4FuDia7J0VKCro4bJMPYmDxd3OQWfir30TIxeFE9+wAex83hyrO6G3HeV0c
+1gq9ilwFdD+DwMEXDUA+6937z7083BzaxNSlrYB8w0O39KTd3RzmGux/Isfj
+4iDuqWnR5urmsNUrfB0zt4tDZ8+FPbtd3BysA/c+2MPl4vDnfLnjR2eEfMis
+3PMTHd0ceGR7fT8D9X8+xD97uj3Cflh8wPiLw39vuwGMrxdfNeTn8Lk4qLO/
+6fY0d3PYdfBH9yUBF4e81Bkn1wH567boqCcIIuQ11h37skwQIQ/z7yyvyQL1
+wPRSXGygryKC4MPCD8a3MDIxfyGGSG+btc+x6Isj0uNyOaYFe4B8AD2YH+Y=
+
+                "]]},
+              
+              ImageSize->{{
+                2 Dynamic[(5. CurrentValue["FontCapHeight"])/
+                   AbsoluteCurrentValue[Magnification], 
+                   ImageSizeCache -> {94., {1., 9.}}]}, 
+                Dynamic[(5. CurrentValue["FontCapHeight"])/
+                 AbsoluteCurrentValue[Magnification], 
+                 ImageSizeCache -> {94., {1., 9.}}]}], GridBox[{
+               {
+                RowBox[{
+                 TagBox["\<\"Number of points: \"\>",
+                  "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                 TagBox["46",
+                  "SummaryItem"]}]},
+               {
+                RowBox[{
+                 TagBox["\<\"Lat bounds: \"\>",
+                  "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                 TagBox[
+                  RowBox[{"{", 
+                   RowBox[{"40.0837599982164`", ",", "40.262410000482`"}], 
+                   "}"}],
+                  "SummaryItem"]}]},
+               {
+                RowBox[{
+                 TagBox["\<\"Lon bounds: \"\>",
+                  "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                 TagBox[
+                  RowBox[{"{", 
+                   RowBox[{"44.4115545693704`", ",", "44.6670049832859`"}], 
+                   "}"}],
+                  "SummaryItem"]}]}
+              },
+              AutoDelete->False,
+              
+              BaseStyle->{
+               ShowStringCharacters -> False, NumberMarks -> False, 
+                PrintPrecision -> 3, ShowSyntaxStyles -> False},
+              
+              GridBoxAlignment->{
+               "Columns" -> {{Left}}, "Rows" -> {{Automatic}}},
+              
+              GridBoxItemSize->{
+               "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+              
+              GridBoxSpacings->{
+               "Columns" -> {{2}}, "Rows" -> {{Automatic}}}]}
+           },
+           AutoDelete->False,
+           BaselinePosition->{1, 1},
+           GridBoxAlignment->{"Rows" -> {{Top}}},
+           
+           GridBoxItemSize->{
+            "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}]}, Dynamic[
+          Typeset`open$$],
+          ImageSize->Automatic],
+         BaselinePosition->Baseline],
+        DynamicModuleValues:>{}], "]"}],
+      GeoPosition[CompressedData["
+1:eJxdkmtIE1AUx5emlWWvOXW+n6Mh2ctXzq2jXq+STS0fZGrIqNSUbEXUoHxX
+FonZRGGkqKRZKbmsaehq5BRzzRxlWT5A0kgtE63wNe30adCHy+XHedzz/9/j
+LMo8ctKIwWB44vl3m38Q1L+3JlC0NKdr9KKQNDFQq2YTSGFukVj6UPhyWs0f
+syWQylZopd4U7Kq8p38hf7uft0aP+f0nbpZq7Ak098r6yjAu44qLOhwJBM6y
+NHNYL+JZRPg6E2gU77Hf70fhQcDl1UYnAnUZkYUyZE7TropKzA/asTfUwd/A
+JQ/XUnkAhQtpl5I7kd9d9OSagqF+oWEm1CuYQqxtdV0Z9mf4KcYfUwNPC+mp
+32EUmm1kCS7Iulc2FR4HDf1qWFlxP5A5U0a3RxxQ39gGLTucwl2zs/fqUI/J
+/FBbvJBC6qAs1R/1ZrvEcJajKJx3ynVJQ38yFruVQ9EUtKJjbLEVAbkyLj05
+loKt3qfag0VAJRc5fY+hIGAuQy6TQGHop4pAzJ9++qabtw39HvPjlx+m0L7A
+83ffTsDtyWQ8J5LCymhi+1dzAsz89VddD1Fw0wRLziGbpny804XzhnGudIUj
+hywFS/ehvpmeqCrWJgKVRUez9Kjf+swq33QjgYYcu/yqEAot13pqW80IaHc+
+fz1CDHGLdXzXP+jfZIJesIL1qqCUzhuBFIRdowwV9s/OkwyXHDDMMzuvbF/B
+/0hq+jyYu5mAkhugNuVRsGxRvVRvJWBlbNeT6Uvhel/pbjHqc1A7Ll5HdmYI
+hjuQYxLhWRpyW31vcQTqbSvgm2iQmwd0E0YW+J40e6oY90XuSt2j0T9JzvjP
+R8jphVLFoiUBfkFy6y3kEN3UCy76Xc6u6e/FfTtuJhx9i6xImJwzRv5/n/8C
+cAsvug==
+       "]],
+      Editable->False,
+      SelectWithContents->True,
+      Selectable->False], "]"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.6798032088655357`*^9, {3.679803257270143*^9, 3.67980330513761*^9}, 
+   3.6836118320510683`*^9}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SlideShowNavigationBar",
+ CellTags->
+  "SlideShowHeader",ExpressionUUID->"3af08274-7f98-4d68-9725-4bf50853fedf"],
+
+Cell[CellGroupData[{
+
+Cell["EntityClass", "Chapter",
+ CellChangeTimes->{{3.683611995910755*^9, 3.683612000652937*^9}}],
+
+Cell["Named entity classes group a bunch of entities together:", "Text",
+ CellChangeTimes->{{3.683611845851709*^9, 3.683611862129713*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EntityClass", "[", 
+   RowBox[{"\"\<Country\>\"", ",", " ", "\"\<GroupOf8\>\""}], "]"}], "[", 
+  RowBox[{"\"\<Population\>\"", ",", " ", "Total"}], "]"}]], "Input",
+ CellChangeTimes->{{3.679803387041355*^9, 3.6798034065221157`*^9}, {
+  3.679803509189889*^9, 3.6798035189396667`*^9}}],
+
+Cell[BoxData[
+ TemplateBox[{"896816184","\"people\"","people","\"People\""},
+  "Quantity"]], "Output",
+ CellChangeTimes->{{3.679803397764058*^9, 3.679803407897753*^9}, {
+  3.67980351381251*^9, 3.679803519638515*^9}}]
+}, Open  ]],
+
+Cell["\<\
+You can use Interpreter if you don\[CloseCurlyQuote]t know the name of a \
+property:\
+\>", "Text",
+ CellChangeTimes->{{3.683611880349845*^9, 3.683611916639394*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Interpreter", "[", "\"\<EntityProperty\>\"", "]"}], "[", 
+  "\"\<neighboring countries\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.679803593648614*^9, 3.679803619569491*^9}}],
+
+Cell[BoxData[
+ TemplateBox[{"\"bordering countries/regions\"",RowBox[{"EntityProperty", "[", 
+     RowBox[{"\"Country\"", ",", "\"BorderingCountries\""}], "]"}],
+   "\"EntityProperty[\\\"Country\\\", \\\"BorderingCountries\\\"]\""},
+  "EntityProperty"]], "Output",
+ CellChangeTimes->{3.679803621456842*^9}]
+}, Open  ]],
+
+Cell["Construct your own EntityClasses from a constraint:", "Text",
+ CellChangeTimes->{{3.683611895230439*^9, 3.683611914631845*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"EntityClass", "[", 
+  RowBox[{"\"\<Country\>\"", ",", " ", 
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[{
+      "\"bordering countries/regions\"",RowBox[{"EntityProperty", "[", 
+         RowBox[{"\"Country\"", ",", "\"BorderingCountries\""}], "]"}],
+       "\"EntityProperty[\\\"Country\\\", \\\"BorderingCountries\\\"]\""},
+      "EntityProperty"], "\[Rule]", " ", 
+     RowBox[{"ContainsAny", "[", 
+      RowBox[{"{", 
+       TemplateBox[{"\"Armenia\"",RowBox[{"Entity", "[", 
+           RowBox[{"\"Country\"", ",", "\"Armenia\""}], "]"}],
+         "\"Entity[\\\"Country\\\", \\\"Armenia\\\"]\"","\"country\""},
+        "Entity"], "}"}], "]"}]}], "}"}]}], "]"}]], "Input"],
+
+Cell[BoxData[
+ InterpretationBox[
+  DynamicModuleBox[{EntityFramework`Formatting`Private`open = False}, 
+   TemplateBox[{
+    TemplateBox[{"\"countries\""}, "GeneralizedEntityClassBase"],TagBox[
+      GridBox[{{
+         TemplateBox[{
+           TemplateBox[{"\"bordering countries/regions\"", 
+             RowBox[{"EntityProperty", "[", 
+               RowBox[{"\"Country\"", ",", "\"BorderingCountries\""}], "]"}], 
+             "\"EntityProperty[\\\"Country\\\", \
+\\\"BorderingCountries\\\"]\""}, "EntityProperty"], 
+           StyleBox["\":\"", "GeneralizedEntityInfoItem"], 
+           RowBox[{"ContainsAny", "[", 
+             RowBox[{"{", 
+               TemplateBox[{"\"Armenia\"", 
+                 RowBox[{"Entity", "[", 
+                   RowBox[{"\"Country\"", ",", "\"Armenia\""}], "]"}], 
+                 "\"Entity[\\\"Country\\\", \\\"Armenia\\\"]\"", 
+                 "\"country\""}, "Entity"], "}"}], "]"}]}, 
+          "GeneralizedEntityInfoRow"]}}, 
+       GridBoxAlignment -> {"Columns" -> {{Left}}}, DefaultBaseStyle -> 
+       "GeneralizedEntityInfoGrid", 
+       GridBoxItemSize -> {
+        "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], "Column"],
+     Dynamic[EntityFramework`Formatting`Private`open],
+     "\"EntityClass[\\\"Country\\\", {EntityProperty[\\\"Country\\\", \
+\\\"BorderingCountries\\\"] -> ContainsAny[{Entity[\\\"Country\\\", \
+\\\"Armenia\\\"]}]}]\""},
+    "GeneralizedEntityToggle"]],
+  EntityClass[
+  "Country", {
+   EntityProperty["Country", "BorderingCountries"] -> ContainsAny[{
+       Entity["Country", "Armenia"]}]}],
+  SelectWithContents->True]], "Output",
+ CellChangeTimes->{
+  3.6836119574191017`*^9},ExpressionUUID->"e8485969-9c0b-478a-9671-\
+016943db504a"]
+}, Open  ]],
+
+Cell["Get all the entities within an EntityClass:", "Text",
+ CellChangeTimes->{{3.683611960830439*^9, 3.683611969197557*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EntityClass", "[", 
+   RowBox[{"\"\<Country\>\"", ",", " ", 
+    RowBox[{"{", 
+     RowBox[{
+      TemplateBox[{
+       "\"bordering countries/regions\"",RowBox[{"EntityProperty", "[", 
+          RowBox[{"\"Country\"", ",", "\"BorderingCountries\""}], "]"}],
+        "\"EntityProperty[\\\"Country\\\", \\\"BorderingCountries\\\"]\""},
+       "EntityProperty"], "\[Rule]", " ", 
+      RowBox[{"ContainsAny", "[", 
+       RowBox[{"{", 
+        TemplateBox[{"\"Armenia\"",RowBox[{"Entity", "[", 
+            RowBox[{"\"Country\"", ",", "\"Armenia\""}], "]"}],
+          "\"Entity[\\\"Country\\\", \\\"Armenia\\\"]\"","\"country\""},
+         "Entity"], "}"}], "]"}]}], "}"}]}], "]"}], "//", 
+  "EntityList"}]], "Input",
+ CellChangeTimes->{{3.683611923633547*^9, 3.683611946935314*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   TemplateBox[{"\"Azerbaijan\"",RowBox[{"Entity", "[", 
+       RowBox[{"\"Country\"", ",", "\"Azerbaijan\""}], "]"}],
+     "\"Entity[\\\"Country\\\", \\\"Azerbaijan\\\"]\"","\"country\""},
+    "Entity"], ",", 
+   TemplateBox[{"\"Georgia\"",RowBox[{"Entity", "[", 
+       RowBox[{"\"Country\"", ",", "\"Georgia\""}], "]"}],
+     "\"Entity[\\\"Country\\\", \\\"Georgia\\\"]\"","\"country\""},
+    "Entity"], ",", 
+   TemplateBox[{"\"Iran\"",RowBox[{"Entity", "[", 
+       RowBox[{"\"Country\"", ",", "\"Iran\""}], "]"}],
+     "\"Entity[\\\"Country\\\", \\\"Iran\\\"]\"","\"country\""},
+    "Entity"], ",", 
+   TemplateBox[{"\"Turkey\"",RowBox[{"Entity", "[", 
+       RowBox[{"\"Country\"", ",", "\"Turkey\""}], "]"}],
+     "\"Entity[\\\"Country\\\", \\\"Turkey\\\"]\"","\"country\""},
+    "Entity"]}], "}"}]], "Output",
+ CellChangeTimes->{{3.683611926944387*^9, 3.683611948451326*^9}}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1332, 935},
+WindowMargins->{{0, Automatic}, {Automatic, 87}},
+Magnification:>2. Inherited,
+FrontEndVersion->"11.1 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 16, \
+2017)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "SlideShowHeader"->{
+  Cell[580, 22, 122, 2, 
+  74, "SlideShowNavigationBar", "ExpressionUUID" -> "
+   013c3792-9455-4411-9be0-36f69ac49d1a",
+   CellTags->"SlideShowHeader"],
+  Cell[1107, 38, 122, 2, 
+  74, "SlideShowNavigationBar", "ExpressionUUID" -> "3de5d618-256f-43d6-
+   b681-79753b5b6888",
+   CellTags->"SlideShowHeader"],
+  Cell[4600, 136, 122, 2, 
+  74, "SlideShowNavigationBar", "ExpressionUUID" -> "
+   ef6f7756-19c9-43a1-95aa-93820717b981",
+   CellTags->"SlideShowHeader"],
+  Cell[6479, 203, 122, 2, 
+  74, "SlideShowNavigationBar", "ExpressionUUID" -> "1d71fa88-e17f-4b57-
+   a169-141bdbaf95e7",
+   CellTags->"SlideShowHeader"],
+  Cell[37137, 1059, 122, 2, 
+  74, "SlideShowNavigationBar", "ExpressionUUID" -> "
+   6f8f4327-84ad-4b20-9055-1e6bd8f839ae",
+   CellTags->"SlideShowHeader"],
+  Cell[42327, 1208, 122, 2, 
+  74, "SlideShowNavigationBar", "ExpressionUUID" -> "
+   ce79f757-633f-4c9f-92ce-9e3074313759",
+   CellTags->"SlideShowHeader"],
+  Cell[147331, 3453, 122, 2, 
+  148, "SlideShowNavigationBar", "ExpressionUUID" -> "
+   3af08274-7f98-4d68-9725-4bf50853fedf",
+   CellTags->"SlideShowHeader"]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"SlideShowHeader", 153901, 3627}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 122, 2, 74, "SlideShowNavigationBar", "ExpressionUUID" -> \
+"013c3792-9455-4411-9be0-36f69ac49d1a",
+ CellTags->"SlideShowHeader"],
+Cell[705, 26, 222, 4, 182, "Title", "ExpressionUUID" -> \
+"4b2c2fc9-1c01-40fa-880e-d2769b7ea080"],
+Cell[930, 32, 140, 1, 101, "Subtitle", "ExpressionUUID" -> \
+"dd475a79-8821-4493-9e89-915e6fc938cd"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1107, 38, 122, 2, 74, "SlideShowNavigationBar", "ExpressionUUID" -> \
+"3de5d618-256f-43d6-b681-79753b5b6888",
+ CellTags->"SlideShowHeader"],
+Cell[CellGroupData[{
+Cell[1254, 44, 215, 3, 216, "Chapter", "ExpressionUUID" -> \
+"3a9e49c9-0f01-4148-9680-4db723615133"],
+Cell[1472, 49, 164, 3, 60, "Text", "ExpressionUUID" -> \
+"79cacc9f-53b1-48a6-8c7b-9eeb8ccf173f"],
+Cell[1639, 54, 203, 5, 63, "Input", "ExpressionUUID" -> \
+"fb32d13a-2253-479d-b536-a35adefe8c11"],
+Cell[1845, 61, 1633, 38, 91, "Input", "ExpressionUUID" -> \
+"137a1b7b-21c7-498a-b297-8679a4820a32"],
+Cell[3481, 101, 223, 4, 98, "Text", "ExpressionUUID" -> \
+"a537970e-d9cc-42fb-83b8-889c3d750afe"],
+Cell[CellGroupData[{
+Cell[3729, 109, 286, 6, 63, "Input", "ExpressionUUID" -> \
+"55d2d181-0683-465e-b485-73f8412e4b67"],
+Cell[4018, 117, 380, 7, 77, "Output", "ExpressionUUID" -> \
+"1547e269-94f1-44b6-bac0-96448eeb595a"]
+}, Open  ]],
+Cell[4413, 127, 138, 3, 60, "Text", "ExpressionUUID" -> \
+"153e12e9-e475-47e4-b120-09edefaeb80f"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4600, 136, 122, 2, 74, "SlideShowNavigationBar", "ExpressionUUID" -> \
+"ef6f7756-19c9-43a1-95aa-93820717b981",
+ CellTags->"SlideShowHeader"],
+Cell[CellGroupData[{
+Cell[4747, 142, 96, 1, 129, "Chapter", "ExpressionUUID" -> \
+"51d05393-048e-4db3-9654-b04d870e73bf"],
+Cell[4846, 145, 129, 1, 60, "Text", "ExpressionUUID" -> \
+"514b509c-0fbc-4247-b952-560484460881"],
+Cell[CellGroupData[{
+Cell[5000, 150, 242, 6, 63, "Input", "ExpressionUUID" -> \
+"c68ffcc7-e1af-4cf9-9770-ed7fd3f36e5a"],
+Cell[5245, 158, 69, 1, 63, "Output", "ExpressionUUID" -> \
+"4d7624de-02b4-4e57-b8a9-ae736c369177"]
+}, Open  ]],
+Cell[5329, 162, 290, 6, 98, "Text", "ExpressionUUID" -> \
+"f4c09a37-cc93-42d9-93b5-6e4d005d2a5f"],
+Cell[CellGroupData[{
+Cell[5644, 172, 192, 4, 63, "Input", "ExpressionUUID" -> \
+"8a421d39-9dee-4be1-9daf-b0c79da598b0"],
+Cell[5839, 178, 70, 1, 63, "Output", "ExpressionUUID" -> \
+"752b9cd5-0e04-4d9c-b958-e7d3e07b05f6"]
+}, Open  ]],
+Cell[5924, 182, 126, 1, 60, "Text", "ExpressionUUID" -> \
+"ac288d66-f174-406e-845c-26a347883cbb"],
+Cell[CellGroupData[{
+Cell[6075, 187, 185, 4, 63, "Input", "ExpressionUUID" -> \
+"a4cd5d2e-fc23-40fc-99f3-18632ba266ec"],
+Cell[6263, 193, 155, 3, 63, "Output", "ExpressionUUID" -> \
+"306ee403-5d93-4f46-bce7-1314fd68ce3e"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6479, 203, 122, 2, 74, "SlideShowNavigationBar", "ExpressionUUID" -> \
+"1d71fa88-e17f-4b57-a169-141bdbaf95e7",
+ CellTags->"SlideShowHeader"],
+Cell[CellGroupData[{
+Cell[6626, 209, 95, 1, 129, "Chapter", "ExpressionUUID" -> \
+"ff7111f6-2385-4f5a-bbad-3de2f6f97650"],
+Cell[6724, 212, 589, 13, 136, "Text", "ExpressionUUID" -> \
+"d54f273d-527c-42b7-b755-dea57835fa9f"],
+Cell[CellGroupData[{
+Cell[7338, 229, 270, 6, 63, "Input", "ExpressionUUID" -> \
+"f6c0db64-f34a-4e19-b808-f802fe30258b"],
+Cell[7611, 237, 132, 3, 63, "Output", "ExpressionUUID" -> \
+"3c9e908b-be1a-40fa-8a75-97f89722410e"]
+}, Open  ]],
+Cell[7758, 243, 177, 4, 60, "Text", "ExpressionUUID" -> \
+"1a056742-67cb-4dd6-9a8f-9da8a4ebf71d"],
+Cell[CellGroupData[{
+Cell[7960, 251, 269, 6, 63, "Input", "ExpressionUUID" -> \
+"b40287a8-361f-473d-8580-58f142e0f9d3"],
+Cell[8232, 259, 6436, 179, 116, "Output", "ExpressionUUID" -> \
+"f2bb5039-0bb7-4edb-bc3b-deab774fa49d"]
+}, Open  ]],
+Cell[14683, 441, 202, 4, 98, "Text", "ExpressionUUID" -> \
+"dd06c0d9-8d46-4c90-ac46-1848c668e9a2"],
+Cell[CellGroupData[{
+Cell[14910, 449, 317, 8, 63, "Input", "ExpressionUUID" -> \
+"c60f0106-04d4-4762-b514-0f80be34af0c"],
+Cell[15230, 459, 6552, 184, 116, "Output", "ExpressionUUID" -> \
+"0cc45f2e-aacc-41bf-a63f-6b34c1c10af3"]
+}, Open  ]],
+Cell[21797, 646, 118, 1, 60, "Text", "ExpressionUUID" -> \
+"86308b1c-02b5-442d-af13-e21562429199"],
+Cell[CellGroupData[{
+Cell[21940, 651, 141, 2, 63, "Input", "ExpressionUUID" -> \
+"b96dca9e-531a-47e2-aa9b-31361682dd76"],
+Cell[22084, 655, 96, 1, 63, "Output", "ExpressionUUID" -> \
+"4fcbb96b-68dd-4744-8f40-898ed914f12e"]
+}, Open  ]],
+Cell[22195, 659, 110, 1, 60, "Text", "ExpressionUUID" -> \
+"a6973542-159f-4256-b2eb-d1db5547b738"],
+Cell[CellGroupData[{
+Cell[22330, 664, 187, 4, 63, "Input", "ExpressionUUID" -> \
+"8d09d39b-f29d-48bc-9b69-7e04357ff332"],
+Cell[22520, 670, 247, 5, 77, "Output", "ExpressionUUID" -> \
+"566171b9-c7eb-4d7c-bb28-6dbeb85ae053"]
+}, Open  ]],
+Cell[22782, 678, 140, 1, 60, "Text", "ExpressionUUID" -> \
+"ab7cc91f-f969-4e46-bda2-fde5ac70459b"],
+Cell[CellGroupData[{
+Cell[22947, 683, 976, 22, 239, "Input", "ExpressionUUID" -> \
+"d6203775-a80e-4e90-9bd6-86c26b8906cd"],
+Cell[23926, 707, 1913, 46, 217, "Output", "ExpressionUUID" -> \
+"295a9064-c107-49ca-b842-1534a3cdd461"]
+}, Open  ]],
+Cell[25854, 756, 159, 3, 60, "Text", "ExpressionUUID" -> \
+"3c934d3f-9455-4576-bc2b-90ff2348d2b8"],
+Cell[26016, 761, 176, 4, 60, "Text", "ExpressionUUID" -> \
+"5e868a10-af33-4831-906b-92cfd37bd33f"],
+Cell[CellGroupData[{
+Cell[26217, 769, 971, 22, 239, "Input", "ExpressionUUID" -> \
+"72e725ce-f7ce-49b8-adf7-2087d6307b90"],
+Cell[27191, 793, 8257, 214, 120, "Output", "ExpressionUUID" -> \
+"2c75638c-59a2-4bbf-ab19-30e40840b884"]
+}, Open  ]],
+Cell[35463, 1010, 136, 1, 60, "Text", "ExpressionUUID" -> \
+"707d3ed7-3cc8-4b90-afb8-078b34c17d43"],
+Cell[CellGroupData[{
+Cell[35624, 1015, 316, 7, 63, "Input", "ExpressionUUID" -> \
+"c75d5397-589d-4762-933b-9e859c4a3272"],
+Cell[35943, 1024, 202, 4, 63, "Output", "ExpressionUUID" -> \
+"93a0cb41-7f91-4cb1-b93a-50ea73c2574e"]
+}, Open  ]],
+Cell[36160, 1031, 299, 5, 98, "Text", "ExpressionUUID" -> \
+"c2132735-6a4e-481a-88c9-6607a3559656"],
+Cell[36462, 1038, 217, 4, 63, "Input", "ExpressionUUID" -> \
+"df23254e-9efa-447c-9db5-f0c71eb32a89"],
+Cell[36682, 1044, 406, 9, 83, "Input", "ExpressionUUID" -> \
+"d44ccf32-7d77-47ea-a879-436b3a2d10a6"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[37137, 1059, 122, 2, 74, "SlideShowNavigationBar", "ExpressionUUID" -> \
+"6f8f4327-84ad-4b20-9055-1e6bd8f839ae",
+ CellTags->"SlideShowHeader"],
+Cell[CellGroupData[{
+Cell[37284, 1065, 259, 4, 129, "Chapter", "ExpressionUUID" -> \
+"b78f927c-7642-4f78-8051-92733f286a16"],
+Cell[37546, 1071, 306, 7, 98, "Text", "ExpressionUUID" -> \
+"1fc8065d-c2c2-4ab3-8bf8-fbeb380d908f"],
+Cell[37855, 1080, 293, 7, 63, "Input", "ExpressionUUID" -> \
+"9498bcaf-6f72-49d8-a2ad-67d95c399bbe"],
+Cell[38151, 1089, 344, 5, 60, "Text", "ExpressionUUID" -> \
+"8a466136-bcce-440b-ae88-4418cd48b869"],
+Cell[38498, 1096, 456, 11, 63, "Input", "ExpressionUUID" -> \
+"c2491355-4773-4b13-ab8c-3ea5acf0cf90"],
+Cell[38957, 1109, 330, 5, 60, "Text", "ExpressionUUID" -> \
+"c603da06-145d-4710-af5d-921b1f4835aa"],
+Cell[39290, 1116, 467, 10, 63, "Input", "ExpressionUUID" -> \
+"81e187ea-b37e-419d-b972-7ab8da61fdf5"],
+Cell[39760, 1128, 223, 5, 60, "Text", "ExpressionUUID" -> \
+"e42d1d44-60e0-4622-b6a3-2886adc95a20"],
+Cell[39986, 1135, 335, 8, 66, "Input", "ExpressionUUID" -> \
+"a955e87d-82ca-4f8f-9d96-b518ec6fc797"],
+Cell[40324, 1145, 275, 6, 60, "Text", "ExpressionUUID" -> \
+"0a996a34-cf0e-4574-b93e-cd3cf065de9b"],
+Cell[40602, 1153, 318, 7, 66, "Input", "ExpressionUUID" -> \
+"67d82c40-c616-4140-a493-1a2cc7c75e86"],
+Cell[40923, 1162, 285, 7, 60, "Text", "ExpressionUUID" -> \
+"c6e3007f-62f8-403a-9e55-20b13e23c3d2"],
+Cell[41211, 1171, 494, 12, 105, "Input", "ExpressionUUID" -> \
+"33c2129e-3a8a-4cf7-b318-d736deb8ba95"],
+Cell[41708, 1185, 324, 9, 63, "Input", "ExpressionUUID" -> \
+"f21aae44-2c9d-485d-986e-aace53bc29e9"],
+Cell[42035, 1196, 243, 6, 63, "Input", "ExpressionUUID" -> \
+"61be12a9-a82b-4514-93e6-68c4449a4340"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[42327, 1208, 122, 2, 74, "SlideShowNavigationBar", "ExpressionUUID" -> \
+"ce79f757-633f-4c9f-92ce-9e3074313759",
+ CellTags->"SlideShowHeader"],
+Cell[CellGroupData[{
+Cell[42474, 1214, 93, 1, 129, "Chapter", "ExpressionUUID" -> \
+"c20bc644-4204-424d-a6ed-f76a7e814ce1"],
+Cell[42570, 1217, 161, 3, 60, "Text", "ExpressionUUID" -> \
+"cfa4536a-f4a6-4cc5-a56d-c1abbe48de57"],
+Cell[CellGroupData[{
+Cell[42756, 1224, 581, 14, 83, "Input", "ExpressionUUID" -> \
+"99701b6b-7c42-4a98-bd3a-77541aa11f52"],
+Cell[43340, 1240, 142, 3, 69, "Output", "ExpressionUUID" -> \
+"c6006cc2-96b3-49a8-a9bf-7436b425af3e"]
+}, Open  ]],
+Cell[43497, 1246, 141, 1, 60, "Text", "ExpressionUUID" -> \
+"17a51aba-c0c1-4c7c-bab9-c7446be8e7cc"],
+Cell[CellGroupData[{
+Cell[43663, 1251, 471, 11, 83, "Input", "ExpressionUUID" -> \
+"1c73dd57-2327-46f8-a9eb-20d957c8a4cf"],
+Cell[44137, 1264, 142, 3, 69, "Output", "ExpressionUUID" -> \
+"c68b02c3-db5a-44be-b6ab-a4927a69a4cb"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[44316, 1272, 455, 10, 83, "Input", "ExpressionUUID" -> \
+"ba83740f-92a7-4739-946a-8fbc71048f20"],
+Cell[44774, 1284, 142, 3, 69, "Output", "ExpressionUUID" -> \
+"74bf8c03-5625-48c6-8583-7186ff0ed096"]
+}, Open  ]],
+Cell[44931, 1290, 128, 1, 60, "Text", "ExpressionUUID" -> \
+"16cd9582-c4e3-489d-849a-b3449a933825"],
+Cell[CellGroupData[{
+Cell[45084, 1295, 466, 10, 83, "Input", "ExpressionUUID" -> \
+"d03aac57-384e-430f-9670-96794d1491ca"],
+Cell[45553, 1307, 52089, 1092, 5717, "Output", "ExpressionUUID" -> \
+"5c603107-e591-49b4-9de8-db77fbd5e939"]
+}, Open  ]],
+Cell[97657, 2402, 166, 3, 120, "Text", "ExpressionUUID" -> \
+"b2dc5bb3-bb0d-449c-b02e-73a2d9fa195d"],
+Cell[CellGroupData[{
+Cell[97848, 2409, 2065, 48, 294, "Input", "ExpressionUUID" -> \
+"e8c775b1-cbbf-4b8b-b57e-884dc5fe08c0"],
+Cell[99916, 2459, 47354, 987, 1194, "Output", "ExpressionUUID" -> \
+"f72207b1-25a1-47ee-a005-e6a06bcb71b5"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[147331, 3453, 122, 2, 148, "SlideShowNavigationBar", "ExpressionUUID" -> \
+"3af08274-7f98-4d68-9725-4bf50853fedf",
+ CellTags->"SlideShowHeader"],
+Cell[CellGroupData[{
+Cell[147478, 3459, 96, 1, 258, "Chapter", "ExpressionUUID" -> \
+"f4b3e616-a56a-4d6c-85bd-3627a336d5b8"],
+Cell[147577, 3462, 138, 1, 120, "Text", "ExpressionUUID" -> \
+"906b7702-904b-42ab-8259-87d12cd5cb2e"],
+Cell[CellGroupData[{
+Cell[147740, 3467, 318, 6, 126, "Input", "ExpressionUUID" -> \
+"2a231fda-d692-4061-8b1b-cd00fb85687f"],
+Cell[148061, 3475, 216, 4, 138, "Output", "ExpressionUUID" -> \
+"982f0ff7-b126-46d2-b9cd-23c2c6405aae"]
+}, Open  ]],
+Cell[148292, 3482, 174, 4, 120, "Text", "ExpressionUUID" -> \
+"ee8296b5-1669-4361-b490-0e232eb56c18"],
+Cell[CellGroupData[{
+Cell[148491, 3490, 210, 4, 126, "Input", "ExpressionUUID" -> \
+"07b13519-595e-4061-841a-82e70c017231"],
+Cell[148704, 3496, 306, 5, 154, "Output", "ExpressionUUID" -> \
+"6526ddf1-69a7-4db5-bd1c-4c69d2650685"]
+}, Open  ]],
+Cell[149025, 3504, 133, 1, 120, "Text", "ExpressionUUID" -> \
+"8754f456-dac0-4d4b-a98f-182537bd15db"],
+Cell[CellGroupData[{
+Cell[149183, 3509, 701, 15, 282, "Input", "ExpressionUUID" -> \
+"91cc68b3-4fff-421d-865a-ed3f730a0cd0"],
+Cell[149887, 3526, 1724, 37, 164, "Output", "ExpressionUUID" -> \
+"e8485969-9c0b-478a-9671-016943db504a"]
+}, Open  ]],
+Cell[151626, 3566, 125, 1, 120, "Text", "ExpressionUUID" -> \
+"7e4b73be-a78c-443f-92a6-34d05cb07d3f"],
+Cell[CellGroupData[{
+Cell[151776, 3571, 817, 18, 368, "Input", "ExpressionUUID" -> \
+"ed678d80-263a-4c78-8b86-a4d62357fb40"],
+Cell[152596, 3591, 924, 19, 158, "Output", "ExpressionUUID" -> \
+"343f15fa-2309-4888-808a-d117f8474ff0"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
