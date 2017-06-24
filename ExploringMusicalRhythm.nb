@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    177128,       4102]
-NotebookOptionsPosition[    160733,       3740]
-NotebookOutlinePosition[    167073,       3881]
-CellTagsIndexPosition[    167030,       3878]
+NotebookDataLength[    177005,       4093]
+NotebookOptionsPosition[    160610,       3731]
+NotebookOutlinePosition[    166950,       3872]
+CellTagsIndexPosition[    166907,       3869]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -2835,12 +2835,12 @@ expression of two different kinds of macro beats.\
 Cell["\<\
 Pretend you\[CloseCurlyQuote]re a drummer from Ghana. You\[CloseCurlyQuote]re \
 given 20 micro-pulses and asked to play on the first of the 20 pulses and \
-three other evenly spaced pulses. In other words, you have four evenly spaced \
+four other evenly spaced pulses. In other words, you have five evenly spaced \
 onsets.\
 \>", "Text",
  CellChangeTimes->{{3.707243892249312*^9, 3.707243960214542*^9}, {
-  3.7072441720747147`*^9, 
-  3.707244172291135*^9}},ExpressionUUID->"8a933f1c-7854-4020-b7aa-\
+  3.7072441720747147`*^9, 3.707244172291135*^9}, {3.7072588165541763`*^9, 
+  3.707258835169436*^9}},ExpressionUUID->"8a933f1c-7854-4020-b7aa-\
 d485bb6790d4"],
 
 Cell[CellGroupData[{
@@ -2875,8 +2875,7 @@ Cell[BoxData[{
   "]"}]}], "Input",
  CellChangeTimes->{{3.707243974903777*^9, 3.707244062126659*^9}, {
   3.707244101494584*^9, 3.7072441100122223`*^9}},
- CellLabel->
-  "In[288]:=",ExpressionUUID->"fb12e695-59b7-40ff-aef9-b0a2cc6aae13"],
+ CellLabel->"In[10]:=",ExpressionUUID->"fb12e695-59b7-40ff-aef9-b0a2cc6aae13"],
 
 Cell[BoxData[
  GraphicsBox[{
@@ -2905,9 +2904,8 @@ Cell[BoxData[
    "DefaultBoundaryStyle" -> Automatic, "DefaultPlotStyle" -> 
     Automatic}]], "Output",
  CellChangeTimes->{{3.7072440059391737`*^9, 3.7072440321794367`*^9}, 
-   3.70724411050793*^9},
- CellLabel->
-  "Out[288]=",ExpressionUUID->"9d9b5637-8b4c-4db5-957b-62f3060df778"],
+   3.70724411050793*^9, 3.707258863693667*^9},
+ CellLabel->"Out[10]=",ExpressionUUID->"da033ba9-bf40-4146-a982-d53c61a932d7"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -3061,22 +3059,21 @@ Cell[BoxData[
     SoundNote[None, 
      Rational[1, 4]]}]]], "Output",
  CellChangeTimes->{{3.7072440059391737`*^9, 3.7072440321794367`*^9}, 
-   3.707244110598069*^9},
- CellLabel->
-  "Out[289]=",ExpressionUUID->"f7021393-ca9d-4c06-8d88-dc6dca6e27bf"]
+   3.70724411050793*^9, 3.707258863768017*^9},
+ CellLabel->"Out[11]=",ExpressionUUID->"d5cf5a5e-e771-4129-9112-b195a860cfe3"]
 }, Open  ]],
 
 Cell[TextData[{
  "Now do the same thing, except you need to play on ",
- StyleBox["4",
+ StyleBox["3",
   FontWeight->"Bold",
   FontSlant->"Italic"],
- " other evenly spaced pulses. In other words, you have five evenly spaced \
+ " other evenly spaced pulses. In other words, you have four evenly spaced \
 onsets."
 }], "Text",
  CellChangeTimes->{{3.707243892249312*^9, 3.707243960214542*^9}, {
-  3.707244181003008*^9, 
-  3.707244198090561*^9}},ExpressionUUID->"8f2a4046-67c8-4616-8293-\
+  3.707244181003008*^9, 3.707244198090561*^9}, {3.707258852737883*^9, 
+  3.707258857817437*^9}},ExpressionUUID->"8f2a4046-67c8-4616-8293-\
 33f6afc55456"],
 
 Cell[CellGroupData[{
@@ -3104,14 +3101,14 @@ Cell[BoxData[{
       RowBox[{
        RowBox[{
         RowBox[{"Mod", "[", 
-         RowBox[{"i", ",", " ", "4"}], "]"}], " ", "\[Equal]", " ", "1"}], 
+         RowBox[{"i", ",", " ", "5"}], "]"}], " ", "\[Equal]", " ", "1"}], 
        ",", " ", "1", ",", " ", "0"}], "]"}], ",", " ", 
      RowBox[{"{", 
       RowBox[{"i", ",", "20"}], "}"}]}], "]"}], ",", " ", "240"}], 
   "]"}]}], "Input",
- CellChangeTimes->{{3.707244206482994*^9, 3.707244207275907*^9}},
- CellLabel->
-  "In[291]:=",ExpressionUUID->"34d818c3-7855-4439-8585-1d3135aa39df"],
+ CellChangeTimes->{{3.707244206482994*^9, 3.707244207275907*^9}, 
+   3.707258850358074*^9},
+ CellLabel->"In[8]:=",ExpressionUUID->"34d818c3-7855-4439-8585-1d3135aa39df"],
 
 Cell[BoxData[
  GraphicsBox[{
@@ -3139,9 +3136,8 @@ Cell[BoxData[
   Method->{
    "DefaultBoundaryStyle" -> Automatic, "DefaultPlotStyle" -> 
     Automatic}]], "Output",
- CellChangeTimes->{3.707244208333227*^9},
- CellLabel->
-  "Out[291]=",ExpressionUUID->"3c39d16f-4084-48af-a386-7b669a9a9653"],
+ CellChangeTimes->{3.707244208333227*^9, 3.7072588623261747`*^9},
+ CellLabel->"Out[8]=",ExpressionUUID->"a1adeb40-f514-4d47-979e-fccdffdbf40b"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -3152,12 +3148,12 @@ Cell[BoxData[
        {RGBColor[0.5, 0, 0.5], 
         StyleBox[{
           RectangleBox[{0., 0.610558394599415}, {0.2375, 0.6224631565041769}],
-           RectangleBox[{1., 0.610558394599415}, \
-{1.2375, 0.6224631565041769}], 
-          RectangleBox[{2., 0.610558394599415}, {2.2375, 0.6224631565041769}],
-           RectangleBox[{3., 0.610558394599415}, \
-{3.2375, 0.6224631565041769}], 
-          RectangleBox[{4., 0.610558394599415}, {4.2375, 0.6224631565041769}]},
+           RectangleBox[{1.25, 0.610558394599415}, \
+{1.4875, 0.6224631565041769}], 
+          RectangleBox[{2.5, 0.610558394599415}, \
+{2.7375, 0.6224631565041769}], 
+          RectangleBox[{3.75, 0.610558394599415}, \
+{3.9875, 0.6224631565041769}]},
          Antialiasing->True]},
        AspectRatio->NCache[
          Rational[6, 35], 0.17142857142857143`],
@@ -3188,7 +3184,7 @@ Cell[BoxData[
         "\" | \"", FontSize -> 14, FontColor -> 
          RGBColor[0.5098039215686274, 0.5098039215686274, 0.5098039215686274],
           StripOnInput -> False],StyleBox[
-         TemplateBox[{"\"4.25\"", "\" s\""}, "RowDefault"], FontColor -> 
+         TemplateBox[{"\"4\"", "\" s\""}, "RowDefault"], FontColor -> 
          RGBColor[0.5098039215686274, 0.5098039215686274, 0.5098039215686274],
           StripOnInput -> False]},
        "RowWithSeparator"], "DialogStyle",
@@ -3213,23 +3209,19 @@ Cell[BoxData[
                Sound`MIDIEvent[
                12, "NoteOff", "Note" -> 75, "Channel" -> 9, "Velocity" -> 0], 
                Sound`MIDIEvent[
-               48, "NoteOn", "Note" -> 75, "Channel" -> 9, "Velocity" -> 127], 
+               60, "NoteOn", "Note" -> 75, "Channel" -> 9, "Velocity" -> 127], 
                Sound`MIDIEvent[
-               60, "NoteOff", "Note" -> 75, "Channel" -> 9, "Velocity" -> 0], 
+               72, "NoteOff", "Note" -> 75, "Channel" -> 9, "Velocity" -> 0], 
                Sound`MIDIEvent[
-               96, "NoteOn", "Note" -> 75, "Channel" -> 9, "Velocity" -> 127], 
-               Sound`MIDIEvent[
-               108, "NoteOff", "Note" -> 75, "Channel" -> 9, "Velocity" -> 0], 
-               Sound`MIDIEvent[
-               144, "NoteOn", "Note" -> 75, "Channel" -> 9, "Velocity" -> 
+               120, "NoteOn", "Note" -> 75, "Channel" -> 9, "Velocity" -> 
                 127], 
                Sound`MIDIEvent[
-               156, "NoteOff", "Note" -> 75, "Channel" -> 9, "Velocity" -> 0], 
+               132, "NoteOff", "Note" -> 75, "Channel" -> 9, "Velocity" -> 0], 
                Sound`MIDIEvent[
-               192, "NoteOn", "Note" -> 75, "Channel" -> 9, "Velocity" -> 
+               180, "NoteOn", "Note" -> 75, "Channel" -> 9, "Velocity" -> 
                 127], 
                Sound`MIDIEvent[
-               204, "NoteOff", "Note" -> 75, "Channel" -> 9, "Velocity" -> 
+               192, "NoteOff", "Note" -> 75, "Channel" -> 9, "Velocity" -> 
                 0]}]}, "DivisionType" -> "PPQ", "Resolution" -> 48]]; 
          Sound`EmitSampledSound[None, "Preemptive"], 
          FEPrivate`EmitSound[None, "Preemptive"]], Method -> "Preemptive", 
@@ -3262,12 +3254,6 @@ Cell[BoxData[
      Rational[1, 4]], 
     SoundNote[None, 
      Rational[1, 4]], 
-    SoundNote["Claves", 
-     Rational[1, 4]], 
-    SoundNote[None, 
-     Rational[1, 4]], 
-    SoundNote[None, 
-     Rational[1, 4]], 
     SoundNote[None, 
      Rational[1, 4]], 
     SoundNote["Claves", 
@@ -3278,15 +3264,21 @@ Cell[BoxData[
      Rational[1, 4]], 
     SoundNote[None, 
      Rational[1, 4]], 
-    SoundNote["Claves", 
-     Rational[1, 4]], 
-    SoundNote[None, 
-     Rational[1, 4]], 
-    SoundNote[None, 
-     Rational[1, 4]], 
     SoundNote[None, 
      Rational[1, 4]], 
     SoundNote["Claves", 
+     Rational[1, 4]], 
+    SoundNote[None, 
+     Rational[1, 4]], 
+    SoundNote[None, 
+     Rational[1, 4]], 
+    SoundNote[None, 
+     Rational[1, 4]], 
+    SoundNote[None, 
+     Rational[1, 4]], 
+    SoundNote["Claves", 
+     Rational[1, 4]], 
+    SoundNote[None, 
      Rational[1, 4]], 
     SoundNote[None, 
      Rational[1, 4]], 
@@ -3294,9 +3286,8 @@ Cell[BoxData[
      Rational[1, 4]], 
     SoundNote[None, 
      Rational[1, 4]]}]]], "Output",
- CellChangeTimes->{3.707244208410719*^9},
- CellLabel->
-  "Out[292]=",ExpressionUUID->"82d28bc9-3971-4524-a4f9-3919d90b83dc"]
+ CellChangeTimes->{3.707244208333227*^9, 3.707258862402567*^9},
+ CellLabel->"Out[9]=",ExpressionUUID->"93f39910-d6f9-47b1-b57b-0db82c9682d8"]
 }, Open  ]],
 
 Cell[BoxData[""], "Input",
@@ -3910,7 +3901,7 @@ Cell[9539, 217, 931, 15, 49, "Text", "ExpressionUUID" -> \
 "9ec08883-433d-4d9e-a380-0101e1a9918b"],
 Cell[10473, 234, 759, 13, 31, "Direction", "ExpressionUUID" -> \
 "1b043ab7-b4be-496a-a526-a2f292822094"],
-Cell[11235, 249, 747, 15, 66, "Input", "ExpressionUUID" -> \
+Cell[11235, 249, 747, 15, 32, "Input", "ExpressionUUID" -> \
 "17b338a9-d991-4856-9872-07c405a1db99"],
 Cell[11985, 266, 581, 10, 49, "Text", "ExpressionUUID" -> \
 "8ee8816d-b55b-4eee-8f3a-a65987ad3181"],
@@ -4042,65 +4033,65 @@ Cell[122929, 2804, 395, 6, 62, "Section", "ExpressionUUID" -> \
 "ed1eca78-45ae-4880-ae54-a84a85c58c7f"],
 Cell[123327, 2812, 1398, 20, 106, "Text", "ExpressionUUID" -> \
 "d8126cd1-cd45-4529-882a-d2b29c561121"],
-Cell[124728, 2834, 444, 9, 49, "Text", "ExpressionUUID" -> \
+Cell[124728, 2834, 491, 9, 49, "Text", "ExpressionUUID" -> \
 "8a933f1c-7854-4020-b7aa-d485bb6790d4"],
 Cell[CellGroupData[{
-Cell[125197, 2847, 1123, 31, 54, "Input", "ExpressionUUID" -> \
+Cell[125244, 2847, 1119, 30, 54, "Input", "ExpressionUUID" -> \
 "fb12e695-59b7-40ff-aef9-b0a2cc6aae13"],
-Cell[126323, 2880, 1300, 29, 47, "Output", "ExpressionUUID" -> \
-"9d9b5637-8b4c-4db5-957b-62f3060df778"],
-Cell[127626, 2911, 6215, 154, 130, "Output", "ExpressionUUID" -> \
-"f7021393-ca9d-4c06-8d88-dc6dca6e27bf"]
+Cell[126366, 2879, 1318, 28, 47, "Output", "ExpressionUUID" -> \
+"da033ba9-bf40-4146-a982-d53c61a932d7"],
+Cell[127687, 2909, 6232, 153, 164, "Output", "ExpressionUUID" -> \
+"d5cf5a5e-e771-4129-9112-b195a860cfe3"]
 }, Open  ]],
-Cell[133856, 3068, 404, 11, 30, "Text", "ExpressionUUID" -> \
+Cell[133934, 3065, 450, 11, 30, "Text", "ExpressionUUID" -> \
 "8f2a4046-67c8-4616-8293-33f6afc55456"],
 Cell[CellGroupData[{
-Cell[134285, 3083, 1072, 30, 54, "Input", "ExpressionUUID" -> \
+Cell[134409, 3080, 1093, 30, 54, "Input", "ExpressionUUID" -> \
 "34d818c3-7855-4439-8585-1d3135aa39df"],
-Cell[135360, 3115, 1247, 28, 47, "Output", "ExpressionUUID" -> \
-"3c39d16f-4084-48af-a386-7b669a9a9653"],
-Cell[136610, 3145, 6161, 153, 130, "Output", "ExpressionUUID" -> \
-"82d28bc9-3971-4524-a4f9-3919d90b83dc"]
+Cell[135505, 3112, 1266, 27, 47, "Output", "ExpressionUUID" -> \
+"a1adeb40-f514-4d47-979e-fccdffdbf40b"],
+Cell[136774, 3141, 5874, 148, 130, "Output", "ExpressionUUID" -> \
+"93f39910-d6f9-47b1-b57b-0db82c9682d8"]
 }, Open  ]],
-Cell[142786, 3301, 154, 3, 32, "Input", "ExpressionUUID" -> \
+Cell[142663, 3292, 154, 3, 32, "Input", "ExpressionUUID" -> \
 "f1dc1833-d2d6-4afd-9e3e-4db5ef01a401"],
-Cell[142943, 3306, 458, 8, 49, "Text", "ExpressionUUID" -> \
+Cell[142820, 3297, 458, 8, 49, "Text", "ExpressionUUID" -> \
 "e297e899-e8f1-47fb-aa44-63e3b1f2132a"],
-Cell[143404, 3316, 1650, 25, 31, "Direction", "ExpressionUUID" -> \
+Cell[143281, 3307, 1650, 25, 31, "Direction", "ExpressionUUID" -> \
 "5610d2fc-c488-406b-b33a-4dd57ffcffa1"],
 Cell[CellGroupData[{
-Cell[145079, 3345, 1244, 33, 32, "Input", "ExpressionUUID" -> \
+Cell[144956, 3336, 1244, 33, 32, "Input", "ExpressionUUID" -> \
 "6ce2ef5f-a4e4-469c-87ae-c5ac4625be32"],
-Cell[146326, 3380, 7523, 181, 130, "Output", "ExpressionUUID" -> \
+Cell[146203, 3371, 7523, 181, 130, "Output", "ExpressionUUID" -> \
 "2616a1f7-1e12-4405-bc1e-59bbdc55061c"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[153886, 3566, 2031, 53, 96, "Input", "ExpressionUUID" -> \
+Cell[153763, 3557, 2031, 53, 96, "Input", "ExpressionUUID" -> \
 "adefd959-baa0-46aa-9ffb-16f2f491205a"],
-Cell[155920, 3621, 2217, 45, 185, "Output", "ExpressionUUID" -> \
+Cell[155797, 3612, 2217, 45, 185, "Output", "ExpressionUUID" -> \
 "f3b3431f-e86c-4f2e-b7af-2f57b043ff2d"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[158186, 3672, 185, 3, 62, "Section", "ExpressionUUID" -> \
+Cell[158063, 3663, 185, 3, 62, "Section", "ExpressionUUID" -> \
 "e1417433-2c57-4bf2-9061-540f230077f8"],
-Cell[158374, 3677, 479, 9, 49, "Text", "ExpressionUUID" -> \
+Cell[158251, 3668, 479, 9, 49, "Text", "ExpressionUUID" -> \
 "6499e11f-ea87-4d68-8186-5eb36029e6c3"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[158890, 3691, 234, 4, 59, "FurtherExplorationSection", "ExpressionUUID" \
+Cell[158767, 3682, 234, 4, 59, "FurtherExplorationSection", "ExpressionUUID" \
 -> "5935468f-4faf-42ec-9ce5-cfaecb303b1f"],
-Cell[159127, 3697, 646, 13, 83, "FurtherExploration", "ExpressionUUID" -> \
+Cell[159004, 3688, 646, 13, 83, "FurtherExploration", "ExpressionUUID" -> \
 "fc00d35b-c175-46f2-bdde-4a3e799238ba"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[159810, 3715, 179, 3, 59, "AuthorshipSection", "ExpressionUUID" -> \
+Cell[159687, 3706, 179, 3, 59, "AuthorshipSection", "ExpressionUUID" -> \
 "1145f06d-098f-44f3-8ec7-d4e9d7eb28ba"],
-Cell[159992, 3720, 214, 4, 24, "Authorship", "ExpressionUUID" -> \
+Cell[159869, 3711, 214, 4, 24, "Authorship", "ExpressionUUID" -> \
 "5102885a-34eb-44ab-80db-aa3710dbd08a"],
-Cell[160209, 3726, 265, 4, 24, "Authorship", "ExpressionUUID" -> \
+Cell[160086, 3717, 265, 4, 24, "Authorship", "ExpressionUUID" -> \
 "a955aad8-c1c5-41e7-ad9b-f592f4a82734"],
-Cell[160477, 3732, 228, 4, 24, "Authorship", "ExpressionUUID" -> \
+Cell[160354, 3723, 228, 4, 24, "Authorship", "ExpressionUUID" -> \
 "31ae3bf8-c288-4b0b-bca6-5f0155809418"]
 }, Open  ]]
 }, Open  ]]
