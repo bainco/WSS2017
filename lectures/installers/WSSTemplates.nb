@@ -1,0 +1,269 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     10785,        259]
+NotebookOptionsPosition[     10292,        238]
+NotebookOutlinePosition[     10766,        258]
+CellTagsIndexPosition[     10723,        255]
+WindowTitle->WSS Templates Installer
+WindowFrame->Palette*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     InterpretationBox[Cell["",
+       FontSize->15,ExpressionUUID->"f62dc522-d6a6-423a-8658-c0fe092cb992"],
+      TextCell["", FontSize -> 15]]},
+    {
+     ButtonBox[
+      TagBox[GridBox[{
+         {"\<\"Install\"\>", 
+          StyleBox[
+           AdjustmentBox["|",
+            BoxBaselineShift->-0.945],
+           FontSize->7,
+           FontWeight->"Bold"], "\<\"Update\"\>"}
+        },
+        AutoDelete->False,
+        GridBoxAlignment->{"Columns" -> {{Center}}},
+        GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+        GridBoxSpacings->{
+         "ColumnsIndexed" -> {2 -> 0.25, 3 -> 0.25}, "Rows" -> {{Automatic}}}],
+       "Grid"],
+      Appearance->Automatic,
+      ButtonData->{
+        CloudObject[
+        "https://www.wolframcloud.com/objects/824d99cf-1e33-4665-ba49-\
+092abc7be4e9"]},
+      ButtonFunction:>(
+       Module[{$CellContext`sstDir = 
+         FileNameJoin[{$UserBaseDirectory, "Applications", 
+            "SummerSchoolTemplates"}], $CellContext`app = 
+         FileNameJoin[{$UserBaseDirectory, 
+            "Applications"}], $CellContext`btnb = 
+         ButtonNotebook[], $CellContext`pro, $CellContext`smnb, \
+$CellContext`arc, $CellContext`progDialog1, $CellContext`menuPath = 
+         FileNameJoin[{$UserBaseDirectory, "Applications", 
+            "SummerSchoolTemplates", "FrontEnd", "TextResources", 
+            
+            Switch[$OperatingSystem, "Windows", "Windows", "MacOSX", 
+             "Macintosh", 
+             Blank[], "X"], "MenuSetup.tr"}]}, If[
+          Not[
+           TrueQ[$CloudConnected]], 
+          Quiet[
+           CloudConnect["RememberMe" -> True]]]; If[
+          Not[
+           TrueQ[$CloudConnected]], NotebookClose[$CellContext`btnb]; 
+          MessageDialog["You must first log into the cloud."], 
+          NotebookClose[$CellContext`btnb]; Catch[
+            
+            With[{$CellContext`bd = 
+              Part[#, 1], $CellContext`btnb1 = $CellContext`btnb, \
+$CellContext`sstDir1 = $CellContext`sstDir}, If[
+               DirectoryQ[$CellContext`sstDir], 
+               If[
+                MatchQ[
+                 ChoiceDialog[
+                 "A version of SummerSchoolTemplates is already installed. Do \
+you wish to overwrite the existing version?", {
+                  "Overwrite" :> Function[$CellContext`u, 
+                    If[$CellContext`u === $Aborted, 
+                    Throw[
+                    NotebookClose[$CellContext`pro]; 
+                    NotebookClose[$CellContext`btnb1]; 
+                    MessageDialog[
+                    "There is a problem with the Cloud. Try again later.", 
+                    WindowFrame -> "ModalDialog", 
+                    WindowSize -> {350, All}]], $CellContext`u]][
+                    TimeConstrained[
+                    If[$CellContext`pro = CreatePalette[
+                    ProgressIndicator[
+                    Dynamic[
+                    Clock[Infinity]], Indeterminate, ImageSize -> {300, 30}], 
+                    WindowMargins -> {{Automatic, Automatic}, {
+                    Automatic, 250}}, WindowTitle -> 
+                    "Checking WSS Cloud Resource.", WindowSize -> {300, Fit}]; 
+                    Quiet[
+                    TrueQ[
+                    FileExistsQ[$CellContext`bd]]], 
+                    NotebookClose[$CellContext`pro]; 
+                    NotebookClose[$CellContext`btnb1]; Quiet[
+                    
+                    DeleteDirectory[$CellContext`sstDir, DeleteContents -> 
+                    True], 
+                    MessageName[DeleteDirectory, "nodir"]], 
+                    Throw[
+                    NotebookClose[$CellContext`pro]; 
+                    NotebookClose[$CellContext`btnb1]; 
+                    MessageDialog[
+                    "There is a problem with the Cloud. Try again later.", 
+                    WindowFrame -> "ModalDialog", WindowSize -> {350, All}]]],
+                     10, $Aborted]], "Cancel" :> $Canceled}, WindowTitle -> 
+                  "Previous Installation", WindowFloating -> 
+                  True], $Canceled], 
+                Throw[$Canceled]]]; $CellContext`progDialog1 = CreateDialog[
+                Column[{
+                  Style[
+                   TextCell["Installing SummerSchoolTemplates..."], 12], 
+                  ProgressIndicator[
+                  Appearance -> "Indeterminate", ImageSize -> 120], 
+                  TextCell[""]}, Alignment -> Center], WindowFloating -> True,
+                 WindowSize -> FitAll]; Function[$CellContext`u, 
+               If[$CellContext`u === $Aborted, 
+                Throw[
+                NotebookClose[$CellContext`progDialog1]; 
+                 NotebookClose[$CellContext`btnb]; 
+                 MessageDialog[
+                  "There is a problem with the Cloud. Try again later.", 
+                   WindowFrame -> "ModalDialog", 
+                   WindowSize -> {350, All}]], $CellContext`u]][
+               TimeConstrained[
+                If[
+                 Quiet[
+                  And[
+                   TrueQ[
+                    FileExistsQ[
+                    Part[#, 1]]], $CellContext`arc = 
+                    FileNameJoin[{$CellContext`app, 
+                    "SummerSchoolTemplates.zip"}]; TrueQ[
+                    FileExistsQ[
+                    CopyFile[
+                    Part[#, 1], $CellContext`arc]]]]], 
+                 Quiet[
+                 ExtractArchive[$CellContext`arc, $CellContext`app]; 
+                  DeleteFile[$CellContext`arc]], 
+                 Throw[
+                 NotebookClose[$CellContext`progDialog1]; 
+                  NotebookClose[$CellContext`btnb]; 
+                  MessageDialog[
+                   "There is a problem with the Cloud. Try again later.", 
+                    WindowFrame -> "ModalDialog", WindowSize -> {350, All}]]],
+                 10, $Aborted]]; If[
+               FileExistsQ[$CellContext`menuPath], 
+               SetOptions[$FrontEnd, 
+                 MenuConfigurationFile -> $CellContext`menuPath]; 
+               MathLink`CallFrontEnd[
+                 FrontEnd`ResetMenusPacket[{Automatic}]], 
+               Throw[
+               NotebookClose[$CellContext`progDialog1]; 
+                NotebookClose[$CellContext`btnb]; 
+                MessageDialog[
+                 "There is a problem with the extracted file. Try again \
+later.", WindowFrame -> "ModalDialog", WindowSize -> {350, All}]]]; 
+             NotebookClose[$CellContext`progDialog1]; 
+             NotebookClose[$CellContext`btnb]; MessageDialog[
+               StringJoin[
+               "Installation almost complete \[LongDash] please restart ", \
+$ProgramName, " to complete the SummerSchoolTemplates installation."], 
+               WindowFloating -> True]]]]]& ),
+      Evaluator->Automatic,
+      FrameMargins->12,
+      Method->"Queued"]},
+    {
+     ButtonBox[
+      RowBox[{"Uninstall", " ", "Paclet"}],
+      Appearance->Automatic,
+      ButtonFunction:>
+       Module[{$CellContext`sstDir = 
+         FileNameJoin[{$UserBaseDirectory, "Applications", 
+            "SummerSchoolTemplates"}], $CellContext`btnb = 
+         ButtonNotebook[], $CellContext`app = 
+         FileNameJoin[{$UserBaseDirectory, 
+            "Applications"}], $CellContext`progDialog1, $CellContext`origMenu = 
+         FileNameJoin[{$InstallationDirectory, "SystemFiles", "FrontEnd", 
+            "TextResources", 
+            
+            Switch[$OperatingSystem, "Windows", "Windows", "MacOSX", 
+             "Macintosh", 
+             Blank[], "X"], "MenuSetup.tr"}]}, Catch[If[
+            DirectoryQ[$CellContext`sstDir], NotebookClose[$CellContext`btnb]; 
+            Quiet[
+              DeleteDirectory[$CellContext`sstDir, DeleteContents -> True], 
+              MessageName[DeleteDirectory, "nodir"]], 
+            Throw[
+            NotebookClose[$CellContext`btnb]; 
+             MessageDialog[
+              "SummerSchoolTemplates is not present.", WindowFrame -> 
+               "ModalDialog"]]]; $CellContext`progDialog1 = CreateDialog[
+             Column[{
+               Style[
+                TextCell["Uninstalling SummerSchoolTemplates..."], 12], 
+               ProgressIndicator[
+               Appearance -> "Indeterminate", ImageSize -> 120], 
+               TextCell[""]}, Alignment -> Center], WindowFloating -> True, 
+             WindowSize -> FitAll]; 
+          SetOptions[$FrontEnd, 
+            MenuConfigurationFile -> $CellContext`origMenu]; 
+          MathLink`CallFrontEnd[
+            FrontEnd`ResetMenusPacket[{Automatic}]]; 
+          NotebookClose[$CellContext`progDialog1]; MessageDialog[
+            StringJoin[
+            "Uninstall almost complete \[LongDash] please restart ", \
+$ProgramName, " to complete the SummerSchoolTemplates uninstall."], 
+            WindowFloating -> True]]; NotebookClose[$CellContext`btnb]; Null],
+      Evaluator->Automatic,
+      FrameMargins->5,
+      Method->"Queued"]}
+   },
+   DefaultBaseStyle->"Column",
+   GridBoxAlignment->{"Columns" -> {{Left}}},
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+   GridBoxSpacings->{"Columns" -> {{Automatic}}, "Rows" -> {{0}}}],
+  "Column"]],
+ CellMargins->{{0, 0}, {0, 0}},
+ CellBracketOptions->{"Color"->RGBColor[0.269993, 0.308507, 0.6]},
+ CellHorizontalScrolling->True,
+ PageBreakAbove->True,
+ PageBreakWithin->False,
+ ShowAutoStyles->True,
+ LineSpacing->{1.25, 0},
+ AutoItalicWords->{},
+ ScriptMinSize->9,
+ ShowStringCharacters->False,
+ FontFamily:>CurrentValue["PanelFontFamily"],
+ FontSize:>CurrentValue[
+  "PanelFontSize"],ExpressionUUID->"3c470256-9d7b-40a3-8ea6-4ceb971ad59c"]
+},
+Saveable->False,
+WindowSize->{230, 130},
+WindowMargins->{{Automatic, Automatic}, {Automatic, Automatic}},
+WindowElements->{},
+WindowTitle->"WSS Templates Installer",
+DockedCells->{},
+TextAlignment->Center,
+FrontEndVersion->"11.1 for Microsoft Windows (64-bit) (April 18, 2017)",
+StyleDefinitions->"Palette.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[596, 21, 9692, 215, 102, InheritFromParent, "ExpressionUUID" -> \
+"3c470256-9d7b-40a3-8ea6-4ceb971ad59c",
+ PageBreakAbove->True,
+ PageBreakWithin->False]
+}
+]
+*)
+
+(* End of internal cache information *)
+
