@@ -1,0 +1,406 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     16176,        398]
+NotebookOptionsPosition[     15388,        372]
+NotebookOutlinePosition[     15742,        388]
+CellTagsIndexPosition[     15699,        385]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"crt", "[", 
+     RowBox[{"n_Integer", ",", " ", "optional_Association"}], "]"}], ":=", 
+    RowBox[{"Table", "[", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"Join", "[", 
+       RowBox[{
+        RowBox[{"<|", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"\"\<position\>\"", "->", 
+           RowBox[{"RandomReal", "[", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"0", ",", "50"}], "}"}], ",", " ", "2"}], "]"}]}], ",", 
+          " ", "\[IndentingNewLine]", 
+          RowBox[{"\"\<heading\>\"", "->", 
+           RowBox[{"RandomReal", "[", 
+            RowBox[{"{", 
+             RowBox[{"0", ",", " ", 
+              RowBox[{"2", "Pi"}]}], "}"}], "]"}]}], ",", 
+          "\[IndentingNewLine]", 
+          RowBox[{"\"\<who\>\"", "\[Rule]", "i"}], ",", "\[IndentingNewLine]", 
+          RowBox[{"\"\<shape\>\"", "->", 
+           GraphicsBox[
+            StyleBox[
+             {EdgeForm[{Opacity[0.], CapForm["Round"]}], FaceForm[RGBColor[
+              1, 0, 0]], 
+              PolygonBox[{{-0.7733818174012608, 
+               0.7764881332781848}, {-0.3408567284197625, \
+-0.008925133587157887}, {-0.8072267814879159, -0.8317207902220118}, {
+               1.0752427998258334`, -0.012883644544816643`}}]},
+             StripOnInput->False,
+             ImagePadding -> {{0., 1.}, {1., 0.}},
+             
+             PlotRange -> {{-0.8417708333333334, 
+              1.1217708333333334`}, {-0.8127, 0.8876999999999999}},
+             PlotRangePadding -> Automatic],
+            ImagePadding->{{0., 1.}, {1., 0.}},
+            ImageSize->{18.4921875, Automatic},
+            
+            PlotRange->{{-0.8357232366767245, 
+             1.1115755130678688`}, {-0.8208760080583005, 0.8621091874320889}},
+            
+            PlotRangePadding->Automatic]}]}], "\[IndentingNewLine]", "|>"}], 
+        ",", " ", "optional"}], "]"}], "\[IndentingNewLine]", ",", " ", 
+      RowBox[{"{", 
+       RowBox[{"i", ",", "n"}], "}"}]}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"askThoseWho", "[", "condition_", "]"}], ":=", 
+   RowBox[{"Flatten", "[", 
+    RowBox[{"Position", "[", 
+     RowBox[{"$Turtles", ",", " ", 
+      RowBox[{"_", "?", "condition"}], ",", " ", 
+      RowBox[{"{", "1", "}"}], ",", " ", 
+      RowBox[{"Heads", "\[Rule]", "False"}]}], "]"}], "]"}]}], 
+  "\n"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"rotateTurtle", "[", "turtleIndex_", "]"}], ":=", " ", 
+    RowBox[{"Locator", "[", 
+     RowBox[{
+      RowBox[{"Dynamic", "@", 
+       RowBox[{"$Turtles", "[", 
+        RowBox[{"[", 
+         RowBox[{"turtleIndex", ",", " ", "\"\<position\>\""}], "]"}], 
+        "]"}]}], ",", 
+      RowBox[{"Graphics", "[", 
+       RowBox[{"Rotate", "[", 
+        RowBox[{
+         RowBox[{"$Turtles", "[", 
+          RowBox[{"[", 
+           RowBox[{"turtleIndex", ",", "\"\<shape\>\"", ",", "1"}], "]"}], 
+          "]"}], ",", " ", 
+         RowBox[{"$Turtles", "[", 
+          RowBox[{"[", 
+           RowBox[{"turtleIndex", ",", " ", "\"\<heading\>\""}], "]"}], 
+          "]"}]}], "]"}], "]"}], ",", " ", 
+      RowBox[{"ImageSize", "\[Rule]", "Small"}]}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\n", 
+ RowBox[{
+  RowBox[{"world", ":=", " ", 
+   RowBox[{"Graphics", "[", 
+    RowBox[{
+     RowBox[{"rotateTurtle", " ", "/@", 
+      RowBox[{"Range", "[", 
+       RowBox[{"Length", "[", "$Turtles", "]"}], "]"}]}], ",", " ", 
+     RowBox[{"PlotRange", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"0", ",", " ", "50"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"0", ",", "50"}], "}"}]}], "}"}]}], ",", 
+     RowBox[{"Frame", "\[Rule]", "True"}]}], 
+    RowBox[{"(*", 
+     RowBox[{",", " ", 
+      RowBox[{"FrameTicks", "\[Rule]", "None"}]}], "*)"}], "]"}]}], 
+  "\n"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"applyActions", "[", "actions_List", "]"}], ":=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"#", "[", 
+        RowBox[{"[", "1", "]"}], "]"}], " ", "@", " ", 
+       RowBox[{"askThoseWho", "[", 
+        RowBox[{"#", "[", 
+         RowBox[{"[", "2", "]"}], "]"}], "]"}]}], ")"}], " ", "&"}], " ", "/@",
+     " ", "actions"}]}], "\[IndentingNewLine]"}], "\n", 
+ RowBox[{
+  RowBox[{"abmManipulate", "[", 
+   RowBox[{"toSetup_", ",", " ", "actions_"}], "]"}], ":=", 
+  RowBox[{"Manipulate", "[", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Dynamic", "@", "world"}], ",", 
+    RowBox[{"Row", "[", 
+     RowBox[{"{", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"Button", "[", 
+        RowBox[{"\"\<setup\>\"", ",", " ", 
+         RowBox[{"$Turtles", " ", "=", " ", "setup"}]}], "]"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"(*", 
+        RowBox[{
+         RowBox[{"Button", "[", 
+          RowBox[{"\"\<spawn\>\"", ",", " ", 
+           RowBox[{"$Turtles", "=", 
+            RowBox[{"Join", "[", 
+             RowBox[{"$Turtles", ",", 
+              RowBox[{"crt", "[", "1", "]"}]}], "]"}]}]}], "]"}], ","}], 
+        "*)"}], "\[IndentingNewLine]", 
+       RowBox[{"(*", 
+        RowBox[{"Button", "[", 
+         RowBox[{"\"\<kill\>\"", ",", " ", 
+          RowBox[{"$Turtles", " ", "=", " ", 
+           RowBox[{"Rest", "[", "$Turtles", "]"}]}]}], "]"}], "*)"}], ",", 
+       " ", "\[IndentingNewLine]", 
+       RowBox[{"Button", "[", 
+        RowBox[{"\"\<go-once\>\"", ",", " ", 
+         RowBox[{"applyActions", "[", "actions", "]"}]}], "]"}], ",", " ", 
+       "\"\<     \>\""}], "\[IndentingNewLine]", "}"}], "]"}]}], 
+   "\[IndentingNewLine]", "]"}]}]}], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.708114719112221*^9, 3.708114741288912*^9}, {
+   3.708118279151222*^9, 3.70811828017875*^9}, {3.7081334447632227`*^9, 
+   3.708133452763097*^9}, {3.7081337927171593`*^9, 3.708133814330688*^9}, {
+   3.708133894628171*^9, 3.708133894748433*^9}, {3.708134898220316*^9, 
+   3.7081349191141*^9}, {3.708134962523769*^9, 3.708134973665222*^9}, {
+   3.7081649756431*^9, 3.708164986177478*^9}, {3.708165042251377*^9, 
+   3.708165160985154*^9}, {3.708168093905788*^9, 3.7081680981833067`*^9}, {
+   3.708170096872294*^9, 3.708170144311953*^9}, {3.708171660325993*^9, 
+   3.708171686518387*^9}, {3.70817218563593*^9, 3.708172187438694*^9}, {
+   3.708172248654429*^9, 3.708172262807088*^9}, {3.7081724326415873`*^9, 
+   3.708172462563628*^9}, {3.708172535566297*^9, 3.70817253910509*^9}, {
+   3.708174169049376*^9, 3.708174170032456*^9}, {3.708175389262279*^9, 
+   3.708175393579974*^9}, {3.708180599779953*^9, 3.7081806511759768`*^9}, {
+   3.708181114619343*^9, 3.7081811188403*^9}, {3.708181298864546*^9, 
+   3.708181329495962*^9}, {3.7081814055492773`*^9, 3.708181468578927*^9}, {
+   3.708185441575111*^9, 3.7081854454283257`*^9}, {3.7081854777152843`*^9, 
+   3.7081854837155037`*^9}, {3.7081860952205544`*^9, 3.708186097731598*^9}, {
+   3.708186147280141*^9, 3.708186151988203*^9}, {3.708186829020384*^9, 
+   3.708186830698715*^9}, {3.7081872798111267`*^9, 3.708187327386759*^9}, {
+   3.708189840999856*^9, 3.7081898454144573`*^9}, {3.708191168667817*^9, 
+   3.7081912718400717`*^9}, {3.708191804455298*^9, 3.708191853166174*^9}, {
+   3.708203649527775*^9, 3.708203665493416*^9}, {3.708203756925735*^9, 
+   3.7082037634313*^9}, {3.708204263389638*^9, 3.708204277714188*^9}, {
+   3.7082043660168533`*^9, 3.708204371470167*^9}, {3.708204679294546*^9, 
+   3.708204720333228*^9}, 3.7082050353314753`*^9, {3.708205119573616*^9, 
+   3.708205125706468*^9}},ExpressionUUID->"6405935c-18b6-4ca7-a3eb-\
+de9c20eeeb85"],
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"yourCondition", ":=", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"#", "[", "\"\<position\>\"", "]"}], "\[NotEqual]", 
+        RowBox[{"{", 
+         RowBox[{"0", ",", "0"}], "}"}]}], ")"}], "&&", 
+      RowBox[{"AllTrue", "[", 
+       RowBox[{
+        RowBox[{"#", "[", "\"\<position\>\"", "]"}], ",", " ", 
+        RowBox[{
+         RowBox[{"0", "<=", "#", "\[LessEqual]", "50"}], "&"}]}], " ", "]"}], 
+      "&&", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"#", "[", "\"\<who\>\"", "]"}], "\[NotEqual]", "7"}], ")"}], 
+      " ", "&&", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"#", "[", "\"\<who\>\"", "]"}], "\[NotEqual]", "1"}], " ", 
+       ")"}], "&&", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"#", "[", "\"\<who\>\"", "]"}], "\[NotEqual]", "5"}], " ", 
+       ")"}]}], "&"}]}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"toDoThis", ":=", 
+    RowBox[{"Function", "[", 
+     RowBox[{"self", ",", " ", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"$Turtles", "[", 
+        RowBox[{"[", 
+         RowBox[{"self", ",", " ", "\"\<position\>\""}], "]"}], "]"}], "=", 
+       RowBox[{"0.5", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"$Turtles", "[", 
+           RowBox[{"[", 
+            RowBox[{
+             RowBox[{"$Turtles", "[", 
+              RowBox[{"[", 
+               RowBox[{"self", ",", " ", "\"\<friend\>\""}], "]"}], "]"}], 
+             ",", "\"\<position\>\""}], "]"}], "]"}], " ", "+", 
+          RowBox[{"$Turtles", "[", 
+           RowBox[{"[", 
+            RowBox[{
+             RowBox[{"$Turtles", "[", 
+              RowBox[{"[", 
+               RowBox[{"self", ",", " ", "\"\<enemy\>\""}], "]"}], "]"}], 
+             ",", "\"\<position\>\""}], "]"}], "]"}]}], ")"}]}]}]}], 
+     "]"}]}]}]}]], "Input",
+ CellChangeTimes->{{3.7082041844132233`*^9, 3.708204196877247*^9}, {
+   3.708204437907969*^9, 3.70820445933375*^9}, {3.708204590912972*^9, 
+   3.708204657124194*^9}, {3.7082047462628307`*^9, 3.708204750421248*^9}, {
+   3.708204875380498*^9, 3.708204964585073*^9}, {3.708205052313527*^9, 
+   3.708205107510538*^9}, 
+   3.7082051531679688`*^9},ExpressionUUID->"366f786b-b03a-41a8-b73a-\
+dc0f29e96208"],
+
+Cell[BoxData[
+ RowBox[{"setup", " ", ":=", " ", 
+  RowBox[{"With", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"n", " ", "=", " ", "50"}], "}"}], ",", " ", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Join", "[", 
+       RowBox[{
+        RowBox[{"<|", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"\"\<behavior\>\"", "\[Rule]", 
+           RowBox[{"RandomChoice", "[", 
+            RowBox[{"{", 
+             RowBox[{"\"\<hero\>\"", ",", " ", "\"\<coward\>\""}], "}"}], 
+            "]"}]}], ",", "\[IndentingNewLine]", 
+          RowBox[{"\"\<friend\>\"", "\[Rule]", 
+           RowBox[{"RandomInteger", "[", "n", "]"}]}], ",", " ", 
+          "\[IndentingNewLine]", 
+          RowBox[{"\"\<enemy\>\"", "\[Rule]", 
+           RowBox[{"RandomInteger", "[", "n", "]"}]}]}], "|>"}], ",", " ", 
+        "#"}], "]"}], "&"}], " ", "/@", " ", 
+     RowBox[{"crt", "[", "n", "]"}]}]}], "\[IndentingNewLine]", 
+   "]"}]}]], "Input",ExpressionUUID->"c19c0390-618b-4f60-abe6-3f818e87d85b"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Clear", "[", "$Turtles", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"abmManipulate", "[", 
+  RowBox[{"setup", ",", " ", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"toDoThis", ",", " ", "yourCondition"}], "}"}], "}"}]}], 
+  "]"}]}], "Input",
+ CellChangeTimes->{{3.708204328388301*^9, 3.7082043494773493`*^9}, 
+   3.7082044643653393`*^9, {3.708204540003018*^9, 3.708204542974386*^9}, {
+   3.708205156508938*^9, 
+   3.708205156950116*^9}},ExpressionUUID->"9d85e82b-99b1-493f-b95a-\
+ad2ed37967a7"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{
+      Hold[
+       Row[{
+         Button["setup", $CellContext`$Turtles = $CellContext`setup], Null, 
+         Button["go-once", 
+          $CellContext`applyActions[{{
+             
+             Function[$CellContext`self, 
+              Part[$CellContext`$Turtles, $CellContext`self, "position"] = 
+              0.5 (Part[$CellContext`$Turtles, 
+                  Part[$CellContext`$Turtles, $CellContext`self, "friend"], 
+                  "position"] + Part[$CellContext`$Turtles, 
+                  Part[$CellContext`$Turtles, $CellContext`self, "enemy"], 
+                  "position"])], And[#["position"] != {0, 0}, 
+              AllTrue[
+               #["position"], 0 <= # <= 50& ], #["who"] != 7, #["who"] != 
+              1, #["who"] != 5]& }}]], "     "}]], 
+      Manipulate`Dump`ThisIsNotAControl}}, Typeset`size$$ = {
+    360., {179., 184.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {}, "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Dynamic[$CellContext`world], 
+      "Specifications" :> {
+        Row[{
+          Button["setup", $CellContext`$Turtles = $CellContext`setup], Null, 
+          Button["go-once", 
+           $CellContext`applyActions[{{
+              
+              Function[$CellContext`self, 
+               Part[$CellContext`$Turtles, $CellContext`self, "position"] = 
+               0.5 (Part[$CellContext`$Turtles, 
+                   Part[$CellContext`$Turtles, $CellContext`self, "friend"], 
+                   "position"] + Part[$CellContext`$Turtles, 
+                   Part[$CellContext`$Turtles, $CellContext`self, "enemy"], 
+                   "position"])], And[#["position"] != {0, 0}, 
+               AllTrue[
+                #["position"], 0 <= # <= 50& ], #["who"] != 7, #["who"] != 
+               1, #["who"] != 5]& }}]], "     "}]}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{405., {226., 232.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{
+  3.7082043901009207`*^9, 3.708204462460822*^9, {3.708204528875782*^9, 
+   3.708204543413279*^9}, 3.7082046170617857`*^9, {3.708204660763578*^9, 
+   3.708204684922181*^9}, 3.708204725508012*^9, 3.7082047638799562`*^9, 
+   3.70820488278975*^9, 3.708204969889286*^9, {3.708205110690563*^9, 
+   3.708205157752644*^9}},ExpressionUUID->"f5130650-3b0f-444b-82e2-\
+68d443d5bdb1"]
+}, Open  ]]
+},
+WindowSize->{1280, 682},
+WindowMargins->{{4, Automatic}, {Automatic, 0}},
+FrontEndVersion->"11.1 for Mac OS X x86 (32-bit, 64-bit Kernel) (April 18, \
+2017)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 7655, 177, 585, "Input", "ExpressionUUID" -> \
+"6405935c-18b6-4ca7-a3eb-de9c20eeeb85",
+ InitializationCell->True],
+Cell[8216, 199, 2309, 60, 117, "Input", "ExpressionUUID" -> \
+"366f786b-b03a-41a8-b73a-dc0f29e96208"],
+Cell[10528, 261, 997, 24, 117, "Input", "ExpressionUUID" -> \
+"59a54795-8249-48eb-80b1-3ad6cb6233c1"],
+Cell[CellGroupData[{
+Cell[11550, 289, 521, 12, 54, "Input", "ExpressionUUID" -> \
+"9d85e82b-99b1-493f-b95a-ad2ed37967a7"],
+Cell[12074, 303, 3298, 66, 475, "Output", "ExpressionUUID" -> \
+"f5130650-3b0f-444b-82e2-68d443d5bdb1"]
+}, Open  ]]
+}
+]
+*)
+
