@@ -3,10 +3,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[         0,          0]
-NotebookDataLength[    800705,      13858]
-NotebookOptionsPosition[    478429,       8313]
-NotebookOutlinePosition[    791264,      13648]
-CellTagsIndexPosition[    790960,      13636]
+NotebookDataLength[    801404,      13898]
+NotebookOptionsPosition[    479127,       8353]
+NotebookOutlinePosition[    791962,      13688]
+CellTagsIndexPosition[    791658,      13676]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -2873,7 +2873,7 @@ like the Wolfram Language have developed into true \
 \[OpenCurlyDoubleQuote]knowledge machines\[CloseCurlyDoubleQuote], current \
 turtle-based languages like NetLogo are still quite powerful when a problem \
 can be described using agent-based thinking. In this project, we hoped to \
-explore what agent-based thinking looks like in the Wolfram language."
+explore what agent-based thinking looks like in the Wolfram Language."
 }], "TemplateText",
  CellChangeTimes->{{3.707836787772583*^9, 3.707836799763899*^9}, {
    3.708097797844706*^9, 3.708097798625815*^9}, {3.7080978567924232`*^9, 
@@ -2882,8 +2882,8 @@ explore what agent-based thinking looks like in the Wolfram language."
    3.7081216197834473`*^9, 3.7081216228073187`*^9}, {3.708174739280595*^9, 
    3.708174744687518*^9}, {3.708174775114697*^9, 3.708174780561842*^9}, {
    3.708174882072277*^9, 3.70817488346124*^9}, {3.7082212063750553`*^9, 
-   3.708221206727173*^9}, {3.7082213296503487`*^9, 
-   3.708221355731318*^9}},ExpressionUUID->"0de5fd76-f0db-4dc5-83d3-\
+   3.708221206727173*^9}, {3.7082213296503487`*^9, 3.708221355731318*^9}, 
+   3.7082580210071917`*^9},ExpressionUUID->"0de5fd76-f0db-4dc5-83d3-\
 0f85a57c45bc"],
 
 Cell[TextData[{
@@ -2921,16 +2921,31 @@ Cell[TextData[{
   "ca47547c-750a-44dd-968b-4c1d5f12facc"],
  " The outcome of this work is a controller/Manipulate we call abmManipulate. \
 abmManipulate takes just two parameters: some sort of setup method and a list \
-of \[OpenCurlyDoubleQuote]action-condition\[CloseCurlyDoubleQuote] pairs. The \
-setup method is provided by the user in order to spawn turtles with custom \
-properties, positions, headings, etc. The action-condition pairs are written \
-as pure functions, giving total control over any and all turtles to the user. \
-Within each pair, \[OpenCurlyDoubleQuote]action\[CloseCurlyDoubleQuote] is a \
-function which operates on a single turtle and can be written in such a way \
-such that any generic turtle task can be represented. The \
-\[OpenCurlyDoubleQuote]condition\[CloseCurlyDoubleQuote] element, is a \
-parallel of the \[OpenCurlyDoubleQuote]ask\[CloseCurlyDoubleQuote] structure \
-in ABM languages: it determines which turtles will be \
+of ",
+ StyleBox["action",
+  FontSlant->"Italic"],
+ "-",
+ StyleBox["condition",
+  FontSlant->"Italic"],
+ " pairs. The setup method is provided by the user in order to spawn turtles \
+with custom properties, positions, headings, etc. The ",
+ StyleBox["action",
+  FontSlant->"Italic"],
+ "-",
+ StyleBox["condition",
+  FontSlant->"Italic"],
+ " pairs are written as pure functions, giving total control over any and all \
+turtles to the user. Within each pair, ",
+ StyleBox["action",
+  FontSlant->"Italic"],
+ " is a function which operates on a single turtle and can be written in such \
+a way such that any generic turtle task can be represented. The ",
+ StyleBox["condition",
+  FontSlant->"Italic"],
+ " element, is a parallel of the ",
+ StyleBox["ask",
+  FontSlant->"Italic"],
+ " structure in ABM languages: it determines which turtles will be \
 \[OpenCurlyDoubleQuote]asked\[CloseCurlyDoubleQuote] to perform the action. \
 Using this new framework, we developed three example models, all of which are \
 runnable. In essence, we\[CloseCurlyQuote]ve enabled a new kind of \
@@ -2949,10 +2964,11 @@ functions necessary to call abmManipulate leaves something to be desired. "
    3.7081216257052717`*^9, 3.70812162672083*^9}, {3.708221178688789*^9, 
    3.708221180166677*^9}, {3.708221385681698*^9, 3.708221413128381*^9}, {
    3.7082214940157003`*^9, 3.708221611292158*^9}, {3.7082501671761427`*^9, 
-   3.708250454527656*^9}, {3.708250506162394*^9, 
-   3.708250506902956*^9}},ExpressionUUID->"cc0e4952-a89b-41f8-ac1a-\
+   3.708250454527656*^9}, {3.708250506162394*^9, 3.708250506902956*^9}, {
+   3.708257941748412*^9, 3.708257943188108*^9}, {3.7082579876993504`*^9, 
+   3.7082580049617167`*^9}},ExpressionUUID->"cc0e4952-a89b-41f8-ac1a-\
 f133f8474517"]
-}, Closed]]
+}, Open  ]]
 }, Open  ]],
 
 Cell[TextData[{
@@ -5291,63 +5307,65 @@ Cell["Main Results \[Dash] abmManipulate[]", "TemplateSubsection",
   3.708256976007028*^9}},ExpressionUUID->"a4e3d008-4eb0-4d8e-bed7-\
 33623658821c"],
 
-Cell["\<\
-The main result of this work is a new function, abmManipulate. In essence, \
+Cell[TextData[{
+ "The main result of this work is a new function, abmManipulate. In essence, \
 abmManipulate is simply an agent-based wrapper for Manipulate. The main \
 difference is that while in Manipulate you often specify certain variables to \
 be manipulated by ControlTypes, abmManipulate takes in functions that define \
-the agents and agent-behavior to be modeled.
-
-abmManipulate has two parameters: a \[OpenCurlyDoubleQuote]setup\
-\[CloseCurlyDoubleQuote] method and a list of \
-\[OpenCurlyDoubleQuote]action-condition\[CloseCurlyDoubleQuote] pairs. 
-
-The \[OpenCurlyDoubleQuote]setup\[CloseCurlyDoubleQuote] method should be a \
-function that does any sort of customization on the turtles that the user \
-needs to setup the state of the world. The crucial part of this function is \
-the adding of the Turtles to the global world state.
-
-But wait! What\[CloseCurlyQuote]s the Turtle construct? Actually, the Turtle \
-is simply an association. In this way, you can not only add an arbitrary \
-number of properties (and if you\[CloseCurlyQuote]re really cool tasks), but \
-you can also easily access any of these properties by using normal \
-association part syntax: aTurtle[\[OpenCurlyDoubleQuote]position\
-\[CloseCurlyDoubleQuote]]. These turtles get rendered to the \
-\[OpenCurlyDoubleQuote]world\[CloseCurlyDoubleQuote] by being processed as \
-Locators. We create a two-way binding using Dynamic between this Locator and \
-the turtle it represents so that any manipulation of the Locator updates the \
-Turtle\[CloseCurlyQuote]s properties. A Turtle has certain default \
-properties: a \[OpenCurlyDoubleQuote]who\[CloseCurlyDoubleQuote] number which \
-is simply the index of the turtle in the global world, a \
-\[OpenCurlyDoubleQuote]position\[CloseCurlyDoubleQuote] which is an {x,y} \
-coordinate pair which is self-explanatory, \[OpenCurlyDoubleQuote]heading\
-\[CloseCurlyDoubleQuote] which is an angle (in radians) relative to the \
-positive x-axis which corresponds to the direction in which the turtle is \
-heading, and \[OpenCurlyDoubleQuote]shape\[CloseCurlyDoubleQuote] which is \
-the marker used to represent the turtle (a graphics object). 
-
-Turtles are created via the crt[n_] method, which returns a list of \
-n-Turtles. By default, the turtles are assigned random positions, random \
-headings, and a classic turtle shape with a random coloring.
-
-In the setup method that is passed to abmManipulate, the user uses crt[n_] as \
-a way of creating turtles to add to the global turtles list. Then the user \
-can apply custom augmentations to all the turtles generated by crt[n_] by \
-performing a simply Association Join. In this manner, to apply custom \
-properties to a turtle, one need only Join the Turtle with a new Association \
-that contains the desired Key-Value pairs for properties the user would like \
-to add. This has the added benefit of also allowing the user to override the \
-randomly generated properties of the turtles by simply using the original \
-Turtle association as the first argument to the Join. An example is below:\
-\>", "TemplateComment",
+the agents and agent-behavior to be modeled.\n\nabmManipulate has two \
+parameters: a ",
+ StyleBox["setup",
+  FontSlant->"Italic"],
+ " method and a list of ",
+ StyleBox["action",
+  FontSlant->"Italic"],
+ "-",
+ StyleBox["condition",
+  FontSlant->"Italic"],
+ " pairs. \n\nThe \[OpenCurlyDoubleQuote]setup\[CloseCurlyDoubleQuote] method \
+should be a function that does any sort of customization on the turtles that \
+the user needs to setup the state of the world. The crucial part of this \
+function is the adding of the Turtles to the global world state.\n\nBut wait! \
+What\[CloseCurlyQuote]s the Turtle construct? Actually, the Turtle is simply \
+an association. In this way, you can not only add an arbitrary number of \
+properties (and if you\[CloseCurlyQuote]re really cool tasks), but you can \
+also easily access any of these properties by using normal association part \
+syntax: aTurtle[\[OpenCurlyDoubleQuote]position\[CloseCurlyDoubleQuote]]. \
+These turtles get rendered to the \[OpenCurlyDoubleQuote]world\
+\[CloseCurlyDoubleQuote] by being processed as Locators. We create a two-way \
+binding using Dynamic between this Locator and the turtle it represents so \
+that any manipulation of the Locator updates the Turtle\[CloseCurlyQuote]s \
+properties. A Turtle has certain default properties: a \
+\[OpenCurlyDoubleQuote]who\[CloseCurlyDoubleQuote] number which is simply the \
+index of the turtle in the global world, a \[OpenCurlyDoubleQuote]position\
+\[CloseCurlyDoubleQuote] which is an {x,y} coordinate pair which is \
+self-explanatory, \[OpenCurlyDoubleQuote]heading\[CloseCurlyDoubleQuote] \
+which is an angle (in radians) relative to the positive x-axis which \
+corresponds to the direction in which the turtle is heading, and \
+\[OpenCurlyDoubleQuote]shape\[CloseCurlyDoubleQuote] which is the marker used \
+to represent the turtle (a graphics object). \n\nTurtles are created via the \
+crt[n_] method, which returns a list of n-Turtles. By default, the turtles \
+are assigned random positions, random headings, and a classic turtle shape \
+with a random coloring.\n\nIn the setup method that is passed to \
+abmManipulate, the user uses crt[n_] as a way of creating turtles to add to \
+the global turtles list. Then the user can apply custom augmentations to all \
+the turtles generated by crt[n_] by performing a simply Association Join. In \
+this manner, to apply custom properties to a turtle, one need only Join the \
+Turtle with a new Association that contains the desired Key-Value pairs for \
+properties the user would like to add. This has the added benefit of also \
+allowing the user to override the randomly generated properties of the \
+turtles by simply using the original Turtle association as the first argument \
+to the Join. An example is below:"
+}], "TemplateComment",
  CellChangeTimes->CompressedData["
-1:eJxTTMoPSmViYGAQBWIQ/WG/WfCqBa8d+WQmg+lnjcXnXwNpuW2/r4Foh5ez
+1:eJxTTMoPSmViYGAQA2IQ/WG/WfCqBa8d+WQmg+lnjcXnXwNpuW2/r4Foh5ez
 FN8AacedD9VANI/OFX0Q/SUz0QhEB3X35YLo/xnJJSA6qvC6xVsgLXHzsC2I
 jvtmHgOiZwo8yQXRlSJPL4DoqBUcl0D0ogcfr4LoGRyvboHomjzV+yDaSlzy
 I4i26b/2F0SryfaxvQPSTpm7zUF0KXOTJYi+xzrNBUQvCJN3BdFWTw97guiG
 xrhAED1FxCQZRAdM8MgE0XKzE1aDaJZtfWC6hIdpJ4j+Z9Z1EER3hQUeA9Fc
-jiynQfQse+uLIDpn5pOXILr98LEvIPrd2o4/IJpt70H290Da9AInN4gGAE4J
-xCY=
+jiynQfQse+uLIDpn5pOXILr98LEvIPrd2o4/IJpt70H290Da9AInN4j2OhF2
+7wOQzvByuQ+iAeNezbo=
+  
   "],ExpressionUUID->"f0f320d1-4bc3-43d2-96ed-0340f69605aa"],
 
 Cell[BoxData[
@@ -5448,13 +5466,17 @@ Cell[BoxData[
    3.7082553804470463`*^9}},ExpressionUUID->"9cad004f-fbd1-42d1-86c1-\
 54c57bc863c1"],
 
-Cell["\<\
-Now, all of the turtles will begin at the origin. Because of the ordering of \
-its parameters, Join these two associations will result in the original \
-assignment of position being overwritten.
-
-The action-condition pairs are simply a list of associations of the form:\
-\>", "TemplateComment",
+Cell[TextData[{
+ "Now, all of the turtles will begin at the origin. Because of the ordering \
+of its parameters, Join these two associations will result in the original \
+assignment of position being overwritten.\n\nThe ",
+ StyleBox["action",
+  FontSlant->"Italic"],
+ "-",
+ StyleBox["condition",
+  FontSlant->"Italic"],
+ " pairs are simply a list of associations of the form:"
+}], "TemplateComment",
  CellChangeTimes->CompressedData["
 1:eJxTTMoPSmViYGAQBWIQ/WG/WfCqBa8d+WQmg+lnjcXnXwNpuW2/r4Foh5ez
 FN8AacedD9VANI/OFX0Q/SUz0QhEB3X35YLo/xnJJSA6qvC6xVsgLXHzsC2I
@@ -5475,20 +5497,24 @@ Cell[BoxData[
   3.708255514594548*^9}},ExpressionUUID->"05bd3ee1-94da-4edd-8e6b-\
 ec89ac24b070"],
 
-Cell["\<\
-Here, someAction is a pure function that is fed a single argument, the \
+Cell[TextData[{
+ "Here, someAction is a pure function that is fed a single argument, the \
 who-number of a turtle to perform an action. someCondition is a PatternTest \
 that is applied to each of the turtles in the world and returns a list of \
-turtles that meet the condition. Two examples are below:\
-\>", "TemplateComment",
+turtles that meet the ",
+ StyleBox["condition",
+  FontSlant->"Italic"],
+ ". Two examples are below:"
+}], "TemplateComment",
  CellChangeTimes->CompressedData["
-1:eJxTTMoPSmViYGAQA2IQ/WG/WfCqBa8d+WQmg+lnjcXnXwNpuW2/r4Foh5ez
+1:eJxTTMoPSmViYGAQB2IQ/WG/WfCqBa8d+WQmg+lnjcXnXwNpuW2/r4Foh5ez
 FN8AacedD9VANI/OFX0Q/SUz0QhEB3X35YLo/xnJJSA6qvC6xVsgLXHzsC2I
 jvtmHgOiZwo8yQXRlSJPL4DoqBUcl0D0ogcfr4LoGRyvboHomjzV+yDaSlzy
 I4i26b/2F0SryfaxvQPSTpm7zUF0KXOTJYi+xzrNBUQvCJN3BdFWTw97guiG
 xrhAED1FxCQZRAdM8MgE0XKzE1aDaJZtfWC6hIdpJ4j+Z9Z1EER3hQUeA9Fc
 jiynQfQse+uLIJqhdftzEO3y67zge5D7axXEQLRN24UeEF2tpDgXRAdF8C8B
-0eyOLptBNABKx8lp
+0eyOLptBdHwN+9UPQLrqnCSYBgAveNLP
+  
   "],ExpressionUUID->"02429bab-5018-4ddd-8dfc-5eccfdc07294"],
 
 Cell[BoxData[{
@@ -5559,10 +5585,16 @@ Cell[BoxData[
   3.708255909277225*^9}},ExpressionUUID->"0e31506d-9057-43d6-bed8-\
 109ba7fbdc12"],
 
-Cell["\<\
-To ask different groups of turtles to do different things, one need only add \
-new action-condition associations to the second argument:\
-\>", "Text",
+Cell[TextData[{
+ "To ask different groups of turtles to do different things, one need only \
+add new ",
+ StyleBox["action",
+  FontSlant->"Italic"],
+ "-",
+ StyleBox["condition",
+  FontSlant->"Italic"],
+ " associations to the second argument:"
+}], "Text",
  CellChangeTimes->{{3.708255920216793*^9, 
   3.70825594600184*^9}},ExpressionUUID->"9a648784-d9ec-4fde-bce8-\
 e7f7db8c97f6"],
@@ -5833,10 +5865,15 @@ Cell["The Heroes and Cowards Model \[Dash] abmManipulate Implementation", \
    3.708257590723918*^9}},ExpressionUUID->"5a247b12-4033-40a4-960f-\
 65d46bf0f9c2"],
 
-Cell["\<\
-Here we present the setup and action-condition pairs for the Heroes and \
-Cowards model described in the previous section.\
-\>", "Text",
+Cell[TextData[{
+ "Here we present the setup and ",
+ StyleBox["action",
+  FontSlant->"Italic"],
+ "-",
+ StyleBox["condition",
+  FontSlant->"Italic"],
+ " pairs for the Heroes and Cowards model described in the previous section."
+}], "Text",
  CellChangeTimes->CompressedData["
 1:eJxTTMoPSmViYGCQAGIQ/WG/WfCqBa8d+WQmg+lnjcXnXwNpuW2/r4Foh5ez
 FN8AacedD9VANI/OFX0Q/SUz0QhEB3X35YLo/xnJJSA6qvC6xVsgLXHzsC2I
@@ -5848,9 +5885,12 @@ jiynQfQse+uLIDpn5pOXILr98LEvIPrd2o4/IJpt70H290Da9AInN4jmE2Dy
   
   "],ExpressionUUID->"558e695a-64c8-41de-8816-17bd8eb4d8ac"],
 
-Cell["\<\
-First, we define the condition to be a hero. We do this by saying\
-\>", "Text",
+Cell[TextData[{
+ "First, we define the ",
+ StyleBox["condition",
+  FontSlant->"Italic"],
+ " to be a hero. We do this by saying"
+}], "Text",
  CellChangeTimes->{{3.708257686265773*^9, 
   3.708257700120781*^9}},ExpressionUUID->"4c3a3944-6523-4af0-8cae-\
 00306bb2bf9a"],
@@ -13591,58 +13631,58 @@ adobe.com/xap/1.0/> <tiff:ResolutionUnit>2</tiff:ResolutionUnit> \
 (* Internal cache information *)
 (*CellTagsOutline
 CellTagsIndex->{
- "Author"->{
-  Cell[1110, 28, 465, 6, 
-  28, "TemplateTagItem", "ExpressionUUID" -> "
-   a925d2a0-3ce1-4094-91fd-24118475ecb7",
-   CellTags->"Author"]},
- "Mentor"->{
-  Cell[1578, 36, 560, 8, 
-  28, "TemplateTagItem", "ExpressionUUID" -> "e68455b6-20b3-424b-bed1-
-   bb704a41475d",
-   CellTags->"Mentor"]},
  "Affiliation"->{
   Cell[2141, 46, 655, 11, 
   45, "TemplateTagItem", "ExpressionUUID" -> "f426677e-0eeb-4a61-
    a41d-702c6f80daed",
    CellTags->"Affiliation"]},
+ "Author"->{
+  Cell[1110, 28, 465, 6, 
+  28, "TemplateTagItem", "ExpressionUUID" -> "
+   a925d2a0-3ce1-4094-91fd-24118475ecb7",
+   CellTags->"Author"]},
  "DataSources"->{
-  Cell[469390, 8079, 257, 4, 
+  Cell[470088, 8119, 257, 4, 
   68, "TemplateSubsection", "ExpressionUUID" -> "595aec4a-a293-426a-
    b50c-4acce4123cb2",
    CellTags->"DataSources"]},
  "FutureDirections"->{
-  Cell[469672, 8087, 276, 4, 
+  Cell[470370, 8127, 276, 4, 
   57, "TemplateSubsection", "ExpressionUUID" -> "e5647c6a-
    cb6b-4235-8887-8cfbb24ef769",
    CellTags->"FutureDirections"]},
- "References"->{
-  Cell[471867, 8140, 313, 5, 
-  68, "TemplateSubsection", "ExpressionUUID" -> "f66f7ca2-dcb9-4c06-9d0a-
-   f2cc48d9fd79",
-   CellTags->"References"]},
  "Keywords"->{
-  Cell[472661, 8160, 182, 2, 
+  Cell[473359, 8200, 182, 2, 
   68, "TemplateSubsection", "ExpressionUUID" -> "0a9d4fd1-d336-4f32-
    b85d-12e6f9eed8ed",
    CellTags->"Keywords"]},
  "LastModifiedDate"->{
-  Cell[477249, 8276, 232, 7, 
+  Cell[477947, 8316, 232, 7, 
   28, "LastModified", "ExpressionUUID" -> "1a10ee68-8b8e-4e80-92ef-
    fc784acf0d5f",
-   CellTags->"LastModifiedDate"]}
+   CellTags->"LastModifiedDate"]},
+ "Mentor"->{
+  Cell[1578, 36, 560, 8, 
+  28, "TemplateTagItem", "ExpressionUUID" -> "e68455b6-20b3-424b-bed1-
+   bb704a41475d",
+   CellTags->"Mentor"]},
+ "References"->{
+  Cell[472565, 8180, 313, 5, 
+  68, "TemplateSubsection", "ExpressionUUID" -> "f66f7ca2-dcb9-4c06-9d0a-
+   f2cc48d9fd79",
+   CellTags->"References"]}
  }
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"Author", 789624, 13593},
- {"Mentor", 789777, 13598},
- {"Affiliation", 789935, 13603},
- {"DataSources", 790099, 13608},
- {"FutureDirections", 790274, 13613},
- {"References", 790448, 13618},
- {"Keywords", 790614, 13623},
- {"LastModifiedDate", 790786, 13628}
+ {"Affiliation", 790327, 13633},
+ {"Author", 790486, 13638},
+ {"DataSources", 790644, 13643},
+ {"FutureDirections", 790819, 13648},
+ {"Keywords", 790991, 13653},
+ {"LastModifiedDate", 791163, 13658},
+ {"Mentor", 791327, 13663},
+ {"References", 791484, 13668}
  }
 *)
 (*NotebookFileOutline
@@ -13672,184 +13712,184 @@ Cell[3164, 70, 169406, 2784, 243, "TemplateFigure", "ExpressionUUID" -> \
 Cell[CellGroupData[{
 Cell[172607, 2859, 308, 5, 68, "TemplateSection", "ExpressionUUID" -> \
 "7f28a721-268a-464e-9bc5-31f61fa28c7d"],
-Cell[172918, 2866, 1309, 20, 106, "TemplateText", "ExpressionUUID" -> \
+Cell[172918, 2866, 1333, 20, 106, "TemplateText", "ExpressionUUID" -> \
 "0de5fd76-f0db-4dc5-83d3-0f85a57c45bc"],
-Cell[174230, 2888, 1852, 28, 163, "TemplateText", "ExpressionUUID" -> \
+Cell[174254, 2888, 1852, 28, 163, "TemplateText", "ExpressionUUID" -> \
 "b6f924a2-7b10-4214-b25b-9bc842ff20ba"],
-Cell[176085, 2918, 2465, 35, 277, "TemplateText", "ExpressionUUID" -> \
+Cell[176109, 2918, 2666, 51, 277, "TemplateText", "ExpressionUUID" -> \
 "cc0e4952-a89b-41f8-ac1a-f133f8474517"]
-}, Closed]]
+}, Open  ]]
 }, Open  ]],
-Cell[178577, 2957, 6920, 145, 63, "TemplateSectionDivider", "ExpressionUUID" \
+Cell[178802, 2973, 6920, 145, 63, "TemplateSectionDivider", "ExpressionUUID" \
 -> "fee0dee2-bb9e-41c3-b8b7-9d979f8c50c4"],
 Cell[CellGroupData[{
-Cell[185522, 3106, 507, 16, 68, "TemplateSection", "ExpressionUUID" -> \
+Cell[185747, 3122, 507, 16, 68, "TemplateSection", "ExpressionUUID" -> \
 "2d847a34-66d2-4516-b974-ff32b660a5bf"],
-Cell[186032, 3124, 38458, 634, 469, "Input", "ExpressionUUID" -> \
+Cell[186257, 3140, 38458, 634, 469, "Input", "ExpressionUUID" -> \
 "6bb451d3-f39b-4384-b847-ede01f307698"],
-Cell[224493, 3760, 81815, 1350, 1445, "Input", "ExpressionUUID" -> \
+Cell[224718, 3776, 81815, 1350, 1445, "Input", "ExpressionUUID" -> \
 "9bf4e77b-ba73-4708-b232-f093ba05f4fe"]
 }, Open  ]],
-Cell[306323, 5113, 7856, 162, 63, "TemplateSectionDivider", "ExpressionUUID" \
+Cell[306548, 5129, 7856, 162, 63, "TemplateSectionDivider", "ExpressionUUID" \
 -> "5f0c9947-b7a0-45c1-b6d5-1f731998092e"],
 Cell[CellGroupData[{
-Cell[314204, 5279, 186, 3, 68, "TemplateSection", "ExpressionUUID" -> \
+Cell[314429, 5295, 186, 3, 68, "TemplateSection", "ExpressionUUID" -> \
 "ba97f0a3-c165-451d-bf4c-74c0b4a4f36e"],
 Cell[CellGroupData[{
-Cell[314415, 5286, 333, 5, 68, "TemplateSubsection", "ExpressionUUID" -> \
+Cell[314640, 5302, 333, 5, 68, "TemplateSubsection", "ExpressionUUID" -> \
 "a4e3d008-4eb0-4d8e-bed7-33623658821c"],
-Cell[314751, 5293, 3547, 57, 562, "TemplateComment", "ExpressionUUID" -> \
+Cell[314976, 5309, 3622, 59, 562, "TemplateComment", "ExpressionUUID" -> \
 "f0f320d1-4bc3-43d2-96ed-0340f69605aa"],
-Cell[318301, 5352, 1362, 36, 148, "Code", "ExpressionUUID" -> \
+Cell[318601, 5370, 1362, 36, 148, "Code", "ExpressionUUID" -> \
 "bdf20bdb-c23f-4381-908b-fcea5eb35771"],
-Cell[319666, 5390, 872, 16, 49, "TemplateComment", "ExpressionUUID" -> \
+Cell[319966, 5408, 872, 16, 49, "TemplateComment", "ExpressionUUID" -> \
 "42a42ae6-6210-42f3-9cbf-444ecaa3e2ba"],
-Cell[320541, 5408, 1557, 40, 186, "Code", "ExpressionUUID" -> \
+Cell[320841, 5426, 1557, 40, 186, "Code", "ExpressionUUID" -> \
 "9cad004f-fbd1-42d1-86c1-54c57bc863c1"],
-Cell[322101, 5450, 773, 15, 87, "TemplateComment", "ExpressionUUID" -> \
+Cell[322401, 5468, 868, 19, 87, "TemplateComment", "ExpressionUUID" -> \
 "c534b440-8f71-4edc-9c18-eb25af810aab"],
-Cell[322877, 5467, 325, 8, 32, "Input", "ExpressionUUID" -> \
+Cell[323272, 5489, 325, 8, 32, "Input", "ExpressionUUID" -> \
 "05bd3ee1-94da-4edd-8e6b-ec89ac24b070"],
-Cell[323205, 5477, 799, 14, 68, "TemplateComment", "ExpressionUUID" -> \
+Cell[323600, 5499, 868, 18, 68, "TemplateComment", "ExpressionUUID" -> \
 "02429bab-5018-4ddd-8dfc-5eccfdc07294"],
-Cell[324007, 5493, 1221, 35, 96, "Input", "ExpressionUUID" -> \
+Cell[324471, 5519, 1221, 35, 96, "Input", "ExpressionUUID" -> \
 "1a604dda-fcad-40b0-841b-22d6486e1848"],
-Cell[325231, 5530, 854, 16, 106, "TemplateComment", "ExpressionUUID" -> \
+Cell[325695, 5556, 854, 16, 106, "TemplateComment", "ExpressionUUID" -> \
 "01a444ae-3297-449a-bbb6-c580f27726b5"],
-Cell[326088, 5548, 431, 11, 32, "Input", "ExpressionUUID" -> \
+Cell[326552, 5574, 431, 11, 32, "Input", "ExpressionUUID" -> \
 "0e31506d-9057-43d6-bed8-109ba7fbdc12"],
-Cell[326522, 5561, 285, 6, 49, "Text", "ExpressionUUID" -> \
+Cell[326986, 5587, 378, 12, 49, "Text", "ExpressionUUID" -> \
 "9a648784-d9ec-4fde-bce8-e7f7db8c97f6"],
-Cell[326810, 5569, 684, 17, 54, "Input", "ExpressionUUID" -> \
+Cell[327367, 5601, 684, 17, 54, "Input", "ExpressionUUID" -> \
 "c542f808-9531-49d8-b576-65b007570ed1"],
-Cell[327497, 5588, 1742, 27, 201, "TemplateComment", "ExpressionUUID" -> \
+Cell[328054, 5620, 1742, 27, 201, "TemplateComment", "ExpressionUUID" -> \
 "3c4f2674-3b0a-49a4-a513-a32ab40de5e3"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[329276, 5620, 183, 3, 68, "TemplateSubsection", "ExpressionUUID" -> \
+Cell[329833, 5652, 183, 3, 68, "TemplateSubsection", "ExpressionUUID" -> \
 "c54bc669-1d00-4e87-877b-cfd746ce37fa"],
-Cell[329462, 5625, 463, 9, 49, "TemplateComment", "ExpressionUUID" -> \
+Cell[330019, 5657, 463, 9, 49, "TemplateComment", "ExpressionUUID" -> \
 "a672a6f1-f8fa-4628-83e3-5438bd707f89"],
-Cell[329928, 5636, 200, 3, 30, "Item", "ExpressionUUID" -> \
+Cell[330485, 5668, 200, 3, 30, "Item", "ExpressionUUID" -> \
 "2704c837-93b3-4260-af0c-7179f0a64be1"],
-Cell[330131, 5641, 584, 10, 49, "TemplateComment", "ExpressionUUID" -> \
+Cell[330688, 5673, 584, 10, 49, "TemplateComment", "ExpressionUUID" -> \
 "d5b64650-703f-4666-bbd8-7988ed9c22f3"],
 Cell[CellGroupData[{
-Cell[330740, 5655, 365, 7, 30, "Item", "ExpressionUUID" -> \
+Cell[331297, 5687, 365, 7, 30, "Item", "ExpressionUUID" -> \
 "cb668600-75c7-4565-a9cc-c6bfd6b146cb"],
-Cell[331108, 5664, 409, 8, 30, "Item", "ExpressionUUID" -> \
+Cell[331665, 5696, 409, 8, 30, "Item", "ExpressionUUID" -> \
 "b83b40d6-e8b0-4b8d-b1bd-e85c9ba97314"],
-Cell[331520, 5674, 389, 8, 30, "Item", "ExpressionUUID" -> \
+Cell[332077, 5706, 389, 8, 30, "Item", "ExpressionUUID" -> \
 "d5db4e10-df30-4310-9022-8c21c7362dde"],
-Cell[331912, 5684, 385, 8, 45, "Item", "ExpressionUUID" -> \
+Cell[332469, 5716, 385, 8, 45, "Item", "ExpressionUUID" -> \
 "8bb104fd-c546-4a7f-8be8-4c72453169ac"]
 }, Open  ]],
-Cell[332312, 5695, 604, 11, 49, "TemplateComment", "ExpressionUUID" -> \
+Cell[332869, 5727, 604, 11, 49, "TemplateComment", "ExpressionUUID" -> \
 "1ea1adcf-04ed-4618-bfd9-8fac034d2f85"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[332953, 5711, 264, 4, 68, "TemplateSubsection", "ExpressionUUID" -> \
+Cell[333510, 5743, 264, 4, 68, "TemplateSubsection", "ExpressionUUID" -> \
 "a55786c3-e7a6-4cf3-bb54-b05532239df1"],
-Cell[333220, 5717, 594, 10, 68, "Text", "ExpressionUUID" -> \
+Cell[333777, 5749, 594, 10, 68, "Text", "ExpressionUUID" -> \
 "a79806fd-331f-489a-ad10-05e6af6a52fc"],
-Cell[333817, 5729, 2836, 70, 220, "Text", "ExpressionUUID" -> \
+Cell[334374, 5761, 2836, 70, 220, "Text", "ExpressionUUID" -> \
 "127261cd-59ce-46e2-83d8-9a66e725c25a"],
-Cell[336656, 5801, 1266, 21, 163, "Text", "ExpressionUUID" -> \
+Cell[337213, 5833, 1266, 21, 163, "Text", "ExpressionUUID" -> \
 "45832608-39cc-4764-bf4c-665a65bb975f"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[337959, 5827, 345, 6, 68, "TemplateSubsection", "ExpressionUUID" -> \
+Cell[338516, 5859, 345, 6, 68, "TemplateSubsection", "ExpressionUUID" -> \
 "5a247b12-4033-40a4-960f-65d46bf0f9c2"],
-Cell[338307, 5835, 666, 13, 49, "Text", "ExpressionUUID" -> \
+Cell[338864, 5867, 757, 18, 49, "Text", "ExpressionUUID" -> \
 "558e695a-64c8-41de-8816-17bd8eb4d8ac"],
-Cell[338976, 5850, 215, 5, 30, "Text", "ExpressionUUID" -> \
+Cell[339624, 5887, 265, 8, 30, "Text", "ExpressionUUID" -> \
 "4c3a3944-6523-4af0-8cae-00306bb2bf9a"],
-Cell[339194, 5857, 2910, 67, 91, "Code", "ExpressionUUID" -> \
+Cell[339892, 5897, 2910, 67, 91, "Code", "ExpressionUUID" -> \
 "d4f979cb-a65c-4733-96b2-d2447b40fa27"],
-Cell[342107, 5926, 163, 3, 32, "Input", "ExpressionUUID" -> \
+Cell[342805, 5966, 163, 3, 32, "Input", "ExpressionUUID" -> \
 "741efb6d-d804-4dac-baa9-0af705cafcab"],
-Cell[342273, 5931, 71, 0, 30, "Text", "ExpressionUUID" -> \
+Cell[342971, 5971, 71, 0, 30, "Text", "ExpressionUUID" -> \
 "9ea863ff-8576-4bf2-99f2-7f8fe13c7bdf"],
-Cell[342347, 5933, 2545, 64, 91, "Code", "ExpressionUUID" -> \
+Cell[343045, 5973, 2545, 64, 91, "Code", "ExpressionUUID" -> \
 "b5853655-029a-4b8c-abc5-8709d6443650"],
-Cell[344895, 5999, 2703, 54, 148, "Code", "ExpressionUUID" -> \
+Cell[345593, 6039, 2703, 54, 148, "Code", "ExpressionUUID" -> \
 "cc5e0974-3d3d-4e2e-b5b5-24f0d1550fa3"],
-Cell[347601, 6055, 147, 3, 54, "Input", "ExpressionUUID" -> \
+Cell[348299, 6095, 147, 3, 54, "Input", "ExpressionUUID" -> \
 "24f228b4-3956-441f-8385-caf5ce4b29bf"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[347785, 6063, 275, 4, 68, "TemplateSubsection", "ExpressionUUID" -> \
+Cell[348483, 6103, 275, 4, 68, "TemplateSubsection", "ExpressionUUID" -> \
 "f27ae70e-91c7-4506-8835-21b281190700"],
-Cell[348063, 6069, 121312, 2007, 1979, "Text", "ExpressionUUID" -> \
+Cell[348761, 6109, 121312, 2007, 1979, "Text", "ExpressionUUID" -> \
 "9f703152-2092-42ea-9c07-795f4558d45c"]
 }, Open  ]],
-Cell[469390, 8079, 257, 4, 68, "TemplateSubsection", "ExpressionUUID" -> \
+Cell[470088, 8119, 257, 4, 68, "TemplateSubsection", "ExpressionUUID" -> \
 "595aec4a-a293-426a-b50c-4acce4123cb2",
  CellTags->"DataSources"],
 Cell[CellGroupData[{
-Cell[469672, 8087, 276, 4, 57, "TemplateSubsection", "ExpressionUUID" -> \
+Cell[470370, 8127, 276, 4, 57, "TemplateSubsection", "ExpressionUUID" -> \
 "e5647c6a-cb6b-4235-8887-8cfbb24ef769",
  CellTags->"FutureDirections"],
-Cell[469951, 8093, 304, 7, 30, "Text", "ExpressionUUID" -> \
+Cell[470649, 8133, 304, 7, 30, "Text", "ExpressionUUID" -> \
 "cc1aacf7-7310-499e-8f43-97d17b229530"],
 Cell[CellGroupData[{
-Cell[470280, 8104, 391, 7, 30, "Item", "ExpressionUUID" -> \
+Cell[470978, 8144, 391, 7, 30, "Item", "ExpressionUUID" -> \
 "2fb684e6-675a-4859-b293-cb91f76524d8"],
-Cell[470674, 8113, 372, 5, 30, "Item", "ExpressionUUID" -> \
+Cell[471372, 8153, 372, 5, 30, "Item", "ExpressionUUID" -> \
 "97c286b6-9004-4ba4-bfd9-858eaeb0776e"],
-Cell[471049, 8120, 400, 7, 30, "Item", "ExpressionUUID" -> \
+Cell[471747, 8160, 400, 7, 30, "Item", "ExpressionUUID" -> \
 "0d30e12e-e583-4329-86ab-61b0a7b2382a"],
-Cell[471452, 8129, 366, 5, 30, "Item", "ExpressionUUID" -> \
+Cell[472150, 8169, 366, 5, 30, "Item", "ExpressionUUID" -> \
 "22a28f39-51e8-456b-9ae5-34b72fc109f8"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[471867, 8140, 313, 5, 68, "TemplateSubsection", "ExpressionUUID" -> \
+Cell[472565, 8180, 313, 5, 68, "TemplateSubsection", "ExpressionUUID" -> \
 "f66f7ca2-dcb9-4c06-9d0a-f2cc48d9fd79",
  CellTags->"References"],
-Cell[472183, 8147, 441, 8, 68, "Text", "ExpressionUUID" -> \
+Cell[472881, 8187, 441, 8, 68, "Text", "ExpressionUUID" -> \
 "04440e39-2e3a-407b-9a30-59597108dd7f"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[472661, 8160, 182, 2, 68, "TemplateSubsection", "ExpressionUUID" -> \
+Cell[473359, 8200, 182, 2, 68, "TemplateSubsection", "ExpressionUUID" -> \
 "0a9d4fd1-d336-4f32-b85d-12e6f9eed8ed",
  CellTags->"Keywords"],
 Cell[CellGroupData[{
-Cell[472868, 8166, 259, 4, 30, "Item", "ExpressionUUID" -> \
+Cell[473566, 8206, 259, 4, 30, "Item", "ExpressionUUID" -> \
 "c5f38158-0dba-4de6-b5d2-d5d7c88dce44"],
-Cell[473130, 8172, 202, 4, 30, "Item", "ExpressionUUID" -> \
+Cell[473828, 8212, 202, 4, 30, "Item", "ExpressionUUID" -> \
 "8f4ed315-9e79-41f9-a35b-13ffdd3146e0"],
-Cell[473335, 8178, 202, 4, 30, "Item", "ExpressionUUID" -> \
+Cell[474033, 8218, 202, 4, 30, "Item", "ExpressionUUID" -> \
 "cd2cce3d-14fe-4703-ac8e-5be1c44e5a22"],
-Cell[473540, 8184, 203, 4, 30, "Item", "ExpressionUUID" -> \
+Cell[474238, 8224, 203, 4, 30, "Item", "ExpressionUUID" -> \
 "9352a0f1-c168-4add-bec6-428fdeb331ea"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[473792, 8194, 160, 3, 68, "TemplateSubsection", "ExpressionUUID" -> \
+Cell[474490, 8234, 160, 3, 68, "TemplateSubsection", "ExpressionUUID" -> \
 "36ecd6b6-37b7-4934-b28a-00f3b0ee8401"],
-Cell[473955, 8199, 615, 10, 87, "Text", "ExpressionUUID" -> \
+Cell[474653, 8239, 615, 10, 87, "Text", "ExpressionUUID" -> \
 "23ac2815-0767-43b3-a815-153b8c134d69"],
 Cell[CellGroupData[{
-Cell[474595, 8213, 423, 8, 30, "Item", "ExpressionUUID" -> \
+Cell[475293, 8253, 423, 8, 30, "Item", "ExpressionUUID" -> \
 "24d36fca-e67d-44f2-b937-721d75d23d95"],
-Cell[475021, 8223, 447, 9, 30, "Item", "ExpressionUUID" -> \
+Cell[475719, 8263, 447, 9, 30, "Item", "ExpressionUUID" -> \
 "0e86ec22-5be0-4630-bbe5-ad6e6365cc80"],
-Cell[475471, 8234, 289, 4, 30, "Item", "ExpressionUUID" -> \
+Cell[476169, 8274, 289, 4, 30, "Item", "ExpressionUUID" -> \
 "897a2292-d25a-4d39-ae2a-9eff3935d7e0"],
-Cell[475763, 8240, 480, 9, 62, "Item", "ExpressionUUID" -> \
+Cell[476461, 8280, 480, 9, 62, "Item", "ExpressionUUID" -> \
 "668ea249-1f50-4f48-8f75-ddc28feb6245"],
-Cell[476246, 8251, 789, 14, 79, "Item", "ExpressionUUID" -> \
+Cell[476944, 8291, 789, 14, 79, "Item", "ExpressionUUID" -> \
 "2f92e4c9-b4d9-4259-8d05-a8b070324596"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[477084, 8271, 162, 3, 68, "TemplateSubsection", "ExpressionUUID" -> \
+Cell[477782, 8311, 162, 3, 68, "TemplateSubsection", "ExpressionUUID" -> \
 "1cd568fb-8340-49f7-8b1e-208734b6bb99"],
-Cell[477249, 8276, 232, 7, 28, "LastModified", "ExpressionUUID" -> \
+Cell[477947, 8316, 232, 7, 28, "LastModified", "ExpressionUUID" -> \
 "1a10ee68-8b8e-4e80-92ef-fc784acf0d5f",
  CellTags->"LastModifiedDate"],
-Cell[477484, 8285, 917, 24, 43, "Input", "ExpressionUUID" -> \
+Cell[478182, 8325, 917, 24, 43, "Input", "ExpressionUUID" -> \
 "387919cf-8311-4ba3-bacd-ed733929beeb"]
 }, Open  ]]
 }, Open  ]]
