@@ -1,0 +1,325 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     11314,        317]
+NotebookOptionsPosition[      9756,        272]
+NotebookOutlinePosition[     10109,        288]
+CellTagsIndexPosition[     10066,        285]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"$Turtles", " ", "=", " ", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"RandomReal", "[", 
+      RowBox[{"1", ",", "2"}], "]"}], ",", "10"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Button", "[", 
+  RowBox[{"\"\<spawn\>\"", ",", " ", 
+   RowBox[{"AppendTo", "[", 
+    RowBox[{"$Turtles", ",", " ", 
+     RowBox[{"RandomReal", "[", 
+      RowBox[{"1", ",", "2"}], "]"}]}], "]"}]}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Button", "[", 
+  RowBox[{"\"\<kill\>\"", ",", " ", 
+   RowBox[{"$Turtles", " ", "=", " ", 
+    RowBox[{"Rest", "[", "$Turtles", "]"}]}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.707669581334795*^9, 3.707669608221946*^9}, {
+   3.707920030333829*^9, 3.707920076548767*^9}, 3.707921147730014*^9, {
+   3.707921425831526*^9, 3.707921466820771*^9}, {3.7079215020201387`*^9, 
+   3.7079215162459183`*^9}},ExpressionUUID->"f4a50d7e-3098-41c3-9469-\
+32f277bff30e"],
+
+Cell[BoxData[
+ ButtonBox["\<\"spawn\"\>",
+  Appearance->Automatic,
+  ButtonFunction:>AppendTo[$CellContext`$Turtles, 
+    RandomReal[1, 2]],
+  Evaluator->Automatic,
+  Method->"Preemptive"]], "Output",
+ CellChangeTimes->{{3.7079215048330803`*^9, 3.707921516630293*^9}, 
+   3.707922254568001*^9},ExpressionUUID->"6b945dd7-7fb1-45db-8efe-\
+e802102cadcd"],
+
+Cell[BoxData[
+ ButtonBox["\<\"kill\"\>",
+  Appearance->Automatic,
+  ButtonFunction:>($CellContext`$Turtles = Rest[$CellContext`$Turtles]),
+  Evaluator->Automatic,
+  Method->"Preemptive"]], "Output",
+ CellChangeTimes->{{3.7079215048330803`*^9, 3.707921516630293*^9}, 
+   3.7079222545786753`*^9},ExpressionUUID->"8e7443ac-5622-4509-81bb-\
+d753b18823a1"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Dynamic", "[", 
+  RowBox[{
+   RowBox[{"Graphics", "[", 
+    RowBox[{
+     RowBox[{"Function", "[", 
+      RowBox[{"self", ",", 
+       RowBox[{"Locator", "[", 
+        RowBox[{"Dynamic", "[", 
+         RowBox[{
+          RowBox[{"$Turtles", "[", 
+           RowBox[{"[", "self", "]"}], "]"}], ",", 
+          RowBox[{"Function", "[", 
+           RowBox[{"value", ",", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"$Turtles", "[", 
+               RowBox[{"[", "self", "]"}], "]"}], "=", "value"}], ";", 
+             "\[IndentingNewLine]", 
+             RowBox[{
+              RowBox[{"Function", "[", 
+               RowBox[{"index", ",", 
+                RowBox[{
+                 RowBox[{"$Turtles", "[", 
+                  RowBox[{"[", "index", "]"}], "]"}], "+=", 
+                 RowBox[{".1", " ", 
+                  RowBox[{"(", 
+                   RowBox[{
+                    RowBox[{"{", "value", "}"}], "-", 
+                    RowBox[{"$Turtles", "[", 
+                    RowBox[{"[", "index", "]"}], "]"}]}], ")"}]}]}]}], "]"}], 
+              "/@", 
+              RowBox[{"Position", "[", 
+               RowBox[{"$Turtles", ",", 
+                RowBox[{"x_List", "/;", 
+                 RowBox[{"0", "<", 
+                  RowBox[{"EuclideanDistance", "[", 
+                   RowBox[{"x", ",", "value"}], "]"}], "<", ".5"}]}], ",", 
+                RowBox[{"{", "1", "}"}]}], "]"}]}]}]}], "]"}]}], "]"}], 
+        "]"}]}], "]"}], "/@", 
+     RowBox[{"Range", "[", 
+      RowBox[{"Length", "[", "$Turtles", "]"}], "]"}]}], "]"}], ",", 
+   RowBox[{"TrackedSymbols", "\[Rule]", 
+    RowBox[{"{", "}"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.70773162910804*^9, 3.707731700707778*^9}, {
+   3.707731828162553*^9, 3.707731930791601*^9}, 3.7077319806979322`*^9, {
+   3.707732967918622*^9, 3.707732984829618*^9}, {3.707733019462729*^9, 
+   3.70773302128658*^9}, {3.707921746011449*^9, 3.707921746666744*^9}, 
+   3.707921955294015*^9, {3.7079221846947613`*^9, 3.707922185701304*^9}, {
+   3.70792225165582*^9, 3.707922252204927*^9}, {3.707922314915565*^9, 
+   3.707922330380625*^9}},ExpressionUUID->"2b07348d-c8bc-42d8-bf26-\
+efee027582ab"],
+
+Cell[BoxData[
+ DynamicBox[ToBoxes[
+   Graphics[
+    Map[
+     Function[$CellContext`self, 
+      Locator[
+       Dynamic[
+        Part[$CellContext`$Turtles, $CellContext`self], 
+        Function[$CellContext`value, 
+         Part[$CellContext`$Turtles, $CellContext`self] = $CellContext`value; 
+         Map[
+           Function[$CellContext`index, 
+            AddTo[
+             Part[$CellContext`$Turtles, $CellContext`index], 
+             0.1 ({$CellContext`value} - 
+              Part[$CellContext`$Turtles, $CellContext`index])]], 
+           Position[$CellContext`$Turtles, 
+            Condition[
+             Pattern[$CellContext`x, 
+              Blank[List]], 0 < 
+             EuclideanDistance[$CellContext`x, $CellContext`value] < 0.1], {
+            1}]]]]]], 
+     Range[
+      Length[$CellContext`$Turtles]]]], StandardForm],
+  ImageSizeCache->{360., {179., 184.}},
+  TrackedSymbols:>{}]], "Output",
+ CellChangeTimes->{{3.7077316310013237`*^9, 3.707731645372677*^9}, 
+   3.707731703554085*^9, {3.70773185617444*^9, 3.707731867518227*^9}, {
+   3.7077319182898397`*^9, 3.707731931234817*^9}, 3.707731981510231*^9, {
+   3.7077329736602907`*^9, 3.707732985182143*^9}, 3.707733023331682*^9, {
+   3.707921740792532*^9, 3.707921747138627*^9}, 3.7079219557657623`*^9, {
+   3.707922163858595*^9, 3.707922186074888*^9}, {3.707922262282194*^9, 
+   3.707922286801602*^9}, 
+   3.707922318754759*^9},ExpressionUUID->"defa5b20-d2be-4b2e-bf42-\
+d72ce37a7e3b"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"$Turtles", "//", "Dynamic"}]], "Input",
+ CellChangeTimes->{{3.707669519800709*^9, 
+  3.7076695213254766`*^9}},ExpressionUUID->"fe7a846b-2d0d-4469-b64e-\
+fc1d99056de7"],
+
+Cell[BoxData[
+ DynamicBox[ToBoxes[$CellContext`$Turtles, StandardForm],
+  ImageSizeCache->{
+   502.30000019073486`, {87.54893493652344, 12.791915893554688`}}]], "Output",\
+
+ CellChangeTimes->{3.707921111097884*^9, 3.707921274787867*^9, 
+  3.707921486288447*^9},ExpressionUUID->"2508246a-44a8-4abd-b1d0-\
+858e97d7d1ba"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"turtleGo", "[", "index_", "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", "}"}], ",", " ", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"$Turtles", "[", 
+        RowBox[{"[", "index", "]"}], "]"}], " ", "=", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           RowBox[{"$Turtles", "[", 
+            RowBox[{"[", "index", "]"}], "]"}], "[", 
+           RowBox[{"[", "1", "]"}], "]"}], " ", "+", " ", 
+          RowBox[{"RandomReal", "[", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"-", "0.1"}], ",", " ", "0.1"}], "}"}], "]"}]}], ",", 
+         " ", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"$Turtles", "[", 
+            RowBox[{"[", "index", "]"}], "]"}], "[", 
+           RowBox[{"[", "2", "]"}], "]"}], 
+          RowBox[{"RandomReal", "[", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"-", "0.1"}], ",", " ", "0.1"}], "}"}], "]"}]}]}], 
+        "}"}]}], ")"}], ";", " ", "\[IndentingNewLine]", 
+     RowBox[{"Pause", "[", "1", "]"}], ";"}]}], "\[IndentingNewLine]", 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.707921884025049*^9, 3.707921939886154*^9}, {
+  3.707921975269676*^9, 3.70792204509032*^9}, {3.707922192894287*^9, 
+  3.707922218302231*^9}},ExpressionUUID->"d7030201-2a6f-4445-978f-\
+ab6e4c3052f2"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{"turtleGo", "[", "1", "]"}], ",", " ", "100"}], "]"}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.707921916257059*^9, 3.7079219179186363`*^9}, {
+   3.707921958843833*^9, 3.70792196231215*^9}, 
+   3.7079220085880127`*^9},ExpressionUUID->"9f9c28c6-ab84-4596-ba2a-\
+96cd16f0a1aa"],
+
+Cell[BoxData["$Aborted"], "Output",
+ CellChangeTimes->{
+  3.7079220677904263`*^9, {3.707922161182744*^9, 3.707922181362379*^9}, 
+   3.70792224099328*^9},ExpressionUUID->"38152d73-5876-4ecf-9fee-\
+76b96c9e8fcf"]
+}, Open  ]],
+
+Cell[BoxData["\[IndentingNewLine]"], "Input",
+ CellChangeTimes->{
+  3.707921521451186*^9},ExpressionUUID->"a3572c59-c9e0-4b0e-b88d-\
+38187c17ee0f"],
+
+Cell[BoxData[
+ RowBox[{"(*", 
+  RowBox[{"Dynamic", "[", 
+   RowBox[{"Graphics", "[", 
+    RowBox[{
+     RowBox[{"Function", "[", 
+      RowBox[{"self", ",", " ", 
+       RowBox[{"Locator", "[", 
+        RowBox[{"Dynamic", "[", 
+         RowBox[{
+          RowBox[{"$Turtles", "[", 
+           RowBox[{"[", "self", "]"}], "]"}], ",", " ", 
+          RowBox[{"$Turtles", " ", "=", 
+           RowBox[{"Normalize", "/@", 
+            RowBox[{"(", 
+             RowBox[{"$Turtles", "-", " ", 
+              RowBox[{"$Turtles", "[", 
+               RowBox[{"[", "self", "]"}], "]"}]}], ")"}]}]}]}], "]"}], 
+        "]"}]}], "]"}], "/@", " ", 
+     RowBox[{"Range", "[", 
+      RowBox[{"Length", "[", "$Turtles", "]"}], "]"}]}], "]"}], "]"}], 
+  "*)"}]], "Input",
+ CellChangeTimes->{{3.707669441386293*^9, 3.70766948131857*^9}, {
+  3.7076697477501507`*^9, 3.7076697865204*^9}, {3.707669830769225*^9, 
+  3.707669864439886*^9}, {3.707669900043221*^9, 3.7076699071702433`*^9}, {
+  3.7076699558393307`*^9, 3.707669988760066*^9}, {3.7079212594838552`*^9, 
+  3.707921261586306*^9}},ExpressionUUID->"20c3a4ef-e4b3-4c01-900a-\
+2530f5beca05"]
+},
+WindowSize->{640, 682},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"11.1 for Mac OS X x86 (32-bit, 64-bit Kernel) (April 18, \
+2017)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 934, 22, 75, "Input", "ExpressionUUID" -> \
+"f4a50d7e-3098-41c3-9469-32f277bff30e"],
+Cell[1517, 46, 351, 9, 43, "Output", "ExpressionUUID" -> \
+"6b945dd7-7fb1-45db-8efe-e802102cadcd"],
+Cell[1871, 57, 351, 8, 43, "Output", "ExpressionUUID" -> \
+"8e7443ac-5622-4509-81bb-d753b18823a1"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2259, 70, 2200, 51, 222, "Input", "ExpressionUUID" -> \
+"2b07348d-c8bc-42d8-bf26-efee027582ab"],
+Cell[4462, 123, 1464, 34, 378, "Output", "ExpressionUUID" -> \
+"defa5b20-d2be-4b2e-bf42-d72ce37a7e3b"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5963, 162, 191, 4, 32, "Input", "ExpressionUUID" -> \
+"fe7a846b-2d0d-4469-b64e-fc1d99056de7"],
+Cell[6157, 168, 318, 7, 117, "Output", "ExpressionUUID" -> \
+"2508246a-44a8-4abd-b1d0-858e97d7d1ba"]
+}, Open  ]],
+Cell[6490, 178, 1383, 38, 159, "Input", "ExpressionUUID" -> \
+"d7030201-2a6f-4445-978f-ab6e4c3052f2"],
+Cell[CellGroupData[{
+Cell[7898, 220, 349, 9, 32, "Input", "ExpressionUUID" -> \
+"9f9c28c6-ab84-4596-ba2a-96cd16f0a1aa"],
+Cell[8250, 231, 210, 4, 32, "Output", "ExpressionUUID" -> \
+"38152d73-5876-4ecf-9fee-76b96c9e8fcf"]
+}, Open  ]],
+Cell[8475, 238, 147, 3, 54, "Input", "ExpressionUUID" -> \
+"a3572c59-c9e0-4b0e-b88d-38187c17ee0f"],
+Cell[8625, 243, 1127, 27, 138, "Input", "ExpressionUUID" -> \
+"20c3a4ef-e4b3-4c01-900a-2530f5beca05"]
+}
+]
+*)
+
