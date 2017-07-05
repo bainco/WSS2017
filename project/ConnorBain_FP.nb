@@ -3,10 +3,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[         0,          0]
-NotebookDataLength[    801404,      13898]
-NotebookOptionsPosition[    479127,       8353]
-NotebookOutlinePosition[    791962,      13688]
-CellTagsIndexPosition[    791658,      13676]
+NotebookDataLength[    804241,      13948]
+NotebookOptionsPosition[    481958,       8403]
+NotebookOutlinePosition[    794793,      13738]
+CellTagsIndexPosition[    794489,      13726]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -5889,10 +5889,17 @@ Cell[TextData[{
  "First, we define the ",
  StyleBox["condition",
   FontSlant->"Italic"],
- " to be a hero. We do this by saying"
+ " to be a hero. We do this by saying turtles who have \
+\[OpenCurlyDoubleQuote]behavior\[CloseCurlyDoubleQuote] of \
+\[OpenCurlyDoubleQuote]hero\[CloseCurlyDoubleQuote] and whose coordinates are \
+within -60 and 60 are movable-heroes. Heroes act by moving towards (5% of the \
+way) toward the midpoint between their friend and their enemy. In other \
+words, they\[CloseCurlyQuote]re moving to protect their friend from their \
+enemy."
 }], "Text",
- CellChangeTimes->{{3.708257686265773*^9, 
-  3.708257700120781*^9}},ExpressionUUID->"4c3a3944-6523-4af0-8cae-\
+ CellChangeTimes->{{3.708257686265773*^9, 3.708257700120781*^9}, {
+  3.708258125974032*^9, 
+  3.7082582176962852`*^9}},ExpressionUUID->"4c3a3944-6523-4af0-8cae-\
 00306bb2bf9a"],
 
 Cell[BoxData[{
@@ -5964,12 +5971,21 @@ Cell[BoxData[{
    3.708219275828044*^9}},ExpressionUUID->"d4f979cb-a65c-4733-96b2-\
 d2447b40fa27"],
 
-Cell[BoxData["AnglePath"], "Input",
- CellChangeTimes->{{3.708257762367756*^9, 
-  3.7082577660447187`*^9}},ExpressionUUID->"741efb6d-d804-4dac-baa9-\
-0af705cafcab"],
-
-Cell["", "Text",ExpressionUUID->"9ea863ff-8576-4bf2-99f2-7f8fe13c7bdf"],
+Cell[TextData[{
+ "Next, we define the ",
+ StyleBox["condition",
+  FontSlant->"Italic"],
+ " to be a coward. We do this by saying turtles who have \
+\[OpenCurlyDoubleQuote]behavior\[CloseCurlyDoubleQuote] of \
+\[OpenCurlyDoubleQuote]coward\[CloseCurlyDoubleQuote] and whose coordinates \
+are within -60 and 60 are movable-heroes. Cowards act by moving towards (5% \
+of the way) toward the point opposite their friend from their enemy. In other \
+words, they\[CloseCurlyQuote]re moving to place their friend in between \
+themselves and their enemy."
+}], "Text",
+ CellChangeTimes->{{3.7082582205161448`*^9, 
+  3.7082582768150387`*^9}},ExpressionUUID->"9ea863ff-8576-4bf2-99f2-\
+7f8fe13c7bdf"],
 
 Cell[BoxData[{
  RowBox[{"cowards", ":=", 
@@ -6037,6 +6053,29 @@ Cell[BoxData[{
   3.708219280707801*^9}},ExpressionUUID->"b5853655-029a-4b8c-abc5-\
 8709d6443650"],
 
+Cell[TextData[{
+ "Finally, we have our setup method. Here we\[CloseCurlyQuote]re creating 200 \
+turtles with 3 custom properties: \[OpenCurlyDoubleQuote]behavior\
+\[CloseCurlyDoubleQuote], \[OpenCurlyDoubleQuote]friend\
+\[CloseCurlyDoubleQuote], and \[OpenCurlyDoubleQuote]enemy.\
+\[CloseCurlyDoubleQuote] For each turtle, \[OpenCurlyDoubleQuote]behavior\
+\[CloseCurlyDoubleQuote] is simply a random choice between \
+\[OpenCurlyDoubleQuote]hero\[CloseCurlyDoubleQuote] and \
+\[OpenCurlyDoubleQuote]coward.\[CloseCurlyDoubleQuote] Each turtle then \
+choses a random other turtle as a \[OpenCurlyDoubleQuote]friend\
+\[CloseCurlyDoubleQuote] and another as an \[OpenCurlyDoubleQuote]enemy.\
+\[CloseCurlyDoubleQuote] Two things to notice here: 1. We use the ",
+ StyleBox["crt ",
+  FontSlant->"Italic"],
+ "function so you need to make sure to run the abmManipulate initialization \
+code; 2. We add our turtles to a global called $Turtles (this global should \
+be clear before you add stuff to it)."
+}], "Text",
+ CellChangeTimes->{{3.7082582205161448`*^9, 3.708258350221381*^9}, {
+  3.7082584311956387`*^9, 
+  3.708258480920187*^9}},ExpressionUUID->"5fe59df8-6a97-46f6-ad11-\
+eb6499ee8eff"],
+
 Cell[BoxData[
  RowBox[{"setup", " ", ":=", " ", 
   RowBox[{"$Turtles", " ", "=", " ", 
@@ -6093,10 +6132,21 @@ Cell[BoxData[
    3.708217638892919*^9}},ExpressionUUID->"cc5e0974-3d3d-4e2e-b5b5-\
 24f0d1550fa3"],
 
-Cell[BoxData["\[IndentingNewLine]"], "Input",
- CellChangeTimes->{
-  3.708257606361538*^9},ExpressionUUID->"24f228b4-3956-441f-8385-\
-caf5ce4b29bf"]
+Cell["\<\
+And that\[CloseCurlyQuote]s it! That\[CloseCurlyQuote]s the whole model \
+specification. The abmManipulate framework takes care of the rest. Once you \
+run these code cells (after having initialized the framework), your model \
+will appear and you can interact with it as you would any other manipulate. \
+And added feature of this framework is that you have total control over every \
+turtle. Even in the middle of a simulation, you can easily pickup a turtle \
+and move it around in order to effect the evolution of the model. Just \
+remember that moving a single turtle might not do much because of the \
+friend-enemy network between turtles.\
+\>", "Text",
+ CellChangeTimes->{{3.7082582205161448`*^9, 3.708258350221381*^9}, {
+  3.708258406836464*^9, 3.708258426057356*^9}, {3.708258484575481*^9, 
+  3.708258577601074*^9}},ExpressionUUID->"f657890e-22e1-44ef-976e-\
+8be077bade88"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -13642,22 +13692,22 @@ CellTagsIndex->{
    a925d2a0-3ce1-4094-91fd-24118475ecb7",
    CellTags->"Author"]},
  "DataSources"->{
-  Cell[470088, 8119, 257, 4, 
+  Cell[472919, 8169, 257, 4, 
   68, "TemplateSubsection", "ExpressionUUID" -> "595aec4a-a293-426a-
    b50c-4acce4123cb2",
    CellTags->"DataSources"]},
  "FutureDirections"->{
-  Cell[470370, 8127, 276, 4, 
+  Cell[473201, 8177, 276, 4, 
   57, "TemplateSubsection", "ExpressionUUID" -> "e5647c6a-
    cb6b-4235-8887-8cfbb24ef769",
    CellTags->"FutureDirections"]},
  "Keywords"->{
-  Cell[473359, 8200, 182, 2, 
+  Cell[476190, 8250, 182, 2, 
   68, "TemplateSubsection", "ExpressionUUID" -> "0a9d4fd1-d336-4f32-
    b85d-12e6f9eed8ed",
    CellTags->"Keywords"]},
  "LastModifiedDate"->{
-  Cell[477947, 8316, 232, 7, 
+  Cell[480778, 8366, 232, 7, 
   28, "LastModified", "ExpressionUUID" -> "1a10ee68-8b8e-4e80-92ef-
    fc784acf0d5f",
    CellTags->"LastModifiedDate"]},
@@ -13667,7 +13717,7 @@ CellTagsIndex->{
    bb704a41475d",
    CellTags->"Mentor"]},
  "References"->{
-  Cell[472565, 8180, 313, 5, 
+  Cell[475396, 8230, 313, 5, 
   68, "TemplateSubsection", "ExpressionUUID" -> "f66f7ca2-dcb9-4c06-9d0a-
    f2cc48d9fd79",
    CellTags->"References"]}
@@ -13675,14 +13725,14 @@ CellTagsIndex->{
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"Affiliation", 790327, 13633},
- {"Author", 790486, 13638},
- {"DataSources", 790644, 13643},
- {"FutureDirections", 790819, 13648},
- {"Keywords", 790991, 13653},
- {"LastModifiedDate", 791163, 13658},
- {"Mentor", 791327, 13663},
- {"References", 791484, 13668}
+ {"Affiliation", 793158, 13683},
+ {"Author", 793317, 13688},
+ {"DataSources", 793475, 13693},
+ {"FutureDirections", 793650, 13698},
+ {"Keywords", 793822, 13703},
+ {"LastModifiedDate", 793994, 13708},
+ {"Mentor", 794158, 13713},
+ {"References", 794315, 13718}
  }
 *)
 (*NotebookFileOutline
@@ -13802,94 +13852,94 @@ Cell[338516, 5859, 345, 6, 68, "TemplateSubsection", "ExpressionUUID" -> \
 "5a247b12-4033-40a4-960f-65d46bf0f9c2"],
 Cell[338864, 5867, 757, 18, 49, "Text", "ExpressionUUID" -> \
 "558e695a-64c8-41de-8816-17bd8eb4d8ac"],
-Cell[339624, 5887, 265, 8, 30, "Text", "ExpressionUUID" -> \
+Cell[339624, 5887, 713, 15, 68, "Text", "ExpressionUUID" -> \
 "4c3a3944-6523-4af0-8cae-00306bb2bf9a"],
-Cell[339892, 5897, 2910, 67, 91, "Code", "ExpressionUUID" -> \
+Cell[340340, 5904, 2910, 67, 91, "Code", "ExpressionUUID" -> \
 "d4f979cb-a65c-4733-96b2-d2447b40fa27"],
-Cell[342805, 5966, 163, 3, 32, "Input", "ExpressionUUID" -> \
-"741efb6d-d804-4dac-baa9-0af705cafcab"],
-Cell[342971, 5971, 71, 0, 30, "Text", "ExpressionUUID" -> \
+Cell[343253, 5973, 688, 14, 87, "Text", "ExpressionUUID" -> \
 "9ea863ff-8576-4bf2-99f2-7f8fe13c7bdf"],
-Cell[343045, 5973, 2545, 64, 91, "Code", "ExpressionUUID" -> \
+Cell[343944, 5989, 2545, 64, 91, "Code", "ExpressionUUID" -> \
 "b5853655-029a-4b8c-abc5-8709d6443650"],
-Cell[345593, 6039, 2703, 54, 148, "Code", "ExpressionUUID" -> \
+Cell[346492, 6055, 1184, 21, 106, "Text", "ExpressionUUID" -> \
+"5fe59df8-6a97-46f6-ad11-eb6499ee8eff"],
+Cell[347679, 6078, 2703, 54, 148, "Code", "ExpressionUUID" -> \
 "cc5e0974-3d3d-4e2e-b5b5-24f0d1550fa3"],
-Cell[348299, 6095, 147, 3, 54, "Input", "ExpressionUUID" -> \
-"24f228b4-3956-441f-8385-caf5ce4b29bf"]
+Cell[350385, 6134, 892, 14, 125, "Text", "ExpressionUUID" -> \
+"f657890e-22e1-44ef-976e-8be077bade88"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[348483, 6103, 275, 4, 68, "TemplateSubsection", "ExpressionUUID" -> \
+Cell[351314, 6153, 275, 4, 68, "TemplateSubsection", "ExpressionUUID" -> \
 "f27ae70e-91c7-4506-8835-21b281190700"],
-Cell[348761, 6109, 121312, 2007, 1979, "Text", "ExpressionUUID" -> \
+Cell[351592, 6159, 121312, 2007, 1979, "Text", "ExpressionUUID" -> \
 "9f703152-2092-42ea-9c07-795f4558d45c"]
 }, Open  ]],
-Cell[470088, 8119, 257, 4, 68, "TemplateSubsection", "ExpressionUUID" -> \
+Cell[472919, 8169, 257, 4, 68, "TemplateSubsection", "ExpressionUUID" -> \
 "595aec4a-a293-426a-b50c-4acce4123cb2",
  CellTags->"DataSources"],
 Cell[CellGroupData[{
-Cell[470370, 8127, 276, 4, 57, "TemplateSubsection", "ExpressionUUID" -> \
+Cell[473201, 8177, 276, 4, 57, "TemplateSubsection", "ExpressionUUID" -> \
 "e5647c6a-cb6b-4235-8887-8cfbb24ef769",
  CellTags->"FutureDirections"],
-Cell[470649, 8133, 304, 7, 30, "Text", "ExpressionUUID" -> \
+Cell[473480, 8183, 304, 7, 30, "Text", "ExpressionUUID" -> \
 "cc1aacf7-7310-499e-8f43-97d17b229530"],
 Cell[CellGroupData[{
-Cell[470978, 8144, 391, 7, 30, "Item", "ExpressionUUID" -> \
+Cell[473809, 8194, 391, 7, 30, "Item", "ExpressionUUID" -> \
 "2fb684e6-675a-4859-b293-cb91f76524d8"],
-Cell[471372, 8153, 372, 5, 30, "Item", "ExpressionUUID" -> \
+Cell[474203, 8203, 372, 5, 30, "Item", "ExpressionUUID" -> \
 "97c286b6-9004-4ba4-bfd9-858eaeb0776e"],
-Cell[471747, 8160, 400, 7, 30, "Item", "ExpressionUUID" -> \
+Cell[474578, 8210, 400, 7, 30, "Item", "ExpressionUUID" -> \
 "0d30e12e-e583-4329-86ab-61b0a7b2382a"],
-Cell[472150, 8169, 366, 5, 30, "Item", "ExpressionUUID" -> \
+Cell[474981, 8219, 366, 5, 30, "Item", "ExpressionUUID" -> \
 "22a28f39-51e8-456b-9ae5-34b72fc109f8"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[472565, 8180, 313, 5, 68, "TemplateSubsection", "ExpressionUUID" -> \
+Cell[475396, 8230, 313, 5, 68, "TemplateSubsection", "ExpressionUUID" -> \
 "f66f7ca2-dcb9-4c06-9d0a-f2cc48d9fd79",
  CellTags->"References"],
-Cell[472881, 8187, 441, 8, 68, "Text", "ExpressionUUID" -> \
+Cell[475712, 8237, 441, 8, 68, "Text", "ExpressionUUID" -> \
 "04440e39-2e3a-407b-9a30-59597108dd7f"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[473359, 8200, 182, 2, 68, "TemplateSubsection", "ExpressionUUID" -> \
+Cell[476190, 8250, 182, 2, 68, "TemplateSubsection", "ExpressionUUID" -> \
 "0a9d4fd1-d336-4f32-b85d-12e6f9eed8ed",
  CellTags->"Keywords"],
 Cell[CellGroupData[{
-Cell[473566, 8206, 259, 4, 30, "Item", "ExpressionUUID" -> \
+Cell[476397, 8256, 259, 4, 30, "Item", "ExpressionUUID" -> \
 "c5f38158-0dba-4de6-b5d2-d5d7c88dce44"],
-Cell[473828, 8212, 202, 4, 30, "Item", "ExpressionUUID" -> \
+Cell[476659, 8262, 202, 4, 30, "Item", "ExpressionUUID" -> \
 "8f4ed315-9e79-41f9-a35b-13ffdd3146e0"],
-Cell[474033, 8218, 202, 4, 30, "Item", "ExpressionUUID" -> \
+Cell[476864, 8268, 202, 4, 30, "Item", "ExpressionUUID" -> \
 "cd2cce3d-14fe-4703-ac8e-5be1c44e5a22"],
-Cell[474238, 8224, 203, 4, 30, "Item", "ExpressionUUID" -> \
+Cell[477069, 8274, 203, 4, 30, "Item", "ExpressionUUID" -> \
 "9352a0f1-c168-4add-bec6-428fdeb331ea"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[474490, 8234, 160, 3, 68, "TemplateSubsection", "ExpressionUUID" -> \
+Cell[477321, 8284, 160, 3, 68, "TemplateSubsection", "ExpressionUUID" -> \
 "36ecd6b6-37b7-4934-b28a-00f3b0ee8401"],
-Cell[474653, 8239, 615, 10, 87, "Text", "ExpressionUUID" -> \
+Cell[477484, 8289, 615, 10, 87, "Text", "ExpressionUUID" -> \
 "23ac2815-0767-43b3-a815-153b8c134d69"],
 Cell[CellGroupData[{
-Cell[475293, 8253, 423, 8, 30, "Item", "ExpressionUUID" -> \
+Cell[478124, 8303, 423, 8, 30, "Item", "ExpressionUUID" -> \
 "24d36fca-e67d-44f2-b937-721d75d23d95"],
-Cell[475719, 8263, 447, 9, 30, "Item", "ExpressionUUID" -> \
+Cell[478550, 8313, 447, 9, 30, "Item", "ExpressionUUID" -> \
 "0e86ec22-5be0-4630-bbe5-ad6e6365cc80"],
-Cell[476169, 8274, 289, 4, 30, "Item", "ExpressionUUID" -> \
+Cell[479000, 8324, 289, 4, 30, "Item", "ExpressionUUID" -> \
 "897a2292-d25a-4d39-ae2a-9eff3935d7e0"],
-Cell[476461, 8280, 480, 9, 62, "Item", "ExpressionUUID" -> \
+Cell[479292, 8330, 480, 9, 62, "Item", "ExpressionUUID" -> \
 "668ea249-1f50-4f48-8f75-ddc28feb6245"],
-Cell[476944, 8291, 789, 14, 79, "Item", "ExpressionUUID" -> \
+Cell[479775, 8341, 789, 14, 79, "Item", "ExpressionUUID" -> \
 "2f92e4c9-b4d9-4259-8d05-a8b070324596"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[477782, 8311, 162, 3, 68, "TemplateSubsection", "ExpressionUUID" -> \
+Cell[480613, 8361, 162, 3, 68, "TemplateSubsection", "ExpressionUUID" -> \
 "1cd568fb-8340-49f7-8b1e-208734b6bb99"],
-Cell[477947, 8316, 232, 7, 28, "LastModified", "ExpressionUUID" -> \
+Cell[480778, 8366, 232, 7, 28, "LastModified", "ExpressionUUID" -> \
 "1a10ee68-8b8e-4e80-92ef-fc784acf0d5f",
  CellTags->"LastModifiedDate"],
-Cell[478182, 8325, 917, 24, 43, "Input", "ExpressionUUID" -> \
+Cell[481013, 8375, 917, 24, 43, "Input", "ExpressionUUID" -> \
 "387919cf-8311-4ba3-bacd-ed733929beeb"]
 }, Open  ]]
 }, Open  ]]
